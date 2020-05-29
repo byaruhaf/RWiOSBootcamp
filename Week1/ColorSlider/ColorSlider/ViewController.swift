@@ -90,27 +90,29 @@ class ViewController: UIViewController {
     }
 
     fileprivate func showColorNameAlert(){
-        let alertController = UIAlertController(title: "Enter Cool Color Name", message: "", preferredStyle: .alert)
-        alertController.addTextField { (textField : UITextField!) -> Void in
+        let alertCtr = UIAlertController(title: "Enter Cool Color Name", message: "", preferredStyle: .alert)
+        alertCtr.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Color Name"
         }
-        let saveAction = UIAlertAction(title: "Set Color", style: .default, handler: { alert -> Void in
-            if let textField = alertController.textFields?[0] {
-                self.colorname.text = textField.text
-                self.colorView.backgroundColor = self.calculateColor()
+        let saveAction = UIAlertAction(title: "Set Color", style: .default, handler: { [weak self, weak alertCtr] alert -> Void in
+            if let textField = alertCtr?.textFields?[0] {
+                self?.colorname.text = textField.text
+                self?.colorView.backgroundColor = self?.calculateColor()
             }
         })
-        // Accessing alert view backgroundColor :
-        alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = self.calculateColor()
+        // Change alert backgroundColor as hint for user.
+        alertCtr.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = self.calculateColor()
         // Accessing buttons tintcolor :
-        alertController.view.tintColor = UIColor.white
+        alertCtr.view.tintColor = UIColor.white
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
-            (action : UIAlertAction!) -> Void in })
+            (action : UIAlertAction!) -> Void in
+            self.setupSliders()
+        })
 
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        alertController.preferredAction = saveAction
-        self.present(alertController, animated: true, completion: nil)
+        alertCtr.addAction(saveAction)
+        alertCtr.addAction(cancelAction)
+        alertCtr.preferredAction = saveAction
+        self.present(alertCtr, animated: true, completion: nil)
     }
 
     // moving of Slider Updates Values displayed
