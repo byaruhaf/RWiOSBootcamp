@@ -34,11 +34,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    setupSliders()
+        setupSliders()
     }
 
-    // MARK: Color mode setup functions
-    private func setupSliders() {
+    // MARK: IBActions
+    // moving of Slider Updates Values displayed
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        self.sliderOneValue.text = "\(Int(sliderOne.value))"
+        self.sliderTwoValue.text = "\(Int(sliderTwo.value))"
+        self.sliderThreeValue.text = "\(Int(sliderThree.value))"
+    }
+
+    @IBAction func setColorTapped(_ sender: Any) {
+        showColorNameAlert()
+    }
+
+    @IBAction func resetSelection(_ sender: Any) {
+        setupSliders()
+    }
+    @IBAction func modeChanged(_ sender: Any) {
+        setupSliders()
+    }
+
+    // MARK: Setup functions
+
+    fileprivate func setupSliders() {
         switch colorModelSelector.selectedSegmentIndex {
         case 0:
             setupRGB()
@@ -47,15 +67,10 @@ class ViewController: UIViewController {
         default:
             break
         }
-        //Reset all to avoid confusion
-        self.sliderOneValue.text = "0"
-        self.sliderTwoValue.text = "0"
-        self.sliderThreeValue.text = "0"
-        sliderOne.value = 0.0
-        sliderTwo.value = 0.0
-        sliderThree.value = 0.0
-        colorView.backgroundColor = .white
+        resetValues()
     }
+
+
 
     fileprivate func setupRGB() {
         isRGB = true
@@ -79,16 +94,38 @@ class ViewController: UIViewController {
         sliderThree.maximumValue = 100
     }
 
+    fileprivate func resetValues() {
+        //Reset all to avoid confusion
+        self.sliderOneValue.text = "0"
+        self.sliderTwoValue.text = "0"
+        self.sliderThreeValue.text = "0"
+        sliderOne.value = 0.0
+        sliderTwo.value = 0.0
+        sliderThree.value = 0.0
+        colorView.backgroundColor = .white
+    }
+
+
+
+}
+
+// MARK: Color Calculator funcitons
+
+extension ViewController {
     fileprivate func calculateColor() -> UIColor {
         if isRGB {
             // Create Color using RGB
             return UIColor(rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
         } else{
             // Create Color using HSB
-           return UIColor(hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value)
+            return UIColor(hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value)
         }
     }
+}
 
+// MARK: Alert User funcitons
+
+extension ViewController {
     fileprivate func showColorNameAlert(){
         let alertCtr = UIAlertController(title: "Enter Cool Color Name", message: "", preferredStyle: .alert)
         alertCtr.addTextField { (textField : UITextField!) -> Void in
@@ -114,23 +151,4 @@ class ViewController: UIViewController {
         alertCtr.preferredAction = saveAction
         self.present(alertCtr, animated: true, completion: nil)
     }
-
-    // moving of Slider Updates Values displayed
-    @IBAction func sliderMoved(_ sender: UISlider) {
-        self.sliderOneValue.text = "\(Int(sliderOne.value))"
-        self.sliderTwoValue.text = "\(Int(sliderTwo.value))"
-        self.sliderThreeValue.text = "\(Int(sliderThree.value))"
-    }
-
-    @IBAction func setColorTapped(_ sender: Any) {
-        showColorNameAlert()
-    }
-
-    @IBAction func resetSelection(_ sender: Any) {
-        setupSliders()
-    }
-    @IBAction func modeChanged(_ sender: Any) {
-        setupSliders()
-    }
-
 }
