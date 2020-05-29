@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F481D3D2481204F00A921C3 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F481D3C2481204F00A921C3 /* WikiViewController.swift */; };
 		5F481D41248127AE00A921C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F481D3F2481263800A921C3 /* WebKit.framework */; };
+		5F7E9C5F24814C9F00DDB5CA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E9C5E24814C9F00DDB5CA /* CustomButton.swift */; };
 		5F9EE3782480C97800B280CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE3772480C97800B280CB /* AppDelegate.swift */; };
 		5F9EE37A2480C97800B280CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE3792480C97800B280CB /* SceneDelegate.swift */; };
 		5F9EE37C2480C97800B280CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE37B2480C97800B280CB /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		5F481D3C2481204F00A921C3 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		5F481D3F2481263800A921C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5F7E9C5E24814C9F00DDB5CA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5F9EE3742480C97800B280CB /* ColorSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9EE3772480C97800B280CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9EE3792480C97800B280CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9EE38B2480D06000B280CB /* UIColor.swift */,
+				5F7E9C5E24814C9F00DDB5CA /* CustomButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				5F9EE37C2480C97800B280CB /* ViewController.swift in Sources */,
 				5F9EE38C2480D06000B280CB /* UIColor.swift in Sources */,
+				5F7E9C5F24814C9F00DDB5CA /* CustomButton.swift in Sources */,
 				5F9EE3782480C97800B280CB /* AppDelegate.swift in Sources */,
 				5F481D3D2481204F00A921C3 /* WikiViewController.swift in Sources */,
 				5F9EE37A2480C97800B280CB /* SceneDelegate.swift in Sources */,
