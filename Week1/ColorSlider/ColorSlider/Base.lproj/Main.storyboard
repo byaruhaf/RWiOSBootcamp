@@ -134,7 +134,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-pv-g0S">
-                                <rect key="frame" x="161.66666666666666" y="64" width="91" height="32"/>
+                                <rect key="frame" x="176.33333333333334" y="64" width="91.000000000000028" height="32"/>
                                 <segments>
                                     <segment title="RGB"/>
                                     <segment title="HSB"/>
@@ -159,7 +159,7 @@
                             <constraint firstAttribute="bottom" secondItem="CBX-hC-OrL" secondAttribute="bottom" id="WgZ-tG-PGa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zqd-P0-Jdv" secondAttribute="bottom" constant="60" id="WiG-my-oJR"/>
                             <constraint firstItem="zqd-P0-Jdv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="env-xF-coQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Z1R-Zh-hl6"/>
-                            <constraint firstItem="mhs-pv-g0S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h1J-IE-Pov"/>
+                            <constraint firstItem="mhs-pv-g0S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="14.666666666666657" id="h1J-IE-Pov"/>
                             <constraint firstItem="sJb-T8-Qn0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mkA-bn-ltS"/>
                             <constraint firstItem="sJb-T8-Qn0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qsq-4s-mXZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="env-xF-coQ" secondAttribute="bottom" constant="60" id="wL6-yx-mN1"/>
