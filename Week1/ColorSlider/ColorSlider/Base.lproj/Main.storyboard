@@ -17,7 +17,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBX-hC-OrL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-Ni-Gyy">
+                                        <rect key="frame" x="369.66666666666669" y="72" width="24.333333333333314" height="23.666666666666671"/>
+                                        <connections>
+                                            <segue destination="dXE-LG-jDx" kind="show" identifier="wikipedia" id="saT-l4-cJZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Rn6-Ni-Gyy" firstAttribute="top" secondItem="CBX-hC-OrL" secondAttribute="topMargin" constant="20" id="BBx-y4-AIk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rn6-Ni-Gyy" secondAttribute="trailing" constant="20" id="uZc-Vu-Ab4"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="colorname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPS-Hn-JJQ">
                                 <rect key="frame" x="166.66666666666666" y="254.66666666666666" width="81" height="20.333333333333343"/>
@@ -108,14 +120,14 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="env-xF-coQ">
-                                <rect key="frame" x="8" y="812" width="64" height="30"/>
+                                <rect key="frame" x="20" y="772" width="64" height="30"/>
                                 <state key="normal" title="Set Color"/>
                                 <connections>
                                     <action selector="setColorTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbP-Kh-dIK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqd-P0-Jdv">
-                                <rect key="frame" x="367" y="812" width="39" height="30"/>
+                                <rect key="frame" x="355" y="772" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SUK-GL-bpY"/>
@@ -140,17 +152,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CBX-hC-OrL" secondAttribute="trailing" id="6y5-42-gwQ"/>
                             <constraint firstItem="BPS-Hn-JJQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AcP-6q-W8P"/>
                             <constraint firstItem="CBX-hC-OrL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AhD-Ft-Sfq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zqd-P0-Jdv" secondAttribute="trailing" constant="8" id="KW4-oc-XmY"/>
-                            <constraint firstItem="env-xF-coQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Ltx-aG-erY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zqd-P0-Jdv" secondAttribute="trailing" constant="20" id="KW4-oc-XmY"/>
+                            <constraint firstItem="env-xF-coQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ltx-aG-erY"/>
                             <constraint firstItem="CBX-hC-OrL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MzS-Sf-Ytc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sJb-T8-Qn0" secondAttribute="trailing" constant="8" id="Rbf-d6-YtZ"/>
                             <constraint firstAttribute="bottom" secondItem="CBX-hC-OrL" secondAttribute="bottom" id="WgZ-tG-PGa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zqd-P0-Jdv" secondAttribute="bottom" constant="20" id="WiG-my-oJR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zqd-P0-Jdv" secondAttribute="bottom" constant="60" id="WiG-my-oJR"/>
                             <constraint firstItem="zqd-P0-Jdv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="env-xF-coQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Z1R-Zh-hl6"/>
                             <constraint firstItem="mhs-pv-g0S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h1J-IE-Pov"/>
                             <constraint firstItem="sJb-T8-Qn0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mkA-bn-ltS"/>
                             <constraint firstItem="sJb-T8-Qn0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qsq-4s-mXZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="env-xF-coQ" secondAttribute="bottom" constant="20" id="wL6-yx-mN1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="env-xF-coQ" secondAttribute="bottom" constant="60" id="wL6-yx-mN1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -172,6 +184,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Wiki View Controller-->
+        <scene sceneID="df8-yF-OcN">
+            <objects>
+                <viewController id="dXE-LG-jDx" customClass="WikiViewController" customModule="ColorSlider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tyN-Aj-bNS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKs-4l-ajd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="770"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA4-J8-uyu">
+                                <rect key="frame" x="187.66666666666666" y="778" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeWiki:" destination="dXE-LG-jDx" eventType="touchUpInside" id="7mZ-Dd-WLJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QKs-4l-ajd" firstAttribute="top" secondItem="ORf-7n-wWA" secondAttribute="top" id="0Vw-zE-M9g"/>
+                            <constraint firstItem="NA4-J8-uyu" firstAttribute="centerX" secondItem="tyN-Aj-bNS" secondAttribute="centerX" id="Edg-4z-2ao"/>
+                            <constraint firstItem="NA4-J8-uyu" firstAttribute="bottom" secondItem="ORf-7n-wWA" secondAttribute="bottom" id="NDl-Op-esg"/>
+                            <constraint firstItem="ORf-7n-wWA" firstAttribute="trailing" secondItem="QKs-4l-ajd" secondAttribute="trailing" id="eDl-ot-6m6"/>
+                            <constraint firstItem="NA4-J8-uyu" firstAttribute="top" secondItem="QKs-4l-ajd" secondAttribute="bottom" constant="8" symbolic="YES" id="ozJ-e0-Kkj"/>
+                            <constraint firstItem="QKs-4l-ajd" firstAttribute="leading" secondItem="ORf-7n-wWA" secondAttribute="leading" id="wX6-zx-fAM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ORf-7n-wWA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w1Q-Pb-Btn"/>
+                    <connections>
+                        <outlet property="wikiWeb" destination="QKs-4l-ajd" id="OE2-W3-k7d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hm-Gl-gTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="141.96428571428569"/>
         </scene>
     </scenes>
 </document>
