@@ -79,6 +79,40 @@ class ViewController: UIViewController {
         sliderThree.maximumValue = 100
     }
 
+    fileprivate func calculateColor() -> UIColor {
+        if isRGB {
+            // Create Color using RGB
+            return UIColor(rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
+        } else{
+            // Create Color using HSB
+           return UIColor(hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value)
+        }
+    }
+
+    fileprivate func showColorNameAlert(){
+        let alertController = UIAlertController(title: "Enter Cool Color Name", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Color Name"
+        }
+        let saveAction = UIAlertAction(title: "Set Color", style: .default, handler: { alert -> Void in
+            if let textField = alertController.textFields?[0] {
+                self.colorname.text = textField.text
+                self.colorView.backgroundColor = self.calculateColor()
+            }
+        })
+        // Accessing alert view backgroundColor :
+        alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = self.calculateColor()
+        // Accessing buttons tintcolor :
+        alertController.view.tintColor = UIColor.white
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
+            (action : UIAlertAction!) -> Void in })
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        alertController.preferredAction = saveAction
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     // moving of Slider Updates Values displayed
     @IBAction func sliderMoved(_ sender: UISlider) {
         self.sliderOneValue.text = "\(Int(sliderOne.value))"
@@ -87,19 +121,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func setColorTapped(_ sender: Any) {
-        if isRGB {
-            // Create Color using RGB
-            let color = UIColor(rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
-            // Configure Color View
-            colorView.backgroundColor = color
-        }
-        if isHSB {
-            // Create Color using HSB
-            let color = UIColor(hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value)
-            // Configure Color View
-            colorView.backgroundColor = color
-        }
+        showColorNameAlert()
     }
+
     @IBAction func resetSelection(_ sender: Any) {
         setupSliders()
     }
