@@ -111,7 +111,7 @@
                                 <rect key="frame" x="8" y="812" width="64" height="30"/>
                                 <state key="normal" title="Set Color"/>
                                 <connections>
-                                    <action selector="updateColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbP-Kh-dIK"/>
+                                    <action selector="setColorTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbP-Kh-dIK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqd-P0-Jdv">

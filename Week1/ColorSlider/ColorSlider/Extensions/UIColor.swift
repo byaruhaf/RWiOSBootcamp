@@ -7,7 +7,6 @@
 //
 import UIKit.UIColor
 
-
     extension UIColor {
         convenience init(rgbColorCodeRed red: Float, green: Float, blue: Float) {
             let redPart: CGFloat = CGFloat(red) / 255

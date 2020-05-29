@@ -28,64 +28,68 @@ class ViewController: UIViewController {
 
     //color for colorView
     var color: UIColor = .white
-    var isRGB:Bool = false
-    var isHSB:Bool = false
+    var isRGB: Bool = false
+    var isHSB: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupSliders() 
+    setupSliders()
     }
 
+    // MARK: Color mode setup functions
     private func setupSliders() {
-
         switch colorModelSelector.selectedSegmentIndex {
         case 0:
-            isRGB = true
-            isHSB = false
-            sliderOneLable.text = "Red"
-            sliderTwoLable.text = "Green"
-            sliderThreeLable.text = "Blue"
-            sliderOne.maximumValue = 255
-            sliderTwo.maximumValue = 255
-            sliderThree.maximumValue = 255
-
+            setupRGB()
         case 1:
-            isRGB = false
-            isHSB = true
-            sliderOneLable.text = "Hue"
-            sliderTwoLable.text = "Saturation"
-            sliderThreeLable.text = "Brightness"
-            sliderOne.maximumValue = 360
-            sliderTwo.maximumValue = 100
-            sliderThree.maximumValue = 100
+            setupHSB()
         default:
-            break;
+            break
         }
+        //Reset all to avoid confusion
         self.sliderOneValue.text = "0"
         self.sliderTwoValue.text = "0"
         self.sliderThreeValue.text = "0"
-        // Configure Sliders
         sliderOne.value = 0.0
         sliderTwo.value = 0.0
         sliderThree.value = 0.0
+        colorView.backgroundColor = .white
     }
 
+    fileprivate func setupRGB() {
+        isRGB = true
+        isHSB = false
+        sliderOneLable.text = "Red"
+        sliderTwoLable.text = "Green"
+        sliderThreeLable.text = "Blue"
+        sliderOne.maximumValue = 255
+        sliderTwo.maximumValue = 255
+        sliderThree.maximumValue = 255
+    }
 
-// moving of Slider Updates Values displayed
+    fileprivate func setupHSB() {
+        isRGB = false
+        isHSB = true
+        sliderOneLable.text = "Hue"
+        sliderTwoLable.text = "Saturation"
+        sliderThreeLable.text = "Brightness"
+        sliderOne.maximumValue = 360
+        sliderTwo.maximumValue = 100
+        sliderThree.maximumValue = 100
+    }
+
+    // moving of Slider Updates Values displayed
     @IBAction func sliderMoved(_ sender: UISlider) {
         self.sliderOneValue.text = "\(Int(sliderOne.value))"
         self.sliderTwoValue.text = "\(Int(sliderTwo.value))"
         self.sliderThreeValue.text = "\(Int(sliderThree.value))"
     }
 
-
-    @IBAction func updateColor(_ sender: Any) {
+    @IBAction func setColorTapped(_ sender: Any) {
         if isRGB {
             // Create Color using RGB
             let color = UIColor(rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
-
-
             // Configure Color View
             colorView.backgroundColor = color
         }
@@ -103,6 +107,4 @@ class ViewController: UIViewController {
         setupSliders()
     }
 
-
 }
-
