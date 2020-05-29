@@ -79,97 +79,102 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="colorname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPS-Hn-JJQ">
-                                <rect key="frame" x="371" y="18.333333333333332" width="154" height="40.666666666666671"/>
+                                <rect key="frame" x="371" y="12.999999999999996" width="154" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sJb-T8-Qn0">
-                                <rect key="frame" x="52" y="74" width="792" height="266"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sJb-T8-Qn0">
+                                <rect key="frame" x="52" y="68.666666666666686" width="792" height="277"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-c3-M47">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="33.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="33.666666666666664"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Hn-8D-DRv">
-                                        <rect key="frame" x="0.0" y="48.666666666666671" width="792" height="30"/>
+                                        <rect key="frame" x="0.0" y="48.666666666666657" width="792" height="33.666666666666657"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-EV-Ih2">
-                                                <rect key="frame" x="-2" y="0.0" width="657.33333333333337" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="730" height="34.666666666666664"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="mps-qs-nR0"/>
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeY-Kn-vdK">
-                                                <rect key="frame" x="661.33333333333337" y="0.0" width="130.66666666666663" height="30"/>
+                                                <rect key="frame" x="734" y="0.0" width="58" height="33.666666666666664"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="SeY-Kn-vdK" firstAttribute="width" secondItem="hKb-EV-Ih2" secondAttribute="width" multiplier="0.2" id="HHa-a1-Vxj"/>
+                                            <constraint firstItem="SeY-Kn-vdK" firstAttribute="width" secondItem="hKb-EV-Ih2" secondAttribute="width" multiplier="0.08" id="HHa-a1-Vxj"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za0-bd-F6D">
-                                        <rect key="frame" x="0.0" y="93.666666666666657" width="73" height="33.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="97.333333333333329" width="73" height="33.666666666666671"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-lJ-Aic">
-                                        <rect key="frame" x="0.0" y="142.33333333333334" width="792" height="30"/>
+                                        <rect key="frame" x="0.0" y="146" width="792" height="33.666666666666657"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jQT-aB-998">
-                                                <rect key="frame" x="-2" y="0.0" width="657.33333333333337" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="730" height="34.666666666666664"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="m89-RU-mn4"/>
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-fM-WJC">
-                                                <rect key="frame" x="661.33333333333337" y="0.0" width="130.66666666666663" height="30"/>
+                                                <rect key="frame" x="734" y="0.0" width="58" height="33.666666666666664"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="hf8-fM-WJC" firstAttribute="width" secondItem="jQT-aB-998" secondAttribute="width" multiplier="0.2" id="oAD-pL-WhV"/>
+                                            <constraint firstItem="hf8-fM-WJC" firstAttribute="width" secondItem="jQT-aB-998" secondAttribute="width" multiplier="0.08" id="oAD-pL-WhV"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17d-CS-DQH">
-                                        <rect key="frame" x="0.0" y="187.33333333333331" width="53.333333333333336" height="33.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="194.66666666666663" width="73" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q9E-8V-NIe">
-                                        <rect key="frame" x="0.0" y="236" width="792" height="30"/>
+                                        <rect key="frame" x="0.0" y="243.33333333333329" width="792" height="33.666666666666657"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-LL-UXa">
-                                                <rect key="frame" x="-2" y="0.0" width="657.33333333333337" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="730" height="34.666666666666664"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="DyW-kG-lDA"/>
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wR-t3-z0A">
-                                                <rect key="frame" x="661.33333333333337" y="0.0" width="130.66666666666663" height="30"/>
+                                                <rect key="frame" x="734" y="0.0" width="58" height="33.666666666666664"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="7wR-t3-z0A" firstAttribute="width" secondItem="DoE-LL-UXa" secondAttribute="width" multiplier="0.2" id="fBf-IY-axx"/>
+                                            <constraint firstItem="7wR-t3-z0A" firstAttribute="width" secondItem="DoE-LL-UXa" secondAttribute="width" multiplier="0.08" id="fBf-IY-axx"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="ivg-c3-M47" firstAttribute="width" secondItem="Za0-bd-F6D" secondAttribute="width" id="I3z-d1-l5v"/>
                                     <constraint firstItem="8Hn-8D-DRv" firstAttribute="trailing" secondItem="Tku-lJ-Aic" secondAttribute="trailing" id="QvX-FS-ZA9"/>
+                                    <constraint firstItem="Za0-bd-F6D" firstAttribute="width" secondItem="17d-CS-DQH" secondAttribute="width" id="Thf-To-xkZ"/>
                                     <constraint firstItem="Tku-lJ-Aic" firstAttribute="trailing" secondItem="Q9E-8V-NIe" secondAttribute="trailing" id="mxu-ab-h8A"/>
                                     <constraint firstAttribute="trailing" secondItem="8Hn-8D-DRv" secondAttribute="trailing" id="oL1-M8-Nhz"/>
                                 </constraints>

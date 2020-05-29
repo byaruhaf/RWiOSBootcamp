@@ -104,6 +104,21 @@ class ViewController: UIViewController {
     colorname.isHidden = true
   }
 
+    fileprivate func setupColors(colorname:String?) {
+        //set color name and backgroud view
+        self.colorname.text = colorname!
+        self.colorname.isHidden = false
+        colorView.backgroundColor = calculateColor()
+        //set lables to inverse Color so they are visible after backgroundColor change.
+        sliderOneLable.textColor = calculateColor().inverseColor()
+        sliderTwoLable.textColor = calculateColor().inverseColor()
+        sliderThreeLable.textColor = calculateColor().inverseColor()
+        sliderOneValue.textColor = calculateColor().inverseColor()
+        sliderTwoValue.textColor = calculateColor().inverseColor()
+        sliderThreeValue.textColor = calculateColor().inverseColor()
+        colorModelSelector.backgroundColor = calculateColor().inverseColor()
+    }
+
 }
 
 // MARK: Color Calculator funcitons
@@ -136,9 +151,7 @@ extension ViewController {
       title: "Set Color", style: .default,
       handler: { [weak self, weak alertCtr] alert -> Void in
         if let textField = alertCtr?.textFields?[0] {
-          self?.colorname.text = textField.text
-            self?.colorname.isHidden = false
-          self?.colorView.backgroundColor = self?.calculateColor()
+            self?.setupColors(colorname:textField.text)
         }
       })
     // Change alert backgroundColor as hint for user.
