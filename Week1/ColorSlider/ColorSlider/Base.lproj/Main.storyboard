@@ -275,7 +275,6 @@
                     </view>
                     <connections>
                         <outlet property="colorModelSelector" destination="mhs-pv-g0S" id="0VQ-Ru-iVm"/>
-                        <outlet property="colorView" destination="8bC-Xf-vdC" id="mae-mb-Rc9"/>
                         <outlet property="colorname" destination="BPS-Hn-JJQ" id="ESR-Qq-aMc"/>
                         <outlet property="sliderOne" destination="hKb-EV-Ih2" id="pox-ql-ZhH"/>
                         <outlet property="sliderOneLable" destination="ivg-c3-M47" id="6L5-y9-wUP"/>
