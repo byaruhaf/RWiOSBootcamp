@@ -24,7 +24,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var sliderThree: UISlider!
   @IBOutlet weak var sliderThreeLable: UILabel!
   @IBOutlet weak var sliderThreeValue: UILabel!
-  @IBOutlet weak var colorView: UIView!
 
   //bool to track currect mode.
   var isRGB: Bool = false
@@ -143,7 +142,9 @@ extension ViewController {
     sliderOne.value = 0.0
     sliderTwo.value = 0.0
     sliderThree.value = 0.0
-    colorView.backgroundColor = .bitterSweet
+    UIView.animate(withDuration: 2) {
+        self.view.backgroundColor = .bitterSweet
+    }
     colorname.isHidden = true
     sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
@@ -159,7 +160,10 @@ extension ViewController {
     guard let colorname = colorname else { return }
     self.colorname.text = colorname.uppercased()
     self.colorname.isHidden = false
-    colorView.backgroundColor = calculateColor()
+    UIView.animate(withDuration: 2) {
+        self.view.backgroundColor = self.calculateColor()
+    }
+
     //set lables to inverse Color so they are visible after backgroundColor change.
     //check if RGB mode is active then selecte correct inverse function. 
     self.colorname.textColor = isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
