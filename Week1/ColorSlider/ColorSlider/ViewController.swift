@@ -145,12 +145,12 @@ extension ViewController {
     sliderThree.value = 0.0
     colorView.backgroundColor = .bitterSweet
     colorname.isHidden = true
-    sliderOneLable.textColor = UIColor.bitterSweet.inverseColor()
-    sliderTwoLable.textColor = UIColor.bitterSweet.inverseColor()
-    sliderThreeLable.textColor = UIColor.bitterSweet.inverseColor()
-    sliderOneValue.textColor = UIColor.bitterSweet.inverseColor()
-    sliderTwoValue.textColor = UIColor.bitterSweet.inverseColor()
-    sliderThreeValue.textColor = UIColor.bitterSweet.inverseColor()
+    sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
+    sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
+    sliderThreeLable.textColor = UIColor.bitterSweet.inverseHSBColor()
+    sliderOneValue.textColor = UIColor.bitterSweet.inverseHSBColor()
+    sliderTwoValue.textColor = UIColor.bitterSweet.inverseHSBColor()
+    sliderThreeValue.textColor = UIColor.bitterSweet.inverseHSBColor()
   }
 
   //configuraion performed when user tapps enter button after setting the name.
@@ -161,13 +161,14 @@ extension ViewController {
     self.colorname.isHidden = false
     colorView.backgroundColor = calculateColor()
     //set lables to inverse Color so they are visible after backgroundColor change.
-    self.colorname.textColor = calculateColor().inverseColor()
-    sliderOneLable.textColor = calculateColor().inverseColor()
-    sliderTwoLable.textColor = calculateColor().inverseColor()
-    sliderThreeLable.textColor = calculateColor().inverseColor()
-    sliderOneValue.textColor = calculateColor().inverseColor()
-    sliderTwoValue.textColor = calculateColor().inverseColor()
-    sliderThreeValue.textColor = calculateColor().inverseColor()
+    self.colorname.textColor = isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderOneLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderTwoLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderThreeLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderOneValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderTwoValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderThreeValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+
   }
 }
 

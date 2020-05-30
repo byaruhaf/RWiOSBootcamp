@@ -34,30 +34,35 @@ extension UIColor {
 // Addpating UIColor to provide an the reverse of the color selected by the user
 // so the text color in the lables can addapt to user color's
 extension UIColor {
-  func inverseColor() -> UIColor {
+  //Reverse RGB color's
+  func inverseRGBColor() -> UIColor {
     var alpha: CGFloat = 1.0
-
-    var white: CGFloat = 0.0
-    if self.getWhite(&white, alpha: &alpha) {
-      return UIColor(white: 1.0 - white, alpha: alpha)
-    }
-
-    var hue: CGFloat = 0.0
-    var saturation: CGFloat = 0.0
-    var brightness: CGFloat = 0.0
-    if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-      return UIColor(
-        hue: 1.0 - hue, saturation: 1.0 - saturation, brightness: 1.0 - brightness, alpha: alpha)
-    }
-
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
     if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
       return UIColor(red: 1.0 - red, green: 1.0 - green, blue: 1.0 - blue, alpha: alpha)
     }
-
+    var white: CGFloat = 0.0
+    if self.getWhite(&white, alpha: &alpha) {
+      return UIColor(white: 1.0 - white, alpha: alpha)
+    }
     return self
   }
 
+  //Reverse HSB color's
+  func inverseHSBColor() -> UIColor {
+    var alpha: CGFloat = 1.0
+    var hue: CGFloat = 0.0
+    var saturation: CGFloat = 0.0
+    var brightness: CGFloat = 0.0
+    if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+      return UIColor(hue: 1.0 - hue, saturation: 1.0 - saturation, brightness: 1.0 - brightness, alpha: alpha)
+    }
+    var white: CGFloat = 0.0
+    if self.getWhite(&white, alpha: &alpha) {
+      return UIColor(white: 1.0 - white, alpha: alpha)
+    }
+    return self
+  }
 }
