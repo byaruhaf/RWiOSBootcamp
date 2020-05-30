@@ -161,6 +161,7 @@ extension ViewController {
     self.colorname.isHidden = false
     colorView.backgroundColor = calculateColor()
     //set lables to inverse Color so they are visible after backgroundColor change.
+    //check if RGB mode is active then selecte correct inverse function. 
     self.colorname.textColor = isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderOneLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderTwoLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
