@@ -37,16 +37,43 @@ class ViewController: UIViewController {
     setupSliders()
 
     let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-    let trackleftImage = UIImage(named: "SliderTrackLeft")
+//    let trackleftImage = UIImage(named: "SliderTrackLeft")
+//    let trackrightImage = UIImage(named: "SliderTrackRight")
+//    let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
+//    let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
+//    sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+//    sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+//    sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+//    sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+//    sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+//    sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+
+//        let redtrackleftImage = UIImage(named: "RedSliderTrackLeft")
+//        let bluetrackleftImage = UIImage(named: "BlueSliderTrackLeft")
+//        let greentrackleftImage = UIImage(named: "GreenSliderTrackLeft")
+//        let redtrackLeftImageresizable = redtrackleftImage?.resizableImage(withCapInsets: insets)
+//        let bluetrackLeftImageresizable = bluetrackleftImage?.resizableImage(withCapInsets: insets)
+//        let greentrackLeftImageresizable = greentrackleftImage?.resizableImage(withCapInsets: insets)
+//        sliderOne.setMinimumTrackImage(redtrackLeftImageresizable, for: .normal)
+//        sliderTwo.setMinimumTrackImage(greentrackLeftImageresizable, for: .normal)
+//        sliderThree.setMinimumTrackImage(bluetrackLeftImageresizable, for: .normal)
+
+        let trackleftImage = UIImage(named: "HSBSliderTrackLeft")
+        let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
+        sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+        sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+        sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+
     let trackrightImage = UIImage(named: "SliderTrackRight")
     let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
-    let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
-    sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
     sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-    sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
     sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-    sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
     sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+
+
+
+
+
   }
 
   // MARK: IBActions
