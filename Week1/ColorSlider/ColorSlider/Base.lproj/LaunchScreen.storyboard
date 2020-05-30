@@ -18,7 +18,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="rwdevcon-bg" translatesAutoresizingMaskIntoConstraints="NO" id="t0Y-he-0go">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="0hT-vT-lWm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0hT-vT-lWm">
                                 <rect key="frame" x="20" y="261" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0hT-vT-lWm" secondAttribute="height" multiplier="1:1" id="NUz-Rz-iaj"/>
@@ -47,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon" width="1024" height="1024"/>
+        <image name="Logo-bg" width="1024" height="1024"/>
         <image name="rwdevcon-bg" width="2208" height="2208"/>
     </resources>
 </document>

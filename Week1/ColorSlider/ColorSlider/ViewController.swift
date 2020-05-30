@@ -124,7 +124,8 @@ class ViewController: UIViewController {
 
     fileprivate func setupColors(colorname:String?) {
         //set color name and backgroud view
-        self.colorname.text = colorname!
+        guard let colorname = colorname else { return }
+        self.colorname.text = colorname.uppercased()
         self.colorname.isHidden = false
         colorView.backgroundColor = calculateColor()
         //set lables to inverse Color so they are visible after backgroundColor change.
@@ -161,9 +162,9 @@ extension ViewController {
 extension ViewController {
   fileprivate func showColorNameAlert() {
     let alertCtr = UIAlertController(
-      title: "Enter Cool Color Name", message: "", preferredStyle: .alert)
+    title: "Color Name", message: "Please enter your Color Name", preferredStyle: .alert)
     alertCtr.addTextField { (textField: UITextField!) -> Void in
-      textField.placeholder = "Color Name"
+      textField.placeholder = "e.g JUJUBlue"
     }
     let saveAction = UIAlertAction(
       title: "Set Color", style: .default,
@@ -172,13 +173,8 @@ extension ViewController {
             self?.setupColors(colorname:textField.text)
         }
       })
-//    // Change alert backgroundColor as hint for user.
-//    alertCtr.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor =
-//      self.calculateColor()
-//    // Accessing buttons tintcolor :
-//    alertCtr.view.tintColor = calculateColor().inverseColor()
     let cancelAction = UIAlertAction(
-      title: "Cancel", style: .default,
+        title: "Cancel", style: .destructive,
       handler: {
         (action: UIAlertAction!) -> Void in
         self.setupSliders()
