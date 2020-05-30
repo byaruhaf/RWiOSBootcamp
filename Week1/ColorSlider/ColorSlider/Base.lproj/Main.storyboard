@@ -301,7 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QKs-4l-ajd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="743.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -309,7 +309,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA4-J8-uyu" customClass="CustomButton" customModule="ColorSlider" customModuleProvider="target">
-                                <rect key="frame" x="138" y="751.66666666666663" width="138" height="46.333333333333371"/>
+                                <rect key="frame" x="155.33333333333334" y="758" width="103.33333333333334" height="42"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,31 +326,42 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NA4-J8-uyu" firstAttribute="height" secondItem="QKs-4l-ajd" secondAttribute="height" multiplier="1:16" id="29M-QD-0qP"/>
+                            <constraint firstItem="NA4-J8-uyu" firstAttribute="height" secondItem="tyN-Aj-bNS" secondAttribute="height" multiplier="1:20" id="29M-QD-0qP"/>
                             <constraint firstItem="QKs-4l-ajd" firstAttribute="top" secondItem="ORf-7n-wWA" secondAttribute="top" id="NnU-mr-Fbv"/>
                             <constraint firstItem="QKs-4l-ajd" firstAttribute="leading" secondItem="ORf-7n-wWA" secondAttribute="leading" id="Q2P-yP-T82"/>
                             <constraint firstItem="QKs-4l-ajd" firstAttribute="centerX" secondItem="tyN-Aj-bNS" secondAttribute="centerX" id="VfJ-C7-dk2"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="NA4-J8-uyu" secondAttribute="bottom" constant="10" id="W9c-JG-rQX">
-                                <variation key="heightClass=compact-widthClass=regular" constant="8"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="NA4-J8-uyu" secondAttribute="bottom" constant="8" id="W9c-JG-rQX">
+                                <variation key="heightClass=compact-widthClass=compact" constant="2"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="2"/>
                             </constraint>
                             <constraint firstItem="NA4-J8-uyu" firstAttribute="top" secondItem="QKs-4l-ajd" secondAttribute="bottom" constant="8" id="YwU-RX-39U"/>
                             <constraint firstItem="NA4-J8-uyu" firstAttribute="width" secondItem="QKs-4l-ajd" secondAttribute="width" multiplier="0.611386" id="fLb-Hf-eHM"/>
                             <constraint firstItem="ORf-7n-wWA" firstAttribute="centerX" secondItem="NA4-J8-uyu" secondAttribute="centerX" id="gg9-Wd-gaH"/>
+                            <constraint firstItem="NA4-J8-uyu" firstAttribute="width" secondItem="tyN-Aj-bNS" secondAttribute="width" multiplier="1:6" id="iyw-Ug-ua5"/>
                             <constraint firstItem="NA4-J8-uyu" firstAttribute="width" secondItem="QKs-4l-ajd" secondAttribute="width" multiplier="0.611386" id="pFt-It-Xdh"/>
                             <constraint firstItem="QKs-4l-ajd" firstAttribute="trailing" secondItem="ORf-7n-wWA" secondAttribute="trailing" id="ybk-n6-CFR"/>
-                            <constraint firstItem="NA4-J8-uyu" firstAttribute="width" secondItem="QKs-4l-ajd" secondAttribute="width" multiplier="1:3" id="yzV-KT-K2w"/>
+                            <constraint firstItem="NA4-J8-uyu" firstAttribute="width" secondItem="tyN-Aj-bNS" secondAttribute="width" multiplier="1:4" id="yzV-KT-K2w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ORf-7n-wWA"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="fLb-Hf-eHM"/>
+                                <exclude reference="iyw-Ug-ua5"/>
                                 <exclude reference="pFt-It-Xdh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="29M-QD-0qP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <exclude reference="29M-QD-0qP"/>
                                 <exclude reference="fLb-Hf-eHM"/>
+                                <include reference="iyw-Ug-ua5"/>
                                 <exclude reference="pFt-It-Xdh"/>
+                                <exclude reference="yzV-KT-K2w"/>
                             </mask>
                         </variation>
                     </view>
