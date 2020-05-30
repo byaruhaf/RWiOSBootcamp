@@ -56,6 +56,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F97035524830A3700A025E3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EE37D2480C97800B280CB /* Main.storyboard */,
+				5F9EE3822480C97A00B280CB /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		5F97035624830A6F00A025E3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EE37B2480C97800B280CB /* ViewController.swift */,
+				5F481D3C2481204F00A921C3 /* WikiViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5F97035724830AF800A025E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EE3772480C97800B280CB /* AppDelegate.swift */,
+				5F9EE3792480C97800B280CB /* SceneDelegate.swift */,
+				5F9EE3852480C97A00B280CB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5F9EE36B2480C97800B280CB = {
 			isa = PBXGroup;
 			children = (
@@ -76,15 +104,11 @@
 		5F9EE3762480C97800B280CB /* ColorSlider */ = {
 			isa = PBXGroup;
 			children = (
-				5F9EE3772480C97800B280CB /* AppDelegate.swift */,
-				5F9EE3792480C97800B280CB /* SceneDelegate.swift */,
-				5F9EE37B2480C97800B280CB /* ViewController.swift */,
-				5F481D3C2481204F00A921C3 /* WikiViewController.swift */,
-				5F9EE37D2480C97800B280CB /* Main.storyboard */,
+				5F97035524830A3700A025E3 /* Storyboards */,
+				5F97035624830A6F00A025E3 /* ViewControllers */,
+				5F97035724830AF800A025E3 /* Supporting Files */,
 				5F9EE38D2480D06F00B280CB /* Extensions */,
 				5F9EE3802480C97A00B280CB /* Assets.xcassets */,
-				5F9EE3822480C97A00B280CB /* LaunchScreen.storyboard */,
-				5F9EE3852480C97A00B280CB /* Info.plist */,
 			);
 			path = ColorSlider;
 			sourceTree = "<group>";
