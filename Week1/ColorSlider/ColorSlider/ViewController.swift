@@ -35,6 +35,18 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     setupSliders()
+
+    let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+    let trackleftImage = UIImage(named: "SliderTrackLeft")
+    let trackrightImage = UIImage(named: "SliderTrackRight")
+    let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
+    let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
+    sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+    sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+    sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+    sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
   }
 
   // MARK: IBActions
@@ -102,6 +114,12 @@ class ViewController: UIViewController {
     sliderThree.value = 0.0
     colorView.backgroundColor = .white
     colorname.isHidden = true
+    sliderOneLable.textColor = .black
+    sliderTwoLable.textColor = .black
+    sliderThreeLable.textColor = .black
+    sliderOneValue.textColor = .darkGray
+    sliderTwoValue.textColor = .darkGray
+    sliderThreeValue.textColor = .darkGray
   }
 
     fileprivate func setupColors(colorname:String?) {
@@ -110,13 +128,13 @@ class ViewController: UIViewController {
         self.colorname.isHidden = false
         colorView.backgroundColor = calculateColor()
         //set lables to inverse Color so they are visible after backgroundColor change.
+        self.colorname.textColor = calculateColor().inverseColor()
         sliderOneLable.textColor = calculateColor().inverseColor()
         sliderTwoLable.textColor = calculateColor().inverseColor()
         sliderThreeLable.textColor = calculateColor().inverseColor()
         sliderOneValue.textColor = calculateColor().inverseColor()
         sliderTwoValue.textColor = calculateColor().inverseColor()
         sliderThreeValue.textColor = calculateColor().inverseColor()
-        colorModelSelector.backgroundColor = calculateColor().inverseColor()
     }
 
 }
@@ -154,11 +172,11 @@ extension ViewController {
             self?.setupColors(colorname:textField.text)
         }
       })
-    // Change alert backgroundColor as hint for user.
-    alertCtr.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor =
-      self.calculateColor()
-    // Accessing buttons tintcolor :
-    alertCtr.view.tintColor = UIColor.white
+//    // Change alert backgroundColor as hint for user.
+//    alertCtr.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor =
+//      self.calculateColor()
+//    // Accessing buttons tintcolor :
+//    alertCtr.view.tintColor = calculateColor().inverseColor()
     let cancelAction = UIAlertAction(
       title: "Cancel", style: .default,
       handler: {
