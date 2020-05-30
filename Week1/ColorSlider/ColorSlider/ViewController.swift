@@ -36,42 +36,16 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
     setupSliders()
 
-    let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-//    let trackleftImage = UIImage(named: "SliderTrackLeft")
-//    let trackrightImage = UIImage(named: "SliderTrackRight")
-//    let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
-//    let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
-//    sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-//    sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-//    sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-//    sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-//    sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-//    sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    colorModelSelector.backgroundColor = .systemBlue
+    colorModelSelector.layer.borderColor = UIColor.white.cgColor
+    colorModelSelector.selectedSegmentTintColor = UIColor.white
+    colorModelSelector.layer.borderWidth = 1
 
-//        let redtrackleftImage = UIImage(named: "RedSliderTrackLeft")
-//        let bluetrackleftImage = UIImage(named: "BlueSliderTrackLeft")
-//        let greentrackleftImage = UIImage(named: "GreenSliderTrackLeft")
-//        let redtrackLeftImageresizable = redtrackleftImage?.resizableImage(withCapInsets: insets)
-//        let bluetrackLeftImageresizable = bluetrackleftImage?.resizableImage(withCapInsets: insets)
-//        let greentrackLeftImageresizable = greentrackleftImage?.resizableImage(withCapInsets: insets)
-//        sliderOne.setMinimumTrackImage(redtrackLeftImageresizable, for: .normal)
-//        sliderTwo.setMinimumTrackImage(greentrackLeftImageresizable, for: .normal)
-//        sliderThree.setMinimumTrackImage(bluetrackLeftImageresizable, for: .normal)
+    let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    colorModelSelector.setTitleTextAttributes(titleTextAttributes, for:.normal)
 
-        let trackleftImage = UIImage(named: "HSBSliderTrackLeft")
-        let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
-        sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-        sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-        sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-
-    let trackrightImage = UIImage(named: "SliderTrackRight")
-    let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
-    sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-    sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-    sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-
-
-
+    let titleTextAttributes1 = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    colorModelSelector.setTitleTextAttributes(titleTextAttributes1, for:.selected)
 
 
   }
@@ -118,6 +92,23 @@ class ViewController: UIViewController {
     sliderOne.maximumValue = 255
     sliderTwo.maximumValue = 255
     sliderThree.maximumValue = 255
+    let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+
+    let redtrackleftImage = UIImage(named: "RedSliderTrackLeft")
+    let bluetrackleftImage = UIImage(named: "BlueSliderTrackLeft")
+    let greentrackleftImage = UIImage(named: "GreenSliderTrackLeft")
+    let redtrackLeftImageresizable = redtrackleftImage?.resizableImage(withCapInsets: insets)
+    let bluetrackLeftImageresizable = bluetrackleftImage?.resizableImage(withCapInsets: insets)
+    let greentrackLeftImageresizable = greentrackleftImage?.resizableImage(withCapInsets: insets)
+    sliderOne.setMinimumTrackImage(redtrackLeftImageresizable, for: .normal)
+    sliderTwo.setMinimumTrackImage(greentrackLeftImageresizable, for: .normal)
+    sliderThree.setMinimumTrackImage(bluetrackLeftImageresizable, for: .normal)
+
+    let trackrightImage = UIImage(named: "SliderTrackRight")
+    let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
+    sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
   }
 
   fileprivate func setupHSB() {
@@ -129,6 +120,21 @@ class ViewController: UIViewController {
     sliderOne.maximumValue = 360
     sliderTwo.maximumValue = 100
     sliderThree.maximumValue = 100
+
+    let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+
+    let trackleftImage = UIImage(named: "HSBSliderTrackLeft")
+    let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
+    sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+    sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+    sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+
+    let trackrightImage = UIImage(named: "SliderTrackRight")
+    let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
+    sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+    sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+
   }
 
   fileprivate func resetValues() {
@@ -149,21 +155,21 @@ class ViewController: UIViewController {
     sliderThreeValue.textColor = .darkGray
   }
 
-    fileprivate func setupColors(colorname:String?) {
-        //set color name and backgroud view
-        guard let colorname = colorname else { return }
-        self.colorname.text = colorname.uppercased()
-        self.colorname.isHidden = false
-        colorView.backgroundColor = calculateColor()
-        //set lables to inverse Color so they are visible after backgroundColor change.
-        self.colorname.textColor = calculateColor().inverseColor()
-        sliderOneLable.textColor = calculateColor().inverseColor()
-        sliderTwoLable.textColor = calculateColor().inverseColor()
-        sliderThreeLable.textColor = calculateColor().inverseColor()
-        sliderOneValue.textColor = calculateColor().inverseColor()
-        sliderTwoValue.textColor = calculateColor().inverseColor()
-        sliderThreeValue.textColor = calculateColor().inverseColor()
-    }
+  fileprivate func setupColors(colorname: String?) {
+    //set color name and backgroud view
+    guard let colorname = colorname else { return }
+    self.colorname.text = colorname.uppercased()
+    self.colorname.isHidden = false
+    colorView.backgroundColor = calculateColor()
+    //set lables to inverse Color so they are visible after backgroundColor change.
+    self.colorname.textColor = calculateColor().inverseColor()
+    sliderOneLable.textColor = calculateColor().inverseColor()
+    sliderTwoLable.textColor = calculateColor().inverseColor()
+    sliderThreeLable.textColor = calculateColor().inverseColor()
+    sliderOneValue.textColor = calculateColor().inverseColor()
+    sliderTwoValue.textColor = calculateColor().inverseColor()
+    sliderThreeValue.textColor = calculateColor().inverseColor()
+  }
 
 }
 
@@ -189,7 +195,7 @@ extension ViewController {
 extension ViewController {
   fileprivate func showColorNameAlert() {
     let alertCtr = UIAlertController(
-    title: "Color Name", message: "Please enter your Color Name", preferredStyle: .alert)
+      title: "Color Name", message: "Please enter your Color Name", preferredStyle: .alert)
     alertCtr.addTextField { (textField: UITextField!) -> Void in
       textField.placeholder = "e.g JUJUBlue"
     }
@@ -197,11 +203,11 @@ extension ViewController {
       title: "Set Color", style: .default,
       handler: { [weak self, weak alertCtr] alert -> Void in
         if let textField = alertCtr?.textFields?[0] {
-            self?.setupColors(colorname:textField.text)
+          self?.setupColors(colorname: textField.text)
         }
       })
     let cancelAction = UIAlertAction(
-        title: "Cancel", style: .destructive,
+      title: "Cancel", style: .destructive,
       handler: {
         (action: UIAlertAction!) -> Void in
         self.setupSliders()
@@ -215,15 +221,14 @@ extension ViewController {
 }
 
 extension ViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "wikipedia" {
-            let controller = segue.destination as! WikiViewController
-            if isRGB{
-                controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/RGB_color_model")
-            }else {
-                controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/HSL_and_HSV")!
-            }
-        }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "wikipedia" {
+      let controller = segue.destination as! WikiViewController
+      if isRGB {
+        controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/RGB_color_model")
+      } else {
+        controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/HSL_and_HSV")!
+      }
     }
+  }
 }
-
