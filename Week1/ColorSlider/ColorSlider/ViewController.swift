@@ -57,6 +57,7 @@ class ViewController: UIViewController {
 // MARK: Setup functions
 
 extension ViewController {
+    //set up  text & ccolors for colorModelSelector view
   fileprivate func setUpSelector() {
     colorModelSelector.backgroundColor = .systemBlue
     colorModelSelector.layer.borderColor = UIColor.white.cgColor
@@ -70,6 +71,7 @@ extension ViewController {
     colorModelSelector.setTitleTextAttributes(titleTextAttributes1, for: .selected)
   }
 
+//setup text & colors depending on the color mode selected.
   fileprivate func setupSliders() {
     switch colorModelSelector.selectedSegmentIndex {
     case 0:
@@ -82,6 +84,7 @@ extension ViewController {
     resetValues()
   }
 
+ //slider configuraion  performed when RGB is selected.
   fileprivate func setupRGB() {
     isRGB = true
     isHSB = false
@@ -92,7 +95,6 @@ extension ViewController {
     sliderTwo.maximumValue = 255
     sliderThree.maximumValue = 255
     let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-
     let redtrackleftImage = UIImage(named: "RedSliderTrackLeft")
     let bluetrackleftImage = UIImage(named: "BlueSliderTrackLeft")
     let greentrackleftImage = UIImage(named: "GreenSliderTrackLeft")
@@ -102,7 +104,6 @@ extension ViewController {
     sliderOne.setMinimumTrackImage(redtrackLeftImageresizable, for: .normal)
     sliderTwo.setMinimumTrackImage(greentrackLeftImageresizable, for: .normal)
     sliderThree.setMinimumTrackImage(bluetrackLeftImageresizable, for: .normal)
-
     let trackrightImage = UIImage(named: "SliderTrackRight")
     let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
     sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
@@ -110,6 +111,7 @@ extension ViewController {
     sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
   }
 
+    //slider configuraion performed when HSB is selected.
   fileprivate func setupHSB() {
     isRGB = false
     isHSB = true
@@ -119,23 +121,20 @@ extension ViewController {
     sliderOne.maximumValue = 360
     sliderTwo.maximumValue = 100
     sliderThree.maximumValue = 100
-
     let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-
     let trackleftImage = UIImage(named: "HSBSliderTrackLeft")
     let trackLeftImageresizable = trackleftImage?.resizableImage(withCapInsets: insets)
     sliderOne.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
     sliderTwo.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
     sliderThree.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-
     let trackrightImage = UIImage(named: "SliderTrackRight")
     let trackRightImageresizable = trackrightImage?.resizableImage(withCapInsets: insets)
     sliderOne.setMaximumTrackImage(trackRightImageresizable, for: .normal)
     sliderTwo.setMaximumTrackImage(trackRightImageresizable, for: .normal)
     sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-
   }
 
+  //configuraion performed during app startup & when reset button is tapped
   fileprivate func resetValues() {
     //Reset all to avoid confusion
     self.sliderOneValue.text = "0"
@@ -154,6 +153,7 @@ extension ViewController {
     sliderThreeValue.textColor = UIColor.bitterSweet.inverseColor()
   }
 
+  //configuraion performed when user tapps enter button after setting the name.
   fileprivate func setupColors(colorname: String?) {
     //set color name and backgroud view
     guard let colorname = colorname else { return }
@@ -176,11 +176,11 @@ extension ViewController {
 extension ViewController {
   fileprivate func calculateColor() -> UIColor {
     if isRGB {
-      // Create Color using RGB
+      // Genrate RGB color
       return UIColor(
         rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
     } else {
-      // Create Color using HSB
+      // Genrate HSB color
       return UIColor(
         hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value
       )
@@ -189,7 +189,6 @@ extension ViewController {
 }
 
 // MARK: Alert User funcitons
-
 extension ViewController {
   fileprivate func showColorNameAlert() {
     let alertCtr = UIAlertController(
