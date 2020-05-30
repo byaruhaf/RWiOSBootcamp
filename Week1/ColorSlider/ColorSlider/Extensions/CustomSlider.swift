@@ -11,16 +11,16 @@ import UIKit
 @IBDesignable
 class CustomSlider: UISlider {
 
-    @IBInspectable var ThumbImage: UIImage? {
-        didSet {
-            setThumbImage(ThumbImage, for: .normal)
-        }
+  @IBInspectable var ThumbImage: UIImage? {
+    didSet {
+      setThumbImage(ThumbImage, for: .normal)
     }
+  }
 
-    @IBInspectable var ThumbHighlightedImage: UIImage? {
-        didSet {
-            setThumbImage(ThumbImage, for: .highlighted)
-        }
+  @IBInspectable var ThumbHighlightedImage: UIImage? {
+    didSet {
+      setThumbImage(ThumbImage, for: .highlighted)
     }
+  }
 
 }
