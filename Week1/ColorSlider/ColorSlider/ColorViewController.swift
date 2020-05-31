@@ -25,7 +25,8 @@ class ColorViewController: UIViewController {
   @IBOutlet weak var sliderThreeLable: UILabel!
   @IBOutlet weak var sliderThreeValue: UILabel!
     @IBOutlet weak var colorView: CustomView!
-    
+    @IBOutlet weak var hexLabel: UILabel!
+
   //bool to track currect mode.
   var isRGB: Bool = false
   var isHSB: Bool = false
@@ -47,6 +48,10 @@ class ColorViewController: UIViewController {
     self.sliderTwoValue.text = "\(Int(sliderTwo.value))"
     self.sliderThreeValue.text = "\(Int(sliderThree.value))"
     colorView.backgroundColor = calculateColor()
+    // set Hex Value on Lable.
+    if let colorHex = calculateColor().toHex {
+         hexLabel.text = "HEX: # \(colorHex)"
+    }
   }
   @IBAction func setColorTapped(_ sender: Any) {
     showColorNameAlert()
@@ -148,6 +153,7 @@ extension ColorViewController {
     sliderOne.value = 0.0
     sliderTwo.value = 0.0
     sliderThree.value = 0.0
+    hexLabel.text = "HEX: #"
     UIView.animate(withDuration: 2) {
       self.view.backgroundColor = .bitterSweet
       self.colorname.isHidden = true
@@ -159,6 +165,7 @@ extension ColorViewController {
     sliderOneValue.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderTwoValue.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderThreeValue.textColor = UIColor.bitterSweet.inverseHSBColor()
+    hexLabel.textColor = UIColor.bitterSweet.inverseHSBColor()
   }
 
   //configuraion performed when user tapps enter button after setting the name.
@@ -188,6 +195,8 @@ extension ColorViewController {
       isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderThreeValue.textColor =
       isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    hexLabel.textColor =
+        isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     saveUserColors()
   }
 
