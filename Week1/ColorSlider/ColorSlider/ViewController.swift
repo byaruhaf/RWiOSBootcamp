@@ -144,8 +144,9 @@ extension ViewController {
     sliderThree.value = 0.0
     UIView.animate(withDuration: 2) {
         self.view.backgroundColor = .bitterSweet
+        self.colorname.isHidden = true
     }
-    colorname.isHidden = true
+
     sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderThreeLable.textColor = UIColor.bitterSweet.inverseHSBColor()
