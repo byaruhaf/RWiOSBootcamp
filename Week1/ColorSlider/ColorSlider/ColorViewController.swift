@@ -28,8 +28,8 @@ class ColorViewController: UIViewController {
   //bool to track currect mode.
   var isRGB: Bool = false
   var isHSB: Bool = false
-
-let defaults = UserDefaults.standard
+//UserDefaults constant
+  let defaults = UserDefaults.standard
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,11 +38,6 @@ let defaults = UserDefaults.standard
     setUpSelector()
     getUserSavedColors()
   }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-    }
 
   // MARK: IBActions
   // moving of Slider Updates Values displayed
@@ -65,7 +60,7 @@ let defaults = UserDefaults.standard
 // MARK: Setup functions
 
 extension ColorViewController {
-    //set up  text & ccolors for colorModelSelector view
+  //set up  text & ccolors for colorModelSelector view
   fileprivate func setUpSelector() {
     colorModelSelector.backgroundColor = .systemBlue
     colorModelSelector.layer.borderColor = UIColor.white.cgColor
@@ -79,7 +74,7 @@ extension ColorViewController {
     colorModelSelector.setTitleTextAttributes(titleTextAttributes1, for: .selected)
   }
 
-//setup text & colors depending on the color mode selected.
+  //setup text & colors depending on the color mode selected.
   fileprivate func setupSliders() {
     switch colorModelSelector.selectedSegmentIndex {
     case 0:
@@ -92,7 +87,7 @@ extension ColorViewController {
     resetValues()
   }
 
- //slider configuraion  performed when RGB is selected.
+  //slider configuration performed when RGB is selected.
   fileprivate func setupRGB() {
     isRGB = true
     isHSB = false
@@ -119,7 +114,7 @@ extension ColorViewController {
     sliderThree.setMaximumTrackImage(trackRightImageresizable, for: .normal)
   }
 
-    //slider configuraion performed when HSB is selected.
+  //slider configuraion performed when HSB is selected.
   fileprivate func setupHSB() {
     isRGB = false
     isHSB = true
@@ -143,7 +138,7 @@ extension ColorViewController {
   }
 
   //configuraion performed during app startup & when reset button is tapped
-    fileprivate func resetValues() {
+  fileprivate func resetValues() {
     //Reset all to avoid confusion
     self.sliderOneValue.text = "0"
     self.sliderTwoValue.text = "0"
@@ -152,8 +147,8 @@ extension ColorViewController {
     sliderTwo.value = 0.0
     sliderThree.value = 0.0
     UIView.animate(withDuration: 2) {
-        self.view.backgroundColor = .bitterSweet
-        self.colorname.isHidden = true
+      self.view.backgroundColor = .bitterSweet
+      self.colorname.isHidden = true
     }
     sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
@@ -170,25 +165,37 @@ extension ColorViewController {
     self.colorname.text = colorname.uppercased()
     self.colorname.isHidden = false
     UIView.animate(withDuration: 2) {
-        self.view.backgroundColor = self.calculateColor()
+      self.view.backgroundColor = self.calculateColor()
     }
 
     //set lables to inverse Color so they are visible after backgroundColor change.
-    //check if RGB mode is active then selecte correct inverse function. 
-    self.colorname.textColor = isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-    sliderOneLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-    sliderTwoLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-    sliderThreeLable.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-    sliderOneValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-    sliderTwoValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-    sliderThreeValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    //check if RGB mode is active then selecte correct inverse function.
+    self.colorname.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderOneLable.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderTwoLable.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderThreeLable.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderOneValue.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderTwoValue.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+    sliderThreeValue.textColor =
+      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     saveUserColors()
   }
 
+}
+
+// MARK: UserDefaults funcitons to save User Colors
+extension ColorViewController {
+
     fileprivate func getUserSavedColors() {
-        guard let colorname = defaults.string(forKey: "colorname") else {return}
+        guard let colorname = defaults.string(forKey: "colorname") else { return }
         self.colorname.isHidden = false
-    guard let backgroundColor = defaults.color(forKey: "appColor")  else {return}
+        guard let backgroundColor = defaults.color(forKey: "appColor") else { return }
         self.colorname.text = colorname
         self.view.backgroundColor = backgroundColor
     }
@@ -208,6 +215,7 @@ extension ColorViewController {
     }
 
 }
+
 
 // MARK: Color Calculator funciton
 extension ColorViewController {
