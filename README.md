@@ -32,5 +32,11 @@ RGB Mode             |  HSB Mode
 :-------------------------:|:-------------------------:
 ![Imgur](https://i.imgur.com/9tkL3R4.png)  |  ![Imgur](https://i.imgur.com/DKfavP1.png)
 
+
+## Contribution
+- If you have a **feature request**, open an **issue**
+- If you want to **contribute**, submit a **pull request**
+
+
 ## License
 [MIT License](https://github.com/byaruhaf/RWiOSBootcamp/blob/master/LICENSE).
