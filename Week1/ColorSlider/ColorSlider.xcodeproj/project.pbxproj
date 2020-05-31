@@ -13,7 +13,7 @@
 		5F7E9C5F24814C9F00DDB5CA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E9C5E24814C9F00DDB5CA /* CustomButton.swift */; };
 		5F9EE3782480C97800B280CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE3772480C97800B280CB /* AppDelegate.swift */; };
 		5F9EE37A2480C97800B280CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE3792480C97800B280CB /* SceneDelegate.swift */; };
-		5F9EE37C2480C97800B280CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE37B2480C97800B280CB /* ViewController.swift */; };
+		5F9EE37C2480C97800B280CB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE37B2480C97800B280CB /* ColorViewController.swift */; };
 		5F9EE37F2480C97800B280CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EE37D2480C97800B280CB /* Main.storyboard */; };
 		5F9EE3812480C97A00B280CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EE3802480C97A00B280CB /* Assets.xcassets */; };
 		5F9EE3842480C97A00B280CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EE3822480C97A00B280CB /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 		5F9EE3742480C97800B280CB /* ColorSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9EE3772480C97800B280CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9EE3792480C97800B280CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F9EE37B2480C97800B280CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F9EE37B2480C97800B280CB /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		5F9EE37E2480C97800B280CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F9EE3802480C97A00B280CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F9EE3832480C97A00B280CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		5F97035624830A6F00A025E3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5F9EE37B2480C97800B280CB /* ViewController.swift */,
+				5F9EE37B2480C97800B280CB /* ColorViewController.swift */,
 				5F481D3C2481204F00A921C3 /* WikiViewController.swift */,
 			);
 			name = ViewControllers;
@@ -194,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9EE37C2480C97800B280CB /* ViewController.swift in Sources */,
+				5F9EE37C2480C97800B280CB /* ColorViewController.swift in Sources */,
 				5F53A8032482012D00F05177 /* CustomSlider.swift in Sources */,
 				5F9EE38C2480D06000B280CB /* UIColor.swift in Sources */,
 				5F7E9C5F24814C9F00DDB5CA /* CustomButton.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ColorViewController.swift
 //  ColorSlider
 //
 //  Created by Franklin Byaruhanga on 29/05/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ColorViewController: UIViewController {
   // MARK: IBOutlet
   @IBOutlet weak var colorModelSelector: UISegmentedControl!
   @IBOutlet weak var colorname: UILabel!
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 }
 // MARK: Setup functions
 
-extension ViewController {
+extension ColorViewController {
     //set up  text & ccolors for colorModelSelector view
   fileprivate func setUpSelector() {
     colorModelSelector.backgroundColor = .systemBlue
@@ -180,7 +180,7 @@ extension ViewController {
 
 // MARK: Color Calculator funciton
 
-extension ViewController {
+extension ColorViewController {
   fileprivate func calculateColor() -> UIColor {
     if isRGB {
       // Genrate RGB color
@@ -196,7 +196,7 @@ extension ViewController {
 }
 
 // MARK: Alert User funcitons
-extension ViewController {
+extension ColorViewController {
   fileprivate func showColorNameAlert() {
     let alertCtr = UIAlertController(
       title: "Color Name", message: "Please enter your Color Name", preferredStyle: .alert)
@@ -225,7 +225,7 @@ extension ViewController {
 }
 
 // MARK: Segue to WikiViewController
-extension ViewController {
+extension ColorViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "wikipedia" {
       let controller = segue.destination as! WikiViewController
