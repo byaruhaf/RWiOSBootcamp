@@ -24,7 +24,8 @@ class ColorViewController: UIViewController {
   @IBOutlet weak var sliderThree: UISlider!
   @IBOutlet weak var sliderThreeLable: UILabel!
   @IBOutlet weak var sliderThreeValue: UILabel!
-
+    @IBOutlet weak var colorView: CustomView!
+    
   //bool to track currect mode.
   var isRGB: Bool = false
   var isHSB: Bool = false
@@ -45,6 +46,7 @@ class ColorViewController: UIViewController {
     self.sliderOneValue.text = "\(Int(sliderOne.value))"
     self.sliderTwoValue.text = "\(Int(sliderTwo.value))"
     self.sliderThreeValue.text = "\(Int(sliderThree.value))"
+    colorView.backgroundColor = calculateColor()
   }
   @IBAction func setColorTapped(_ sender: Any) {
     showColorNameAlert()
@@ -150,6 +152,7 @@ extension ColorViewController {
       self.view.backgroundColor = .bitterSweet
       self.colorname.isHidden = true
     }
+    colorView.backgroundColor = self.view.backgroundColor
     sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderThreeLable.textColor = UIColor.bitterSweet.inverseHSBColor()
@@ -166,6 +169,7 @@ extension ColorViewController {
     self.colorname.isHidden = false
     UIView.animate(withDuration: 2) {
       self.view.backgroundColor = self.calculateColor()
+        self.colorView.backgroundColor = self.calculateColor()
     }
 
     //set lables to inverse Color so they are visible after backgroundColor change.
@@ -195,9 +199,10 @@ extension ColorViewController {
     fileprivate func getUserSavedColors() {
         guard let colorname = defaults.string(forKey: "colorname") else { return }
         self.colorname.isHidden = false
-        guard let backgroundColor = defaults.color(forKey: "appColor") else { return }
         self.colorname.text = colorname
+        guard let backgroundColor = defaults.color(forKey: "appColor") else { return }
         self.view.backgroundColor = backgroundColor
+        self.colorView.backgroundColor = backgroundColor
     }
 
     fileprivate func saveUserColors() {
