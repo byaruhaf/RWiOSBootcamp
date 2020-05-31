@@ -29,12 +29,20 @@ class ColorViewController: UIViewController {
   var isRGB: Bool = false
   var isHSB: Bool = false
 
+let defaults = UserDefaults.standard
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     setupSliders()
     setUpSelector()
+    getUserSavedColors()
   }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+    }
 
   // MARK: IBActions
   // moving of Slider Updates Values displayed
@@ -48,6 +56,7 @@ class ColorViewController: UIViewController {
   }
   @IBAction func resetSelection(_ sender: Any) {
     setupSliders()
+    clearUserSavedColors()
   }
   @IBAction func modeChanged(_ sender: Any) {
     setupSliders()
@@ -134,7 +143,7 @@ extension ColorViewController {
   }
 
   //configuraion performed during app startup & when reset button is tapped
-  fileprivate func resetValues() {
+    fileprivate func resetValues() {
     //Reset all to avoid confusion
     self.sliderOneValue.text = "0"
     self.sliderTwoValue.text = "0"
@@ -146,7 +155,6 @@ extension ColorViewController {
         self.view.backgroundColor = .bitterSweet
         self.colorname.isHidden = true
     }
-
     sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
     sliderThreeLable.textColor = UIColor.bitterSweet.inverseHSBColor()
@@ -174,12 +182,34 @@ extension ColorViewController {
     sliderOneValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderTwoValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderThreeValue.textColor =  isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-
+    saveUserColors()
   }
+
+    fileprivate func getUserSavedColors() {
+        guard let colorname = defaults.string(forKey: "colorname") else {return}
+        self.colorname.isHidden = false
+    guard let backgroundColor = defaults.color(forKey: "appColor")  else {return}
+        self.colorname.text = colorname
+        self.view.backgroundColor = backgroundColor
+    }
+
+    fileprivate func saveUserColors() {
+        // save current background Color
+        defaults.set(color: self.view.backgroundColor, forKey: "appColor")
+        // current color name
+        defaults.set(colorname.text, forKey: "colorname")
+    }
+
+    fileprivate func clearUserSavedColors() {
+        // remove saved background Color
+        defaults.removeObject(forKey: "appColor")
+        // remove saved color name
+        defaults.removeObject(forKey: "colorname")
+    }
+
 }
 
 // MARK: Color Calculator funciton
-
 extension ColorViewController {
   fileprivate func calculateColor() -> UIColor {
     if isRGB {
