@@ -30,8 +30,7 @@ Choose from 2 modes and move the slider to the required values then tap the **Se
 ### Modes
 RGB Mode             |  HSB Mode
 :-------------------------:|:-------------------------:
-![Imgur](https://i.imgur.com/9tkL3R4.png)  |  ![Imgur](https://i.imgur.com/DKfavP1.png)
-
+![RGB](https://i.imgur.com/9tkL3R4.png)  |  ![HSB](https://i.imgur.com/DKfavP1.png)
 
 ## Contribution
 - If you have a **feature request**, open an **issue**
