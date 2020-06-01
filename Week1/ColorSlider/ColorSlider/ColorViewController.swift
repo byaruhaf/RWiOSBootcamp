@@ -29,9 +29,9 @@ class ColorViewController: UIViewController {
 
     //bool to track currect mode.
     var currentMode:colorModeState = .isRGB
-    //  var isRGB: Bool = false
-    //  var isP3RGB: Bool = false
-    //  var isHSB: Bool = false
+
+    //curent Hex value
+    var currentHex:String = ""
 
     //UserDefaults constant
     let defaults = UserDefaults.standard
@@ -53,7 +53,8 @@ class ColorViewController: UIViewController {
         colorView.backgroundColor = calculateColor()
         // set Hex Value on Lable.
         if let colorHex = calculateColor().toHex {
-            hexLabel.text = "HEX: # \(colorHex)"
+            colorname.text = "HEX: # \(colorHex)"
+            currentHex = "HEX: # \(colorHex)"
         }
     }
     @IBAction func setColorTapped(_ sender: Any) {
@@ -88,21 +89,12 @@ extension ColorViewController {
     fileprivate func setupSliders() {
         switch colorModelSelector.selectedSegmentIndex {
         case 0:
-            //      isRGB = true
-            //      isHSB = false
-            //      isP3RGB = false
             currentMode = .isRGB
             setupRGB()
         case 1:
-            //      isP3RGB = true
-            //      isRGB = false
-            //      isHSB = false
             currentMode = .isP3RGB
             setupRGB()
         case 2:
-            //      isHSB = true
-            //      isRGB = false
-            //      isP3RGB = false
             currentMode = .isHSB
             setupHSB()
         default:
@@ -169,12 +161,16 @@ extension ColorViewController {
             self.sliderTwo.setValue(0, animated:true)
             self.sliderThree.setValue(0, animated:true)
         })
-        self.hexLabel.text = "HEX: #"
-
+        self.colorname.text = "HEX: #"
+        // smoth hiding hexlable with animaiton
+        UIView.transition(with: hexLabel, duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.hexLabel.isHidden = true
+        })
         // smoth the reset background color with animaiton
         UIView.animate(withDuration: 2) {
             self.view.backgroundColor = .bitterSweet
-            self.colorname.isHidden = true
         }
 
         colorView.backgroundColor = self.view.backgroundColor
@@ -188,11 +184,20 @@ extension ColorViewController {
     }
 
     //configuraion performed when user tapps enter button after setting the name.
-    fileprivate func setupColors(colorname: String?) {
+    fileprivate func setupColors(usercolorname: String?) {
         //set color name and backgroud view
-        guard let colorname = colorname else { return }
-        self.colorname.text = colorname.uppercased()
-        self.colorname.isHidden = false
+        guard let usercolorname = usercolorname else { return }
+        self.colorname.text = usercolorname.uppercased()
+//        self.colorname.isHidden = false
+        self.hexLabel.text = currentHex
+//        self.hexLabel.isHidden = false
+
+        UIView.transition(with: hexLabel, duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.hexLabel.isHidden = false
+        })
+
         UIView.animate(withDuration: 2) {
             self.view.backgroundColor = self.calculateColor()
             self.colorView.backgroundColor = self.calculateColor()
@@ -281,7 +286,7 @@ extension ColorViewController {
             title: "Set Color", style: .default,
             handler: { [weak self, weak alertCtr] alert -> Void in
                 if let textField = alertCtr?.textFields?[0] {
-                    self?.setupColors(colorname: textField.text)
+                    self?.setupColors(usercolorname: textField.text)
                 }
         })
         let cancelAction = UIAlertAction(
@@ -304,7 +309,6 @@ extension ColorViewController {
         if segue.identifier == "wikipedia" {
             let controller = segue.destination as! WikiViewController
             // Determine which wikipedia page to show depending on currently selected color mode
-
             switch currentMode {
             case .isRGB:
                     controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/RGB_color_model")
