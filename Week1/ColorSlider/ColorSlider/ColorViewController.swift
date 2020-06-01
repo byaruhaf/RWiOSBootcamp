@@ -176,6 +176,7 @@ extension ColorViewController {
             self.view.backgroundColor = .bitterSweet
             self.colorname.isHidden = true
         }
+
         colorView.backgroundColor = self.view.backgroundColor
         sliderOneLable.textColor = UIColor.bitterSweet.inverseHSBColor()
         sliderTwoLable.textColor = UIColor.bitterSweet.inverseHSBColor()
