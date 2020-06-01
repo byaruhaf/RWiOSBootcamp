@@ -56,6 +56,11 @@ class ColorViewController: UIViewController {
             colorname.text = "HEX: # \(colorHex)"
             currentHex = "HEX: # \(colorHex)"
         }
+                UIView.transition(with: hexLabel, duration: 0.4,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                                    self.hexLabel.isHidden = true
+                })
     }
     @IBAction func setColorTapped(_ sender: Any) {
         showColorNameAlert()
@@ -188,21 +193,15 @@ extension ColorViewController {
         //set color name and backgroud view
         guard let usercolorname = usercolorname else { return }
         self.colorname.text = usercolorname.uppercased()
-//        self.colorname.isHidden = false
         self.hexLabel.text = currentHex
-//        self.hexLabel.isHidden = false
-
-        UIView.transition(with: hexLabel, duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: {
-                            self.hexLabel.isHidden = false
-        })
+        self.hexLabel.isHidden = true
+        self.hexLabel.isHidden = false
 
         UIView.animate(withDuration: 2) {
             self.view.backgroundColor = self.calculateColor()
             self.colorView.backgroundColor = self.calculateColor()
         }
-
+        
         //set lables to inverse Color so they are visible after backgroundColor change.
         //check if RGB mode is active then selecte correct inverse function.
         self.colorname.textColor = inverseColor()
@@ -233,12 +232,16 @@ extension ColorViewController {
 extension ColorViewController {
 
     fileprivate func getUserSavedColors() {
-        guard let colorname = defaults.string(forKey: "colorname") else { return }
+        guard let userColorName = defaults.string(forKey: "colorname") else { return }
         self.colorname.isHidden = false
-        self.colorname.text = colorname
+        self.colorname.text = userColorName
         guard let backgroundColor = defaults.color(forKey: "appColor") else { return }
         self.view.backgroundColor = backgroundColor
         self.colorView.backgroundColor = backgroundColor
+
+        self.sliderOne.value = defaults.float(forKey: "sliderOne")
+         self.sliderTwo.value = defaults.float(forKey: "sliderTwo")
+         self.sliderThree.value = defaults.float(forKey: "sliderThree")
     }
 
     fileprivate func saveUserColors() {
@@ -246,6 +249,12 @@ extension ColorViewController {
         defaults.set(color: self.view.backgroundColor, forKey: "appColor")
         // current color name
         defaults.set(colorname.text, forKey: "colorname")
+        // current value of slider 1
+        defaults.set(sliderOne.value, forKey: "sliderOne")
+        // current value of slider 1
+        defaults.set(sliderTwo.value, forKey: "sliderTwo")
+        // current value of slider 1
+        defaults.set(sliderThree.value, forKey: "sliderThree")
     }
 
     fileprivate func clearUserSavedColors() {
@@ -253,6 +262,12 @@ extension ColorViewController {
         defaults.removeObject(forKey: "appColor")
         // remove saved color name
         defaults.removeObject(forKey: "colorname")
+        // remove saved  value for slider 1
+        defaults.removeObject(forKey: "sliderOne")
+        // remove saved  value for slider 1
+        defaults.removeObject(forKey: "sliderTwo")
+        // remove saved  value for slider 1
+        defaults.removeObject(forKey: "sliderThree")
     }
 
 }
