@@ -51,11 +51,12 @@ class ColorViewController: UIViewController {
     self.sliderTwoValue.text = "\(Int(sliderTwo.value))"
     self.sliderThreeValue.text = "\(Int(sliderThree.value))"
     colorView.backgroundColor = calculateColor()
+     self.colorname.textColor = inverseColor()
     // set Hex Value on Lable.
 //    if let colorHex = calculateColor().toHex(alpha: false) {
     let colorHex = calculateColor().toHexString()
-      colorname.text = "HEX:\(colorHex)"
-      currentHex = "HEX:\(colorHex)"
+    colorname.text = "HEX: \(colorHex)".uppercased()
+    currentHex = "HEX: \(colorHex)".uppercased()
 
     UIView.transition(
       with: hexLabel, duration: 0.4,
