@@ -76,22 +76,69 @@ extension UIColor {
 
 extension UIColor {
     // MARK: - Convenience Methods
-    var toHex: String? {
-        // Extract Components
+    func toHex(alpha: Bool = false) -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil
         }
-        // Helpers
-        let red = Float(components[0])
-        let green = Float(components[1])
-        let blue = Float(components[2])
-        var alpha = Float(1.0)
+
+        let r = Float(components[0])
+        let g = Float(components[1])
+        let b = Float(components[2])
+        var a = Float(1.0)
 
         if components.count >= 4 {
-            alpha = Float(components[3])
+            a = Float(components[3])
         }
-        // Create Hex String
-        let hex = String(format: "%02lX%02lX%02lX%02lX", lroundf(red * 255), lroundf(green * 255), lroundf(blue * 255), lroundf(alpha * 255))
-        return hex
+
+        if alpha {
+            return String(format: "%02lX%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255), lroundf(a * 255))
+        } else {
+            return String(format: "%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
+        }
     }
+
+    var hexString: String? {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        let multiplier = CGFloat(255.999999)
+
+        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return nil
+        }
+
+        if alpha == 1.0 {
+            return String(
+                format: "#%02lX%02lX%02lX",
+                Int(red * multiplier),
+                Int(green * multiplier),
+                Int(blue * multiplier)
+            )
+        }
+        else {
+            return String(
+                format: "#%02lX%02lX%02lX%02lX",
+                Int(red * multiplier),
+                Int(green * multiplier),
+                Int(blue * multiplier),
+                Int(alpha * multiplier)
+            )
+        }
+    }
+
+    func toHexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+
+        return String(format:"#%06x", rgb)
+    }
+
 }

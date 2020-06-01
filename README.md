@@ -12,11 +12,16 @@
 import MeKit
 
 let Name: String = "Byarunaga Franklin"
-let DiscordUsername: String = "TM Franklin"
-let loaction:CLLocationManager = "Uganda" "🇺🇬"
-let ProgrammingExperience: String = "1 year with iOS & Swift"
-let GoalsHobbiesInterests:[String] = ["Coding", "Music", "Coding"]
 
+let DiscordUsername: String = "TM Franklin"
+
+let loaction:CLLocationManager = "Uganda" "🇺🇬"
+
+let ProgrammingExperience: String = "1 year with iOS & Swift"
+
+let Goals:[String] = ["Become an indi iOS developer"]
+
+let Hobbies&Interests:[String] = ["Coding", "Music", "Beer"]
 ```
 
 ## Week 1 Assignment: ColorSlider App

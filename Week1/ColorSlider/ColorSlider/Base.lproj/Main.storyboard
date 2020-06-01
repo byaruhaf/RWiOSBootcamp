@@ -122,6 +122,8 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbImage" value="SliderThumb-Normal"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbHighlightedImage" value="SliderThumb-Highlighted"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="SliderThumb-Normal"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightedImage" value="SliderThumb-Highlighted"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="mps-qs-nR0"/>
@@ -161,6 +163,8 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbImage" value="SliderThumb-Normal"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbHighlightedImage" value="SliderThumb-Highlighted"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="SliderThumb-Normal"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightedImage" value="SliderThumb-Highlighted"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="m89-RU-mn4"/>
@@ -199,6 +203,8 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbImage" value="SliderThumb-Normal"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbHighlightedImage" value="SliderThumb-Highlighted"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightedImage" value="SliderThumb-Highlighted"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="SliderThumb-Normal"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="DyW-kG-lDA"/>
@@ -229,6 +235,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="gnK-Xw-UqG" firstAttribute="width" secondItem="pDh-IU-4FF" secondAttribute="width" multiplier="0.03" id="psP-nZ-dMX"/>
                                     <constraint firstItem="gnK-Xw-UqG" firstAttribute="height" secondItem="pDh-IU-4FF" secondAttribute="height" id="vw7-Y8-bf0"/>
