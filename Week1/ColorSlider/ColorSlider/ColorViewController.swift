@@ -163,11 +163,15 @@ extension ColorViewController {
         self.sliderOneValue.text = "0"
         self.sliderTwoValue.text = "0"
         self.sliderThreeValue.text = "0"
-        self.sliderOne.value = 0.0
-        self.sliderTwo.value = 0.0
-        self.sliderThree.value = 0.0
+        // smoth the reset of the slider's with animaiton
+        UIView.animate(withDuration: 0.4, animations: {
+            self.sliderOne.setValue(0, animated:true)
+            self.sliderTwo.setValue(0, animated:true)
+            self.sliderThree.setValue(0, animated:true)
+        })
         self.hexLabel.text = "HEX: #"
-        
+
+        // smoth the reset background color with animaiton
         UIView.animate(withDuration: 2) {
             self.view.backgroundColor = .bitterSweet
             self.colorname.isHidden = true
@@ -195,23 +199,26 @@ extension ColorViewController {
 
         //set lables to inverse Color so they are visible after backgroundColor change.
         //check if RGB mode is active then selecte correct inverse function.
-        self.colorname.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        sliderOneLable.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        sliderTwoLable.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        sliderThreeLable.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        sliderOneValue.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        sliderTwoValue.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        sliderThreeValue.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
-        hexLabel.textColor =
-            currentMode == .isRGB || currentMode == .isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+        self.colorname.textColor = inverseColor()
+        sliderOneLable.textColor = inverseColor()
+        sliderTwoLable.textColor = inverseColor()
+        sliderThreeLable.textColor = inverseColor()
+        sliderOneValue.textColor = inverseColor()
+        sliderTwoValue.textColor = inverseColor()
+        sliderThreeValue.textColor = inverseColor()
+        hexLabel.textColor = inverseColor()
         saveUserColors()
+    }
+
+    fileprivate func inverseColor() -> UIColor {
+        switch currentMode {
+        case .isRGB:
+            return calculateColor().inverseRGBColor()
+        case .isP3RGB:
+            return calculateColor().inverseRGBColor()
+        case .isHSB:
+            return calculateColor().inverseHSBColor()
+        }
     }
 
 }
@@ -247,21 +254,6 @@ extension ColorViewController {
 // MARK: Color Calculator funciton
 extension ColorViewController {
     fileprivate func calculateColor() -> UIColor {
-        //    if isRGB {
-        //      // Genrate RGB color
-        //      return UIColor(
-        //        rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
-        //    } else if isP3RGB {
-        //      // Genrate P3RGB color
-        //      return UIColor(
-        //        p3rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
-        //    } else {
-        //      // Genrate HSB color
-        //      return UIColor(
-        //        hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value
-        //      )
-        //    }
-
         switch currentMode {
         case .isRGB:
             return UIColor(
@@ -311,11 +303,6 @@ extension ColorViewController {
         if segue.identifier == "wikipedia" {
             let controller = segue.destination as! WikiViewController
             // Determine which wikipedia page to show depending on currently selected color mode
-//            if isRGB {
-//                controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/RGB_color_model")
-//            } else {
-//                controller.wikiURL = URL(string: "https://en.wikipedia.org/wiki/HSL_and_HSV")!
-//            }
 
             switch currentMode {
             case .isRGB:
