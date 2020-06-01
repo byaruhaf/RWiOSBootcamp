@@ -29,7 +29,10 @@ class ColorViewController: UIViewController {
 
   //bool to track currect mode.
   var isRGB: Bool = false
+    var isP3RGB: Bool = false
   var isHSB: Bool = false
+
+
 //UserDefaults constant
   let defaults = UserDefaults.standard
 
@@ -85,8 +88,19 @@ extension ColorViewController {
   fileprivate func setupSliders() {
     switch colorModelSelector.selectedSegmentIndex {
     case 0:
+        isRGB = true
+        isHSB = false
+        isP3RGB = false
       setupRGB()
     case 1:
+        isP3RGB = true
+        isRGB = false
+        isHSB = false
+      setupRGB()
+    case 2:
+        isHSB = true
+        isRGB = false
+        isP3RGB = false
       setupHSB()
     default:
       break
@@ -96,8 +110,6 @@ extension ColorViewController {
 
   //slider configuration performed when RGB is selected.
   fileprivate func setupRGB() {
-    isRGB = true
-    isHSB = false
     sliderOneLable.text = "Red"
     sliderTwoLable.text = "Green"
     sliderThreeLable.text = "Blue"
@@ -123,8 +135,6 @@ extension ColorViewController {
 
   //slider configuraion performed when HSB is selected.
   fileprivate func setupHSB() {
-    isRGB = false
-    isHSB = true
     sliderOneLable.text = "Hue"
     sliderTwoLable.text = "Saturation"
     sliderThreeLable.text = "Brightness"
@@ -182,21 +192,21 @@ extension ColorViewController {
     //set lables to inverse Color so they are visible after backgroundColor change.
     //check if RGB mode is active then selecte correct inverse function.
     self.colorname.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderOneLable.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderTwoLable.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderThreeLable.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderOneValue.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderTwoValue.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     sliderThreeValue.textColor =
-      isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+      isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     hexLabel.textColor =
-        isRGB ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
+        isRGB||isP3RGB  ? calculateColor().inverseRGBColor() : calculateColor().inverseHSBColor()
     saveUserColors()
   }
 
@@ -238,12 +248,17 @@ extension ColorViewController {
       // Genrate RGB color
       return UIColor(
         rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
-    } else {
+    } else if isP3RGB{
+        // Genrate P3RGB color
+        return UIColor(
+            p3rgbColorCodeRed: sliderOne.value, green: sliderTwo.value, blue: sliderThree.value)
+    }else {
       // Genrate HSB color
       return UIColor(
         hsbColorCodeHue: sliderOne.value, saturation: sliderTwo.value, brightness: sliderThree.value
       )
     }
+
   }
 }
 

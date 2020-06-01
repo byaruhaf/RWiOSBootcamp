@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ColorViewController" customModule="ColorSlider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="colorname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPS-Hn-JJQ">
-                                <rect key="frame" x="118.66666666666667" y="124.00000000000001" width="176.66666666666663" height="39.666666666666671"/>
+                                <rect key="frame" x="359.66666666666669" y="8" width="176.66666666666669" height="39.666666666666664"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="env-xF-coQ" customClass="CustomButton" customModule="ColorSlider" customModuleProvider="target">
-                                <rect key="frame" x="20" y="736" width="100" height="40"/>
+                                <rect key="frame" x="64" y="366" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7Ic-b0-ICh"/>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqd-P0-Jdv" customClass="CustomButton" customModule="ColorSlider" customModuleProvider="target">
-                                <rect key="frame" x="294" y="736" width="100" height="40"/>
+                                <rect key="frame" x="732" y="366" width="100" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3lH-iQ-YQP"/>
@@ -61,20 +61,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-Ni-Gyy">
-                                <rect key="frame" x="327" y="820.33333333333337" width="24.333333333333314" height="23.666666666666629"/>
+                                <rect key="frame" x="568" y="361.33333333333331" width="24.333333333333371" height="23.666666666666686"/>
                                 <connections>
                                     <segue destination="dXE-LG-jDx" kind="show" identifier="wikipedia" id="saT-l4-cJZ"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-pv-g0S">
-                                <rect key="frame" x="107" y="812" width="200" height="41"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-pv-g0S">
+                                <rect key="frame" x="348" y="353" width="200" height="41"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Etq-L1-0su"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="zFO-l2-XZw"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="RGB"/>
+                                    <segment title="sRGB"/>
+                                    <segment title="p3RGB"/>
                                     <segment title="HSB"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,10 +84,10 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-IU-4FF">
-                                <rect key="frame" x="2" y="298.66666666666669" width="410" height="299.00000000000006"/>
+                                <rect key="frame" x="46" y="57.666666666666657" width="804" height="299"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnK-Xw-UqG" customClass="CustomView" customModule="ColorSlider" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="12.333333333333334" height="299"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="299"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
@@ -95,16 +96,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sJb-T8-Qn0">
-                                        <rect key="frame" x="20.333333333333343" y="0.33333333333331439" width="389.66666666666663" height="298.66666666666669"/>
+                                        <rect key="frame" x="32" y="0.33333333333334281" width="772" height="298.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEX: #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAs-W6-pFr">
-                                                <rect key="frame" x="194.66666666666663" y="0.0" width="195" height="68.666666666666671"/>
+                                                <rect key="frame" x="386" y="0.0" width="386" height="68.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1SD-7W-EiA">
-                                                <rect key="frame" x="0.0" y="76.666666666666686" width="389.66666666666669" height="68.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="76.666666666666657" width="772" height="68.666666666666657"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-c3-M47">
                                                         <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="32.666666666666664"/>
@@ -113,10 +114,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Hn-8D-DRv">
-                                                        <rect key="frame" x="0.0" y="37.666666666666629" width="389.66666666666669" height="31"/>
+                                                        <rect key="frame" x="0.0" y="37.666666666666686" width="772" height="31"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-EV-Ih2" customClass="CustomSlider" customModule="ColorSlider" customModuleProvider="target">
-                                                                <rect key="frame" x="-2" y="0.0" width="315.66666666666669" height="32"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="621.66666666666663" height="32"/>
                                                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbImage" value="SliderThumb-Normal"/>
@@ -127,7 +128,7 @@
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeY-Kn-vdK">
-                                                                <rect key="frame" x="319.66666666666669" y="0.0" width="70" height="31"/>
+                                                                <rect key="frame" x="625.66666666666663" y="0.0" width="146.33333333333337" height="31"/>
                                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="22"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -143,7 +144,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e0P-4q-T2v">
-                                                <rect key="frame" x="0.0" y="153.33333333333331" width="389.66666666666669" height="68.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="153.33333333333334" width="772" height="68.666666666666657"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za0-bd-F6D">
                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="32.666666666666664"/>
@@ -152,10 +153,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-lJ-Aic">
-                                                        <rect key="frame" x="0.0" y="37.666666666666686" width="389.66666666666669" height="31"/>
+                                                        <rect key="frame" x="0.0" y="37.666666666666657" width="772" height="31"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jQT-aB-998" customClass="CustomSlider" customModule="ColorSlider" customModuleProvider="target">
-                                                                <rect key="frame" x="-2" y="0.0" width="315.66666666666669" height="32"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="621.66666666666663" height="32"/>
                                                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbImage" value="SliderThumb-Normal"/>
@@ -166,7 +167,7 @@
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-fM-WJC">
-                                                                <rect key="frame" x="319.66666666666669" y="0.0" width="70" height="31"/>
+                                                                <rect key="frame" x="625.66666666666663" y="0.0" width="146.33333333333337" height="31"/>
                                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="22"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -182,7 +183,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="21K-kG-5Hs">
-                                                <rect key="frame" x="0.0" y="229.99999999999997" width="389.66666666666669" height="68.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="229.99999999999997" width="772" height="68.666666666666657"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17d-CS-DQH">
                                                         <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="32.666666666666664"/>
@@ -191,10 +192,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q9E-8V-NIe">
-                                                        <rect key="frame" x="0.0" y="37.666666666666629" width="389.66666666666669" height="31"/>
+                                                        <rect key="frame" x="0.0" y="37.666666666666686" width="772" height="31"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-LL-UXa" customClass="CustomSlider" customModule="ColorSlider" customModuleProvider="target">
-                                                                <rect key="frame" x="-2" y="0.0" width="315.66666666666669" height="32"/>
+                                                                <rect key="frame" x="-2" y="0.0" width="621.66666666666663" height="32"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbImage" value="SliderThumb-Normal"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="ThumbHighlightedImage" value="SliderThumb-Highlighted"/>
@@ -204,7 +205,7 @@
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wR-t3-z0A">
-                                                                <rect key="frame" x="319.66666666666669" y="0.0" width="70" height="31"/>
+                                                                <rect key="frame" x="625.66666666666663" y="0.0" width="146.33333333333337" height="31"/>
                                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="22"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -308,11 +309,11 @@
             <objects>
                 <viewController id="dXE-LG-jDx" customClass="WikiViewController" customModule="ColorSlider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tyN-Aj-bNS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="QKs-4l-ajd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                                <rect key="frame" x="44" y="0.0" width="808" height="353"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -320,7 +321,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA4-J8-uyu" customClass="CustomButton" customModule="ColorSlider" customModuleProvider="target">
-                                <rect key="frame" x="155.33333333333334" y="758" width="103.33333333333334" height="42"/>
+                                <rect key="frame" x="373.33333333333331" y="361" width="149.33333333333331" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

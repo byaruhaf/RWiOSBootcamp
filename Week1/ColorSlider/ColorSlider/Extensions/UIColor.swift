@@ -21,6 +21,13 @@ extension UIColor {
     let alpha: CGFloat = 1.0
     self.init(red: redPart, green: greenPart, blue: bluePart, alpha: alpha)
   }
+    convenience init(p3rgbColorCodeRed red: Float, green: Float, blue: Float) {
+        let redPart: CGFloat = CGFloat(red) / 255
+        let greenPart: CGFloat = CGFloat(green) / 255
+        let bluePart: CGFloat = CGFloat(blue) / 255
+        let alpha: CGFloat = 1.0
+        self.init(displayP3Red: redPart, green: greenPart, blue: bluePart, alpha: alpha)
+    }
   convenience init(hsbColorCodeHue hue: Float, saturation: Float, brightness: Float) {
     let hue: CGFloat = CGFloat(hue) / 360
     let saturation: CGFloat = CGFloat(saturation) / 100
