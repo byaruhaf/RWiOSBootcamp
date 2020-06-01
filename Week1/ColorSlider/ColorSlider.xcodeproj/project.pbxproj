@@ -19,6 +19,7 @@
 		5F9EE3842480C97A00B280CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EE3822480C97A00B280CB /* LaunchScreen.storyboard */; };
 		5F9EE38C2480D06000B280CB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EE38B2480D06000B280CB /* UIColor.swift */; };
 		5FAC45D6248415B900F37B72 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC45D5248415B900F37B72 /* CustomView.swift */; };
+		5FD8A9212484813B00AEA3B3 /* colorModeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD8A9202484813B00AEA3B3 /* colorModeState.swift */; };
 		5FFB320A24836D110056B381 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB320924836D110056B381 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		5F9EE3852480C97A00B280CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9EE38B2480D06000B280CB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5FAC45D5248415B900F37B72 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5FD8A9202484813B00AEA3B3 /* colorModeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorModeState.swift; sourceTree = "<group>"; };
 		5FFB320924836D110056B381 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				5F7E9C5E24814C9F00DDB5CA /* CustomButton.swift */,
 				5FAC45D5248415B900F37B72 /* CustomView.swift */,
 				5F53A8022482012D00F05177 /* CustomSlider.swift */,
+				5FD8A9202484813B00AEA3B3 /* colorModeState.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				5FAC45D6248415B900F37B72 /* CustomView.swift in Sources */,
 				5F7E9C5F24814C9F00DDB5CA /* CustomButton.swift in Sources */,
 				5FFB320A24836D110056B381 /* UserDefaults.swift in Sources */,
+				5FD8A9212484813B00AEA3B3 /* colorModeState.swift in Sources */,
 				5F9EE3782480C97800B280CB /* AppDelegate.swift in Sources */,
 				5F481D3D2481204F00A921C3 /* WikiViewController.swift in Sources */,
 				5F9EE37A2480C97800B280CB /* SceneDelegate.swift in Sources */,
