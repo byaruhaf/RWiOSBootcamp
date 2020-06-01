@@ -15,8 +15,7 @@ extension UserDefaults {
     var colorSaved: UIColor?
     if let colorData = data(forKey: forKey) {
       do {
-        if let color = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(colorData) as? UIColor
-        {
+        if let color = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(colorData) as? UIColor {
           colorSaved = color
         }
       } catch {

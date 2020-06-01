@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum colorModeState {
+enum ColorModeState {
     case isRGB, isHSB, isP3RGB
 }
