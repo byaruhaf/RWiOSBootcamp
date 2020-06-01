@@ -302,7 +302,7 @@ extension ColorViewController {
     }
 
     fileprivate func valueToHex() -> String {
-        return String(format: "%02lX%02lX%02lX", lroundf(sliderOne.value), lroundf(sliderOne.value), lroundf(sliderOne.value))
+        return String(format: "%02lX%02lX%02lX", lroundf(sliderOne.value), lroundf(sliderTwo.value), lroundf(sliderThree.value))
     }
 
 
