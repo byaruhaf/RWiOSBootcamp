@@ -23,28 +23,3 @@ let Goals:[String] = ["Become an indi iOS developer"]
 
 let Hobbies&Interests:[String] = ["Coding", "Music", "Beer"]
 ```
-
-## Week 1 Assignment: ColorSlider App
-
-ColorSlider is a Color Picker App with both RGB and HSB modes. The app can be used with any iPhone that supports **[iOS 13](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/ios)**
-
-### How to use
-Choose from 3 modes and move the slider to the required values then tap the **Set Color Button** to enter a name of your chosen color that will be used to set the app background color. You can tap the **Reset Button** any time to return back to app default colors.
-
-Your current color name & values are saved when you close the app, so you can resume from where you stopped any time.
-
-Hex vlaues are displayed as you vary the slider.  
-
-
-### Modes
-sRGB Mode             |  HSB Mode	            | p3RGB Mode
-:-------------------------:|:-------------------------:|:---------------------
-![sRGB](https://i.imgur.com/yQEEJB9.png)  |  ![HSB](https://i.imgur.com/ro18QmQ.png) | ![p3RGB](https://i.imgur.com/iR5eMzZ.png) 
-
-## Contribution
-- If you have a **feature request**, open an **issue**
-- If you want to **contribute**, submit a **pull request**
-
-
-## License
-[MIT License](https://github.com/byaruhaf/RWiOSBootcamp/blob/master/LICENSE).
