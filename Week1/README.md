@@ -39,9 +39,9 @@ ColorSlider is a Color Picker App with both RGB and HSB modes. The app can be us
 
 
 ### Modes
-sRGB Mode             |  HSB Mode	            | p3RGB Mode
-:-------------------------:|:-------------------------:|:---------------------
-![sRGB](https://i.imgur.com/yQEEJB9.png)  |  ![HSB](https://i.imgur.com/ro18QmQ.png) | ![p3RGB](https://i.imgur.com/iR5eMzZ.png) 
+|sRGB Mode|HSB Mode|p3RGB Mode|
+|:-------------------------:|:-------------------------:|:---------------------:
+|![sRGB](https://i.imgur.com/yQEEJB9.png)  |  ![HSB](https://i.imgur.com/ro18QmQ.png) | ![p3RGB](https://i.imgur.com/iR5eMzZ.png) |
 
 ## Contribution
 - If you have a **feature request**, open an **issue**
