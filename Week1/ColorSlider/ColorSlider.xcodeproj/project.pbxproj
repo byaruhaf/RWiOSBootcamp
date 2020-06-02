@@ -54,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F3CD2B72485FE1C00C61E52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FD8A9202484813B00AEA3B3 /* ColorModeState.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5F481D3E2481263800A921C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +122,7 @@
 				5F97035624830A6F00A025E3 /* ViewControllers */,
 				5F97035724830AF800A025E3 /* Supporting Files */,
 				5F9EE38D2480D06F00B280CB /* Extensions */,
+				5F3CD2B72485FE1C00C61E52 /* Model */,
 				5F9EE3802480C97A00B280CB /* Assets.xcassets */,
 			);
 			path = ColorSlider;
@@ -127,7 +136,6 @@
 				5F7E9C5E24814C9F00DDB5CA /* CustomButton.swift */,
 				5FAC45D5248415B900F37B72 /* CustomView.swift */,
 				5F53A8022482012D00F05177 /* CustomSlider.swift */,
-				5FD8A9202484813B00AEA3B3 /* ColorModeState.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
