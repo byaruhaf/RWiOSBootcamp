@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RevBullsEye/RevBullsEye.xcodeproj">
+      location = "group:BullsEye/BullsEye.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:RGBullsEye/RGBullsEye.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:BullsEye/BullsEye.xcodeproj">
+      location = "group:RevBullsEye/RevBullsEye.xcodeproj">
    </FileRef>
 </Workspace>

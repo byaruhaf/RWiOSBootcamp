@@ -9,11 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-  var currentValue = 0
-  var targetValue = 0
-  var score = 0
-  var round = 0
+    var model = BullsEyeGame()
   
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var targetLabel: UILabel!
@@ -23,16 +19,16 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let roundedValue = slider.value.rounded()
-    currentValue = Int(roundedValue)
+    model.currentValue = Int(roundedValue)
     startNewGame()
   }
 
   @IBAction func showAlert() {
     
-    let difference = abs(targetValue - currentValue)
+    let difference = abs(model.targetValue - model.currentValue)
     var points = 100 - difference
     
-    score += points
+    model.score += points
     
     let title: String
     if difference == 0 {
@@ -66,26 +62,26 @@ class ViewController: UIViewController {
   
   @IBAction func sliderMoved(_ slider: UISlider) {
     let roundedValue = slider.value.rounded()
-    currentValue = Int(roundedValue)
+    model.currentValue = Int(roundedValue)
   }
   
   func startNewRound() {
-    round += 1
-    targetValue = Int.random(in: 1...100)
-    currentValue = 50
-    slider.value = Float(currentValue)
+    model.round += 1
+    model.targetValue = Int.random(in: 1...100)
+    model.currentValue = 50
+    slider.value = Float(model.currentValue)
     updateLabels()
   }
   
   func updateLabels() {
-    targetLabel.text = String(targetValue)
-    scoreLabel.text = String(score)
-    roundLabel.text = String(round)
+    targetLabel.text = String(model.targetValue)
+    scoreLabel.text = String(model.score)
+    roundLabel.text = String(model.round)
   }
   
   @IBAction func startNewGame() {
-    score = 0
-    round = 0
+    model.score = 0
+    model.round = 0
     startNewRound()
   }
   
