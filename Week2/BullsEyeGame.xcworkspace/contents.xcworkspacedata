@@ -10,4 +10,7 @@
    <FileRef
       location = "group:RevBullsEye/RevBullsEye.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:BullsEyeGame/BullsEyeGame.xcodeproj">
+   </FileRef>
 </Workspace>

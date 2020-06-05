@@ -9,26 +9,30 @@
 import Foundation
 import Combine
 
-class BullsEyeGame {
-    var gameStartValue = 0
-    var playerValue = 0
-    @Published var targetValue = 0
-    @Published var score = 0
-    @Published var round = 0
+public class BullsEyeGame {
+    public var gameStartValue = 0
+    public var playerValue = 0
+    @Published public var targetValue = 0
+    @Published public var score = 0
+    @Published public var round = 0
 
-    func start() {
+   public init() {
+    }
+
+
+   public func start() {
         score = 0
         round = 0
         startRound()
     }
 
-    func startRound() {
+    public func startRound() {
         round += 1
         targetValue = Int.random(in: 1...100)
         gameStartValue = 50
     }
 
-    func pointsCalculator(for difference:Int) -> (points:Int,message:String) {
+    public func pointsCalculator(for difference:Int) -> (points:Int,message:String) {
         var points = 100 - difference
 
         score += points
