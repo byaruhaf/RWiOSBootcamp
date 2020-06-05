@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     var model = BullsEyeGame()
-  
+    var userValue:Int = 0
+
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var targetLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
@@ -19,73 +20,54 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let roundedValue = slider.value.rounded()
-    model.currentValue = Int(roundedValue)
+    model.gameStartValue = Int(roundedValue)
     startNewGame()
   }
-
-  @IBAction func showAlert() {
-    
-    let difference = abs(model.targetValue - model.currentValue)
-    var points = 100 - difference
-    
-    model.score += points
-    
-    let title: String
-    if difference == 0 {
-      title = "Perfect!"
-      points += 100
-    } else if difference < 5 {
-      title = "You almost had it!"
-      if difference == 1 {
-        points += 50
-      }
-    } else if difference < 10 {
-      title = "Pretty good!"
-    } else {
-      title = "Not even close..."
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateLabels()
     }
-    
-    let message = "You scored \(points) points"
-    
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    
-    let action = UIAlertAction(title: "OK", style: .default, handler: {
-      action in
-      self.startNewRound()
-    })
-    
-    alert.addAction(action)
-    
-    present(alert, animated: true, completion: nil)
-    
+
+
+    @IBAction func showAlert() {
+    let result = model.gamePointsCalculator(userValue)
+        alert(result)
   }
   
   @IBAction func sliderMoved(_ slider: UISlider) {
     let roundedValue = slider.value.rounded()
-    model.currentValue = Int(roundedValue)
+    userValue = Int(roundedValue)
   }
   
   func startNewRound() {
-    model.round += 1
-    model.targetValue = Int.random(in: 1...100)
-    model.currentValue = 50
-    slider.value = Float(model.currentValue)
+    model.startRound()
+    slider.value = Float(model.gameStartValue)
     updateLabels()
   }
   
   func updateLabels() {
-    targetLabel.text = String(model.targetValue)
+    targetLabel.text = String(model.gameTargetValue)
     scoreLabel.text = String(model.score)
     roundLabel.text = String(model.round)
   }
   
   @IBAction func startNewGame() {
-    model.score = 0
-    model.round = 0
+    model.startGame()
     startNewRound()
   }
   
 }
 
-
+extension ViewController {
+    fileprivate func alert(_ result: (points: Int, message: String)) {
+        let message = "You scored \(result.points) points"
+        let alert = UIAlertController(title: result.message, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: {
+            action in
+            self.startNewRound()
+        })
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+}
 
