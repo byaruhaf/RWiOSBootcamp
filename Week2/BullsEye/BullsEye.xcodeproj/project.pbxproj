@@ -58,14 +58,12 @@
 		352A679720D171E800D5BF05 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				5F5F35EA248A83330037C393 /* ViewControllers */,
+				5F5F35E7248A822D0037C393 /* Model */,
+				5F5F35E8248A82630037C393 /* Storyboards */,
 				5F5F35E4248A4AF00037C393 /* Extensions */,
-				352A679820D171E800D5BF05 /* AppDelegate.swift */,
-				352A679A20D171E800D5BF05 /* ViewController.swift */,
-				5F8A80F9248A02EC001DA27F /* BullsEyeGame.swift */,
-				352A679C20D171E800D5BF05 /* Main.storyboard */,
+				5F5F35E9248A82FF0037C393 /* Supporting Files */,
 				352A679F20D171EA00D5BF05 /* Assets.xcassets */,
-				352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */,
-				352A67A420D171EA00D5BF05 /* Info.plist */,
 			);
 			path = BullsEye;
 			sourceTree = "<group>";
@@ -76,6 +74,40 @@
 				5F5F35E5248A4B1F0037C393 /* UIAlertController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5F5F35E7248A822D0037C393 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F8A80F9248A02EC001DA27F /* BullsEyeGame.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5F5F35E8248A82630037C393 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				352A679C20D171E800D5BF05 /* Main.storyboard */,
+				352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5F5F35E9248A82FF0037C393 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				352A679820D171E800D5BF05 /* AppDelegate.swift */,
+				352A67A420D171EA00D5BF05 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F5F35EA248A83330037C393 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				352A679A20D171E800D5BF05 /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

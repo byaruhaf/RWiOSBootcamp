@@ -12,11 +12,11 @@ import Combine
 class BullsEyeGame {
     var gameStartValue = 0
     var playerValue = 0
-     @Published var gameTargetValue = 0
+     @Published var targetValue = 0
      @Published var score = 0
      @Published var round = 0
 
-     func startGame() {
+     func start() {
         score = 0
         round = 0
         startRound()
@@ -24,12 +24,11 @@ class BullsEyeGame {
 
      func startRound() {
         round += 1
-        gameTargetValue = Int.random(in: 1...100)
+        targetValue = Int.random(in: 1...100)
         gameStartValue = 50
     }
 
-     func gamePointsCalculator() -> (points:Int,message:String) {
-        let difference = abs(gameTargetValue - playerValue)
+    func pointsCalculator(for difference:Int) -> (points:Int,message:String) {
         var points = 100 - difference
 
         score += points

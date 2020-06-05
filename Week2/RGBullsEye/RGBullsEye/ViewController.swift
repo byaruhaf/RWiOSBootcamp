@@ -21,6 +21,8 @@
 */
 
 import UIKit
+import Combine
+
 
 class ViewController: UIViewController {
   @IBOutlet weak var targetLabel: UILabel!
@@ -40,6 +42,7 @@ class ViewController: UIViewController {
   
   let game = BullsEyeGame()
   var rgb = RGB()
+
   
   @IBAction func aSliderMoved(sender: UISlider) {
 
@@ -59,6 +62,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    game.startGame()
   }
 }
 

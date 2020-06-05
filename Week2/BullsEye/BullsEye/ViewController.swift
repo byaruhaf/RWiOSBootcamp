@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 class ViewController: UIViewController {
-    var gameModel = BullsEyeGame()
+    var game = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
 
     @IBOutlet weak var slider: UISlider!
@@ -20,31 +20,33 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewGame()
+//        startNewGame()
+        game.start()
         subscribeToModel()
     }
 
     @IBAction func showAlert() {
-        self.gameAlert(gameModel.gamePointsCalculator()) {
-            self.gameModel.startRound()
-            self.slider.value = Float(self.gameModel.gameStartValue)
+        let difference = abs(game.targetValue - game.playerValue)
+        self.gameAlert(game.pointsCalculator(for:difference)) {
+            self.game.startRound()
+            self.slider.value = Float(self.game.gameStartValue)
         }
     }
 
     @IBAction func sliderMoved(_ slider: UISlider) {
-        gameModel.playerValue = Int(slider.value.rounded())
+        game.playerValue = Int(slider.value.rounded())
     }
 
     @IBAction func startNewGame() {
-        gameModel.startGame()
+        game.start()
     }
 
     fileprivate func subscribeToModel() {
-        gameModel.$score.map{$0.description}
+        game.$score.map{$0.description}
             .assign(to: \.text, on: scoreLabel).store(in: &cancellables)
-        gameModel.$round.map{$0.description}
+        game.$round.map{$0.description}
             .assign(to: \.text, on: roundLabel).store(in: &cancellables)
-        gameModel.$gameTargetValue.map{$0.description}
+        game.$targetValue.map{$0.description}
             .assign(to: \.text, on: targetLabel).store(in: &cancellables)
     }
 }
