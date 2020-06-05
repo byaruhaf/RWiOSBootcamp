@@ -12,6 +12,7 @@
 		352A679E20D171E800D5BF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A679C20D171E800D5BF05 /* Main.storyboard */; };
 		352A67A020D171EA00D5BF05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A679F20D171EA00D5BF05 /* Assets.xcassets */; };
 		352A67A320D171EA00D5BF05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */; };
+		5F8A80FA248A02EC001DA27F /* BullsEyeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A80F9248A02EC001DA27F /* BullsEyeGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		352A679F20D171EA00D5BF05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352A67A220D171EA00D5BF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352A67A420D171EA00D5BF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F8A80F9248A02EC001DA27F /* BullsEyeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				352A679820D171E800D5BF05 /* AppDelegate.swift */,
 				352A679A20D171E800D5BF05 /* ViewController.swift */,
+				5F8A80F9248A02EC001DA27F /* BullsEyeGame.swift */,
 				352A679C20D171E800D5BF05 /* Main.storyboard */,
 				352A679F20D171EA00D5BF05 /* Assets.xcassets */,
 				352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				352A679B20D171E800D5BF05 /* ViewController.swift in Sources */,
 				352A679920D171E800D5BF05 /* AppDelegate.swift in Sources */,
+				5F8A80FA248A02EC001DA27F /* BullsEyeGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
