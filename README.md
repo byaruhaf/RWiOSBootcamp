@@ -8,6 +8,8 @@
 [![Twitter](https://img.shields.io/badge/twitter-@byaruhaf-blue.svg)](http://twitter.com/byaruhaf)
 
 # About Me
+| Command | Description |
+| --- | --- |
 ``` swift
 import MeKit
 
@@ -23,3 +25,4 @@ let Goals:[String] = ["Become an indi iOS developer"]
 
 let Hobbies&Interests:[String] = ["Coding", "Music", "Beer"]
 ```
+![Profile Pic](PP.jpeg)
