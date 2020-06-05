@@ -11,12 +11,15 @@ import Foundation
 struct BullsEyeGame {
     var gameStartValue = 0
     var gameTargetValue = 0
+    var playerValue = 0
+
     var score = 0
     var round = 0
 
     mutating func startGame() {
         score = 0
         round = 0
+        startRound()
     }
 
     mutating func startRound() {
@@ -26,8 +29,8 @@ struct BullsEyeGame {
 
     }
 
-    mutating func gamePointsCalculator(_ userValue:Int) -> (points:Int,message:String) {
-        let difference = abs(gameTargetValue - userValue)
+    mutating func gamePointsCalculator() -> (points:Int,message:String) {
+        let difference = abs(gameTargetValue - playerValue)
         var points = 100 - difference
 
         score += points
