@@ -45,7 +45,8 @@ class ViewController: UIViewController {
 
   
   @IBAction func aSliderMoved(sender: UISlider) {
-
+    updatedSliderLables()
+    guessLabel.backgroundColor = UIColor(rgbStruct: rgb)
   }
   
   @IBAction func showAlert(sender: AnyObject) {
@@ -64,5 +65,12 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     game.startGame()
   }
+
+    fileprivate func updatedSliderLables(){
+        self.redLabel.text = "\(Int(redSlider.value))"
+        self.greenLabel.text = "\(Int(greenSlider.value))"
+        self.blueLabel.text = "\(Int(blueSlider.value))"
+    }
+
 }
 
