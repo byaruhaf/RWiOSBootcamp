@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5F20480C248AA67F00C1883C /* BullsEyeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F20480B248AA67F00C1883C /* BullsEyeGame.swift */; };
+		5F204818248AAAD800C1883C /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F204817248AAAD800C1883C /* UIAlertController.swift */; };
 		5FC09FBB248AA52100B24A74 /* BullsEyeGame.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC09FB9248AA52100B24A74 /* BullsEyeGame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F20480B248AA67F00C1883C /* BullsEyeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeGame.swift; sourceTree = "<group>"; };
+		5F204817248AAAD800C1883C /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		5FC09FB6248AA52100B24A74 /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC09FB9248AA52100B24A74 /* BullsEyeGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BullsEyeGame.h; sourceTree = "<group>"; };
 		5FC09FBA248AA52100B24A74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				5FC09FB9248AA52100B24A74 /* BullsEyeGame.h */,
 				5F20480B248AA67F00C1883C /* BullsEyeGame.swift */,
+				5F204817248AAAD800C1883C /* UIAlertController.swift */,
 				5FC09FBA248AA52100B24A74 /* Info.plist */,
 			);
 			path = BullsEyeGame;
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F204818248AAAD800C1883C /* UIAlertController.swift in Sources */,
 				5F20480C248AA67F00C1883C /* BullsEyeGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,6 @@
 		352A67A320D171EA00D5BF05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */; };
 		5F20480F248AA94500C1883C /* BullsEyeGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F20480E248AA94500C1883C /* BullsEyeGame.framework */; };
 		5F204810248AA94500C1883C /* BullsEyeGame.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F20480E248AA94500C1883C /* BullsEyeGame.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5F5F35E6248A4B1F0037C393 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35E5248A4B1F0037C393 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +39,6 @@
 		352A67A220D171EA00D5BF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352A67A420D171EA00D5BF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F20480E248AA94500C1883C /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F5F35E5248A4B1F0037C393 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 			children = (
 				5F5F35EA248A83330037C393 /* ViewControllers */,
 				5F5F35E8248A82630037C393 /* Storyboards */,
-				5F5F35E4248A4AF00037C393 /* Extensions */,
 				5F5F35E9248A82FF0037C393 /* Supporting Files */,
 				352A679F20D171EA00D5BF05 /* Assets.xcassets */,
 			);
@@ -90,14 +87,6 @@
 				5F20480E248AA94500C1883C /* BullsEyeGame.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5F5F35E4248A4AF00037C393 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5F5F35E5248A4B1F0037C393 /* UIAlertController.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5F5F35E8248A82630037C393 /* Storyboards */ = {
@@ -199,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F5F35E6248A4B1F0037C393 /* UIAlertController.swift in Sources */,
 				352A679B20D171E800D5BF05 /* ViewController.swift in Sources */,
 				352A679920D171E800D5BF05 /* AppDelegate.swift in Sources */,
 			);
