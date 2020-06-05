@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 class ViewController: UIViewController {
-    var model = BullsEyeGame()
+    var gameModel = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
 
     @IBOutlet weak var slider: UISlider!
@@ -25,26 +25,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        self.gameAlert(model.gamePointsCalculator()) {
-            self.model.startRound()
-            self.slider.value = Float(self.model.gameStartValue)
+        self.gameAlert(gameModel.gamePointsCalculator()) {
+            self.gameModel.startRound()
+            self.slider.value = Float(self.gameModel.gameStartValue)
         }
     }
 
     @IBAction func sliderMoved(_ slider: UISlider) {
-        model.playerValue = Int(slider.value.rounded())
+        gameModel.playerValue = Int(slider.value.rounded())
     }
 
     @IBAction func startNewGame() {
-        model.startGame()
+        gameModel.startGame()
     }
 
     fileprivate func subscribeToModel() {
-        model.$score.map{$0.description}
+        gameModel.$score.map{$0.description}
             .assign(to: \.text, on: scoreLabel).store(in: &cancellables)
-        model.$round.map{$0.description}
+        gameModel.$round.map{$0.description}
             .assign(to: \.text, on: roundLabel).store(in: &cancellables)
-        model.$gameTargetValue.map{$0.description}
+        gameModel.$gameTargetValue.map{$0.description}
             .assign(to: \.text, on: targetLabel).store(in: &cancellables)
     }
 }
