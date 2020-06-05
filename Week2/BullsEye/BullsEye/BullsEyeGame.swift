@@ -7,29 +7,28 @@
 //
 
 import Foundation
+import Combine
 
-struct BullsEyeGame {
+class BullsEyeGame {
     var gameStartValue = 0
-    var gameTargetValue = 0
     var playerValue = 0
+     @Published var gameTargetValue = 0
+     @Published var score = 0
+     @Published var round = 0
 
-    var score = 0
-    var round = 0
-
-    mutating func startGame() {
+     func startGame() {
         score = 0
         round = 0
         startRound()
     }
 
-    mutating func startRound() {
+     func startRound() {
         round += 1
         gameTargetValue = Int.random(in: 1...100)
         gameStartValue = 50
-
     }
 
-    mutating func gamePointsCalculator() -> (points:Int,message:String) {
+     func gamePointsCalculator() -> (points:Int,message:String) {
         let difference = abs(gameTargetValue - playerValue)
         var points = 100 - difference
 
@@ -51,7 +50,6 @@ struct BullsEyeGame {
         }
         return (points,message)
     }
-
 
 }
 
