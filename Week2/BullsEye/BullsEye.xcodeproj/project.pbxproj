@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,23 +12,8 @@
 		352A679E20D171E800D5BF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A679C20D171E800D5BF05 /* Main.storyboard */; };
 		352A67A020D171EA00D5BF05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A679F20D171EA00D5BF05 /* Assets.xcassets */; };
 		352A67A320D171EA00D5BF05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */; };
-		5F20480F248AA94500C1883C /* BullsEyeGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F20480E248AA94500C1883C /* BullsEyeGame.framework */; };
-		5F204810248AA94500C1883C /* BullsEyeGame.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F20480E248AA94500C1883C /* BullsEyeGame.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F9AC42A248B48670059D379 /* BullsEyeGameModel in Frameworks */ = {isa = PBXBuildFile; productRef = 5F9AC429248B48670059D379 /* BullsEyeGameModel */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5F204811248AA94500C1883C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5F204810248AA94500C1883C /* BullsEyeGame.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		352A679520D171E800D5BF05 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F20480F248AA94500C1883C /* BullsEyeGame.framework in Frameworks */,
+				5F9AC42A248B48670059D379 /* BullsEyeGameModel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,13 +110,15 @@
 				352A679120D171E800D5BF05 /* Sources */,
 				352A679220D171E800D5BF05 /* Frameworks */,
 				352A679320D171E800D5BF05 /* Resources */,
-				5F204811248AA94500C1883C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BullsEye;
+			packageProductDependencies = (
+				5F9AC429248B48670059D379 /* BullsEyeGameModel */,
+			);
 			productName = BullsEye;
 			productReference = 352A679520D171E800D5BF05 /* BullsEye.app */;
 			productType = "com.apple.product-type.application";
@@ -389,6 +376,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F9AC429248B48670059D379 /* BullsEyeGameModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BullsEyeGameModel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 352A678D20D171E800D5BF05 /* Project object */;
 }

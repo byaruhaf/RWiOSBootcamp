@@ -3,33 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F204814248AA95100C1883C /* BullsEyeGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F204813248AA95100C1883C /* BullsEyeGame.framework */; };
-		5F204815248AA95100C1883C /* BullsEyeGame.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F204813248AA95100C1883C /* BullsEyeGame.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F5F35D1248A0AB40037C393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35D0248A0AB40037C393 /* AppDelegate.swift */; };
 		5F5F35D3248A0AB40037C393 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35D2248A0AB40037C393 /* SceneDelegate.swift */; };
 		5F5F35D5248A0AB40037C393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35D4248A0AB40037C393 /* ViewController.swift */; };
 		5F5F35D8248A0AB40037C393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5F35D6248A0AB40037C393 /* Main.storyboard */; };
 		5F5F35DA248A0AB70037C393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5F35D9248A0AB70037C393 /* Assets.xcassets */; };
 		5F5F35DD248A0AB70037C393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5F35DB248A0AB70037C393 /* LaunchScreen.storyboard */; };
+		5F9AC42C248B49170059D379 /* BullsEyeGameModel in Frameworks */ = {isa = PBXBuildFile; productRef = 5F9AC42B248B49170059D379 /* BullsEyeGameModel */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5F204816248AA95100C1883C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5F204815248AA95100C1883C /* BullsEyeGame.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F204813248AA95100C1883C /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F204814248AA95100C1883C /* BullsEyeGame.framework in Frameworks */,
+				5F9AC42C248B49170059D379 /* BullsEyeGameModel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,13 +89,15 @@
 				5F5F35C9248A0AB40037C393 /* Sources */,
 				5F5F35CA248A0AB40037C393 /* Frameworks */,
 				5F5F35CB248A0AB40037C393 /* Resources */,
-				5F204816248AA95100C1883C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RevBullsEye;
+			packageProductDependencies = (
+				5F9AC42B248B49170059D379 /* BullsEyeGameModel */,
+			);
 			productName = RevBullsEye;
 			productReference = 5F5F35CD248A0AB40037C393 /* RevBullsEye.app */;
 			productType = "com.apple.product-type.application";
@@ -366,6 +353,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F9AC42B248B49170059D379 /* BullsEyeGameModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BullsEyeGameModel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F5F35C5248A0AB40037C393 /* Project object */;
 }

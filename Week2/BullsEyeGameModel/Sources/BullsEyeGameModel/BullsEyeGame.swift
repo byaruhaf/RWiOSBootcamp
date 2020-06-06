@@ -9,18 +9,19 @@
 import Foundation
 import Combine
 
+@available(iOS 13.0, *)
 public class BullsEyeGame {
-    public var gameStartValue = 0
-    public var playerValue = 0
     @Published public var targetValue = 0
     @Published public var score = 0
     @Published public var round = 0
+    public var gameStartValue = 0
+    public var playerValue = 0
 
-   public init() {
+    public init() {
     }
 
 
-   public func start() {
+    public func start() {
         score = 0
         round = 0
         startRound()

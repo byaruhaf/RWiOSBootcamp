@@ -8,7 +8,7 @@
 
 import UIKit
 import Combine
-import BullsEyeGame
+import BullsEyeGameModel
 
 class ViewController: UIViewController {
     var game = BullsEyeGame()

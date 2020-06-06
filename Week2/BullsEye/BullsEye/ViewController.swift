@@ -8,7 +8,7 @@
 
 import UIKit
 import Combine
-import BullsEyeGame
+import BullsEyeGameModel
 
 class ViewController: UIViewController {
     var game = BullsEyeGame()
@@ -21,7 +21,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        startNewGame()
         game.start()
         subscribeToModel()
     }
