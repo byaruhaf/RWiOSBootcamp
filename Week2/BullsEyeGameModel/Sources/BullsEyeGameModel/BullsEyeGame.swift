@@ -17,6 +17,7 @@ public class BullsEyeGame {
     @Published public var round = 0
     public var gameStartValue = 0
     public var playerValue = 0
+    public var isHighScore = false
 
     // Treat: Hint
     public var percentageDifference: Int { return abs(targetValue - playerValue) }
@@ -38,6 +39,7 @@ public class BullsEyeGame {
         round += 1
         targetValue = Int.random(in: 1...100)
         gameStartValue = 50
+        isHighScore = false
     }
 
 
@@ -51,11 +53,13 @@ public class BullsEyeGame {
         var message:String {
             if percentageDifference == 0 {
                 points += 100
+                isHighScore = true
                 return "Perfect!"
             } else if percentageDifference < 5 {
                 if percentageDifference == 1 {
                     points += 50
                 }
+                isHighScore = true
                 return "You almost had it!"
             } else if percentageDifference < 10 {
                 return "Pretty good!"

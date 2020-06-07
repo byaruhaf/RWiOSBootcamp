@@ -10,9 +10,11 @@ import UIKit
 import Combine
 import BullsEyeGameModel
 
+
 class ViewController: UIViewController {
     var game = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
+    var highScoreAnimation = HighScoreAnimation()
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
@@ -26,12 +28,19 @@ class ViewController: UIViewController {
 //        sliderSetUp()
         game.start()
         subscribeToModel()
+        animationSetup()
     }
 
     @IBAction func showAlert() {
-        self.gameAlert(game.pointsCalculator(for:game.percentageDifference)) {
+        let result = game.pointsCalculator(for:game.percentageDifference)
+        if game.isHighScore {
+            self.view.layer.addSublayer(highScoreAnimation.emitter)
+        }
+        self.gameAlert(result) {
             self.game.startRound()
             self.slider.value = Float(self.game.gameStartValue)
+            self.highScoreAnimation.emitter.removeFromSuperlayer()
+            self.slider.minimumTrackTintColor = UIColor.blue
         }
     }
 
@@ -57,14 +66,10 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor =
             UIColor.blue.withAlphaComponent(CGFloat(game.percentageDifference)/100.0)
     }
-
-//    fileprivate func sliderSetUp() {
-//        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-//
-//        let trackLeftImageresizable = bluetrackImage?.resizableImage(withCapInsets: insets)
-//        slider.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
-//
-//        let trackRightImageresizable = bluetrackImage?.resizableImage(withCapInsets: insets)
-//        slider.setMaximumTrackImage(trackRightImageresizable, for: .normal)
-//    }
+    fileprivate func animationSetup() {
+        highScoreAnimation.emitter.emitterPosition = CGPoint(x: self.view.frame.size.width / 2, y: -10)
+        highScoreAnimation.emitter.emitterShape = CAEmitterLayerEmitterShape.line
+        highScoreAnimation.emitter.emitterSize = CGSize(width: self.view.frame.size.width, height: 2.0)
+        highScoreAnimation.emitter.emitterCells = highScoreAnimation.generateEmitterCells()
+    }
 }

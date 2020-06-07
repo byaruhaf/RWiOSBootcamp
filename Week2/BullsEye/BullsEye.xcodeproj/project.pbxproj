@@ -15,6 +15,7 @@
 		5F9AC42A248B48670059D379 /* BullsEyeGameModel in Frameworks */ = {isa = PBXBuildFile; productRef = 5F9AC429248B48670059D379 /* BullsEyeGameModel */; };
 		5FB12230248D568F00B3CF9C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1222E248D568F00B3CF9C /* CustomButton.swift */; };
 		5FB12231248D568F00B3CF9C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1222F248D568F00B3CF9C /* CustomSlider.swift */; };
+		5FB12233248D6C4A00B3CF9C /* HighScoreAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB12232248D6C4A00B3CF9C /* HighScoreAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5F20480E248AA94500C1883C /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB1222E248D568F00B3CF9C /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5FB1222F248D568F00B3CF9C /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		5FB12232248D6C4A00B3CF9C /* HighScoreAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				352A679A20D171E800D5BF05 /* ViewController.swift */,
+				5FB12232248D6C4A00B3CF9C /* HighScoreAnimation.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB12233248D6C4A00B3CF9C /* HighScoreAnimation.swift in Sources */,
 				352A679B20D171E800D5BF05 /* ViewController.swift in Sources */,
 				352A679920D171E800D5BF05 /* AppDelegate.swift in Sources */,
 				5FB12230248D568F00B3CF9C /* CustomButton.swift in Sources */,
