@@ -41,6 +41,6 @@ struct RGB {
     let rDiff = Double(r - target.r)
     let gDiff = Double(g - target.g)
     let bDiff = Double(b - target.b)
-    return sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff) / 255.0
+    return sqrt((rDiff * rDiff + gDiff * gDiff + bDiff * bDiff) / 3)  / 255 * 100
   }
 }

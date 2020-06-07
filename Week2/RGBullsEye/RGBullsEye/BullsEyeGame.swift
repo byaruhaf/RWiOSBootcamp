@@ -9,40 +9,54 @@
 import Foundation
 import Combine
 
-class BullsEyeGame {
-    var gameStartValue = 0
-    var playerValue = 0
-    @Published var gameTargetValue = 0
-    @Published var score = 0
-    @Published var round = 0
 
-    func startGame() {
+class BullsEyeGame {
+
+    @Published  var score = 0
+    @Published  var round = 0
+     var gameStartValue = RGB()
+     var playerValue = RGB()
+    var targetValue = RGB()
+
+     init() {
+    }
+
+
+    /// Description
+     func start() {
         score = 0
         round = 0
         startRound()
     }
 
-    func startRound() {
+
+    /// Description
+     func startRound() {
         round += 1
-        gameTargetValue = Int.random(in: 1...100)
-        gameStartValue = 50
+    targetValue = RGB(r: Int.random(in: 0...255),
+                      g: Int.random(in: 0...255),
+                      b: Int.random(in: 0...255))
+        print(targetValue)
     }
 
-    func gamePointsCalculator() -> (points:Int,message:String) {
-        let difference = abs(gameTargetValue - playerValue)
-        var points = 100 - difference
+
+    /// Description
+    /// - Parameter percentageDifference: difference description
+    /// - Returns: description
+    func pointsCalculator(for percentageDifference:Int) -> (points:Int,message:String) {
+        var points = 100 - percentageDifference
 
         score += points
         var message:String {
-            if difference == 0 {
+            if percentageDifference == 0 {
                 points += 100
                 return "Perfect!"
-            } else if difference < 5 {
-                if difference == 1 {
+            } else if percentageDifference < 5 {
+                if percentageDifference == 1 {
                     points += 50
                 }
                 return "You almost had it!"
-            } else if difference < 10 {
+            } else if percentageDifference < 10 {
                 return "Pretty good!"
             } else {
                 return "Not even close..."
@@ -50,4 +64,6 @@ class BullsEyeGame {
         }
         return (points,message)
     }
+
 }
+

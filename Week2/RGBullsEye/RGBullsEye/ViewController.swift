@@ -41,35 +41,48 @@ class ViewController: UIViewController {
   @IBOutlet weak var scoreLabel: UILabel!
   
   let game = BullsEyeGame()
-  var rgb = RGB()
+var cancellables = Set<AnyCancellable>()
 
   
   @IBAction func aSliderMoved(sender: UISlider) {
     updatedSliderLables()
-    guessLabel.backgroundColor = UIColor(rgbStruct: rgb)
+    game.playerValue = RGB(r: Int(redSlider.value), g: Int(greenSlider.value), b: Int(blueSlider.value))
+    guessLabel.backgroundColor = UIColor(rgbStruct:game.playerValue)
   }
   
   @IBAction func showAlert(sender: AnyObject) {
+    let percentageDifference = Int(game.playerValue.difference(target: game.targetValue))
+    print(percentageDifference)
+    self.gameAlert(game.pointsCalculator(for:percentageDifference)) {
+        self.game.startRound()
+        self.targetLabel.backgroundColor = UIColor(rgbStruct:self.game.targetValue )
+    }
 
   }
   
   @IBAction func startOver(sender: AnyObject) {
+    game.start()
 
   }
-  
-  func updateView() {
 
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    game.startGame()
+    game.start()
+    subscribeToModel()
+    self.targetLabel.backgroundColor = UIColor(rgbStruct:self.game.targetValue )
   }
 
     fileprivate func updatedSliderLables(){
         self.redLabel.text = "\(Int(redSlider.value))"
         self.greenLabel.text = "\(Int(greenSlider.value))"
         self.blueLabel.text = "\(Int(blueSlider.value))"
+    }
+
+    fileprivate func subscribeToModel() {
+        game.$score.map{$0.description}
+            .assign(to: \.text, on: scoreLabel).store(in: &cancellables)
+        game.$round.map{$0.description}
+            .assign(to: \.text, on: roundLabel).store(in: &cancellables)
     }
 
 }

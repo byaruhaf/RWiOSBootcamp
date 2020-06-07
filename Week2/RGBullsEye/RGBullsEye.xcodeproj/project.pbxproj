@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181A114F22AD925B003EA9CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181A114E22AD925B003EA9CF /* LaunchScreen.storyboard */; };
+		5FBCC4D9248B93AB0006AC9D /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */; };
 		CDCB57E51BED8F4800003224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB57E41BED8F4800003224 /* AppDelegate.swift */; };
 		CDCB57E71BED8F4800003224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB57E61BED8F4800003224 /* ViewController.swift */; };
 		CDCB57EA1BED8F4800003224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCB57E81BED8F4800003224 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		181A114E22AD925B003EA9CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		CDCB57E11BED8F4800003224 /* RGBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCB57E41BED8F4800003224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDCB57E61BED8F4800003224 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				CDCB57E41BED8F4800003224 /* AppDelegate.swift */,
 				CDCB57E61BED8F4800003224 /* ViewController.swift */,
 				CDCB57F61BED941D00003224 /* BullsEyeGame.swift */,
+				5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */,
 				CDCB57F71BED941D00003224 /* RGB.swift */,
 				CDCB57FA1BED986300003224 /* AboutViewController.swift */,
 				CDCB57E81BED8F4800003224 /* Main.storyboard */,
@@ -164,6 +167,7 @@
 				CDCB57E51BED8F4800003224 /* AppDelegate.swift in Sources */,
 				CDCB57F81BED941D00003224 /* BullsEyeGame.swift in Sources */,
 				CDCB57FB1BED986300003224 /* AboutViewController.swift in Sources */,
+				5FBCC4D9248B93AB0006AC9D /* UIAlertController.swift in Sources */,
 				CDCB57F91BED941D00003224 /* RGB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        let difference = abs(game.targetValue - game.playerValue)
-        self.gameAlert(game.pointsCalculator(for:difference)) {
+        let percentageDifference = abs(game.targetValue - game.playerValue)
+        self.gameAlert(game.pointsCalculator(for:percentageDifference)) {
             self.game.startRound()
             self.slider.value = Float(self.game.gameStartValue)
         }
