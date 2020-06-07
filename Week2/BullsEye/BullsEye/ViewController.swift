@@ -18,9 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
+    let bluetrackImage = UIImage(named: "BlueSliderTrackLeft")
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        sliderSetUp()
         game.start()
         subscribeToModel()
     }
@@ -36,7 +39,6 @@ class ViewController: UIViewController {
         game.playerValue = Int(slider.value.rounded())
         setupSliderHint()
     }
-
 
     @IBAction func startNewGame() {
         game.start()
@@ -56,4 +58,13 @@ class ViewController: UIViewController {
             UIColor.blue.withAlphaComponent(CGFloat(game.percentageDifference)/100.0)
     }
 
+//    fileprivate func sliderSetUp() {
+//        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+//
+//        let trackLeftImageresizable = bluetrackImage?.resizableImage(withCapInsets: insets)
+//        slider.setMinimumTrackImage(trackLeftImageresizable, for: .normal)
+//
+//        let trackRightImageresizable = bluetrackImage?.resizableImage(withCapInsets: insets)
+//        slider.setMaximumTrackImage(trackRightImageresizable, for: .normal)
+//    }
 }

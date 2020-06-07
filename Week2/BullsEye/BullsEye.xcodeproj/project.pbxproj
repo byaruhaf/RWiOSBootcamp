@@ -13,6 +13,8 @@
 		352A67A020D171EA00D5BF05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A679F20D171EA00D5BF05 /* Assets.xcassets */; };
 		352A67A320D171EA00D5BF05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */; };
 		5F9AC42A248B48670059D379 /* BullsEyeGameModel in Frameworks */ = {isa = PBXBuildFile; productRef = 5F9AC429248B48670059D379 /* BullsEyeGameModel */; };
+		5FB12230248D568F00B3CF9C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1222E248D568F00B3CF9C /* CustomButton.swift */; };
+		5FB12231248D568F00B3CF9C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1222F248D568F00B3CF9C /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		352A67A220D171EA00D5BF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352A67A420D171EA00D5BF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F20480E248AA94500C1883C /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB1222E248D568F00B3CF9C /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5FB1222F248D568F00B3CF9C /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		352A679720D171E800D5BF05 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				5FBCC4DD248D462B0006AC9D /* Extensions */,
 				5F5F35EA248A83330037C393 /* ViewControllers */,
 				5F5F35E8248A82630037C393 /* Storyboards */,
 				5F5F35E9248A82FF0037C393 /* Supporting Files */,
@@ -98,6 +103,15 @@
 				352A679A20D171E800D5BF05 /* ViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5FBCC4DD248D462B0006AC9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5FB1222E248D568F00B3CF9C /* CustomButton.swift */,
+				5FB1222F248D568F00B3CF9C /* CustomSlider.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +191,8 @@
 			files = (
 				352A679B20D171E800D5BF05 /* ViewController.swift in Sources */,
 				352A679920D171E800D5BF05 /* AppDelegate.swift in Sources */,
+				5FB12230248D568F00B3CF9C /* CustomButton.swift in Sources */,
+				5FB12231248D568F00B3CF9C /* CustomSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
