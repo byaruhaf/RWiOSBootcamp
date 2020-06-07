@@ -12,11 +12,11 @@ import Combine
 
 class BullsEyeGame {
 
-    @Published  var score = 0
-    @Published  var round = 0
+    @Published var targetValue = RGB()
+    @Published var score = 0
+    @Published var round = 0
      var gameStartValue = RGB()
      var playerValue = RGB()
-    var targetValue = RGB()
 
      init() {
     }

@@ -55,7 +55,6 @@ var cancellables = Set<AnyCancellable>()
     print(percentageDifference)
     self.gameAlert(game.pointsCalculator(for:percentageDifference)) {
         self.game.startRound()
-        self.targetLabel.backgroundColor = UIColor(rgbStruct:self.game.targetValue )
     }
 
   }
@@ -69,7 +68,6 @@ var cancellables = Set<AnyCancellable>()
     super.viewDidLoad()
     game.start()
     subscribeToModel()
-    self.targetLabel.backgroundColor = UIColor(rgbStruct:self.game.targetValue )
   }
 
     fileprivate func updatedSliderLables(){
@@ -83,6 +81,8 @@ var cancellables = Set<AnyCancellable>()
             .assign(to: \.text, on: scoreLabel).store(in: &cancellables)
         game.$round.map{$0.description}
             .assign(to: \.text, on: roundLabel).store(in: &cancellables)
+        game.$targetValue.map{UIColor(rgbStruct: $0)}
+        .assign(to: \.backgroundColor, on: targetLabel).store(in: &cancellables)
     }
 
 }
