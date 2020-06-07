@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var game = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
     var guessTextLength: Int = 0
-    let textValueChangePublisher = NotificationCenter.Publisher.init(center: .default, name: UITextField.textDidChangeNotification , object: nil)
+//    let textValueChangePublisher = NotificationCenter.Publisher.init(center: .default, name: UITextField.textDidChangeNotification , object: nil)
 
     
 
@@ -23,14 +23,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var warnLabel: UILabel!
-    
+    @IBOutlet weak var hitMeButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
         startNewGame()
         subscribeToModel()
-        setPublisher()
+//        setPublisher()
         slider.isUserInteractionEnabled = false
+        hitMeButton.isEnabled = false
+        targetTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+
     }
 
     @IBAction func showAlert() {
@@ -43,6 +47,8 @@ class ViewController: UIViewController {
             self.game.startRound()
             self.slider.value = Float(self.game.targetValue)
             self.targetTextField.text = ""
+            self.hitMeButton.isEnabled = false
+//            self.slider.minimumTrackTintColor = UIColor.blue.withAlphaComponent(CGFloat(1))
         }
     }
 
@@ -54,6 +60,29 @@ class ViewController: UIViewController {
                     self.slider.minimumTrackTintColor =
                         UIColor.blue.withAlphaComponent(CGFloat(self.game.percentageDifference)/100.0)
     }
+
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard let guess = targetTextField.text, !guess.isEmpty
+            else {
+                hitMeButton.isEnabled = false
+                return
+        }
+        guard let guessNum = Int(guess), (1...100).contains(guessNum)
+            else {
+                hitMeButton.isEnabled = false
+                return
+        }
+        hitMeButton.isEnabled = true
+        self.slider.minimumTrackTintColor =
+            UIColor.blue.withAlphaComponent(CGFloat(self.game.percentageDifference)/100.0)
+    }
+
 
     @IBAction func startNewGame() {
         print("Starting")
@@ -86,22 +115,24 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
 
-    func setPublisher() {
-        let textFieldTextCounter = Publishers.Map(upstream: self.textValueChangePublisher) { notification -> Int in
-            let length = (notification.object as! UITextField).text?.count ?? 0
-            if length > 3 {
-                self.warnLabel.text = "Entered text length is invalid"
-            }
-            else {
-                self.warnLabel.text = ""
-            }
-            return length
-        }
-
-        let nameTextFieldSubscriber = Subscribers.Assign(object: self, keyPath: \.guessTextLength)
-
-        textFieldTextCounter.subscribe(nameTextFieldSubscriber)
-    }
+//    func setPublisher() {
+//        let textFieldTextCounter = Publishers.Map(upstream: self.textValueChangePublisher) { notification -> Int in
+//            let length = (notification.object as! UITextField).text?.count ?? 0
+//            if length > 3 {
+//                self.warnLabel.text = "Entered text length is invalid"
+//            }
+//            else {
+//                self.warnLabel.text = ""
+//            }
+//            return length
+//        }
+//        .compactMap { $0.object as? UITextField }
+//        .map { $0.text ?? "" }
+//
+//        let nameTextFieldSubscriber = Subscribers.Assign(object: self, keyPath: \.guessTextLength)
+//
+//        textFieldTextCounter.subscribe(nameTextFieldSubscriber)
+//    }
 
 
 

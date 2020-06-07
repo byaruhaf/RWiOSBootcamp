@@ -40,7 +40,6 @@ class ViewController: UIViewController {
 
     @IBAction func startNewGame() {
         game.start()
-        setupSliderHint()
     }
 
     fileprivate func subscribeToModel() {
