@@ -44,11 +44,14 @@ class ViewController: UIViewController {
         guessLabel.backgroundColor = UIColor(rgbStruct:game.playerValue)
     }
 
+
     @IBAction func showAlert(sender: AnyObject) {
+        displayTargetRGB()
         let percentageDifference = Int(game.playerValue.difference(target: game.targetValue))
         print(percentageDifference)
-        self.gameAlert(game.pointsCalculator(for:percentageDifference)) {
-            self.game.startRound()
+        self.gameAlert(game.pointsCalculator(for:percentageDifference)) { [weak self] in
+            self?.game.startRound()
+            self?.targetTextLabel.attributedText = NSMutableAttributedString(string:"match this color")
         }
     }
 
@@ -69,11 +72,33 @@ class ViewController: UIViewController {
     }
 
     fileprivate func subscribeToModel() {
-        game.$score.map{$0.description}
-            .assign(to: \.text, on: scoreLabel).store(in: &cancellables)
-        game.$round.map{$0.description}
-            .assign(to: \.text, on: roundLabel).store(in: &cancellables)
-        game.$targetValue.map{UIColor(rgbStruct: $0)}
-            .assign(to: \.backgroundColor, on: targetLabel).store(in: &cancellables)
+        game.$score.sink { [weak self] in self?.scoreLabel.text = $0.description }
+            .store(in: &cancellables)
+        game.$round.sink { [weak self] in self?.roundLabel.text = $0.description }
+            .store(in: &cancellables)
+        game.$targetValue.sink { [weak self] in self?.targetLabel.backgroundColor = UIColor(rgbStruct: $0) }
+            .store(in: &self.cancellables)
+    }
+
+    fileprivate func displayTargetRGB() {
+        // Create the attributed string
+        let rgbTargetString = NSMutableAttributedString(string:"")
+        // Declare the colors
+        let myStringColor1 = UIColor.systemRed
+        let myStringColor2 = UIColor.systemGreen
+        let myStringColor3 = UIColor.systemBlue
+        // Create the attributes and add them to the string
+        let firstAttributes = [NSAttributedString.Key.foregroundColor: myStringColor1]
+        let secondAttributes = [NSAttributedString.Key.foregroundColor: myStringColor2]
+        let thirdAttributes = [NSAttributedString.Key.foregroundColor: myStringColor3]
+        // add them to the strings
+        let firstString = NSMutableAttributedString(string: "Red: \(game.targetValue.r) ", attributes: firstAttributes)
+        let secondString = NSAttributedString(string: "Green: \(game.targetValue.g) ", attributes: secondAttributes)
+        let thirdString = NSAttributedString(string: "Blue: \(game.targetValue.b)", attributes: thirdAttributes)
+        //join them together
+        rgbTargetString.append(firstString)
+        rgbTargetString.append(secondString)
+        rgbTargetString.append(thirdString)
+        targetTextLabel.attributedText = rgbTargetString
     }
 }

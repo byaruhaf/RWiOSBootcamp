@@ -43,12 +43,12 @@ class ViewController: UIViewController {
     }
 
     fileprivate func subscribeToModel() {
-        game.$score.map{$0.description}
-            .assign(to: \.text, on: scoreLabel).store(in: &cancellables)
-        game.$round.map{$0.description}
-            .assign(to: \.text, on: roundLabel).store(in: &cancellables)
-        game.$targetValue.map{$0.description}
-            .assign(to: \.text, on: targetLabel).store(in: &cancellables)
+        game.$score.sink { [weak self] in self?.scoreLabel.text = $0.description }
+            .store(in: &cancellables)
+        game.$round.sink { [weak self] in self?.roundLabel.text = $0.description }
+            .store(in: &cancellables)
+        game.$targetValue.sink { [weak self] in self?.targetLabel.text = $0.description }
+            .store(in: &cancellables)
     }
 
     fileprivate func setupSliderHint() {

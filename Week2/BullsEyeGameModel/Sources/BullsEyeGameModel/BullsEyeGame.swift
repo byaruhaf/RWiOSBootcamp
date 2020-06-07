@@ -46,7 +46,8 @@ public class BullsEyeGame {
     /// - Returns: description
     public func pointsCalculator(for percentageDifference:Int) -> (points:Int,message:String) {
         var points = 100 - percentageDifference
-
+        score += points
+        // calculate bonus moings and determine message to user. 
         var message:String {
             if percentageDifference == 0 {
                 points += 100
@@ -62,7 +63,6 @@ public class BullsEyeGame {
                 return "Not even close..."
             }
         }
-
         score += points
         return (points,message)
     }
