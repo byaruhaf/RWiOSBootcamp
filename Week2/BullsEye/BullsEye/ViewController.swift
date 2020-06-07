@@ -26,8 +26,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        let percentageDifference = abs(game.targetValue - game.playerValue)
-        self.gameAlert(game.pointsCalculator(for:percentageDifference)) {
+        self.gameAlert(game.pointsCalculator(for:game.percentageDifference)) {
             self.game.startRound()
             self.slider.value = Float(self.game.gameStartValue)
         }
@@ -35,10 +34,13 @@ class ViewController: UIViewController {
 
     @IBAction func sliderMoved(_ slider: UISlider) {
         game.playerValue = Int(slider.value.rounded())
+        setupSliderHint()
     }
+
 
     @IBAction func startNewGame() {
         game.start()
+        setupSliderHint()
     }
 
     fileprivate func subscribeToModel() {
@@ -49,4 +51,10 @@ class ViewController: UIViewController {
         game.$targetValue.map{$0.description}
             .assign(to: \.text, on: targetLabel).store(in: &cancellables)
     }
+
+    fileprivate func setupSliderHint() {
+        slider.minimumTrackTintColor =
+            UIColor.blue.withAlphaComponent(CGFloat(game.percentageDifference)/100.0)
+    }
+
 }
