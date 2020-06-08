@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         self.gameAlert(result) { [weak self] in
             self?.game.startRound()
             self?.newRoundSetup()
+            self?.slider.minimumTrackTintColor = UIColor.blue
         }
     }
 
