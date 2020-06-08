@@ -36,6 +36,7 @@ class BullsEyeGame {
         round += 1
         targetValue = RGB.random()
         isHighScore = false
+        print(targetValue)
     }
 
 

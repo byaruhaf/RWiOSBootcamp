@@ -16,43 +16,46 @@ The app can be used with any iPhone that supports **[iOS 13](https://support.app
 ### Assigment Requirements completed
 * Refactor the ViewController in BullsEye Game to create a UI-independent model.
 * Test UI-independent model on RGBullsEye Game replace Int() type with RGB() type.
-* modify slider’s minimum track tint color in BullsEye Game to provide visual hint to player
+* modify slider’s minimum track tint color in BullsEye Game to provide a visual hint to the player
 
 ### Stretch Above and Beyond Requirements completed:
 * “Reverse” the BullsEye game to use a text field.
-* Modify slider’s minimum track tint color in RevBullsEye Game to provide visual hint to player
+* Modify slider’s minimum track tint color in RevBullsEye Game to provide a visual hint to the player
 * Prevent the user from submitting text that won’t work, either because
-	* The text isn’t a number
-	* The Number outside the slider’s range
-* User can dissmiss the keyboard using two methords for the RevBullsEye
- 	1. Tap screen
-	2. Tap done button 
+    * The text isn’t a number
+    * The Number outside the slider’s range
+* User can dismiss the keyboard using two methods for the RevBullsEye
+     1. Tap screen
+    2. Tap done button 
  
 
 ### Additional Assignment Goals completed
-* Groups all game projects and packages under one xcode workspace so its easier to work on them together
+* Groups all game projects and packages under one Xcode workspace so it's easier to work on them together
 * Model code for games BullsEye & RevBullsEye moved to Swift Package to avoid duplicating code.
-* As an SPM Package model code can be distributed to other developer to make their own version of BullsEye
-* Use Apples Combine framework to so UI can listen for changes in the model.
-* Show animation when user has a high score. 
+* As an SPM Package model code can be distributed to other developers to make their version of BullsEye
+* Use Apples Combine framework so UI can listen for changes in the model.
+* Show animation when the user has a high score. 
 
 ### Class vs Struct:
-My personal preference is always start with a struct, why you wonder. Because Crusty said so.
+My personal preference is always to start with a struct. **why you wonder?**
 
-![Crusty](https://i.imgur.com/604g7JU.jpg) 
+Because Crusty said so.
 
-Jokes Aside, The reason i prefer structs are the value semantics esapcaly mutabilty.
+![Crusty](Demo/Crusty.png) 
 
-But as game model required **mutation** 
-I changed the model to a class to avoid adding mutation keyword to all my model funcitons.
-The next version of the 3 games could be rewritten for **MVVM** so the **model** is a struct & the **view model** is a class.  
+**All joking aside,**
+
+The reason I prefer structs is the value semantics especially mutability. But as game model required **mutation** I changed the model to a class to avoid adding mutation keyword to all my model functions. The next version of the 3 games could be rewritten for **MVVM** so the **model** is a struct & the **view model** is a class.  
 
 ### Shared Game assets :
-The shared game assets could also be moved from the indivaual game project to Swift Package.
-The feature **[SE-0271:Package Manager Resources](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md)** will be available in swift 5.3. So next version of BullsEye & RevBullsEye can take advantage of that. 
+The shared game assets could also be moved from the individual game project to Swift Package.
+The feature **[SE-0271: Package Manager Resources](https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md)** will be available in swift 5.3. So the next version of BullsEye & RevBullsEye can take advantage of that. 
 
-### Game App
-!Put Screenshots heree!
+## App Demo
+### BullsEye
+![RGBullsEye](Demo/Bull3.gif)
+### RGBullsEye
+![RGBullsEye](Demo/RGBBull.gif)
 
 ## Attribution
 Game Background Image created by <a href='https://www.freepik.com/upklyak'> upklyak</a>
