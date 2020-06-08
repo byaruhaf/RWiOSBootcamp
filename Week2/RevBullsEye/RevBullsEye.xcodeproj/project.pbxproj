@@ -18,6 +18,7 @@
 		5F5F35D8248A0AB40037C393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5F35D6248A0AB40037C393 /* Main.storyboard */; };
 		5F5F35DA248A0AB70037C393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5F35D9248A0AB70037C393 /* Assets.xcassets */; };
 		5F5F35DD248A0AB70037C393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5F35DB248A0AB70037C393 /* LaunchScreen.storyboard */; };
+		5FD926FE248ECBDD006C7D6B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD926FD248ECBDD006C7D6B /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5F5F35D9248A0AB70037C393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F5F35DC248A0AB70037C393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F5F35DE248A0AB70037C393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FD926FD248ECBDD006C7D6B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5F35D4248A0AB40037C393 /* ViewController.swift */,
+				5FD926FD248ECBDD006C7D6B /* AboutViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				5F2AF910248DF11300419EB5 /* CustomView.swift in Sources */,
 				5F5F35D3248A0AB40037C393 /* SceneDelegate.swift in Sources */,
 				5F2AF901248DE40E00419EB5 /* HighScoreAnimation.swift in Sources */,
+				5FD926FE248ECBDD006C7D6B /* AboutViewController.swift in Sources */,
 				5F2AF90E248DF11300419EB5 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
