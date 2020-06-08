@@ -63,7 +63,6 @@ class ViewController: UIViewController {
         guard let text = sender.text else { return }
         guard let playerValue = Int(text) else { return  }
         game.playerValue = playerValue
-        print(playerValue)
                     self.slider.minimumTrackTintColor =
                         UIColor.blue.withAlphaComponent(CGFloat(self.game.percentageDifference)/100.0)
     }
@@ -92,10 +91,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func startNewGame() {
-        print("Starting")
         game.start()
         self.slider.value = Float(self.game.targetValue)
-        print("\(slider.value)")
     }
 
     fileprivate func subscribeToModel() {
