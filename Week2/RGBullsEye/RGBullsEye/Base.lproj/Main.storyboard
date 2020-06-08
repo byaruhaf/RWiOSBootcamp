@@ -312,13 +312,15 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3e-ii-G2Q">
-                                <rect key="frame" x="64" y="8" width="768" height="142.5"/>
-                                <string key="text">*** RGBull's Eye ***
-
+                                <rect key="frame" x="64" y="8" width="768" height="178.5"/>
+                                <string key="text">RGBull's Eye
 Welcome to the awesome game of RGBull's Eye where you can win points and fame by dragging 3 sliders.
 
-Your goal is to place the sliders as close as possible to the target RGB value. The closer you are, the more points you score. Enjoy!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+Your goal is to place the sliders as close as possible to the target RGB value. The closer you are, the more points you score. Enjoy!
+
+From: Franklin B
+Raywenderlich Ios Bootcamp</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -332,6 +334,9 @@ Your goal is to place the sliders as close as possible to the target RGB value. 
                             <constraint firstItem="X3e-ii-G2Q" firstAttribute="trailing" secondItem="64x-Y3-HJu" secondAttribute="trailingMargin" id="yyJ-7g-rxn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboutGame" destination="X3e-ii-G2Q" id="bW4-xb-fTw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQx-wo-U70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
