@@ -18,15 +18,12 @@ public class BullsEyeGame {
     public var gameStartValue = 0
     public var playerValue = 0
     public var isHighScore = false
-
-    // Treat: Hint
     public var percentageDifference: Int { return abs(targetValue - playerValue) }
 
-    public init() {
-    }
+    public init() {}
 
 
-    /// Description
+    /// A Function to start the game
     public func start() {
         score = 0
         round = 0
@@ -34,7 +31,7 @@ public class BullsEyeGame {
     }
 
 
-    /// Description
+    /// A Function to start new round by generating a random TargetValue
     public func startRound() {
         round += 1
         targetValue = Int.random(in: 1...100)
@@ -43,31 +40,33 @@ public class BullsEyeGame {
     }
 
 
-    /// Description
-    /// - Parameter percentageDifference: difference description
-    /// - Returns: description
+    /// A Function to calculate game point
+    /// - Parameter percentageDifference:  The percentage difference  between target and player values
+    /// - Returns: A tuple with total points and message to the player
     public func pointsCalculator(for percentageDifference:Int) -> (points:Int,message:String) {
+        // Basic Points
         var points = 100 - percentageDifference
-        score += points
-        // calculate bonus moings and determine message to user. 
-        var message:String {
-            if percentageDifference == 0 {
-                points += 100
-                isHighScore = true
-                return "Perfect!"
-            } else if percentageDifference < 5 {
-                if percentageDifference == 1 {
-                    points += 50
-                }
-                isHighScore = true
-                return "You almost had it!"
-            } else if percentageDifference < 10 {
-                return "Pretty good!"
-            } else {
-                return "Not even close..."
+
+        let message: String
+
+        // Calulate Bonus Points
+        if percentageDifference == 0 {
+            message = "Perfect!"
+            points += 100
+        } else if percentageDifference < 5 {
+            message = "You almost had it!"
+            if percentageDifference == 1 {
+                points += 50
             }
+        } else if percentageDifference < 10 {
+            message = "Pretty good!"
+        } else {
+            message = "Not even close..."
         }
+
+        //Base points & Bonus points are added to score
         score += points
+        
         return (points,message)
     }
 
