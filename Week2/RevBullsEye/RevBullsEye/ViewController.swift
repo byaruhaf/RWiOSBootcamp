@@ -10,10 +10,12 @@ import UIKit
 import Combine
 import BullsEyeGameModel
 
+
 class ViewController: UIViewController {
     var game = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
     var guessTextLength: Int = 0
+    var highScoreAnimation = HighScoreAnimation()
 //    let textValueChangePublisher = NotificationCenter.Publisher.init(center: .default, name: UITextField.textDidChangeNotification , object: nil)
 
     
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        animationSetup()
         setupTextFields()
         startNewGame()
         subscribeToModel()
@@ -42,15 +45,19 @@ class ViewController: UIViewController {
         guard let playerValue = Int(text) else { return  }
         game.playerValue = playerValue
 
-        let percentageDifference = abs(game.targetValue - game.playerValue)
-        self.gameAlert(game.pointsCalculator(for:percentageDifference)) {
-            self.game.startRound()
-            self.slider.value = Float(self.game.targetValue)
-            self.targetTextField.text = ""
-            self.hitMeButton.isEnabled = false
-//            self.slider.minimumTrackTintColor = UIColor.blue.withAlphaComponent(CGFloat(1))
+//        let percentageDifference = abs(game.targetValue - game.playerValue)
+        let result = game.pointsCalculator(for:game.percentageDifference)
+        if game.isHighScore {
+            self.view.layer.addSublayer(highScoreAnimation.emitter)
+        }
+        self.gameAlert(result) { [weak self] in
+            self?.game.startRound()
+            self?.newRoundSetup()
         }
     }
+
+
+
 
     @IBAction func userGuessDidChange(_ sender: UITextField) {
         guard let text = sender.text else { return }
@@ -98,6 +105,20 @@ class ViewController: UIViewController {
             .store(in: &cancellables)
     }
 
+    fileprivate func newRoundSetup() {
+        self.slider.value = Float(self.game.targetValue)
+        self.targetTextField.text = ""
+        self.hitMeButton.isEnabled = false
+        self.highScoreAnimation.emitter.removeFromSuperlayer()
+    }
+
+    fileprivate func animationSetup() {
+        highScoreAnimation.emitter.emitterPosition = CGPoint(x: self.view.frame.size.width / 2, y: -10)
+        highScoreAnimation.emitter.emitterShape = CAEmitterLayerEmitterShape.line
+        highScoreAnimation.emitter.emitterSize = CGSize(width: self.view.frame.size.width, height: 2.0)
+        highScoreAnimation.emitter.emitterCells = highScoreAnimation.generateEmitterCells()
+    }
+
     func setupTextFields() {
         // Dissmiss keyboard by touching anywhere on the screen
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
@@ -133,7 +154,6 @@ class ViewController: UIViewController {
 //
 //        textFieldTextCounter.subscribe(nameTextFieldSubscriber)
 //    }
-
 
 
 }

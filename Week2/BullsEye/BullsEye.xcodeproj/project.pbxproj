@@ -12,6 +12,7 @@
 		352A679E20D171E800D5BF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A679C20D171E800D5BF05 /* Main.storyboard */; };
 		352A67A020D171EA00D5BF05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A679F20D171EA00D5BF05 /* Assets.xcassets */; };
 		352A67A320D171EA00D5BF05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A67A120D171EA00D5BF05 /* LaunchScreen.storyboard */; };
+		5F9626EA248D98F100F5C067 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9626E9248D98F100F5C067 /* CustomView.swift */; };
 		5F9AC42A248B48670059D379 /* BullsEyeGameModel in Frameworks */ = {isa = PBXBuildFile; productRef = 5F9AC429248B48670059D379 /* BullsEyeGameModel */; };
 		5FB12230248D568F00B3CF9C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1222E248D568F00B3CF9C /* CustomButton.swift */; };
 		5FB12231248D568F00B3CF9C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1222F248D568F00B3CF9C /* CustomSlider.swift */; };
@@ -27,6 +28,7 @@
 		352A67A220D171EA00D5BF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352A67A420D171EA00D5BF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F20480E248AA94500C1883C /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9626E9248D98F100F5C067 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5FB1222E248D568F00B3CF9C /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5FB1222F248D568F00B3CF9C /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		5FB12232248D6C4A00B3CF9C /* HighScoreAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreAnimation.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		5F5F35E9248A82FF0037C393 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5FB12232248D6C4A00B3CF9C /* HighScoreAnimation.swift */,
 				352A679820D171E800D5BF05 /* AppDelegate.swift */,
 				352A67A420D171EA00D5BF05 /* Info.plist */,
 			);
@@ -103,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				352A679A20D171E800D5BF05 /* ViewController.swift */,
-				5FB12232248D6C4A00B3CF9C /* HighScoreAnimation.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 			children = (
 				5FB1222E248D568F00B3CF9C /* CustomButton.swift */,
 				5FB1222F248D568F00B3CF9C /* CustomSlider.swift */,
+				5F9626E9248D98F100F5C067 /* CustomView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				5FB12233248D6C4A00B3CF9C /* HighScoreAnimation.swift in Sources */,
 				352A679B20D171E800D5BF05 /* ViewController.swift in Sources */,
 				352A679920D171E800D5BF05 /* AppDelegate.swift in Sources */,
+				5F9626EA248D98F100F5C067 /* CustomView.swift in Sources */,
 				5FB12230248D568F00B3CF9C /* CustomButton.swift in Sources */,
 				5FB12231248D568F00B3CF9C /* CustomSlider.swift in Sources */,
 			);

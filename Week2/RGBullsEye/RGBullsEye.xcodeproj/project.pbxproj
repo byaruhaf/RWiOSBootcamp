@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181A114F22AD925B003EA9CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181A114E22AD925B003EA9CF /* LaunchScreen.storyboard */; };
+		5F2AF8FA248DE0ED00419EB5 /* HighScoreAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2AF8F9248DE0ED00419EB5 /* HighScoreAnimation.swift */; };
 		5FBCC4D9248B93AB0006AC9D /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */; };
 		CDCB57E51BED8F4800003224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB57E41BED8F4800003224 /* AppDelegate.swift */; };
 		CDCB57E71BED8F4800003224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB57E61BED8F4800003224 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		181A114E22AD925B003EA9CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F2AF8F9248DE0ED00419EB5 /* HighScoreAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreAnimation.swift; sourceTree = "<group>"; };
 		5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		CDCB57E11BED8F4800003224 /* RGBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCB57E41BED8F4800003224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F2AF8F8248DE0C700419EB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDCB57F01BED8F4800003224 /* Info.plist */,
+				CDCB57E41BED8F4800003224 /* AppDelegate.swift */,
+				5F2AF8F9248DE0ED00419EB5 /* HighScoreAnimation.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F2AF902248DEB2400419EB5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDCB57E61BED8F4800003224 /* ViewController.swift */,
+				CDCB57FA1BED986300003224 /* AboutViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5F2AF903248DEB8D00419EB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5F2AF904248DEB9B00419EB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDCB57F61BED941D00003224 /* BullsEyeGame.swift */,
+				CDCB57F71BED941D00003224 /* RGB.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5F2AF905248DEBBD00419EB5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CDCB57E81BED8F4800003224 /* Main.storyboard */,
+				181A114E22AD925B003EA9CF /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		CDCB57D81BED8F4800003224 = {
 			isa = PBXGroup;
 			children = (
@@ -75,16 +122,12 @@
 		CDCB57E31BED8F4800003224 /* RGBullsEye */ = {
 			isa = PBXGroup;
 			children = (
-				CDCB57E41BED8F4800003224 /* AppDelegate.swift */,
-				CDCB57E61BED8F4800003224 /* ViewController.swift */,
-				CDCB57F61BED941D00003224 /* BullsEyeGame.swift */,
-				5FBCC4D8248B93AB0006AC9D /* UIAlertController.swift */,
-				CDCB57F71BED941D00003224 /* RGB.swift */,
-				CDCB57FA1BED986300003224 /* AboutViewController.swift */,
-				CDCB57E81BED8F4800003224 /* Main.storyboard */,
-				181A114E22AD925B003EA9CF /* LaunchScreen.storyboard */,
+				5F2AF902248DEB2400419EB5 /* ViewControllers */,
+				5F2AF904248DEB9B00419EB5 /* Model */,
+				5F2AF905248DEBBD00419EB5 /* Storyboards */,
+				5F2AF903248DEB8D00419EB5 /* Extensions */,
+				5F2AF8F8248DE0C700419EB5 /* Supporting Files */,
 				CDCB57EB1BED8F4800003224 /* Assets.xcassets */,
-				CDCB57F01BED8F4800003224 /* Info.plist */,
 			);
 			path = RGBullsEye;
 			sourceTree = "<group>";
@@ -168,6 +211,7 @@
 				CDCB57F81BED941D00003224 /* BullsEyeGame.swift in Sources */,
 				CDCB57FB1BED986300003224 /* AboutViewController.swift in Sources */,
 				5FBCC4D9248B93AB0006AC9D /* UIAlertController.swift in Sources */,
+				5F2AF8FA248DE0ED00419EB5 /* HighScoreAnimation.swift in Sources */,
 				CDCB57F91BED941D00003224 /* RGB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

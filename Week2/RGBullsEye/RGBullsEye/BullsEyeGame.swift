@@ -15,6 +15,7 @@ class BullsEyeGame {
     @Published var targetValue = RGB()
     @Published var score = 0
     @Published var round = 0
+     public var isHighScore = false
      var gameStartValue = RGB()
      var playerValue = RGB()
 
@@ -37,6 +38,7 @@ class BullsEyeGame {
                       g: Int.random(in: 0...255),
                       b: Int.random(in: 0...255))
         print(targetValue)
+        isHighScore = false
     }
 
 
@@ -49,11 +51,13 @@ class BullsEyeGame {
         var message:String {
             if percentageDifference == 0 {
                 points += 100
+                isHighScore = true
                 return "Perfect!"
             } else if percentageDifference < 5 {
                 if percentageDifference == 1 {
                     points += 50
                 }
+                isHighScore = true
                 return "You almost had it!"
             } else if percentageDifference < 10 {
                 return "Pretty good!"

@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     let game = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
+    var highScoreAnimation = HighScoreAnimation()
 
     @IBAction func aSliderMoved(sender: UISlider) {
         updatedSliderLables()
@@ -48,10 +49,14 @@ class ViewController: UIViewController {
     @IBAction func showAlert(sender: AnyObject) {
         displayTargetRGB()
         let percentageDifference = Int(game.playerValue.difference(target: game.targetValue))
-        print(percentageDifference)
-        self.gameAlert(game.pointsCalculator(for:percentageDifference)) { [weak self] in
+        let result = game.pointsCalculator(for:percentageDifference)
+        if game.isHighScore {
+            self.view.layer.addSublayer(highScoreAnimation.emitter)
+        }
+        self.gameAlert(result) { [weak self] in
             self?.game.startRound()
             self?.targetTextLabel.attributedText = NSMutableAttributedString(string:"match this color")
+            self?.highScoreAnimation.emitter.removeFromSuperlayer()
         }
     }
 
@@ -61,6 +66,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        animationSetup()
         game.start()
         subscribeToModel()
     }
@@ -78,6 +84,13 @@ class ViewController: UIViewController {
             .store(in: &cancellables)
         game.$targetValue.sink { [weak self] in self?.targetLabel.backgroundColor = UIColor(rgbStruct: $0) }
             .store(in: &self.cancellables)
+    }
+
+    fileprivate func animationSetup() {
+        highScoreAnimation.emitter.emitterPosition = CGPoint(x: self.view.frame.size.width / 2, y: -10)
+        highScoreAnimation.emitter.emitterShape = CAEmitterLayerEmitterShape.line
+        highScoreAnimation.emitter.emitterSize = CGSize(width: self.view.frame.size.width, height: 2.0)
+        highScoreAnimation.emitter.emitterCells = highScoreAnimation.generateEmitterCells()
     }
 
     fileprivate func displayTargetRGB() {
