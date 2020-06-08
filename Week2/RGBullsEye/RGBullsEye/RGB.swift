@@ -32,7 +32,12 @@ extension UIColor {
   }
 }
 
-struct RGB {
+protocol BullsEyeGameAble {
+    static func random() -> Self
+}
+
+
+struct RGB:BullsEyeGameAble {
   var r = 127
   var g = 127
   var b = 127

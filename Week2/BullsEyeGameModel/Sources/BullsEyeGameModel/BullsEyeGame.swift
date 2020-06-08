@@ -34,7 +34,7 @@ public class BullsEyeGame {
     /// A Function to start new round by generating a random TargetValue
     public func startRound() {
         round += 1
-        targetValue = Int.random(in: 1...100)
+        targetValue = Int.random()
         gameStartValue = 50
         isHighScore = false
     }

@@ -10,14 +10,20 @@
 
 ## Week 2 Assignment
 
-ColorSlider is a Color Picker App with both RGB and HSB modes. The app can be used with any iPhone that supports **[iOS 13](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/ios)**
+Refactor the [BullsEye](https://files.betamax.raywenderlich.com/attachments/videos/1927/20a3598d-8d8d-4044-ad39-5a1d58c62ad9.zip) project to make it conform to the Model-View-Controller architecture.
+The app can be used with any iPhone that supports **[iOS 13](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/ios)**
 
 ### Assigment Requirements completed
-* Users can pick a Red, Blue and Green value using sliders
+* Refactor the ViewController in BullsEye Game to create a UI-independent model.
+* Test UI-independent model on RGBullsEye Game replace Int() type with RGB() type.
+* modify slider’s minimum track tint color in BullsEye Game to provide visual hint to player
 
 ### Stretch Above and Beyond Requirements completed:
-* “reverse” the BullsEye game to use a text field.
-* Restrict users to enter only numberic values in to the text field for the RevBullsEye
+* “Reverse” the BullsEye game to use a text field.
+* Modify slider’s minimum track tint color in RevBullsEye Game to provide visual hint to player
+* Prevent the user from submitting text that won’t work, either because
+	* The text isn’t a number
+	* The Number outside the slider’s range
 * User can dissmiss the keyboard using two methords for the RevBullsEye
  	1. Tap screen
 	2. Tap done button 
@@ -27,7 +33,8 @@ ColorSlider is a Color Picker App with both RGB and HSB modes. The app can be us
 * Groups all game projects and packages under one xcode workspace so its easier to work on them together
 * Model code for games BullsEye & RevBullsEye moved to Swift Package to avoid duplicating code.
 * As an SPM Package model code can be distributed to other developer to make their own version of BullsEye
-* Use Apples Combine framework to so UI can lissten for changes in the model 
+* Use Apples Combine framework to so UI can listen for changes in the model.
+* Show animation when user has a high score. 
 
 ### Class vs Struct:
 My personal preference is always start with a struct, why you wonder. Because Crusty said so.
@@ -47,18 +54,9 @@ The feature **[SE-0271:Package Manager Resources](https://github.com/apple/swift
 ### Game App
 !Put Screenshots heree!
 
-## Contribution
-<a href='https://www.freepik.com/free-photos-vectors/background'>Background vector created by upklyak - www.freepik.com</a>
+## Attribution
+Game Background Image created by <a href='https://www.freepik.com/upklyak'> upklyak</a>
 
-<a href="https://www.freepik.com/free-photos-vectors/star">Star vector created by upklyak - www.freepik.com</a>
-
-<a href="https://www.vecteezy.com/free-vector/exact">Exact Vectors by Vecteezy</a>
-
-<a href="https://www.vecteezy.com/free-vector/game-background">Game Background Vectors by Vecteezy</a>
-
-<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by upklyak - www.freepik.com</a>
-
-<a href="https://www.freepik.com/free-photos-vectors/star">Star vector created by vectorpouch - www.freepik.com</a>
 
 ## Contribution
 - If you have a **feature request**, open an **issue**
