@@ -34,10 +34,9 @@ class BullsEyeGame {
     /// A Function to start new round by generating a random TargetValue
     func startRound() {
         round += 1
-        targetValue = RGB(r: Int.random(in: 0...255),
-                          g: Int.random(in: 0...255),
-                          b: Int.random(in: 0...255))
+        targetValue = RGB.random()
         isHighScore = false
+        print(targetValue)
     }
 
 
@@ -53,10 +52,12 @@ class BullsEyeGame {
         // Calulate Bonus Points
         if percentageDifference == 0 {
             message = "Perfect!"
+            isHighScore = true
             points += 100
         } else if percentageDifference < 5 {
             message = "You almost had it!"
             if percentageDifference == 1 {
+                isHighScore = true
                 points += 50
             }
         } else if percentageDifference < 10 {

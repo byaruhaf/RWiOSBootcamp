@@ -43,4 +43,10 @@ struct RGB {
     let bDiff = Double(b - target.b)
     return sqrt((rDiff * rDiff + gDiff * gDiff + bDiff * bDiff) / 3)  / 255 * 100
   }
+
+    static func random() -> RGB {
+        RGB(r: Int.random(in: 0...255),
+            g: Int.random(in: 0...255),
+            b: Int.random(in: 0...255))
+    }
 }

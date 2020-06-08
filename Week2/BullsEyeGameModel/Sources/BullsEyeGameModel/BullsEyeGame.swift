@@ -52,10 +52,12 @@ public class BullsEyeGame {
         // Calulate Bonus Points
         if percentageDifference == 0 {
             message = "Perfect!"
+            isHighScore = true
             points += 100
         } else if percentageDifference < 5 {
             message = "You almost had it!"
             if percentageDifference == 1 {
+                isHighScore = true
                 points += 50
             }
         } else if percentageDifference < 10 {
