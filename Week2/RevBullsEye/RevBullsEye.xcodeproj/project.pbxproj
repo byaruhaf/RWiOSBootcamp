@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5F2AF8FF248DE3A900419EB5 /* BullsEyeGameModel in Frameworks */ = {isa = PBXBuildFile; productRef = 5F2AF8FE248DE3A900419EB5 /* BullsEyeGameModel */; };
 		5F2AF901248DE40E00419EB5 /* HighScoreAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2AF900248DE40E00419EB5 /* HighScoreAnimation.swift */; };
+		5F2AF90E248DF11300419EB5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2AF90B248DF11300419EB5 /* CustomButton.swift */; };
+		5F2AF90F248DF11300419EB5 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2AF90C248DF11300419EB5 /* CustomSlider.swift */; };
+		5F2AF910248DF11300419EB5 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2AF90D248DF11300419EB5 /* CustomView.swift */; };
 		5F5F35D1248A0AB40037C393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35D0248A0AB40037C393 /* AppDelegate.swift */; };
 		5F5F35D3248A0AB40037C393 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35D2248A0AB40037C393 /* SceneDelegate.swift */; };
 		5F5F35D5248A0AB40037C393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35D4248A0AB40037C393 /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		5F204813248AA95100C1883C /* BullsEyeGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BullsEyeGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2AF900248DE40E00419EB5 /* HighScoreAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreAnimation.swift; sourceTree = "<group>"; };
+		5F2AF90B248DF11300419EB5 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5F2AF90C248DF11300419EB5 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		5F2AF90D248DF11300419EB5 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5F5F35CD248A0AB40037C393 /* RevBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RevBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5F35D0248A0AB40037C393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F5F35D2248A0AB40037C393 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,9 +59,39 @@
 		5F2AF8FB248DE0FE00419EB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F5F35D0248A0AB40037C393 /* AppDelegate.swift */,
+				5F5F35D2248A0AB40037C393 /* SceneDelegate.swift */,
+				5F5F35DE248A0AB70037C393 /* Info.plist */,
 				5F2AF900248DE40E00419EB5 /* HighScoreAnimation.swift */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F2AF908248DF05C00419EB5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5F5F35D6248A0AB40037C393 /* Main.storyboard */,
+				5F5F35DB248A0AB70037C393 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		5F2AF909248DF06200419EB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F2AF90B248DF11300419EB5 /* CustomButton.swift */,
+				5F2AF90C248DF11300419EB5 /* CustomSlider.swift */,
+				5F2AF90D248DF11300419EB5 /* CustomView.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5F2AF90A248DF06600419EB5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F5F35D4248A0AB40037C393 /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		5F5F35C4248A0AB40037C393 = {
@@ -78,14 +114,11 @@
 		5F5F35CF248A0AB40037C393 /* RevBullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				5F2AF90A248DF06600419EB5 /* ViewControllers */,
+				5F2AF909248DF06200419EB5 /* Extensions */,
+				5F2AF908248DF05C00419EB5 /* Storyboards */,
 				5F2AF8FB248DE0FE00419EB5 /* Supporting Files */,
-				5F5F35D0248A0AB40037C393 /* AppDelegate.swift */,
-				5F5F35D2248A0AB40037C393 /* SceneDelegate.swift */,
-				5F5F35D4248A0AB40037C393 /* ViewController.swift */,
-				5F5F35D6248A0AB40037C393 /* Main.storyboard */,
 				5F5F35D9248A0AB70037C393 /* Assets.xcassets */,
-				5F5F35DB248A0AB70037C393 /* LaunchScreen.storyboard */,
-				5F5F35DE248A0AB70037C393 /* Info.plist */,
 			);
 			path = RevBullsEye;
 			sourceTree = "<group>";
@@ -165,9 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F5F35D5248A0AB40037C393 /* ViewController.swift in Sources */,
+				5F2AF90F248DF11300419EB5 /* CustomSlider.swift in Sources */,
 				5F5F35D1248A0AB40037C393 /* AppDelegate.swift in Sources */,
+				5F2AF910248DF11300419EB5 /* CustomView.swift in Sources */,
 				5F5F35D3248A0AB40037C393 /* SceneDelegate.swift in Sources */,
 				5F2AF901248DE40E00419EB5 /* HighScoreAnimation.swift in Sources */,
+				5F2AF90E248DF11300419EB5 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@
 //
 //  Created by Franklin Byaruhanga on 07/06/2020.
 //  Copyright © 2020 Ray Wenderlich. All rights reserved.
-//
+//  https://medium.com/@prabhu_irl/particle-effects-in-swift-using-caemitterlayer-79fb88452724
 
 import UIKit
 
