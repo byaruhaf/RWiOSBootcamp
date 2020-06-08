@@ -41,16 +41,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l3K-t3-y92">
-                                        <rect key="frame" x="80.666666666666686" y="90.333333333333314" width="646.66666666666652" height="82.666666666666686"/>
+                                        <rect key="frame" x="80.666666666666686" y="90.333333333333343" width="646.66666666666652" height="74.333333333333343"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-yV-RBj" customClass="CustomView" customModule="BullsEye" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="646.66666666666663" height="82.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="646.66666666666663" height="74.333333333333329"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wNb-dV-CrL">
-                                                        <rect key="frame" x="6" y="0.0" width="634.66666666666663" height="82.666666666666671"/>
+                                                        <rect key="frame" x="6" y="0.0" width="634.66666666666663" height="74.333333333333329"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-t6-6Ap">
-                                                                <rect key="frame" x="0.0" y="31.666666666666671" width="9.6666666666666661" height="19.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="27.333333333333329" width="9.6666666666666661" height="19.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -58,8 +58,8 @@
                                                                 <size key="shadowOffset" width="0.0" height="1"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-Xz-bBv" customClass="CustomSlider" customModule="BullsEye" customModuleProvider="target">
-                                                                <rect key="frame" x="19.666666666666686" y="26.000000000000014" width="576.33333333333326" height="32"/>
-                                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <rect key="frame" x="19.666666666666686" y="21.666666666666671" width="576.33333333333326" height="32"/>
+                                                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="SliderThumb-Normal"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightedImage" value="SliderThumb-Highlighted"/>
@@ -72,7 +72,7 @@
                                                                 </connections>
                                                             </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A4-Ih-jW4">
-                                                                <rect key="frame" x="606" y="31.666666666666671" width="28.666666666666629" height="19.666666666666671"/>
+                                                                <rect key="frame" x="606" y="27.333333333333329" width="28.666666666666629" height="19.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.2418113053" green="0.0" blue="0.46669572590000002" alpha="0.84468642979452058" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.2418113053" green="0.0" blue="0.46669572590000002" alpha="0.9473191352739726" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="wNb-dV-CrL" firstAttribute="leading" secondItem="U1R-yV-RBj" secondAttribute="leading" constant="6" id="PlZ-cy-LRq"/>
                                                     <constraint firstItem="wNb-dV-CrL" firstAttribute="top" secondItem="U1R-yV-RBj" secondAttribute="top" id="Tnw-nZ-Ov0"/>
@@ -92,35 +92,30 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wc2-oK-Qqq">
-                                        <rect key="frame" x="354" y="243" width="100" height="37"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-C6-Xcr" customClass="CustomButton" customModule="BullsEye" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="37"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Hit Me!" backgroundImage="Button-Normal">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
-                                                        <real key="value" value="6"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ry-5k-rlC"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-C6-Xcr" customClass="CustomButton" customModule="BullsEye" customModuleProvider="target">
+                                        <rect key="frame" x="354" y="234.66666666666666" width="100" height="44.666666666666657"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Hit Me!" backgroundImage="Button-Normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ry-5k-rlC"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="300" translatesAutoresizingMaskIntoConstraints="NO" id="5zs-fJ-cSB">
-                                        <rect key="frame" x="115.66666666666669" y="350" width="576.66666666666652" height="23"/>
+                                        <rect key="frame" x="115.66666666666669" y="349.33333333333331" width="576.66666666666652" height="23.666666666666686"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sB8-JZ-ktc">
-                                                <rect key="frame" x="0.0" y="0.0" width="148.33333333333334" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="148.33333333333334" height="23.666666666666668"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak3-cX-jsW" customClass="CustomButton" customModule="BullsEye" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="2.3333333333333321" width="20" height="20.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="2.3333333333333321" width="20" height="21.000000000000004"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,7 +132,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zP-za-elQ">
-                                                        <rect key="frame" x="30" y="0.0" width="51" height="23"/>
+                                                        <rect key="frame" x="30" y="0.0" width="51" height="23.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -145,7 +140,7 @@
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-5t-e5q">
-                                                        <rect key="frame" x="91" y="0.0" width="57.333333333333343" height="23"/>
+                                                        <rect key="frame" x="91" y="0.0" width="57.333333333333343" height="23.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -155,10 +150,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hUC-xA-Vni">
-                                                <rect key="frame" x="448.33333333333331" y="0.0" width="128.33333333333331" height="23"/>
+                                                <rect key="frame" x="448.33333333333331" y="0.0" width="128.33333333333331" height="23.666666666666668"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc0-jI-teF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="23.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -166,7 +161,7 @@
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZC-Qn-43h">
-                                                        <rect key="frame" x="65.333333333333371" y="0.0" width="28.666666666666671" height="23"/>
+                                                        <rect key="frame" x="65.333333333333371" y="0.0" width="28.666666666666671" height="23.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -174,7 +169,7 @@
                                                         <size key="shadowOffset" width="0.0" height="1"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKE-hT-wp8">
-                                                        <rect key="frame" x="104" y="0.0" width="24.333333333333343" height="23"/>
+                                                        <rect key="frame" x="104" y="0.0" width="24.333333333333343" height="23.666666666666668"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -184,6 +179,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="l3K-t3-y92" firstAttribute="width" secondItem="hdx-tL-IIy" secondAttribute="width" multiplier="0.8" id="Hlo-67-Cd1"/>
+                                    <constraint firstItem="qhX-C6-Xcr" firstAttribute="height" secondItem="l3K-t3-y92" secondAttribute="height" multiplier="0.6" id="dda-nv-AZy"/>
                                 </constraints>
                             </stackView>
                         </subviews>

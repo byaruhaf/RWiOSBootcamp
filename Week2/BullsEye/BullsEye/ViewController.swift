@@ -12,35 +12,38 @@ import BullsEyeGameModel
 
 
 class ViewController: UIViewController {
+    //Model object instantiated
     var game = BullsEyeGame()
+    //subcriber object instantiated
     var cancellables = Set<AnyCancellable>()
+    //animation object instantiated
     var highScoreAnimation = HighScoreAnimation()
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
-    let bluetrackImage = UIImage(named: "BlueSliderTrackLeft")
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        sliderSetUp()
         game.start()
         subscribeToModel()
         animationSetup()
     }
 
     @IBAction func showAlert() {
+        //calcualte score
         let result = game.pointsCalculator(for:game.percentageDifference)
+        //show animaiton for high scores
         if game.isHighScore {
             self.view.layer.addSublayer(highScoreAnimation.emitter)
         }
+        // alert user of results
         self.gameAlert(result) {
             self.game.startRound()
             self.slider.value = Float(self.game.gameStartValue)
             self.highScoreAnimation.emitter.removeFromSuperlayer()
-            self.slider.minimumTrackTintColor = UIColor.blue
+            self.slider.minimumTrackTintColor = UIColor.yellow
         }
     }
 
@@ -48,11 +51,11 @@ class ViewController: UIViewController {
         game.playerValue = Int(slider.value.rounded())
         setupSliderHint()
     }
-
+//Start of new Game
     @IBAction func startNewGame() {
         game.start()
     }
-
+    // subscribe to model to recive values as they change.
     fileprivate func subscribeToModel() {
         game.$score.sink { [weak self] in self?.scoreLabel.text = $0.description }
             .store(in: &cancellables)
@@ -61,11 +64,12 @@ class ViewController: UIViewController {
         game.$targetValue.sink { [weak self] in self?.targetLabel.text = $0.description }
             .store(in: &cancellables)
     }
-
+    // setup hint to guide player
     fileprivate func setupSliderHint() {
         slider.minimumTrackTintColor =
-            UIColor.blue.withAlphaComponent(CGFloat(game.percentageDifference)/100.0)
+            UIColor.yellow.withAlphaComponent(CGFloat(game.percentageDifference)/100.0)
     }
+    // Animaition setup for Highscore's
     fileprivate func animationSetup() {
         highScoreAnimation.emitter.emitterPosition = CGPoint(x: self.view.frame.size.width / 2, y: -10)
         highScoreAnimation.emitter.emitterShape = CAEmitterLayerEmitterShape.line
