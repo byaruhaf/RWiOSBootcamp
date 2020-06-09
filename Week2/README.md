@@ -45,7 +45,7 @@ Because Crusty said so.
 
 **All joking aside,**
 
-The reason I prefer structs is the value semantics especially mutability. But as game model required **mutation** I changed the model to a class to avoid adding mutation keyword to all my model functions. The next version of the 3 games could be rewritten for **MVVM** so the **model** is a struct & the **view model** is a class.  
+The reason I prefer structs is the value semantics especially immutability. But as game model required **mutation** I changed the model to a class to avoid adding mutation keyword to all my model functions. The next version of the 3 games could be rewritten for **MVVM** so the **model** is a struct & the **view model** is a class.  
 
 ### Shared Game assets :
 The shared game assets could also be moved from the individual game project to Swift Package.
