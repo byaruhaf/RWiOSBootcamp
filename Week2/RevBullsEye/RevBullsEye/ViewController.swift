@@ -15,10 +15,7 @@ class ViewController: UIViewController {
     var game = BullsEyeGame()
     var cancellables = Set<AnyCancellable>()
     var guessTextLength: Int = 0
-    var highScoreAnimation = HighScoreAnimation()
-    let textValueChangePublisher = NotificationCenter.Publisher.init(center: .default, name: UITextField.textDidChangeNotification , object: nil)
-
-    
+    var highScoreAnimation = HighScoreAnimation()    
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var targetTextField: UITextField!
@@ -33,7 +30,6 @@ class ViewController: UIViewController {
         setupTextFields()
         startNewGame()
         subscribeToModel()
-//        setPublisher()
         slider.isUserInteractionEnabled = false
         hitMeButton.isEnabled = false
         targetTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
@@ -133,26 +129,6 @@ class ViewController: UIViewController {
     @objc func doneEditing() {
         self.view.endEditing(true)
     }
-
-    func setPublisher() {
-        let textFieldTextCounter = Publishers.Map(upstream: self.textValueChangePublisher) { notification -> Int in
-            let length = (notification.object as! UITextField).text?.count ?? 0
-            if length > 3 {
-                self.warnLabel.text = "Entered text length is invalid"
-            }
-            else {
-                self.warnLabel.text = ""
-            }
-            return length
-        }
-        .compactMap { $0.object as? UITextField }
-        .map { $0.text ?? "" }
-
-        let nameTextFieldSubscriber = Subscribers.Assign(object: self, keyPath: \.guessTextLength)
-
-        textFieldTextCounter.subscribe(nameTextFieldSubscriber)
-    }
-
 
 }
 
