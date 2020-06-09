@@ -46,30 +46,53 @@
                                             <constraint firstItem="qwT-6k-lPj" firstAttribute="width" secondItem="BwK-7I-Kn1" secondAttribute="width" multiplier="0.3" id="5x9-rT-gfk"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="7XE-gg-fXT">
-                                        <rect key="frame" x="80.666666666666686" y="100" width="646.66666666666652" height="79"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcf-OJ-tTx">
+                                        <rect key="frame" x="33.666666666666686" y="100" width="740.66666666666652" height="79"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gr-b1-i9i">
-                                                <rect key="frame" x="0.0" y="0.0" width="9.6666666666666661" height="79"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="0.0" height="1"/>
-                                            </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Dps-B0-M5W">
-                                                <rect key="frame" x="38.666666666666686" y="0.0" width="550.33333333333326" height="80"/>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6m-Ji-sZ9">
-                                                <rect key="frame" x="618" y="0.0" width="28.666666666666629" height="79"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="0.0" height="1"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7XE-gg-fXT">
+                                                <rect key="frame" x="0.0" y="0.0" width="740.66666666666663" height="79"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gr-b1-i9i">
+                                                        <rect key="frame" x="0.0" y="0.0" width="15.666666666666666" height="79"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Dps-B0-M5W">
+                                                        <rect key="frame" x="28.666666666666686" y="0.0" width="670.33333333333326" height="80"/>
+                                                        <color key="thumbTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="SliderThumb-Highlighted"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="thumbHighlightedImage" value="SliderThumb-Normal"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6m-Ji-sZ9">
+                                                        <rect key="frame" x="712" y="0.0" width="28.666666666666629" height="79"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Dps-B0-M5W" firstAttribute="width" secondItem="Tcf-OJ-tTx" secondAttribute="width" multiplier="0.9" id="9nI-FA-ZVn"/>
+                                            <constraint firstItem="7XE-gg-fXT" firstAttribute="leading" secondItem="Tcf-OJ-tTx" secondAttribute="leading" id="IKP-Io-XcQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="7XE-gg-fXT" secondAttribute="trailing" id="SiL-mh-4bn"/>
+                                            <constraint firstItem="7XE-gg-fXT" firstAttribute="top" secondItem="Tcf-OJ-tTx" secondAttribute="top" id="ZUv-Zx-P7D"/>
+                                            <constraint firstAttribute="bottom" secondItem="7XE-gg-fXT" secondAttribute="bottom" id="f5u-0y-fHA"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LJG-bm-ziu">
                                         <rect key="frame" x="354" y="239" width="100" height="40"/>
                                         <subviews>
@@ -163,9 +186,6 @@
                                         <variation key="heightClass=compact-widthClass=compact" spacing="20"/>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="7XE-gg-fXT" firstAttribute="width" secondItem="aUL-uh-rd0" secondAttribute="width" multiplier="0.8" id="BT7-GP-d3b"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -246,6 +266,8 @@ Raywenderlich Ios Bootcamp
         </scene>
     </scenes>
     <resources>
+        <image name="SliderThumb-Highlighted" width="32" height="32"/>
+        <image name="SliderThumb-Normal" width="32" height="32"/>
         <image name="arrow.uturn.right.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
