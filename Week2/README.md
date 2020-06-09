@@ -39,7 +39,7 @@ The app can be used with any iPhone that supports **[iOS 13](https://support.app
 ### Class vs Struct:
 My personal preference is always to start with a struct. **why you wonder?**
 
-Because Crusty said so.
+Because [Crusty](https://twitter.com/DaveAbrahams/status/1104537209456091136) said so.
 
 ![Crusty](Demo/Crusty.png) 
 
