@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var cancellables = Set<AnyCancellable>()
     var guessTextLength: Int = 0
     var highScoreAnimation = HighScoreAnimation()
-//    let textValueChangePublisher = NotificationCenter.Publisher.init(center: .default, name: UITextField.textDidChangeNotification , object: nil)
+    let textValueChangePublisher = NotificationCenter.Publisher.init(center: .default, name: UITextField.textDidChangeNotification , object: nil)
 
     
 
@@ -134,24 +134,24 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
 
-//    func setPublisher() {
-//        let textFieldTextCounter = Publishers.Map(upstream: self.textValueChangePublisher) { notification -> Int in
-//            let length = (notification.object as! UITextField).text?.count ?? 0
-//            if length > 3 {
-//                self.warnLabel.text = "Entered text length is invalid"
-//            }
-//            else {
-//                self.warnLabel.text = ""
-//            }
-//            return length
-//        }
-//        .compactMap { $0.object as? UITextField }
-//        .map { $0.text ?? "" }
-//
-//        let nameTextFieldSubscriber = Subscribers.Assign(object: self, keyPath: \.guessTextLength)
-//
-//        textFieldTextCounter.subscribe(nameTextFieldSubscriber)
-//    }
+    func setPublisher() {
+        let textFieldTextCounter = Publishers.Map(upstream: self.textValueChangePublisher) { notification -> Int in
+            let length = (notification.object as! UITextField).text?.count ?? 0
+            if length > 3 {
+                self.warnLabel.text = "Entered text length is invalid"
+            }
+            else {
+                self.warnLabel.text = ""
+            }
+            return length
+        }
+        .compactMap { $0.object as? UITextField }
+        .map { $0.text ?? "" }
+
+        let nameTextFieldSubscriber = Subscribers.Assign(object: self, keyPath: \.guessTextLength)
+
+        textFieldTextCounter.subscribe(nameTextFieldSubscriber)
+    }
 
 
 }

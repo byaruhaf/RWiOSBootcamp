@@ -8,4 +8,9 @@
 [![Twitter](https://img.shields.io/badge/twitter-@byaruhaf-blue.svg)](http://twitter.com/byaruhaf)
 
 # About Me
-![Profile](About.jpg)
+![Profile](Doc/About.jpg)
+
+## Assignment's
+---
+1. [Week 01](./Week01/README.md)
+2. [Week 02](./Week02/README.md)
