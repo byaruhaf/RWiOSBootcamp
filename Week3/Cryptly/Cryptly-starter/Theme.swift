@@ -39,3 +39,23 @@ protocol Theme {
   var borderColor: UIColor { get }
   var widgetBackgroundColor: UIColor { get }
 }
+
+protocol Themeable {
+  func registerForTheme()
+  func unregisterForTheme()
+  func themeChanged()
+}
+
+struct DarkTheme: Theme {
+  let borderColor: UIColor = .yellow
+  let backgroundColor: UIColor = .black
+  let textColor: UIColor = .yellow
+  let widgetBackgroundColor: UIColor = .black
+}
+
+struct LightTheme: Theme {
+  let borderColor: UIColor = .blue
+  let backgroundColor: UIColor = .white
+  let textColor: UIColor = .blue
+  let widgetBackgroundColor: UIColor = .white
+}

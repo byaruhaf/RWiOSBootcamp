@@ -32,9 +32,19 @@
 
 import Foundation
 
+enum Trend: Int, Codable{
+  case rising,falling
+}
+
 struct CryptoCurrency: Codable {
   let name: String
   let symbol: String
   let currentValue: Int
   let previousValue: Int
+  var trend:Trend {
+    currentValue > previousValue ? .rising:.falling
+  }
+  var percentageRise:Float  {
+    Float(((currentValue - previousValue) / previousValue) * 100)
+  }
 }

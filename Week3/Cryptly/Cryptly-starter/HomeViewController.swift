@@ -54,7 +54,6 @@ class HomeViewController: UIViewController{
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupViews()
     setupLabels()
     setView1Data()
     setView2Data()
@@ -63,43 +62,20 @@ class HomeViewController: UIViewController{
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    registerForTheme()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
+    unregisterForTheme()
   }
 
-  func setupViews() {
-      
-    view1.backgroundColor = .systemGray6
-    view1.layer.borderColor = UIColor.lightGray.cgColor
-    view1.layer.borderWidth = 1.0
-    view1.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-    view1.layer.shadowOffset = CGSize(width: 0, height: 2)
-    view1.layer.shadowRadius = 4
-    view1.layer.shadowOpacity = 0.8
-    
-    view2.backgroundColor = .systemGray6
-    view2.layer.borderColor = UIColor.lightGray.cgColor
-    view2.layer.borderWidth = 1.0
-    view2.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-    view2.layer.shadowOffset = CGSize(width: 0, height: 2)
-    view2.layer.shadowRadius = 4
-    view2.layer.shadowOpacity = 0.8
-    
-    view3.backgroundColor = .systemGray6
-    view3.layer.borderColor = UIColor.lightGray.cgColor
-    view3.layer.borderWidth = 1.0
-    view3.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-    view3.layer.shadowOffset = CGSize(width: 0, height: 2)
-    view3.layer.shadowRadius = 4
-    view3.layer.shadowOpacity = 0.8
-  }
-  
   func setupLabels() {
     headingLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
     view1TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
     view2TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+    view4TextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+    view5TextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
   }
   
   func setView1Data() {
@@ -114,6 +90,57 @@ class HomeViewController: UIViewController{
     view3TextLabel.text = viewModel.decreasedCurrency()
   }
   
+
+
   @IBAction func switchPressed(_ sender: Any) {
+    setupTheme()
+  }
+
+  fileprivate func setupTheme() {
+    if themeSwitch.isOn {
+      ThemeManager.shared.currentTheme = DarkTheme()
+    }else {
+      ThemeManager.shared.currentTheme = LightTheme()
+    }
+  }
+
+}
+
+
+extension HomeViewController:Themeable{
+  func registerForTheme() {
+    NotificationCenter.default.addObserver(self, selector: #selector(themeChanged), name: NSNotification.Name.init("themeChanged"), object: nil)
+  }
+
+  func unregisterForTheme() {
+    NotificationCenter.default.removeObserver(self)
+  }
+
+  @objc func themeChanged() {
+    UIView.animate(withDuration: 2) {
+      self.view1.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view2.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view3.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view4.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view5.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+
+
+
+    self.view1.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    self.view2.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    self.view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    self.view4.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    self.view5.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+
+      self.headingLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view1TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view2TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view4TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view5TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view4DataText.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view5DataText.textColor = ThemeManager.shared.currentTheme?.textColor
+    self.view.backgroundColor = ThemeManager.shared.currentTheme?.backgroundColor
+  }
   }
 }
