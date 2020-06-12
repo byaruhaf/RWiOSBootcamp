@@ -40,6 +40,7 @@ protocol Theme {
   var widgetBackgroundColor: UIColor { get }
   var downtextColor: UIColor { get }
   var uptextColor: UIColor { get }
+  var titletextColor: UIColor { get }
 }
 
 protocol Themeable {
@@ -55,13 +56,19 @@ struct DarkTheme: Theme {
   let widgetBackgroundColor: UIColor = .black
   let downtextColor: UIColor = .systemRed
   let uptextColor: UIColor = .systemBlue
+  let titletextColor: UIColor = .yellow
 }
 
 struct LightTheme: Theme {
   let borderColor: UIColor = .blue
-  let backgroundColor: UIColor = .white
-  let textColor: UIColor = .blue
-  let widgetBackgroundColor: UIColor = .white
-  let downtextColor: UIColor = .systemRed
+//  let backgroundColor: UIColor = .white
+   let backgroundColor: UIColor = UIColor(red:0.145, green:0.127, blue:0.210, alpha:1.000)
+//  let textColor: UIColor = .blue
+  let textColor: UIColor = .white
+//  let widgetBackgroundColor: UIColor = .white
+    let widgetBackgroundColor: UIColor = UIColor(red:0.223, green:0.205, blue:0.297, alpha:1.000)
+//  let downtextColor: UIColor = .systemRed
+  let downtextColor: UIColor = UIColor(red:0.920, green:0.341, blue:0.403, alpha:1.000)
   let uptextColor: UIColor = .systemBlue
+  let titletextColor: UIColor = .white
 }

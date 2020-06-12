@@ -94,11 +94,11 @@ class HomeViewController: UIViewController{
   }
 
   func setview4DataText() {
-    view4DataText.text = viewModel.mostFallingCurrency()?.description
+    view4DataText.text = viewModel.mostFallingCurrency()
   }
 
   func setview5DataText() {
-    view5DataText.text = viewModel.mostRisingCurrency()?.description
+    view5DataText.text = viewModel.mostRisingCurrency()
   }
   
 
@@ -134,7 +134,7 @@ extension HomeViewController:Themeable{
   func animateBatch1() {
     UIView.animate(withDuration: 0.2, animations: {
       self.view.backgroundColor = ThemeManager.shared.currentTheme?.backgroundColor
-      self.headingLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+      self.headingLabel.textColor = ThemeManager.shared.currentTheme?.titletextColor
       self.view1.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
         self.view1.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
          self.view1TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor

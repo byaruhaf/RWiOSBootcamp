@@ -57,14 +57,16 @@ class CryptoCurrencyViewModel {
     let  decreasedCurrenies =  cryptoCurrencys.filter { $0.currentValue < $0.previousValue}.reduce(""){$0 + $1.name + " ,"}
      return String(decreasedCurrenies.dropLast())
   }
-  func mostRisingCurrency() -> Float? {
+  func mostRisingCurrency() -> String? {
     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    return cryptoCurrencys.map() {$0.percentageRise}.max()
+    let value = cryptoCurrencys.map() {$0.percentageRise}.max()
+    return String(format: "%.02f", Double(value!))
   }
 
-  func mostFallingCurrency() -> Float? {
+  func mostFallingCurrency() -> String? {
     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    return cryptoCurrencys.map() {$0.percentageRise}.min()
+     let value = cryptoCurrencys.map() {$0.percentageRise}.min()
+     return String(format: "%.02f", Double(value!))
   }
 
 

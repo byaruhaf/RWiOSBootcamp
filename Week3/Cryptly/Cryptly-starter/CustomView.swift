@@ -8,6 +8,12 @@
 
 import UIKit
 
+//protocol Roundable: UIView {
+//   func round()
+//    var cornerRadius : CGFloat { get }
+//}
+//
+
 @IBDesignable
 class CustomView: UIView {
     @IBInspectable var cornerRadiusValue: CGFloat = 10.0 {
