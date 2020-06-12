@@ -72,18 +72,15 @@
 		185CB1FA23C78CE6009F7571 /* Cryptly-starter */ = {
 			isa = PBXGroup;
 			children = (
+				5FD3F66924941A790026E6A6 /* Storyboards */,
 				A1F9E0552492697800323226 /* ThemeManager */,
 				A1F9E0542492696200323226 /* Data */,
-				185CB1FB23C78CE6009F7571 /* AppDelegate.swift */,
-				185CB1FD23C78CE6009F7571 /* SceneDelegate.swift */,
+				5FD3F66B24941B060026E6A6 /* Supporting Files */,
 				5FD3F666249413FC0026E6A6 /* Extension */,
-				A1F9E048249267DB00323226 /* HomeViewController.swift */,
-				185CB20123C78CE6009F7571 /* Main.storyboard */,
+				5FD3F66A24941AD50026E6A6 /* ViewController */,
 				5FD3F667249414170026E6A6 /* Model */,
 				5FD3F668249414280026E6A6 /* ViewModel */,
 				185CB20423C78CE8009F7571 /* Assets.xcassets */,
-				180DC61423C78D9800486B1A /* LaunchScreen.storyboard */,
-				185CB20923C78CE8009F7571 /* Info.plist */,
 			);
 			path = "Cryptly-starter";
 			sourceTree = "<group>";
@@ -111,6 +108,33 @@
 				5F2C7B8C249341FA0004B2C4 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FD3F66924941A790026E6A6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				185CB20123C78CE6009F7571 /* Main.storyboard */,
+				180DC61423C78D9800486B1A /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		5FD3F66A24941AD50026E6A6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1F9E048249267DB00323226 /* HomeViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5FD3F66B24941B060026E6A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				185CB1FB23C78CE6009F7571 /* AppDelegate.swift */,
+				185CB1FD23C78CE6009F7571 /* SceneDelegate.swift */,
+				185CB20923C78CE8009F7571 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A1F9E0542492696200323226 /* Data */ = {

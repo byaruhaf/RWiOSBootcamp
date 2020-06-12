@@ -52,11 +52,11 @@ protocol Themeable {
 struct DarkTheme: Theme {
   let borderColor: UIColor = .yellow
   let backgroundColor: UIColor = .black
-  let textColor: UIColor = .yellow
-  let widgetBackgroundColor: UIColor = .black
+   let textColor: UIColor = UIColor(red:0.999, green:0.494, blue:0.000, alpha:1.000)
+   let widgetBackgroundColor: UIColor = UIColor(red:0.114, green:0.114, blue:0.114, alpha:1.000)
   let downtextColor: UIColor = .systemRed
   let uptextColor: UIColor = .systemBlue
-  let titletextColor: UIColor = .yellow
+  let titletextColor: UIColor = UIColor(red:0.999, green:0.494, blue:0.000, alpha:1.000)
 }
 
 struct LightTheme: Theme {
