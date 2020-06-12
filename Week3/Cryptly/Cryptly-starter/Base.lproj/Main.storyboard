@@ -201,7 +201,7 @@
                         <viewLayoutGuide key="safeArea" id="Fco-UW-GoN"/>
                     </view>
                     <navigationItem key="navigationItem" id="mL2-rx-U9s">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ug4-v8-lt1">
+                        <barButtonItem key="rightBarButtonItem" id="ug4-v8-lt1">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="kW6-Ms-UCP">
                                 <rect key="frame" x="343" y="6.6666666666666679" width="51" height="31.000000000000004"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
