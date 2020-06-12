@@ -8,11 +8,6 @@
 
 import UIKit
 
-//protocol Roundable: UIView {
-//   func round()
-//    var cornerRadius : CGFloat { get }
-//}
-//
 
 @IBDesignable
 class CustomView: UIView {
@@ -54,6 +49,3 @@ class CustomView: UIView {
         self.clipsToBounds = true
     }
 }
-
-//view5.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-//view5.layer.shadowOffset = CGSize(width: 0, height: 2)

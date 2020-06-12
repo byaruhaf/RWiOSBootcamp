@@ -57,6 +57,11 @@
                                     <constraint firstItem="2pP-O3-GIK" firstAttribute="leading" secondItem="4oo-MW-3FZ" secondAttribute="leading" constant="20" id="kqZ-7S-eKw"/>
                                     <constraint firstAttribute="trailing" secondItem="2pP-O3-GIK" secondAttribute="trailing" constant="20" id="sqv-6S-XbB"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpI-h7-D97" customClass="CustomView" customModule="Cryptly" customModuleProvider="target">
                                 <rect key="frame" x="20" y="328.33333333333331" width="374" height="120"/>
