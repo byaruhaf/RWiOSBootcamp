@@ -45,6 +45,6 @@ struct CryptoCurrency: Codable {
     currentValue > previousValue ? .rising:.falling
   }
   var percentageRise:Float  {
-    Float(((currentValue - previousValue) / previousValue) * 100)
+    (Float(currentValue - previousValue) / Float(previousValue)) * 100
   }
 }

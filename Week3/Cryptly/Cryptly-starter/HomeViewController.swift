@@ -58,6 +58,8 @@ class HomeViewController: UIViewController{
     setView1Data()
     setView2Data()
     setView3Data()
+    setview4DataText()
+    setview5DataText()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +90,14 @@ class HomeViewController: UIViewController{
   
   func setView3Data() {
     view3TextLabel.text = viewModel.decreasedCurrency()
+  }
+
+  func setview4DataText() {
+    view4DataText.text = viewModel.mostFallingCurrency()?.description
+  }
+
+  func setview5DataText() {
+    view5DataText.text = viewModel.mostRisingCurrency()?.description
   }
   
 

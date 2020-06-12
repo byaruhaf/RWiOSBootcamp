@@ -40,21 +40,32 @@ class CryptoCurrencyViewModel {
     self.cryptoCurrencys = cryptoCurrencys
   }
 
-  func allcurrency() -> String {
-    guard let cryptoCurrencys = cryptoCurrencys else { return ""}
+  func allcurrency() -> String? {
+    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
     let  allcurrencys = cryptoCurrencys.reduce(""){$0 + $1.name + " ,"}
     return String(allcurrencys.dropLast())
   }
 
-  func increasedCurrency() -> String {
-     guard let cryptoCurrencys = cryptoCurrencys else { return ""}
+  func increasedCurrency() -> String? {
+     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
     let  increasedCurrenies = cryptoCurrencys.filter { $0.currentValue > $0.previousValue}.reduce(""){$0 + $1.name + " ," }
     return String(increasedCurrenies.dropLast())
   }
 
-  func decreasedCurrency() -> String {
-     guard let cryptoCurrencys = cryptoCurrencys else { return ""}
+  func decreasedCurrency() -> String? {
+     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
     let  decreasedCurrenies =  cryptoCurrencys.filter { $0.currentValue < $0.previousValue}.reduce(""){$0 + $1.name + " ,"}
      return String(decreasedCurrenies.dropLast())
   }
+  func mostRisingCurrency() -> Float? {
+    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
+    return cryptoCurrencys.map() {$0.percentageRise}.max()
+  }
+
+  func mostFallingCurrency() -> Float? {
+    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
+    return cryptoCurrencys.map() {$0.percentageRise}.min()
+  }
+
+
 }
