@@ -65,6 +65,7 @@ class HomeViewController: UIViewController{
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     registerForTheme()
+    setupTheme()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -127,30 +128,61 @@ extension HomeViewController:Themeable{
   }
 
   @objc func themeChanged() {
-    UIView.animate(withDuration: 2) {
+    animateBatch1()
+  }
+
+  func animateBatch1() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.view.backgroundColor = ThemeManager.shared.currentTheme?.backgroundColor
+      self.headingLabel.textColor = ThemeManager.shared.currentTheme?.textColor
       self.view1.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+        self.view1.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+         self.view1TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    }) { (true) in
+      self.animateBatch2()
+    }
+  }
+
+  func animateBatch2() {
+    UIView.animate(withDuration: 0.3, animations: {
       self.view2.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view2.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+      self.view2TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+
+    }) { (true) in
+      self.animateBatch3()
+    }
+  }
+
+  func animateBatch3() {
+    UIView.animate(withDuration: 0.3, animations: {
+      self.view3.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+      self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+
+    }) { (true) in
+      self.animateBatch4()
+    }
+  }
+  func animateBatch4() {
+    UIView.animate(withDuration: 0.2) {
       self.view3.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
       self.view4.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
       self.view5.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+      self.view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+      self.view4.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+      self.view5.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+      self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+      self.view4TextLabel.textColor = ThemeManager.shared.currentTheme?.downtextColor
+      self.view5TextLabel.textColor = ThemeManager.shared.currentTheme?.uptextColor
+      self.view4DataText.textColor = ThemeManager.shared.currentTheme?.downtextColor
+      self.view5DataText.textColor = ThemeManager.shared.currentTheme?.uptextColor
+//      self.view4DataText.textColor = UIColor.systemRed
+//      self.view5DataText.textColor = UIColor.systemBlue
+//      self.view4TextLabel.textColor = UIColor.systemRed
+//      self.view5TextLabel.textColor = UIColor.systemBlue
 
-
-
-    self.view1.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-    self.view2.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-    self.view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-    self.view4.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-    self.view5.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-
-      self.headingLabel.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view1TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view2TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view4TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view5TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view4DataText.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view5DataText.textColor = ThemeManager.shared.currentTheme?.textColor
-    self.view.backgroundColor = ThemeManager.shared.currentTheme?.backgroundColor
+    }
   }
-  }
+
 }
