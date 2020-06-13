@@ -9,6 +9,9 @@
 import Foundation
 import Combine
 
+protocol BullsEyeGameAble {
+    static func random() -> Self
+}
 
 @available(iOS 13.0, *)
 public class BullsEyeGame {

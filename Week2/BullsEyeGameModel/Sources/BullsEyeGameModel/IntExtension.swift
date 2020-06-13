@@ -7,9 +7,6 @@
 
 import Foundation
 
-protocol BullsEyeGameAble {
-    static func random() -> Self
-}
 
 extension Int: BullsEyeGameAble  {
     static func random() -> Int {
