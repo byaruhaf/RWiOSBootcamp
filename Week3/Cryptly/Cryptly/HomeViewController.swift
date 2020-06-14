@@ -34,7 +34,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+  let client = NomicsAPIClient()
+
   let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: DataGenerator.shared.generateData())
+
+//  var viewModel:[CryptoCurrencyViewModel] = []
 
   @IBOutlet weak var view1: UIView!
   @IBOutlet weak var view2: UIView!
@@ -54,7 +58,7 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupLabels()
-    updateViewData()
+    getData()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +80,16 @@ class HomeViewController: UIViewController {
     view5TextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
   }
 
-  func updateViewData() {
+  func getData() {
+    client.getCryptoData { [unowned self] currentCyptoData, error in
+      if let currentCyptoData = currentCyptoData {
+        let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: currentCyptoData)
+        self.updateViewData(viewModel:viewModel)
+      }
+    }
+  }
+
+  func updateViewData(viewModel:CryptoCurrencyViewModel) {
     view1TextLabel.text = viewModel.allcurrency()
     view2TextLabel.text = viewModel.increasedCurrency()
     view3TextLabel.text = viewModel.decreasedCurrency()

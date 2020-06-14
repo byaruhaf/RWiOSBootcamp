@@ -15,6 +15,8 @@
 		5F2C7B8D249341FA0004B2C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C7B8C249341FA0004B2C4 /* ViewModel.swift */; };
 		5F2C7B8F24935BC70004B2C4 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C7B8E24935BC70004B2C4 /* CustomView.swift */; };
 		5F51E077249617E70085A339 /* realData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F51E076249617E70085A339 /* realData.json */; };
+		5FDF33DD249665CF00D6B2DE /* NomicsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF33DC249665CF00D6B2DE /* NomicsAPIClient.swift */; };
+		5FDF33DF2496679B00D6B2DE /* NomicsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF33DE2496679B00D6B2DE /* NomicsError.swift */; };
 		A1F9E049249267DB00323226 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E048249267DB00323226 /* HomeViewController.swift */; };
 		A1F9E04B2492688C00323226 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E04A2492688C00323226 /* DataGenerator.swift */; };
 		A1F9E04D249268A300323226 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F9E04C249268A300323226 /* Data.json */; };
@@ -34,6 +36,8 @@
 		5F2C7B8C249341FA0004B2C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5F2C7B8E24935BC70004B2C4 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5F51E076249617E70085A339 /* realData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = realData.json; sourceTree = "<group>"; };
+		5FDF33DC249665CF00D6B2DE /* NomicsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomicsAPIClient.swift; sourceTree = "<group>"; };
+		5FDF33DE2496679B00D6B2DE /* NomicsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomicsError.swift; sourceTree = "<group>"; };
 		A1F9E048249267DB00323226 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1F9E04A2492688C00323226 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 		A1F9E04C249268A300323226 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		185CB1FA23C78CE6009F7571 /* Cryptly */ = {
 			isa = PBXGroup;
 			children = (
+				5FDF33DB2496658C00D6B2DE /* NetworkManager */,
 				5FD3F66924941A790026E6A6 /* Storyboards */,
 				A1F9E0552492697800323226 /* ThemeManager */,
 				5FD3F66B24941B060026E6A6 /* Supporting Files */,
@@ -137,6 +142,15 @@
 				185CB20923C78CE8009F7571 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FDF33DB2496658C00D6B2DE /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				5FDF33DC249665CF00D6B2DE /* NomicsAPIClient.swift */,
+				5FDF33DE2496679B00D6B2DE /* NomicsError.swift */,
+			);
+			name = NetworkManager;
 			sourceTree = "<group>";
 		};
 		A1F9E0542492696200323226 /* Data */ = {
@@ -251,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FDF33DD249665CF00D6B2DE /* NomicsAPIClient.swift in Sources */,
+				5FDF33DF2496679B00D6B2DE /* NomicsError.swift in Sources */,
 				A1F9E04F249268D200323226 /* Model.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
