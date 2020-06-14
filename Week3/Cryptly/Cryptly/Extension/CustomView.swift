@@ -9,9 +9,15 @@
 import UIKit
 
 
+protocol Roundable: UIView {
+  var cornerRadius: CGFloat { get }
+  func setUpView()
+}
+
 @IBDesignable
-class CustomView: UIView {
-    @IBInspectable var cornerRadiusValue: CGFloat = 10.0 {
+class CustomView: UIView, Roundable {
+
+    @IBInspectable var cornerRadius: CGFloat = 10.0 {
         didSet {
             setUpView()
         }
@@ -50,11 +56,10 @@ class CustomView: UIView {
         setUpView()
     }
     func setUpView() {
-        self.layer.cornerRadius = self.cornerRadiusValue
+      self.layer.cornerRadius = self.cornerRadius
       self.layer.borderWidth = self.borderWidth
       self.layer.shadowRadius = self.shadowRadius
       self.layer.shadowOpacity = self.shadowOpacity
-      self.layer.cornerRadius = self.cornerRadiusValue
       self.layer.shadowOffset = self.shadowOffset
       self.layer.shadowColor = self.shadowColor
     }
