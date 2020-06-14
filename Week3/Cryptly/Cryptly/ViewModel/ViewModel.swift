@@ -1,18 +1,5 @@
 import Foundation
 
-//struct CryptoCurrency: Codable {
-//  let name: String
-//  let symbol: String
-//  let currentValue: Int
-//  let previousValue: Int
-//  var trend:Trend {
-//    currentValue > previousValue ? .rising:.falling
-//  }
-//  var percentageRise:Float  {
-//    (Float(currentValue - previousValue) / Float(previousValue)) * 100
-//  }
-//}
-
 class CryptoCurrencyViewModel {
 
  let cryptoCurrencys:[CryptoCurrency]?
@@ -39,22 +26,35 @@ class CryptoCurrencyViewModel {
      return String(decreasedCurrenies.dropLast(2))
   }
 
-  func mostRisingCurrency() -> (cryptoSymbol:String,value:String)? {
+//  func mostRisingCurrency() -> (riseSymbol:String,riseValue:String)? {
+//    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
+//    let cryptoRiseDict = cryptoCurrencys.reduce(into: [String: Double]()) { $0[$1.symbol] = $1._30d.percentageRise}
+//    let mostRisingCurrency = cryptoRiseDict.max { a, b in a.value < b.value }
+//    let riseValue = String(format: "%.05f", (mostRisingCurrency?.value)!)
+//    let riseSymbol = mostRisingCurrency?.key
+//    return (riseSymbol!,riseValue)
+//  }
+//
+//  func mostFallingCurrency() -> (fallSymbol:String,fallValue:String)? {
+//    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
+//    let cryptoRiseDict = cryptoCurrencys.reduce(into: [String: Double]()) { $0[$1.symbol] = $1._30d.percentageRise}
+//    let mostFallingCurrency = cryptoRiseDict.min { a, b in a.value < b.value }
+//    let fallValue = String(format: "%.05f", (mostFallingCurrency?.value)!)
+//    let fallSymbol = mostFallingCurrency?.key
+//    return (fallSymbol!,fallValue)
+//  }
+
+  func CurrencyRiseFallCalculation() -> (riseSymbol:String,riseValue:String,fallSymbol:String,fallValue:String)? {
     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
     let cryptoRiseDict = cryptoCurrencys.reduce(into: [String: Double]()) { $0[$1.symbol] = $1._30d.percentageRise}
     let mostRisingCurrency = cryptoRiseDict.max { a, b in a.value < b.value }
-    let value = String(format: "%.05f", (mostRisingCurrency?.value)!)
-    let cryptoSymbol = mostRisingCurrency?.key
-    return (cryptoSymbol!,value)
+    let riseValue = String(format: "%.05f", (mostRisingCurrency?.value)!)
+    let riseSymbol = mostRisingCurrency?.key
+    let mostFallingCurrency = cryptoRiseDict.min { a, b in a.value < b.value }
+    let fallValue = String(format: "%.05f", (mostFallingCurrency?.value)!)
+    let fallSymbol = mostFallingCurrency?.key
+    return (riseSymbol!,riseValue,fallSymbol!,fallValue)
   }
 
-  func mostFallingCurrency() -> (cryptoSymbol:String,value:String)? {
-    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let cryptoRiseDict = cryptoCurrencys.reduce(into: [String: Double]()) { $0[$1.symbol] = $1._30d.percentageRise}
-    let mostRisingCurrency = cryptoRiseDict.min { a, b in a.value < b.value }
-    let value = String(format: "%.05f", (mostRisingCurrency?.value)!)
-    let cryptoSymbol = mostRisingCurrency?.key
-    return (cryptoSymbol!,value)
-  }
 
 }

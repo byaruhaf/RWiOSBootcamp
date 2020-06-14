@@ -20,7 +20,6 @@
 		5FDF33DF2496679B00D6B2DE /* NomicsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF33DE2496679B00D6B2DE /* NomicsError.swift */; };
 		A1F9E049249267DB00323226 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E048249267DB00323226 /* HomeViewController.swift */; };
 		A1F9E04B2492688C00323226 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E04A2492688C00323226 /* DataGenerator.swift */; };
-		A1F9E04D249268A300323226 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = A1F9E04C249268A300323226 /* Data.json */; };
 		A1F9E04F249268D200323226 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E04E249268D200323226 /* Model.swift */; };
 		A1F9E0512492690000323226 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E0502492690000323226 /* ThemeManager.swift */; };
 		A1F9E0532492690B00323226 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9E0522492690B00323226 /* Theme.swift */; };
@@ -42,7 +41,6 @@
 		5FDF33DE2496679B00D6B2DE /* NomicsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomicsError.swift; sourceTree = "<group>"; };
 		A1F9E048249267DB00323226 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1F9E04A2492688C00323226 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
-		A1F9E04C249268A300323226 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		A1F9E04E249268D200323226 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A1F9E0502492690000323226 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		A1F9E0522492690B00323226 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		A1F9E0542492696200323226 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A1F9E04C249268A300323226 /* Data.json */,
 				5F51E076249617E70085A339 /* realData.json */,
 				A1F9E04A2492688C00323226 /* DataGenerator.swift */,
 			);
@@ -237,7 +234,6 @@
 				5F51E077249617E70085A339 /* realData.json in Resources */,
 				185CB20523C78CE8009F7571 /* Assets.xcassets in Resources */,
 				185CB20323C78CE6009F7571 /* Main.storyboard in Resources */,
-				A1F9E04D249268A300323226 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

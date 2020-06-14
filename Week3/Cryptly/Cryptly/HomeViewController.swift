@@ -63,10 +63,10 @@ class HomeViewController: UIViewController {
     view1TextLabel.text = viewModel.allcurrency()
     view2TextLabel.text = viewModel.increasedCurrency()
     view3TextLabel.text = viewModel.decreasedCurrency()
-    view4DataText.text = viewModel.mostFallingCurrency()?.value
-    view4TextLabel.text = "Most Rising: \(viewModel.mostFallingCurrency()!.cryptoSymbol)"
-    view5DataText.text = viewModel.mostRisingCurrency()?.value
-    view5TextLabel.text = "Most Rising: \(viewModel.mostRisingCurrency()!.cryptoSymbol)"
+    view4DataText.text = viewModel.CurrencyRiseFallCalculation()?.fallValue
+    view4TextLabel.text = "Most Rising: \(viewModel.CurrencyRiseFallCalculation()!.fallSymbol)"
+    view5DataText.text = viewModel.CurrencyRiseFallCalculation()?.riseValue
+    view5TextLabel.text = "Most Rising: \(viewModel.CurrencyRiseFallCalculation()!.riseSymbol)"
   }
 
   @IBAction func switchPressed(_ sender: Any) {
