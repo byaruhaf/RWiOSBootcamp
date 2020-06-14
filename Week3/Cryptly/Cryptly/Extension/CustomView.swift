@@ -31,6 +31,16 @@ class CustomView: UIView {
       setUpView()
     }
   }
+  @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 2) {
+    didSet {
+      setUpView()
+    }
+  }
+  @IBInspectable var shadowColor: CGColor = UIColor.black.withAlphaComponent(0.7).cgColor{
+    didSet {
+      setUpView()
+    }
+  }
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
@@ -45,7 +55,7 @@ class CustomView: UIView {
       self.layer.shadowRadius = self.shadowRadius
       self.layer.shadowOpacity = self.shadowOpacity
       self.layer.cornerRadius = self.cornerRadiusValue
-      self.layer.cornerRadius = self.cornerRadiusValue
-        self.clipsToBounds = true
+      self.layer.shadowOffset = self.shadowOffset
+      self.layer.shadowColor = self.shadowColor
     }
 }

@@ -74,7 +74,6 @@
 			children = (
 				5FD3F66924941A790026E6A6 /* Storyboards */,
 				A1F9E0552492697800323226 /* ThemeManager */,
-				A1F9E0542492696200323226 /* Data */,
 				5FD3F66B24941B060026E6A6 /* Supporting Files */,
 				5FD3F666249413FC0026E6A6 /* Extension */,
 				5FD3F66A24941AD50026E6A6 /* ViewController */,
@@ -96,6 +95,7 @@
 		5FD3F667249414170026E6A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A1F9E0542492696200323226 /* Data */,
 				A1F9E04E249268D200323226 /* Model.swift */,
 				A1F9E0522492690B00323226 /* Theme.swift */,
 			);

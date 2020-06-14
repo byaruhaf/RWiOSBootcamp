@@ -42,20 +42,20 @@ class CryptoCurrencyViewModel {
 
   func allcurrency() -> String? {
     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let  allcurrencys = cryptoCurrencys.reduce(""){$0 + $1.name + " ,"}
-    return String(allcurrencys.dropLast())
+    let  allcurrencys = cryptoCurrencys.reduce(""){$0 + $1.symbol + ", "}
+    return String(allcurrencys.dropLast(2))
   }
 
   func increasedCurrency() -> String? {
      guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let  increasedCurrenies = cryptoCurrencys.filter { $0.currentValue > $0.previousValue}.reduce(""){$0 + $1.name + " ," }
-    return String(increasedCurrenies.dropLast())
+    let  increasedCurrenies = cryptoCurrencys.filter { $0.currentValue > $0.previousValue}.reduce(""){$0 + $1.name + ", " }
+    return String(increasedCurrenies.dropLast(2))
   }
 
   func decreasedCurrency() -> String? {
      guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let  decreasedCurrenies =  cryptoCurrencys.filter { $0.currentValue < $0.previousValue}.reduce(""){$0 + $1.name + " ,"}
-     return String(decreasedCurrenies.dropLast())
+    let  decreasedCurrenies =  cryptoCurrencys.filter { $0.currentValue < $0.previousValue}.reduce(""){$0 + $1.name + ", "}
+     return String(decreasedCurrenies.dropLast(2))
   }
   func mostRisingCurrency() -> String? {
     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
