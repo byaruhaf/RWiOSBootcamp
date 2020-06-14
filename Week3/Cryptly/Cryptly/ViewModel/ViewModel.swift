@@ -32,6 +32,19 @@
 
 import Foundation
 
+//struct CryptoCurrency: Codable {
+//  let name: String
+//  let symbol: String
+//  let currentValue: Int
+//  let previousValue: Int
+//  var trend:Trend {
+//    currentValue > previousValue ? .rising:.falling
+//  }
+//  var percentageRise:Float  {
+//    (Float(currentValue - previousValue) / Float(previousValue)) * 100
+//  }
+//}
+
 class CryptoCurrencyViewModel {
 
  let cryptoCurrencys:[CryptoCurrency]?
@@ -48,26 +61,26 @@ class CryptoCurrencyViewModel {
 
   func increasedCurrency() -> String? {
      guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let  increasedCurrenies = cryptoCurrencys.filter { $0.currentValue > $0.previousValue}.reduce(""){$0 + $1.name + ", " }
+    let  increasedCurrenies = cryptoCurrencys.filter { Double($0._30d.priceChangePct)!.isLess(than: 0.000000000) }.reduce(""){$0 + $1.name + ", " }
     return String(increasedCurrenies.dropLast(2))
   }
 
   func decreasedCurrency() -> String? {
      guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let  decreasedCurrenies =  cryptoCurrencys.filter { $0.currentValue < $0.previousValue}.reduce(""){$0 + $1.name + ", "}
+    let  decreasedCurrenies =  cryptoCurrencys.filter { !(Double($0._30d.priceChangePct)!.isLess(than: 0.000000000)) }.reduce(""){$0 + $1.name + ", " }
      return String(decreasedCurrenies.dropLast(2))
   }
+
   func mostRisingCurrency() -> String? {
     guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-    let value = cryptoCurrencys.map() {$0.percentageRise}.max()
-    return String(format: "%.02f", Double(value!))
+    let value = cryptoCurrencys.map{ $0._30d.priceChangePct }.compactMap{Double($0)}.max()
+    return String(format: "%.05f", Double(value!))
   }
 
   func mostFallingCurrency() -> String? {
-    guard let cryptoCurrencys = cryptoCurrencys else { return nil}
-     let value = cryptoCurrencys.map() {$0.percentageRise}.min()
-     return String(format: "%.02f", Double(value!))
+  guard let cryptoCurrencys = cryptoCurrencys else { return nil}
+  let value = cryptoCurrencys.map{ $0._30d.priceChangePct }.compactMap{Double($0)}.min()
+  return String(format: "%.05f", Double(value!))
   }
-
-
+  
 }

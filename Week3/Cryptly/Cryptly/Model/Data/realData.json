@@ -1,0 +1,171 @@
+[
+  {
+    "id": "BTC",
+    "currency": "BTC",
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg",
+    "price": "9440.20818276",
+    "price_date": "2020-06-14T00:00:00Z",
+    "price_timestamp": "2020-06-14T08:19:00Z",
+    "circulating_supply": "18404212",
+    "max_supply": "21000000",
+    "market_cap": "173739592720",
+    "rank": "1",
+    "high": "19349.28521721",
+    "high_timestamp": "2017-12-16T00:00:00Z",
+    "1d": {
+      "volume": "17919091885.15",
+      "price_change": "-51.14265874",
+      "price_change_pct": "-0.0054",
+      "volume_change": "-5757257016.55",
+      "volume_change_pct": "-0.2432",
+      "market_cap_change": "-932403886.08",
+      "market_cap_change_pct": "-0.0053"
+    },
+    "30d": {
+      "volume": "955058372376.28",
+      "price_change": "-29.59681983",
+      "price_change_pct": "-0.0031",
+      "volume_change": "-461612678638.33",
+      "volume_change_pct": "-0.3258",
+      "market_cap_change": "-294466549.56",
+      "market_cap_change_pct": "-0.0017"
+    }
+  },
+  {
+    "id": "ETH",
+    "currency": "ETH",
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg",
+    "price": "236.32520907",
+    "price_date": "2020-06-14T00:00:00Z",
+    "price_timestamp": "2020-06-14T08:19:00Z",
+    "circulating_supply": "111342862",
+    "market_cap": "26313125067",
+    "rank": "2",
+    "high": "1394.96861152",
+    "high_timestamp": "2018-01-13T00:00:00Z",
+    "1d": {
+      "volume": "10929756123.05",
+      "price_change": "-1.11622416",
+      "price_change_pct": "-0.0047",
+      "volume_change": "2155641661.82",
+      "volume_change_pct": "0.2457",
+      "market_cap_change": "-121027720.86",
+      "market_cap_change_pct": "-0.0046"
+    },
+    "30d": {
+      "volume": "379935595057.40",
+      "price_change": "40.35574477",
+      "price_change_pct": "0.2059",
+      "volume_change": "-200672945253.98",
+      "volume_change_pct": "-0.3456",
+      "market_cap_change": "4573297128.02",
+      "market_cap_change_pct": "0.2104"
+    }
+  },
+  {
+    "id": "XRP",
+    "currency": "XRP",
+    "symbol": "XRP",
+    "name": "Ripple",
+    "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/XRP.svg",
+    "price": "0.19144800",
+    "price_date": "2020-06-14T00:00:00Z",
+    "price_timestamp": "2020-06-14T08:19:00Z",
+    "circulating_supply": "44257803618",
+    "max_supply": "100000000000",
+    "market_cap": "8473067867",
+    "rank": "4",
+    "high": "2.77549031",
+    "high_timestamp": "2018-01-07T00:00:00Z",
+    "1d": {
+      "volume": "776892930.86",
+      "price_change": "-0.00098230",
+      "price_change_pct": "-0.0051",
+      "volume_change": "-212822453.52",
+      "volume_change_pct": "-0.2150",
+      "market_cap_change": "-43474626.02",
+      "market_cap_change_pct": "-0.0051"
+    },
+    "30d": {
+      "volume": "43221916195.24",
+      "price_change": "-0.00737642",
+      "price_change_pct": "-0.0371",
+      "volume_change": "-28036189531.76",
+      "volume_change_pct": "-0.3934",
+      "market_cap_change": "-297644431.12",
+      "market_cap_change_pct": "-0.0339"
+    }
+  },
+  {
+    "id": "LTC",
+    "currency": "LTC",
+    "symbol": "LTC",
+    "name": "Litecoin",
+    "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/ltc.svg",
+    "price": "44.61094629",
+    "price_date": "2020-06-14T00:00:00Z",
+    "price_timestamp": "2020-06-14T08:19:00Z",
+    "circulating_supply": "64948076",
+    "max_supply": "84000000",
+    "market_cap": "2897395116",
+    "rank": "7",
+    "high": "356.49418720",
+    "high_timestamp": "2017-12-18T00:00:00Z",
+    "1d": {
+      "volume": "1504018301.69",
+      "price_change": "-0.13840153",
+      "price_change_pct": "-0.0031",
+      "volume_change": "-480938632.02",
+      "volume_change_pct": "-0.2423",
+      "market_cap_change": "-8665598.97",
+      "market_cap_change_pct": "-0.0030"
+    },
+    "30d": {
+      "volume": "79207453073.20",
+      "price_change": "1.67036476",
+      "price_change_pct": "0.0389",
+      "volume_change": "-46259380919.58",
+      "volume_change_pct": "-0.3687",
+      "market_cap_change": "117724352.76",
+      "market_cap_change_pct": "0.0424"
+    }
+  },
+  {
+    "id": "NXT",
+    "currency": "NXT",
+    "symbol": "NXT",
+    "name": "Nxt",
+    "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/nxt.svg",
+    "price": "0.01105845",
+    "price_date": "2020-06-14T00:00:00Z",
+    "price_timestamp": "2020-06-14T08:19:00Z",
+    "circulating_supply": "998999942",
+    "max_supply": "1000000000",
+    "market_cap": "11047389",
+    "rank": "243",
+    "high": "1.84056088",
+    "high_timestamp": "2017-12-23T00:00:00Z",
+    "1d": {
+      "volume": "928199.32",
+      "price_change": "-0.00035298",
+      "price_change_pct": "-0.0309",
+      "volume_change": "-79091.61",
+      "volume_change_pct": "-0.0785",
+      "market_cap_change": "-352627.04",
+      "market_cap_change_pct": "-0.0309"
+    },
+    "30d": {
+      "volume": "30225587.90",
+      "price_change": "0.00026432",
+      "price_change_pct": "0.0245",
+      "volume_change": "-4862177.31",
+      "volume_change_pct": "-0.1386",
+      "market_cap_change": "264054.81",
+      "market_cap_change_pct": "0.0245"
+    }
+  }
+]

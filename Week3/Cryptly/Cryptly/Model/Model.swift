@@ -36,15 +36,56 @@ enum Trend: Int, Codable{
   case rising,falling
 }
 
+//struct CryptoCurrency: Codable {
+//  let name: String
+//  let symbol: String
+//  let currentValue: Int
+//  let previousValue: Int
+//  var trend:Trend {
+//    currentValue > previousValue ? .rising:.falling
+//  }
+//  var percentageRise:Float  {
+//    (Float(currentValue - previousValue) / Float(previousValue)) * 100
+//  }
+//}
+
 struct CryptoCurrency: Codable {
-  let name: String
+  let id: String
+  let currency: String
   let symbol: String
-  let currentValue: Int
-  let previousValue: Int
-  var trend:Trend {
-    currentValue > previousValue ? .rising:.falling
+  let name: String
+  let logoUrl: URL
+  let price: String
+  let priceDate: String
+  let priceTimestamp: String
+  struct __1d: Codable {
+    let priceChange: String
+    let priceChangePct: String
+    private enum CodingKeys: String, CodingKey {
+      case priceChange = "price_change"
+      case priceChangePct = "price_change_pct"
+    }
   }
-  var percentageRise:Float  {
-    (Float(currentValue - previousValue) / Float(previousValue)) * 100
+  let _1d: __1d
+  struct __30d: Codable {
+    let priceChange: String
+    let priceChangePct: String
+    private enum CodingKeys: String, CodingKey {
+      case priceChange = "price_change"
+      case priceChangePct = "price_change_pct"
+    }
+  }
+  let _30d: __30d
+  private enum CodingKeys: String, CodingKey {
+    case id
+    case currency
+    case symbol
+    case name
+    case logoUrl = "logo_url"
+    case price
+    case priceDate = "price_date"
+    case priceTimestamp = "price_timestamp"
+    case _1d = "1d"
+    case _30d = "30d"
   }
 }

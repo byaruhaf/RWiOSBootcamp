@@ -39,7 +39,7 @@ class DataGenerator {
     
     func generateData() -> [CryptoCurrency]? {
         
-        if let filePath = Bundle.main.path(forResource: "Data", ofType: "json") {
+        if let filePath = Bundle.main.path(forResource: "realData", ofType: "json") {
             let fileURL = URL(fileURLWithPath: filePath)
             do {
                 let data = try Data(contentsOf: fileURL)
