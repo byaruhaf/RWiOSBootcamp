@@ -18,7 +18,7 @@ struct CryptoCurrency: Codable {
     let priceChangePct: String
     var trend:Trend? {
       guard let priceChangePct = Double(self.priceChangePct) else { return nil }
-      return priceChangePct.isLess(than: 0.000000000) ? Trend.rising:Trend.falling
+      return priceChangePct.isLess(than: 0.000000000) ? Trend.falling:Trend.rising
     }
     var percentageRise:Double?  {
       guard let priceChangePct = Double(self.priceChangePct) else { return nil }

@@ -3,7 +3,7 @@ import Foundation
 class NomicsAPIClient {
   fileprivate let NomicsAPIKey = "d1a90a4dfeaa4047300f749853ac7501"
 
-  let searchTerm = "BTC,ETH,LTC,XRP,NXT"
+  let searchTerm = "BTC,ETH,LTC,XRP,NXT,ADA"
   let periodRange = "30d"
 
   var url: URL {

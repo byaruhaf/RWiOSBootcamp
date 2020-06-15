@@ -123,7 +123,7 @@ extension HomeViewController: Themeable {
       animations: {
         self.view2.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
         self.view2.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-        self.view2TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+        self.view2TextLabel.textColor = ThemeManager.shared.currentTheme?.uptextColor
       }
     ) { (true) in
       self.animateBatch3()
@@ -136,7 +136,7 @@ extension HomeViewController: Themeable {
       animations: {
         self.view3.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
         self.view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-        self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+        self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.downtextColor
       }
     ) { (true) in
       self.animateBatch4()
@@ -144,13 +144,10 @@ extension HomeViewController: Themeable {
   }
   func animateBatch4() {
     UIView.animate(withDuration: 0.2) {
-      self.view3.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
       self.view4.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
       self.view5.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
-      self.view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
       self.view4.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
       self.view5.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
-      self.view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
       self.view4TextLabel.textColor = ThemeManager.shared.currentTheme?.downtextColor
       self.view5TextLabel.textColor = ThemeManager.shared.currentTheme?.uptextColor
       self.view4DataText.textColor = ThemeManager.shared.currentTheme?.downtextColor
