@@ -3,7 +3,6 @@ import Foundation
 class NomicsAPIClient {
   fileprivate let NomicsAPIKey = "d1a90a4dfeaa4047300f749853ac7501"
   lazy var baseURL: URL = {
-//    return URL(string: "https://api.nomics.com/v1/currencies/ticker?key=\(NomicsAPIKey)&ids=BTC,ETH,LTC,XRP,NXT&interval=1d,30d")!
     return URL(string: "https://api.nomics.com/v1/currencies/ticker?key=\(NomicsAPIKey)&ids=BTC,ETH,LTC,XRP,NXT&interval=30d")!
 
   }()

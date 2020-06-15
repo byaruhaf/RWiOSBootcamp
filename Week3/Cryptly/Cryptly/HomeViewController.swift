@@ -4,7 +4,7 @@ class HomeViewController: UIViewController {
 
   let client = NomicsAPIClient()
 
-  let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: DataGenerator.shared.generateData())
+//  let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: DataGenerator.shared.generateData())
 
 //  var viewModel:[CryptoCurrencyViewModel] = []
 
@@ -63,10 +63,15 @@ class HomeViewController: UIViewController {
     view1TextLabel.text = viewModel.allcurrency()
     view2TextLabel.text = viewModel.increasedCurrency()
     view3TextLabel.text = viewModel.decreasedCurrency()
-    view4DataText.text = viewModel.CurrencyRiseFallCalculation()?.fallValue
-    view4TextLabel.text = "Most Rising: \(viewModel.CurrencyRiseFallCalculation()!.fallSymbol)"
-    view5DataText.text = viewModel.CurrencyRiseFallCalculation()?.riseValue
-    view5TextLabel.text = "Most Rising: \(viewModel.CurrencyRiseFallCalculation()!.riseSymbol)"
+
+    if let currencyRiseFallCalculation = viewModel.CurrencyRiseFallCalculation() {
+      view4DataText.text = currencyRiseFallCalculation.fallValue
+      view5DataText.text = currencyRiseFallCalculation.riseValue
+      view4TextLabel.text = "Most Falling: \(currencyRiseFallCalculation.fallSymbol)"
+      view5TextLabel.text = "Most Rising: \(currencyRiseFallCalculation.riseSymbol)"
+      view4Image.image = UIImage(named: "\(currencyRiseFallCalculation.fallSymbol)")
+      view5Image.image = UIImage(named: "\(currencyRiseFallCalculation.riseSymbol)")
+    }
   }
 
   @IBAction func switchPressed(_ sender: Any) {

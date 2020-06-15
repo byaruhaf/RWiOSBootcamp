@@ -16,11 +16,13 @@ struct CryptoCurrency: Codable {
   struct __30d: Codable {
     let priceChange: String
     let priceChangePct: String
-    var trend:Trend {
-      Double(self.priceChangePct)!.isLess(than: 0.000000000) ? .rising:.falling
+    var trend:Trend? {
+      guard let priceChangePct = Double(self.priceChangePct) else { return nil }
+      return priceChangePct.isLess(than: 0.000000000) ? Trend.rising:Trend.falling
     }
-    var percentageRise:Double  {
-      Double(self.priceChangePct)!
+    var percentageRise:Double?  {
+      guard let priceChangePct = Double(self.priceChangePct) else { return nil }
+      return priceChangePct
     }
     private enum CodingKeys: String, CodingKey {
       case priceChange = "price_change"
@@ -37,7 +39,6 @@ struct CryptoCurrency: Codable {
     case price
     case priceDate = "price_date"
     case priceTimestamp = "price_timestamp"
-//    case _1d = "1d"
     case _30d = "30d"
   }
 }

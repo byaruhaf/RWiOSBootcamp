@@ -15,6 +15,7 @@
 		5F2C7B8D249341FA0004B2C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C7B8C249341FA0004B2C4 /* ViewModel.swift */; };
 		5F2C7B8F24935BC70004B2C4 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C7B8E24935BC70004B2C4 /* CustomView.swift */; };
 		5F51E077249617E70085A339 /* realData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F51E076249617E70085A339 /* realData.json */; };
+		5F72CD9524975804006ABB17 /* customoperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72CD9424975804006ABB17 /* customoperator.swift */; };
 		5FD046B22496A42B0030A234 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD046B12496A42B0030A234 /* UIImageView.swift */; };
 		5FDF33DD249665CF00D6B2DE /* NomicsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF33DC249665CF00D6B2DE /* NomicsAPIClient.swift */; };
 		5FDF33DF2496679B00D6B2DE /* NomicsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF33DE2496679B00D6B2DE /* NomicsError.swift */; };
@@ -36,6 +37,7 @@
 		5F2C7B8C249341FA0004B2C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5F2C7B8E24935BC70004B2C4 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5F51E076249617E70085A339 /* realData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = realData.json; sourceTree = "<group>"; };
+		5F72CD9424975804006ABB17 /* customoperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customoperator.swift; sourceTree = "<group>"; };
 		5FD046B12496A42B0030A234 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		5FDF33DC249665CF00D6B2DE /* NomicsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomicsAPIClient.swift; sourceTree = "<group>"; };
 		5FDF33DE2496679B00D6B2DE /* NomicsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomicsError.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				5F2C7B8E24935BC70004B2C4 /* CustomView.swift */,
 				5FD046B12496A42B0030A234 /* UIImageView.swift */,
+				5F72CD9424975804006ABB17 /* customoperator.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				5FDF33DD249665CF00D6B2DE /* NomicsAPIClient.swift in Sources */,
 				5FDF33DF2496679B00D6B2DE /* NomicsError.swift in Sources */,
 				A1F9E04F249268D200323226 /* Model.swift in Sources */,
+				5F72CD9524975804006ABB17 /* customoperator.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				5FD046B22496A42B0030A234 /* UIImageView.swift in Sources */,
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
