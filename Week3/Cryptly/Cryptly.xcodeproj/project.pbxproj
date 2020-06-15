@@ -82,7 +82,7 @@
 		185CB1FA23C78CE6009F7571 /* Cryptly */ = {
 			isa = PBXGroup;
 			children = (
-				5FDF33DB2496658C00D6B2DE /* NetworkManager */,
+				5FDF33DB2496658C00D6B2DE /* NomicsAPI */,
 				5FD3F66924941A790026E6A6 /* Storyboards */,
 				A1F9E0552492697800323226 /* ThemeManager */,
 				5FD3F66B24941B060026E6A6 /* Supporting Files */,
@@ -151,13 +151,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FDF33DB2496658C00D6B2DE /* NetworkManager */ = {
+		5FDF33DB2496658C00D6B2DE /* NomicsAPI */ = {
 			isa = PBXGroup;
 			children = (
 				5FDF33DC249665CF00D6B2DE /* NomicsAPIClient.swift */,
 				5FDF33DE2496679B00D6B2DE /* NomicsError.swift */,
 			);
-			name = NetworkManager;
+			name = NomicsAPI;
 			sourceTree = "<group>";
 		};
 		A1F9E0542492696200323226 /* Data */ = {

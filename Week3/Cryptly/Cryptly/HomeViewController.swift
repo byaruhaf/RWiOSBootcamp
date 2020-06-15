@@ -4,10 +4,6 @@ class HomeViewController: UIViewController {
 
   let client = NomicsAPIClient()
 
-//  let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: DataGenerator.shared.generateData())
-
-//  var viewModel:[CryptoCurrencyViewModel] = []
-
   @IBOutlet weak var view1: UIView!
   @IBOutlet weak var view2: UIView!
   @IBOutlet weak var view3: UIView!
@@ -59,15 +55,15 @@ class HomeViewController: UIViewController {
       case .failure(let error):
         switch error {
         case .invalidData:
-          Alert.showBasic(title: "invalidData", message: "Contact Developer", vc: self)
+          Alert.showBasic(title: "Invalid Data", message: "Contact Developer", vc: self)
         case .invalidUrl:
-          Alert.showBasic(title: "invalidUrl", message: "Contact Developer", vc: self)
+          Alert.showBasic(title: "Invalid URL", message: "Contact Developer", vc: self)
         case .jsonParsingFailure:
-          Alert.showBasic(title: "jsonParsingFailure", message: "Contact Developer", vc: self)
+          Alert.showBasic(title: "Json Parsing Failure", message: "Contact Developer", vc: self)
         case .requestFailed:
-          Alert.showBasic(title: "requestFailed", message: "Check your internet Connection", vc: self)
+          Alert.showBasic(title: "Internet Request Failed", message: "Check your internet Connection", vc: self)
         case .responseUnsuccessful(statusCode: let statusCode):
-           Alert.showBasic(title: "responseUnsuccessful", message: "statusCode: \(statusCode)", vc: self)
+           Alert.showBasic(title: "Data Request Unsuccessful", message: "statusCode: \(statusCode)", vc: self)
         }
       }
     }

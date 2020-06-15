@@ -17,7 +17,7 @@ Create an app called Cryptly that displays prices of cryptocurrencies
 * Decode JSON data to the app data model
 * Update the user interface based on the app data model. 
 * use only filter() and/or reduce() to extract view data from the model 
-* use protocols and NotificationCenter to change app theme based on the toggle button 
+* use protocols and NotificationCenter to change app theme based on the toggle button state
 
 ### Stretch Above and Beyond Requirements completed:
 * Refactor setupViews() function in to a custom UIView
@@ -30,6 +30,7 @@ Create an app called Cryptly that displays prices of cryptocurrencies
 * added ViewModel to prepare the model data for the view. 
 * added animation during the change of theme's
 * added network component to fetch data from a remote [Nomics API](api.nomics.com)
+* using swift's Result type for the Asynchronous completion handler
 
 
 
