@@ -27,36 +27,36 @@ class NomicsAPIClient {
   let decoder = JSONDecoder()
   let session = URLSession(configuration: .default)
 
-  typealias CryptoCompletionHandler = ([CryptoCurrency]?, Error?) -> Void
+  typealias CryptoCompletionHandler = (Result<[CryptoCurrency], NomicsError>) -> Void
 
   func getCryptoData(completionHandler completion: @escaping CryptoCompletionHandler) {
 
     let request = URLRequest(url: url)
 
     let task = session.dataTask(with: request) { (data, response, error) in
-      DispatchQueue.main.async {
-        if let data = data {
-          guard let httpResponse = response as? HTTPURLResponse else {
-            completion(nil, NomicsError.requestFailed)
-            return
-          }
-          if httpResponse.statusCode == 200 {
+      DispatchQueue.main.async {//main start
+        guard let httpResponse = response as? HTTPURLResponse else {
+          completion(.failure(NomicsError.requestFailed))
+          return
+        }
+        if httpResponse.statusCode == 200 {
+          if let data = data {
             do {
               let cryptoCurrency = try self.decoder.decode([CryptoCurrency].self, from: data)
-              completion(cryptoCurrency, nil)
+              completion(.success(cryptoCurrency))
             } catch {
-              completion(nil, NomicsError.invalidData)
+              completion(.failure(NomicsError.jsonParsingFailure))
             }
           } else {
-            completion(nil, error)
+            completion(.failure(NomicsError.invalidData))
           }
-
-        } else if let error = error {
-          completion(nil, error)
+        } else {
+          completion(.failure(NomicsError.responseUnsuccessful(statusCode: httpResponse.statusCode)))
         }
-      }
+      } //main end
     }
     task.resume()
   }
+
 
 }

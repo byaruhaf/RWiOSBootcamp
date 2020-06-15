@@ -51,10 +51,24 @@ class HomeViewController: UIViewController {
   }
 
   func getData() {
-    client.getCryptoData { [unowned self] currentCyptoData, error in
-      if let currentCyptoData = currentCyptoData {
-        let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: currentCyptoData)
-        self.updateViewData(viewModel:viewModel)
+    client.getCryptoData { result in
+      switch result {
+      case .success(let currentCyptoData):
+          let viewModel = CryptoCurrencyViewModel(cryptoCurrencys: currentCyptoData)
+          self.updateViewData(viewModel:viewModel)
+      case .failure(let error):
+        switch error {
+        case .invalidData:
+          Alert.showBasic(title: "invalidData", message: "Contact Developer", vc: self)
+        case .invalidUrl:
+          Alert.showBasic(title: "invalidUrl", message: "Contact Developer", vc: self)
+        case .jsonParsingFailure:
+          Alert.showBasic(title: "jsonParsingFailure", message: "Contact Developer", vc: self)
+        case .requestFailed:
+          Alert.showBasic(title: "requestFailed", message: "Check your internet Connection", vc: self)
+        case .responseUnsuccessful(statusCode: let statusCode):
+           Alert.showBasic(title: "responseUnsuccessful", message: "statusCode: \(statusCode)", vc: self)
+        }
       }
     }
   }
