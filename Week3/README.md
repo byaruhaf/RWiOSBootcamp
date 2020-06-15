@@ -21,16 +21,16 @@ Create an app called Cryptly that displays prices of cryptocurrencies
 
 ### Stretch Above and Beyond Requirements completed:
 * Refactor setupViews() function in to a custom UIView
-* add trend & percentageRise variables to the app model
+* Add trend & percentageRise variables to the app model
 * Display Most Falling and Most Rising cryptocurrencies
 * create a Roundable protocol for a custom view restricted to the class UIView.
  
 
 ### Additional Assignment Goals completed
-* added ViewModel to prepare the model data for the view. 
-* added animation during the change of theme's
-* added network component to fetch data from a remote [Nomics API](api.nomics.com)
-* using swift's Result type for the Asynchronous completion handler
+* Added ViewModel to prepare the model data for the view. 
+* Added animation during the change of theme's
+* Added network component to fetch data from a remote [Nomics API](api.nomics.com)
+* Using swift's Result type for the Asynchronous completion handler
 
 
 
