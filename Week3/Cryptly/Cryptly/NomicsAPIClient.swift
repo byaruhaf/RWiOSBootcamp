@@ -2,32 +2,36 @@ import Foundation
 
 class NomicsAPIClient {
   fileprivate let NomicsAPIKey = "d1a90a4dfeaa4047300f749853ac7501"
-  lazy var baseURL: URL = {
-    return URL(string: "https://api.nomics.com/v1/currencies/ticker?key=\(NomicsAPIKey)&ids=BTC,ETH,LTC,XRP,NXT&interval=30d")!
 
-  }()
+  let searchTerm = "BTC,ETH,LTC,XRP,NXT"
+  let periodRange = "30d"
 
+  var url: URL {
+    var components = URLComponents()
+    components.scheme = "https"
+    components.host = "api.nomics.com"
+    components.path = "/v1/currencies/ticker"
+    components.queryItems = [
+      URLQueryItem(name: "key", value: NomicsAPIKey),
+      URLQueryItem(name: "ids", value: searchTerm),
+      URLQueryItem(name: "interval", value: periodRange)
+    ]
+    guard let url = components.url else {
+      preconditionFailure(
+        "Invalid URL components: \(components)"
+      )
+    }
+    return url
+  }
 
-typealias CryptoCompletionHandler = ([CryptoCurrency]?, Error?) -> Void
+  let decoder = JSONDecoder()
+  let session = URLSession(configuration: .default)
 
-let decoder = JSONDecoder()
-
-let session: URLSession
-
-init(configuration: URLSessionConfiguration) {
-  self.session = URLSession(configuration: configuration)
-}
-
-convenience init() {
-  self.init(configuration: .default)
-}
+  typealias CryptoCompletionHandler = ([CryptoCurrency]?, Error?) -> Void
 
   func getCryptoData(completionHandler completion: @escaping CryptoCompletionHandler) {
 
-    let url = baseURL
-
     let request = URLRequest(url: url)
-
 
     let task = session.dataTask(with: request) { (data, response, error) in
       DispatchQueue.main.async {
