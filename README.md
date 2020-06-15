@@ -14,3 +14,4 @@
 ---
 1. [Week 01](./Week1/README.md)
 2. [Week 02](./Week2/README.md)
+3. [Week 03](./Week3/)
