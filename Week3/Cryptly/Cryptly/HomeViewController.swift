@@ -43,9 +43,9 @@ class HomeViewController: UIViewController {
   }
 
   func setupLabels() {
-    headingLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-    view1TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-    view2TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+    view1TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+    view2TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+    view3TextLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
     view4TextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
     view5TextLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
   }
