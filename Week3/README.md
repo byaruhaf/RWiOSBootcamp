@@ -36,8 +36,10 @@ Create an app called Cryptly that displays prices of cryptocurrencies
 
 ## App Demo
 
+![Light2Dark](Demo/Light2Dark.gif)
+
 |Light Mode|Dark Mode|
-|:-------------------------:|:-------------------------:|
+|:-------------------------:|:-------------------------
 |![CryptlyLight](Demo/CryptlyLight.png)  |  ![CryptlyDark.png](Demo/CryptlyDark.png) |
 
 ## Attribution
