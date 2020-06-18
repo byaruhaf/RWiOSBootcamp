@@ -61,7 +61,7 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-iw-efA">
+                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-iw-efA">
                                         <rect key="frame" x="78.666666666666686" y="182.33333333333334" width="650.66666666666652" height="25.666666666666657"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OJB-PN-gwH"/>
