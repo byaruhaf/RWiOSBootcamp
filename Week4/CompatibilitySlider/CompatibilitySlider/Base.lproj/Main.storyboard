@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,51 +18,51 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="1xY-fq-vQc">
                                 <rect key="frame" x="44" y="32" width="808" height="207"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel about..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPk-A6-VfC">
-                                        <rect key="frame" x="311.5" y="0.0" width="185.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User 1, what do you think about.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPk-A6-VfC">
+                                        <rect key="frame" x="279" y="0.0" width="250" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AAc-jm-ROL">
-                                        <rect key="frame" x="283" y="54.5" width="242" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="AAc-jm-ROL">
+                                        <rect key="frame" x="282.66666666666669" y="54.333333333333329" width="242.66666666666669" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="xxM-eR-Pe8">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="30"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ITEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yar-uD-3oE">
-                                                <rect key="frame" x="80.5" y="0.0" width="81" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="ITEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yar-uD-3oE">
+                                                <rect key="frame" x="93.333333333333314" y="0.0" width="56.333333333333343" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Q30-xt-i6I">
-                                                <rect key="frame" x="161.5" y="0.0" width="80.5" height="30"/>
+                                                <rect key="frame" x="149.66666666666663" y="0.0" width="93" height="30"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VEL-re-XfV">
-                                        <rect key="frame" x="81" y="118.5" width="646" height="30"/>
+                                        <rect key="frame" x="80.666666666666686" y="118.33333333333334" width="646.66666666666652" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terrible" translatesAutoresizingMaskIntoConstraints="NO" id="MHE-4j-X35">
-                                                <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="129.33333333333334" height="30"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bad" translatesAutoresizingMaskIntoConstraints="NO" id="Oso-n0-SLr">
-                                                <rect key="frame" x="129" y="0.0" width="129.5" height="30"/>
+                                                <rect key="frame" x="129.33333333333331" y="0.0" width="129.33333333333331" height="30"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meh" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-Xb-g0a">
-                                                <rect key="frame" x="258.5" y="0.0" width="129" height="30"/>
+                                                <rect key="frame" x="258.66666666666663" y="0.0" width="129.33333333333337" height="30"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="good" translatesAutoresizingMaskIntoConstraints="NO" id="UDX-5m-69w">
-                                                <rect key="frame" x="387.5" y="0.0" width="129.5" height="30"/>
+                                                <rect key="frame" x="387.99999999999994" y="0.0" width="129.33333333333331" height="30"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="great" translatesAutoresizingMaskIntoConstraints="NO" id="5XL-nc-oMm">
-                                                <rect key="frame" x="517" y="0.0" width="129" height="30"/>
+                                                <rect key="frame" x="517.33333333333337" y="0.0" width="129.33333333333337" height="30"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-iw-efA">
-                                        <rect key="frame" x="79" y="182.5" width="650" height="25.5"/>
+                                        <rect key="frame" x="78.666666666666686" y="182.33333333333334" width="650.66666666666652" height="25.666666666666657"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OJB-PN-gwH"/>
                                         </connections>
@@ -73,6 +73,7 @@
                                     <constraint firstItem="AAc-jm-ROL" firstAttribute="width" secondItem="1xY-fq-vQc" secondAttribute="width" multiplier="0.3" id="cuo-X1-cEy"/>
                                     <constraint firstItem="VEL-re-XfV" firstAttribute="width" secondItem="1xY-fq-vQc" secondAttribute="width" multiplier="0.8" id="m2K-Yv-vPv"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" spacing="100"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1w-P6-8nd">
                                 <rect key="frame" x="415" y="355" width="66" height="30"/>
@@ -87,7 +88,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xY-fq-vQc" secondAttribute="trailing" id="DZ9-8g-0Fw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d1w-P6-8nd" secondAttribute="bottom" constant="8" id="FPz-Jh-uev"/>
                             <constraint firstItem="1xY-fq-vQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="GNw-Cf-TNA"/>
-                            <constraint firstItem="d1w-P6-8nd" firstAttribute="top" secondItem="1xY-fq-vQc" secondAttribute="bottom" constant="116" id="Kil-5Y-yLh"/>
+                            <constraint firstItem="d1w-P6-8nd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1xY-fq-vQc" secondAttribute="bottom" constant="116" id="Kil-5Y-yLh"/>
                             <constraint firstItem="1xY-fq-vQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bVC-Vi-54E"/>
                             <constraint firstItem="d1w-P6-8nd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eO8-6C-b92"/>
                         </constraints>
@@ -107,7 +108,7 @@
     <resources>
         <image name="bad" width="30" height="30"/>
         <image name="good" width="30" height="30"/>
-        <image name="great" width="30" height="30"/>
+        <image name="great" width="20" height="20"/>
         <image name="meh" width="30" height="30"/>
         <image name="star" width="1000" height="1000"/>
         <image name="terrible" width="30" height="30"/>

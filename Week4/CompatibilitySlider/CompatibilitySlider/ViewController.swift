@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        startGame()
     }
 
     @IBAction func sliderValueChanged(_ sender: UISlider) {
@@ -47,6 +48,22 @@ class ViewController: UIViewController {
         print(matchPercentage, "%")
         let matchString = (matchPercentage * 100).rounded()
         return "\(matchString)%"
+    }
+
+    func startGame()  {
+        self.currentItemIndex = 0
+        startRound()
+    }
+
+    func startRound() {
+        if currentItemIndex < compatibilityItems.count {
+            updateView(currentItemIndex)
+
+        }
+    }
+
+    func updateView(_ currentItemIndex:Int) {
+        compatibilityItemLabel.text = compatibilityItems[currentItemIndex]
     }
 
 }

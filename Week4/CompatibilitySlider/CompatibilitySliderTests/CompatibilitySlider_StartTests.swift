@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import CompatibilitySlider_Start
+@testable import CompatibilitySlider
 
 class CompatibilitySlider_StartTests: XCTestCase {
 
