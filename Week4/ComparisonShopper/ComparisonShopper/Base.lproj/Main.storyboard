@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ComparisonShopper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cF-bQ-XH9">
+                                <rect key="frame" x="16" y="68" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR3-N9-oJU">
+                                <rect key="frame" x="215" y="68" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="kFM-8L-Jys">
+                                <rect key="frame" x="16" y="162" width="183" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ep7-9Q-9nQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="6Tl-ho-9j4">
+                                <rect key="frame" x="215" y="162" width="183" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isC-pG-JOl">
+                                <rect key="frame" x="83.5" y="378" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWY-yX-Vmp">
+                                <rect key="frame" x="83.5" y="418" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="273-4y-mHA">
+                                <rect key="frame" x="282.5" y="418" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejr-fP-kpV">
+                                <rect key="frame" x="156" y="553" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Right Item"/>
+                                <connections>
+                                    <action selector="didPressAddRightHouseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dzt-Re-ssS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zs-8b-Ndd">
+                                <rect key="frame" x="282.5" y="378" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kFM-8L-Jys" firstAttribute="width" secondItem="8cF-bQ-XH9" secondAttribute="width" id="6Hi-Mo-bLM"/>
+                            <constraint firstItem="8cF-bQ-XH9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Qd-cy-m4b"/>
+                            <constraint firstItem="qR3-N9-oJU" firstAttribute="leading" secondItem="8cF-bQ-XH9" secondAttribute="trailing" constant="16" id="C11-oo-8Bv"/>
+                            <constraint firstItem="kFM-8L-Jys" firstAttribute="top" secondItem="8cF-bQ-XH9" secondAttribute="bottom" constant="64" id="HcJ-dG-cza"/>
+                            <constraint firstItem="eWY-yX-Vmp" firstAttribute="top" secondItem="isC-pG-JOl" secondAttribute="bottom" constant="16" id="Iwx-Cw-uYt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qR3-N9-oJU" secondAttribute="trailing" constant="16" id="NiB-T9-ipY"/>
+                            <constraint firstItem="isC-pG-JOl" firstAttribute="centerX" secondItem="kFM-8L-Jys" secondAttribute="centerX" id="TBK-Sg-g3w"/>
+                            <constraint firstItem="273-4y-mHA" firstAttribute="centerX" secondItem="8Zs-8b-Ndd" secondAttribute="centerX" id="W6L-ft-T8m"/>
+                            <constraint firstItem="kFM-8L-Jys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZbP-bw-IYU"/>
+                            <constraint firstItem="qR3-N9-oJU" firstAttribute="width" secondItem="8cF-bQ-XH9" secondAttribute="width" id="bOU-GE-tsV"/>
+                            <constraint firstItem="qR3-N9-oJU" firstAttribute="height" secondItem="8cF-bQ-XH9" secondAttribute="height" id="chY-9Q-ld2"/>
+                            <constraint firstItem="isC-pG-JOl" firstAttribute="top" secondItem="kFM-8L-Jys" secondAttribute="bottom" constant="16" id="eFb-75-OPV"/>
+                            <constraint firstItem="8Zs-8b-Ndd" firstAttribute="centerX" secondItem="6Tl-ho-9j4" secondAttribute="centerX" id="g0p-aO-94k"/>
+                            <constraint firstItem="qR3-N9-oJU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="g7C-Jo-mij"/>
+                            <constraint firstItem="273-4y-mHA" firstAttribute="centerY" secondItem="eWY-yX-Vmp" secondAttribute="centerY" id="gMr-zO-HBd"/>
+                            <constraint firstAttribute="trailing" secondItem="6Tl-ho-9j4" secondAttribute="trailing" constant="16" id="gYf-cK-a63"/>
+                            <constraint firstItem="6Tl-ho-9j4" firstAttribute="centerY" secondItem="kFM-8L-Jys" secondAttribute="centerY" id="iKL-oU-up7"/>
+                            <constraint firstItem="8cF-bQ-XH9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="j0O-yD-wb9"/>
+                            <constraint firstItem="kFM-8L-Jys" firstAttribute="height" secondItem="6Tl-ho-9j4" secondAttribute="height" id="nfo-c8-gF1"/>
+                            <constraint firstItem="eWY-yX-Vmp" firstAttribute="centerX" secondItem="isC-pG-JOl" secondAttribute="centerX" id="r0I-VX-rPM"/>
+                            <constraint firstItem="6Tl-ho-9j4" firstAttribute="leading" secondItem="kFM-8L-Jys" secondAttribute="trailing" constant="16" id="wOC-dG-mlE"/>
+                            <constraint firstItem="8Zs-8b-Ndd" firstAttribute="centerY" secondItem="isC-pG-JOl" secondAttribute="centerY" id="zGa-Ce-Jx6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewLeft" destination="kFM-8L-Jys" id="Np8-DM-ACI"/>
+                        <outlet property="imageViewRight" destination="6Tl-ho-9j4" id="JJb-bG-W7M"/>
+                        <outlet property="priceLabelLeft" destination="isC-pG-JOl" id="mEG-tv-J4m"/>
+                        <outlet property="priceLabelRight" destination="8Zs-8b-Ndd" id="duf-oQ-ZbI"/>
+                        <outlet property="roomLabelRight" destination="273-4y-mHA" id="Xhk-iC-AQN"/>
+                        <outlet property="titleLabelLeft" destination="8cF-bQ-XH9" id="HOg-o4-mDJ"/>
+                        <outlet property="titleLabelRight" destination="qR3-N9-oJU" id="Gdp-J4-v9F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" width="920" height="680"/>
+    </resources>
+</document>
