@@ -77,7 +77,16 @@ class ViewController: UIViewController {
     }
 
     func updateView(_ currentItemIndex:Int) {
-        compatibilityItemLabel.text = compatibilityItems[currentItemIndex]
+
+        slider.value = 3
+
+        UIView.transition(with: compatibilityItemLabel,
+                          duration: 1,
+                          options: .transitionFlipFromBottom,
+                          animations: { [weak self] in
+                            self?.compatibilityItemLabel.text = self?.compatibilityItems[currentItemIndex]
+            }, completion: nil)
+
 
         if !isperson1DonePlaying {
             questionLabel.text = "Player 1, what do you think about.."
