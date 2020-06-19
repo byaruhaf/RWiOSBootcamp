@@ -29,20 +29,24 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="szi-uG-soY">
-                                        <rect key="frame" x="44" y="48.333333333333329" width="306.33333333333331" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="szi-uG-soY">
+                                        <rect key="frame" x="115.33333333333336" y="48.333333333333329" width="163.66666666666663" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="efp-pR-iCf">
-                                                <rect key="frame" x="0.0" y="10.000000000000004" width="22" height="20"/>
+                                                <rect key="frame" x="0.0" y="2.3333333333333321" width="28.666666666666668" height="26"/>
+                                                <color key="tintColor" red="0.99730998280000005" green="0.95169383289999998" blue="0.42731621860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ITEM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yar-uD-3oE">
-                                                <rect key="frame" x="124.99999999999999" y="0.0" width="56.333333333333329" height="30"/>
+                                                <rect key="frame" x="53.666666666666657" y="0.0" width="56.333333333333343" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tLf-d5-Tjf">
-                                                <rect key="frame" x="284.33333333333331" y="10.000000000000004" width="22" height="20"/>
+                                                <rect key="frame" x="134.99999999999997" y="2.3333333333333321" width="28.666666666666657" height="26"/>
+                                                <color key="tintColor" red="0.99726372959999998" green="0.95182436699999995" blue="0.4076974988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
