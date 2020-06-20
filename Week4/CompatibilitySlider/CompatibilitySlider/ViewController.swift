@@ -14,7 +14,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var questionLabel: UILabel!
 
-  var compatibilityItems = ["Chinchilla", "Crocodile", "Cheetah"]
+  var compatibilityItems = ["Koala", "Dingo", "Kangaroo", "Wombat"]
+
 
   var currentItemIndex = 0
 
