@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImageTap()
-        startGame()
+        startCompatibility()
     }
 
     @IBAction func didPressNextItemButton(_ sender: Any) {
@@ -54,15 +54,15 @@ class ViewController: UIViewController {
         return "\(matchString)%"
     }
 
-    func startGame() {
+    func startCompatibility() {
         self.currentItemIndex = 0
         isperson1DonePlaying = false
         isperson2DonePlaying = false
 
-        startRound()
+        startCompatibilityRound()
     }
 
-    func startRound() {
+    func startCompatibilityRound() {
         if !isperson1DonePlaying {
             currentPerson = person1
 
@@ -100,18 +100,18 @@ class ViewController: UIViewController {
             let currentItem = compatibilityItems[currentItemIndex]
             currentPerson?.items.updateValue(slider.value, forKey: currentItem)
             currentItemIndex += 1
-            startRound()
+            startCompatibilityRound()
         } else {
             switch (isperson1DonePlaying, isperson2DonePlaying) {
                 case (false, false):
                     isperson1DonePlaying = true
                     currentItemIndex = 0
-                    startRound()
+                    startCompatibilityRound()
                 case (true, false):
                     isperson2DonePlaying = true
                     currentItemIndex = 0
                     Alert.showBasic(title: "Results", message: "you two are \(calculateCompatibility()) compatible", vc: self)
-                    startGame()
+                    startCompatibility()
                 default:
                     Alert.showBasic(title: "Logic Error", message: "Please contact Developer", vc: self)
             }
