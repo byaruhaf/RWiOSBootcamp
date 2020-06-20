@@ -49,7 +49,6 @@ class ViewController: UIViewController {
 
     let sumOfAllPercentages = percentagesForAllItems.reduce(0, +)
     let matchPercentage = sumOfAllPercentages / Double(compatibilityItems.count)
-    print(matchPercentage, "%")
     let matchString = 100 - (matchPercentage * 100).rounded()
     return "\(matchString)%"
   }
@@ -114,7 +113,8 @@ class ViewController: UIViewController {
           title: "Results", message: "you two are \(calculateCompatibility()) compatible", vc: self)
         startGame()
       default:
-        print("imposible STate")
+        Alert.showBasic(
+            title: "Logic Error", message: "Please contact Developer", vc: self)
       }
     }
   }
