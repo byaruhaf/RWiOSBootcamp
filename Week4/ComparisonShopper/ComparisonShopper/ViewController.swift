@@ -70,10 +70,12 @@ class ViewController: UIViewController {
         }
 
         alert.addTextField { (textField) in
+            textField.keyboardType = .decimalPad
             textField.placeholder = "price"
         }
 
         alert.addTextField { (textField) in
+            textField.keyboardType = .numberPad
             textField.placeholder = "bedrooms"
         }
 
@@ -82,8 +84,8 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ (UIAlertAction) in
             var house = House()
             house.address = alert.textFields?[0].text
-            house.price = alert.textFields?[1].text
-            house.bedrooms = alert.textFields?[2].text
+            house.price = "$ \(alert.textFields?[1].text ??? 0.description)"
+            house.bedrooms = "\(alert.textFields?[2].text ??? 0.description) bedrooms"
             self.house2 = house
             self.setUpRightSideUI()
         }))

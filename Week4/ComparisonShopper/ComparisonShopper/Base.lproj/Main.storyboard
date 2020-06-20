@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,57 +12,57 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ComparisonShopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabelLeft" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cF-bQ-XH9">
-                                <rect key="frame" x="16" y="24" width="136" height="60"/>
+                                <rect key="frame" x="16" y="68" width="183" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabelRight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR3-N9-oJU">
-                                <rect key="frame" x="168" y="24" width="136" height="60"/>
+                                <rect key="frame" x="215" y="68" width="183" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="kFM-8L-Jys">
-                                <rect key="frame" x="16" y="148" width="136" height="200"/>
+                                <rect key="frame" x="16" y="162" width="183" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ep7-9Q-9nQ"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="6Tl-ho-9j4">
-                                <rect key="frame" x="168" y="148" width="136" height="200"/>
+                                <rect key="frame" x="215" y="162" width="183" height="200"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="priceLabelLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isC-pG-JOl">
-                                <rect key="frame" x="21" y="364" width="126" height="24"/>
+                                <rect key="frame" x="44.666666666666657" y="378" width="126" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomLabelLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWY-yX-Vmp">
-                                <rect key="frame" x="21" y="404" width="126" height="24"/>
+                                <rect key="frame" x="44.666666666666657" y="418" width="126" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomLabelRight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="273-4y-mHA">
-                                <rect key="frame" x="167" y="404" width="138" height="24"/>
+                                <rect key="frame" x="237.66666666666663" y="418" width="138" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejr-fP-kpV">
-                                <rect key="frame" x="109" y="539" width="102" height="30"/>
+                                <rect key="frame" x="156" y="553" width="102" height="30"/>
                                 <state key="normal" title="Add Right Item"/>
                                 <connections>
                                     <action selector="didPressAddRightHouseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dzt-Re-ssS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="priceLabelRight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zs-8b-Ndd">
-                                <rect key="frame" x="167.5" y="364" width="137" height="24"/>
+                                <rect key="frame" x="238" y="378" width="137" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ejr-fP-kpV" firstAttribute="top" secondItem="eWY-yX-Vmp" secondAttribute="bottom" constant="111" id="2QY-wB-fYf"/>
+                            <constraint firstItem="Ejr-fP-kpV" firstAttribute="top" secondItem="eWY-yX-Vmp" secondAttribute="bottom" priority="750" constant="111" id="2QY-wB-fYf"/>
                             <constraint firstItem="kFM-8L-Jys" firstAttribute="width" secondItem="8cF-bQ-XH9" secondAttribute="width" id="6Hi-Mo-bLM"/>
                             <constraint firstItem="8cF-bQ-XH9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Qd-cy-m4b"/>
                             <constraint firstItem="qR3-N9-oJU" firstAttribute="leading" secondItem="8cF-bQ-XH9" secondAttribute="trailing" constant="16" id="C11-oo-8Bv"/>
