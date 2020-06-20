@@ -34,10 +34,6 @@ class ViewController: UIViewController {
         startGame()
     }
 
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        //        print(sender.value)
-    }
-
     @IBAction func didPressNextItemButton(_ sender: Any) {
         saveScore()
     }

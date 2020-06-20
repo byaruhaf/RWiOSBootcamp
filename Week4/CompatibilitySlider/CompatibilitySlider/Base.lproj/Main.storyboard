@@ -88,9 +88,6 @@
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qva-iw-efA" customClass="CustomSlider" customModule="CompatibilitySlider" customModuleProvider="target">
                                                 <rect key="frame" x="-2" y="60" width="782" height="31"/>
-                                                <connections>
-                                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OJB-PN-gwH"/>
-                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
