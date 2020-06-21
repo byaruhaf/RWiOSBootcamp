@@ -1,4 +1,4 @@
-# Cryptly App 
+# ComparisonShopper & CompatibilitySlider
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -8,42 +8,33 @@
 [![Twitter](https://img.shields.io/badge/twitter-@byaruhaf-blue.svg)](http://twitter.com/byaruhaf)
 
 
-## Week 3 Assignment
+## Week 4 Assignment
 
-Create an app called Cryptly that displays prices of cryptocurrencies
+Practice Debugging on ComparisonShopper & build a mini dating app called Compatibility Slider
 
 ### Assignment Requirements completed
-* Create an app data model CryptoCurrency
-* Decode JSON data to the app data model
-* Update the user interface based on the app data model. 
-* use only filter() and/or reduce() to extract view data from the model 
-* use protocols and NotificationCenter to change app theme based on the toggle button state
-
-### Stretch Above and Beyond Requirements completed:
-* Refactor setupViews() function in to a custom UIView
-* Add trend & percentageRise variables to the app model
-* Display Most Falling and Most Rising cryptocurrencies
-* create a Roundable protocol for a custom view restricted to the class UIView.
- 
+* Fix app crash of ComparisonShopper
+* Fix app missing UI display for the second house in ComparisonShopper
+* Layout Compatibility Slider using autolayout
+* add App Logic to Compatibility Slider
+* use protocols and NotificationCenter to change app theme based on the toggle button state 
 
 ### Additional Assignment Goals completed
-* Added ViewModel to prepare the model data for the view. 
-* Added animation during the change of theme's
-* Added network component to fetch data from a remote [Nomics API](api.nomics.com)
-* Using swift's Result type for the Asynchronous completion handler
+* Fixed unattached outlet in ComparisonShopper
+* Added keyboard Type restrictions to the beds and price textFields in ComparisonShopper
+* Fixed Compatibility calculation in Compatibility Slider
+* Added animation to smooth the transition between animals in Compatibility Slider
+* UX Testing revealed users kept clicking the emojis of the  Compatibility Slider so added a tap Gesture Recognizer's to the emojis to move the slider to set positions 
 
 
 
 ## App Demo
 
-![Light2Dark](Demo/Light2Dark.gif)
 
-|Light Mode|Dark Mode|
+| Comparison Shopper| Compatibility Slider|
 |:-------------------------:|:-------------------------
-|![CryptlyLight](Demo/CryptlyLight.png)  |  ![CryptlyDark.png](Demo/CryptlyDark.png) |
+|![ComparisonShopper](Demo/ComparisonShopper.png)  |  ![CompatibilitySlider.png](Demo/CompatibilitySlider.png) |
 
-## Attribution
-App logo by [TempusInfernus](https://en.wikipedia.org/wiki/File:Cryptocurrency_Logo.svg)
 
 
 ## Contribution
