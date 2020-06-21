@@ -57,8 +57,6 @@ class CompatibilitySlider_StartUITests: XCTestCase {
         nextItemStaticText.tap()
         greatImage.tap()
         nextItemStaticText.tap()
-        app.alerts["Results"].scrollViews.otherElements.buttons["OK"].tap()
-
-
+        XCTAssertTrue(app.alerts["Results"].scrollViews.otherElements.buttons["OK"].exists)
     }
 }

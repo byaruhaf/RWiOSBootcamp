@@ -25,7 +25,8 @@ Practice Debugging on ComparisonShopper & build a mini dating app called Compati
 * Fixed Compatibility calculation in Compatibility Slider
 * Added animation to smooth the transition between animals in Compatibility Slider
 * UX Testing revealed users kept clicking the emojis of the  Compatibility Slider so added a tap Gesture Recognizer's to the emojis to move the slider to set positions.
-* Added XCTest for the calculateCompatibility function. 
+* Added XCTest for the calculateCompatibility function in Compatibility Slider app.
+* Added UI Testing for Compatibility Slider app.
 
 
 
