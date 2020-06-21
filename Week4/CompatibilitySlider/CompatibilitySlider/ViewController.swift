@@ -38,6 +38,17 @@ class ViewController: UIViewController {
         saveScore()
     }
 
+}
+
+
+
+// extension for app logic
+extension ViewController {
+
+/**
+    Function to calculate calculate Compatibility for player 1 & player 2
+    - Returns: String percentage for Compatibility calculate
+**/
     func calculateCompatibility() -> String {
         // If diff 0.0 is 100% and 5.0 is 0%, calculate match percentage
         var percentagesForAllItems: [Double] = []
@@ -54,6 +65,10 @@ class ViewController: UIViewController {
         return "\(matchString)%"
     }
 
+
+/**
+     Function to start Compatibility game flow
+**/
     func startCompatibility() {
         self.currentItemIndex = 0
         isperson1DonePlaying = false
@@ -62,6 +77,9 @@ class ViewController: UIViewController {
         startCompatibilityRound()
     }
 
+/**
+    Function to start Compatibility rounds for player 1 and player 2
+**/
     func startCompatibilityRound() {
         if !isperson1DonePlaying {
             currentPerson = person1
@@ -76,6 +94,9 @@ class ViewController: UIViewController {
         }
     }
 
+    /**
+     Function to update view based on the current index fo the compatibilityItems array
+     **/
     func updateView(_ currentItemIndex: Int) {
 
         slider.value = 3
@@ -95,6 +116,9 @@ class ViewController: UIViewController {
         }
     }
 
+    /**
+     Function to save player score
+     **/
     func saveScore() {
         if currentItemIndex < compatibilityItems.count {
             let currentItem = compatibilityItems[currentItemIndex]
@@ -118,8 +142,11 @@ class ViewController: UIViewController {
         }
     }
 }
-
+// extension for emoji tap Gesture functions
 extension ViewController {
+    /**
+     Function to determine  which emoji was touched using tag number and move the slider by the values below
+     **/
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let emo = tapGestureRecognizer.view as! UIImageView
@@ -140,6 +167,9 @@ extension ViewController {
         }
     }
 
+    /**
+     Function to add tap Gesture Recognizer to each emoji
+     **/
     fileprivate func setupImageTap() {
         let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
