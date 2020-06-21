@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FB8AFB4249C02E800695BBD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8AFB3249C02E800695BBD /* Alert.swift */; };
+		5FB8AFB7249C2E6700695BBD /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */; };
+		5FB8AFB8249C2E6700695BBD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8AFB6249C2E6700695BBD /* CustomButton.swift */; };
 		C3017C402499C83A00B1E49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C3F2499C83A00B1E49A /* AppDelegate.swift */; };
 		C3017C422499C83A00B1E49A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C412499C83A00B1E49A /* SceneDelegate.swift */; };
 		C3017C442499C83A00B1E49A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C432499C83A00B1E49A /* ViewController.swift */; };
@@ -25,19 +28,22 @@
 			containerPortal = C3017C342499C83A00B1E49A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C3017C3B2499C83A00B1E49A;
-			remoteInfo = "CompatibilitySlider";
+			remoteInfo = CompatibilitySlider;
 		};
 		C3017C612499C83B00B1E49A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C3017C342499C83A00B1E49A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C3017C3B2499C83A00B1E49A;
-			remoteInfo = "CompatibilitySlider";
+			remoteInfo = CompatibilitySlider;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C3017C3C2499C83A00B1E49A /* CompatibilitySlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CompatibilitySlider.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FB8AFB3249C02E800695BBD /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		5FB8AFB6249C2E6700695BBD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C3017C3C2499C83A00B1E49A /* CompatibilitySlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompatibilitySlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3017C3F2499C83A00B1E49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3017C412499C83A00B1E49A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3017C432499C83A00B1E49A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,10 +52,10 @@
 		C3017C4B2499C83B00B1E49A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3017C4E2499C83B00B1E49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3017C502499C83B00B1E49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3017C552499C83B00B1E49A /* CompatibilitySliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CompatibilitySliderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3017C552499C83B00B1E49A /* CompatibilitySliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompatibilitySliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3017C592499C83B00B1E49A /* CompatibilitySlider_StartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilitySlider_StartTests.swift; sourceTree = "<group>"; };
 		C3017C5B2499C83B00B1E49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3017C602499C83B00B1E49A /* CompatibilitySliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CompatibilitySliderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3017C602499C83B00B1E49A /* CompatibilitySliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompatibilitySliderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3017C642499C83B00B1E49A /* CompatibilitySlider_StartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilitySlider_StartUITests.swift; sourceTree = "<group>"; };
 		C3017C662499C83B00B1E49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3017C722499C91700B1E49A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -103,6 +109,9 @@
 		C3017C3E2499C83A00B1E49A /* CompatibilitySlider */ = {
 			isa = PBXGroup;
 			children = (
+				5FB8AFB3249C02E800695BBD /* Alert.swift */,
+				5FB8AFB6249C2E6700695BBD /* CustomButton.swift */,
+				5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */,
 				C3017C3F2499C83A00B1E49A /* AppDelegate.swift */,
 				C3017C412499C83A00B1E49A /* SceneDelegate.swift */,
 				C3017C432499C83A00B1E49A /* ViewController.swift */,
@@ -113,7 +122,7 @@
 				C3017C502499C83B00B1E49A /* Info.plist */,
 				C3017C482499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld */,
 			);
-			path = "CompatibilitySlider";
+			path = CompatibilitySlider;
 			sourceTree = "<group>";
 		};
 		C3017C582499C83B00B1E49A /* CompatibilitySliderTests */ = {
@@ -122,7 +131,7 @@
 				C3017C592499C83B00B1E49A /* CompatibilitySlider_StartTests.swift */,
 				C3017C5B2499C83B00B1E49A /* Info.plist */,
 			);
-			path = "CompatibilitySliderTests";
+			path = CompatibilitySliderTests;
 			sourceTree = "<group>";
 		};
 		C3017C632499C83B00B1E49A /* CompatibilitySliderUITests */ = {
@@ -131,7 +140,7 @@
 				C3017C642499C83B00B1E49A /* CompatibilitySlider_StartUITests.swift */,
 				C3017C662499C83B00B1E49A /* Info.plist */,
 			);
-			path = "CompatibilitySliderUITests";
+			path = CompatibilitySliderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +158,8 @@
 			);
 			dependencies = (
 			);
-			name = "CompatibilitySlider";
-			productName = "CompatibilitySlider";
+			name = CompatibilitySlider;
+			productName = CompatibilitySlider;
 			productReference = C3017C3C2499C83A00B1E49A /* CompatibilitySlider.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -167,8 +176,8 @@
 			dependencies = (
 				C3017C572499C83B00B1E49A /* PBXTargetDependency */,
 			);
-			name = "CompatibilitySliderTests";
-			productName = "CompatibilitySliderTests";
+			name = CompatibilitySliderTests;
+			productName = CompatibilitySliderTests;
 			productReference = C3017C552499C83B00B1E49A /* CompatibilitySliderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -185,8 +194,8 @@
 			dependencies = (
 				C3017C622499C83B00B1E49A /* PBXTargetDependency */,
 			);
-			name = "CompatibilitySliderUITests";
-			productName = "CompatibilitySliderUITests";
+			name = CompatibilitySliderUITests;
+			productName = CompatibilitySliderUITests;
 			productReference = C3017C602499C83B00B1E49A /* CompatibilitySliderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -265,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB8AFB4249C02E800695BBD /* Alert.swift in Sources */,
+				5FB8AFB7249C2E6700695BBD /* CustomSlider.swift in Sources */,
 				C3017C732499C91700B1E49A /* Person.swift in Sources */,
 				C3017C4A2499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld in Sources */,
+				5FB8AFB8249C2E6700695BBD /* CustomButton.swift in Sources */,
 				C3017C442499C83A00B1E49A /* ViewController.swift in Sources */,
 				C3017C402499C83A00B1E49A /* AppDelegate.swift in Sources */,
 				C3017C422499C83A00B1E49A /* SceneDelegate.swift in Sources */,
@@ -443,13 +455,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9MF56EMP8;
-				INFOPLIST_FILE = "CompatibilitySlider/Info.plist";
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
+				INFOPLIST_FILE = CompatibilitySlider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CompatibilitySlider";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appabntu.CompatibilitySlider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,13 +473,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9MF56EMP8;
-				INFOPLIST_FILE = "CompatibilitySlider/Info.plist";
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
+				INFOPLIST_FILE = CompatibilitySlider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CompatibilitySlider";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appabntu.CompatibilitySlider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,14 +493,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A9MF56EMP8;
-				INFOPLIST_FILE = "CompatibilitySliderTests/Info.plist";
+				INFOPLIST_FILE = CompatibilitySliderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CompatibilitySliderTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CompatibilitySliderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -503,14 +515,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A9MF56EMP8;
-				INFOPLIST_FILE = "CompatibilitySliderTests/Info.plist";
+				INFOPLIST_FILE = CompatibilitySliderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CompatibilitySliderTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CompatibilitySliderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -524,17 +536,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A9MF56EMP8;
-				INFOPLIST_FILE = "CompatibilitySliderUITests/Info.plist";
+				INFOPLIST_FILE = CompatibilitySliderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CompatibilitySliderUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CompatibilitySliderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "CompatibilitySlider";
+				TEST_TARGET_NAME = CompatibilitySlider;
 			};
 			name = Debug;
 		};
@@ -544,17 +556,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A9MF56EMP8;
-				INFOPLIST_FILE = "CompatibilitySliderUITests/Info.plist";
+				INFOPLIST_FILE = CompatibilitySliderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CompatibilitySliderUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CompatibilitySliderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "CompatibilitySlider";
+				TEST_TARGET_NAME = CompatibilitySlider;
 			};
 			name = Release;
 		};

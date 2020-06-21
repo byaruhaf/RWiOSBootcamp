@@ -27,17 +27,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.house1 = House()
+        self.house1?.price = "$12,000"
+        self.house1?.bedrooms = "3 bedrooms"
+         self.house1?.address = "117 street"
         setUpLeftSideUI()
         setUpRightSideUI()
-
-        house1?.price = "$12,000"
-        house1?.bedrooms = "3 bedrooms"
     }
 
     func setUpLeftSideUI() {
-        titleLabelLeft.text = house1!.address!
-        priceLabelLeft.text = house1!.price!
-        roomLabelLeft.text = house1!.bedrooms!
+        priceLabelLeft.text = house1?.price
+        roomLabelLeft.text = house1?.bedrooms
+        titleLabelLeft.text = house1?.address
     }
 
     func setUpRightSideUI() {
@@ -47,9 +48,13 @@ class ViewController: UIViewController {
             priceLabelRight.alpha = 0
             roomLabelRight.alpha = 0
         } else {
-            titleLabelRight.text! = house2!.address!
-            priceLabelRight.text! = house2!.price!
-            roomLabelRight.text! = house2!.bedrooms!
+            titleLabelRight.alpha = 1
+            imageViewRight.alpha = 1
+            priceLabelRight.alpha = 1
+            roomLabelRight.alpha = 1
+            titleLabelRight.text = house2?.address!
+            priceLabelRight.text = house2?.price!
+            roomLabelRight.text = house2?.bedrooms!
         }
     }
 
@@ -65,10 +70,12 @@ class ViewController: UIViewController {
         }
 
         alert.addTextField { (textField) in
+            textField.keyboardType = .decimalPad
             textField.placeholder = "price"
         }
 
         alert.addTextField { (textField) in
+            textField.keyboardType = .numberPad
             textField.placeholder = "bedrooms"
         }
 
@@ -77,8 +84,8 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ (UIAlertAction) in
             var house = House()
             house.address = alert.textFields?[0].text
-            house.price = alert.textFields?[1].text
-            house.bedrooms = alert.textFields?[2].text
+            house.price = "$ \(alert.textFields?[1].text ??? 0.description)"
+            house.bedrooms = "\(alert.textFields?[2].text ??? 0.description) bedrooms"
             self.house2 = house
             self.setUpRightSideUI()
         }))
