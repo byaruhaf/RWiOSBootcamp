@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		5FB8AFB4249C02E800695BBD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8AFB3249C02E800695BBD /* Alert.swift */; };
 		5FB8AFB7249C2E6700695BBD /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */; };
-		5FB8AFB8249C2E6700695BBD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8AFB6249C2E6700695BBD /* CustomButton.swift */; };
 		C3017C402499C83A00B1E49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C3F2499C83A00B1E49A /* AppDelegate.swift */; };
 		C3017C422499C83A00B1E49A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C412499C83A00B1E49A /* SceneDelegate.swift */; };
 		C3017C442499C83A00B1E49A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C432499C83A00B1E49A /* ViewController.swift */; };
 		C3017C472499C83A00B1E49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3017C452499C83A00B1E49A /* Main.storyboard */; };
-		C3017C4A2499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3017C482499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld */; };
 		C3017C4C2499C83B00B1E49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3017C4B2499C83B00B1E49A /* Assets.xcassets */; };
 		C3017C4F2499C83B00B1E49A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3017C4D2499C83B00B1E49A /* LaunchScreen.storyboard */; };
 		C3017C5A2499C83B00B1E49A /* CompatibilitySlider_StartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3017C592499C83B00B1E49A /* CompatibilitySlider_StartTests.swift */; };
@@ -42,13 +40,11 @@
 /* Begin PBXFileReference section */
 		5FB8AFB3249C02E800695BBD /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
-		5FB8AFB6249C2E6700695BBD /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C3017C3C2499C83A00B1E49A /* CompatibilitySlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompatibilitySlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3017C3F2499C83A00B1E49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3017C412499C83A00B1E49A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3017C432499C83A00B1E49A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3017C462499C83A00B1E49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C3017C492499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompatibilitySlider_Start.xcdatamodel; sourceTree = "<group>"; };
 		C3017C4B2499C83B00B1E49A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3017C4E2499C83B00B1E49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3017C502499C83B00B1E49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				5FB8AFB3249C02E800695BBD /* Alert.swift */,
-				5FB8AFB6249C2E6700695BBD /* CustomButton.swift */,
 				5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */,
 				C3017C3F2499C83A00B1E49A /* AppDelegate.swift */,
 				C3017C412499C83A00B1E49A /* SceneDelegate.swift */,
@@ -120,7 +115,6 @@
 				C3017C4B2499C83B00B1E49A /* Assets.xcassets */,
 				C3017C4D2499C83B00B1E49A /* LaunchScreen.storyboard */,
 				C3017C502499C83B00B1E49A /* Info.plist */,
-				C3017C482499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld */,
 			);
 			path = CompatibilitySlider;
 			sourceTree = "<group>";
@@ -277,8 +271,6 @@
 				5FB8AFB4249C02E800695BBD /* Alert.swift in Sources */,
 				5FB8AFB7249C2E6700695BBD /* CustomSlider.swift in Sources */,
 				C3017C732499C91700B1E49A /* Person.swift in Sources */,
-				C3017C4A2499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld in Sources */,
-				5FB8AFB8249C2E6700695BBD /* CustomButton.swift in Sources */,
 				C3017C442499C83A00B1E49A /* ViewController.swift in Sources */,
 				C3017C402499C83A00B1E49A /* AppDelegate.swift in Sources */,
 				C3017C422499C83A00B1E49A /* SceneDelegate.swift in Sources */,
@@ -492,7 +484,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9MF56EMP8;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				INFOPLIST_FILE = CompatibilitySliderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -514,7 +506,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9MF56EMP8;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				INFOPLIST_FILE = CompatibilitySliderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -535,7 +527,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9MF56EMP8;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				INFOPLIST_FILE = CompatibilitySliderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,7 +547,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A9MF56EMP8;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				INFOPLIST_FILE = CompatibilitySliderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,19 +602,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C3017C482499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C3017C492499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodel */,
-			);
-			currentVersion = C3017C492499C83A00B1E49A /* CompatibilitySlider_Start.xcdatamodel */;
-			path = CompatibilitySlider_Start.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C3017C342499C83A00B1E49A /* Project object */;
 }

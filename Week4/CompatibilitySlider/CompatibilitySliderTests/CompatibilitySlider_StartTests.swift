@@ -51,8 +51,10 @@ class CompatibilitySlider_StartTests: XCTestCase {
     func testCompatibilityCalculation() throws {
         let result1 = sut.calculateCompatibility()
         let result2 = sut2.calculateCompatibility()
+        let result3 = sut2.currentPerson == sut2.person2
         XCTAssertEqual( "100.0%", result1)
         XCTAssertEqual( "0.0%", result2)
+        XCTAssertEqual( true, result3)
     }
 
 }

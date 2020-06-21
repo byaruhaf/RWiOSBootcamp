@@ -11,18 +11,6 @@ import UIKit
 @IBDesignable
 class CustomSlider: UISlider {
 
-    @IBInspectable var thumbImage: UIImage? {
-        didSet {
-            setThumbImage(thumbImage, for: .normal)
-        }
-    }
-
-    @IBInspectable var thumbHighlightedImage: UIImage? {
-        didSet {
-            setThumbImage(thumbImage, for: .highlighted)
-        }
-    }
-
     //To set line height value from IB, here ten is default value
     @IBInspectable var trackLineHeight: CGFloat = 10
 
