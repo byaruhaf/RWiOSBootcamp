@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 
     var compatibilityItems = ["Koala", "Dingo", "Kangaroo", "Wombat"]
     var currentItemIndex = 0
+    var isIndexInRange:Bool { currentItemIndex < compatibilityItems.count }
 
     var person1 = Person(id: 1, items: [:])
     var person2 = Person(id: 2, items: [:])
@@ -87,7 +88,7 @@ extension ViewController {
         } else {
             currentPerson = person2
         }
-        if currentItemIndex < compatibilityItems.count {
+        if isIndexInRange {
             updateView(currentItemIndex)
         } else {
             saveScore()
@@ -120,7 +121,7 @@ extension ViewController {
      Function to save player score
      **/
     func saveScore() {
-        if currentItemIndex < compatibilityItems.count {
+        if isIndexInRange {
             let currentItem = compatibilityItems[currentItemIndex]
             currentPerson?.items.updateValue(slider.value, forKey: currentItem)
             currentItemIndex += 1

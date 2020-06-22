@@ -17,16 +17,6 @@ infix operator ??? : NilCoalescingPrecedence
 
 
 // MARK: Operator Implementation
-//func ???<T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
-//    switch optional {
-//        case let value?:
-//            return String(describing: value) // Why not "\(value)", btw?
-//        case nil:
-//            return defaultValue()
-//    }
-//}
-//
-
 public func ???<T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
     return optional.map { String(describing: $0) } ?? defaultValue()
 }

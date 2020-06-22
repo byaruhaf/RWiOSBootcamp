@@ -27,6 +27,7 @@ Practice Debugging on ComparisonShopper & build a mini dating app called Compati
 * UX Testing revealed users (Wife) kept clicking the emojis of the  Compatibility Slider so added a tap Gesture Recognizer's to the emojis to move the slider to set positions.
 * Added Unit Test for the calculateCompatibility function in Compatibility Slider app.
 * Added UI Testing for Compatibility Slider app to verify ui will flow as expected.
+* Code Coverage 98%
 
 
 
