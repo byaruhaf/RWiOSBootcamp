@@ -17,7 +17,6 @@ Practice Debugging on ComparisonShopper & build a mini dating app called Compati
 * Fix app missing UI display for the second house in ComparisonShopper
 * Layout Compatibility Slider using autolayout
 * add App Logic to Compatibility Slider
-* use protocols and NotificationCenter to change app theme based on the toggle button state 
 
 ### Additional Assignment Goals completed
 * Fixed unattached outlet in ComparisonShopper
