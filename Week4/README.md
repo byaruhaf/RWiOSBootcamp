@@ -23,9 +23,10 @@ Practice Debugging on ComparisonShopper & build a mini dating app called Compati
 * Added keyboard Type restrictions to the beds and price textFields in ComparisonShopper
 * Fixed Compatibility calculation in Compatibility Slider
 * Added animation to smooth the transition between animals in Compatibility Slider
+* Slider resets to a default value when next item is clicked to provide a visual indication the next round is ready
 * UX Testing revealed users (Wife) kept clicking the emojis of the  Compatibility Slider so added a tap Gesture Recognizer's to the emojis to move the slider to set positions.
-* Added Unit Test for the calculateCompatibility function in Compatibility Slider app.
-* Added UI Testing for Compatibility Slider app to verify ui will flow as expected.
+* Added Unit Test for the calculate compatibility function in the Compatibility Slider app.
+* Added UI Testing for Compatibility Slider app to verify UI will flow as expected.
 * Code Coverage 98%
 
 
