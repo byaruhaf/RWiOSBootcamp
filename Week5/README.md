@@ -23,6 +23,10 @@ Build Birdie​ a Twitter-like app with tableviews
 * Move the logic in cellForRowAt into a MediaPostsCellCoordinator. The MediaPostsCellCoordinator determines which cell to display based on the Media Type.
 
 ### Additional Assignment Goals completed
+* Image for post can come from 3 sources
+	* Photo library
+	* Camera roll
+	* camera (Reqires real divice not simulator)
 * Refactored tableview Datasource from ViewController to MediaPostsDataSource
 * Refactored Image Picking function to ImagePicker class and use delegates and protocols pattern to return selected image to ViewController
 * Refactored UIAlert for user post data from ViewController to MediaPostsHandler and use completion closure to tableview reload when valid data has been input
