@@ -22,7 +22,11 @@ class ViewController: UIViewController{
 
     @IBAction func didPressCreateTextPostButton(_ sender: Any) {
 //        createPost()
-        requestPostDetails()
+//        requestPostDetails()
+        MediaPostsHandler.shared.requestPostDetails(vc: self) { [unowned self] in
+            self.tableview.reloadData()
+        }
+
     }
 
     @IBAction func didPressCreateImagePostButton(_ sender: UIButton) {
@@ -46,45 +50,48 @@ class ViewController: UIViewController{
 
 extension ViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
-        requestPostDetails(withImage: image)
+//        requestPostDetails(withImage: image)
+        MediaPostsHandler.shared.requestPostDetails(withImage: image, vc: self) { [unowned self] in
+            self.tableview.reloadData()
+        }
     }
 }
 
 
-extension ViewController {
-    func requestPostDetails(withImage:UIImage? = nil) {
-        let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
-
-        alert.addTextField { (textField) in
-            textField.placeholder = "Username"
-            textField.returnKeyType = .next
-            textField.autocapitalizationType = .words
-        }
-
-        alert.addTextField { (textField) in
-            textField.placeholder = "post"
-            textField.autocapitalizationType = .sentences
-            textField.autocorrectionType = .yes
-            textField.returnKeyType = .done
-        }
-
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
-
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ [unowned self] _  in
-            guard let username = alert.textFields?[0].text else { return }
-            let textPost = alert.textFields?[1].text
-            if let imageForPost = withImage {
-                let post = ImagePost(textBody: textPost, userName: username, timestamp: Date(), image: imageForPost)
-                MediaPostsHandler.shared.addImagePost(imagePost: post)
-            } else {
-                let post = TextPost(textBody: textPost, userName: username, timestamp: Date())
-                MediaPostsHandler.shared.addTextPost(textPost: post)
-            }
-
-              self.tableview.reloadData()
-        }))
-
-        present(alert, animated: true, completion: nil)
-    }
-
-}
+//extension ViewController {
+//    func requestPostDetails(withImage:UIImage? = nil) {
+//        let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
+//
+//        alert.addTextField { (textField) in
+//            textField.placeholder = "Username"
+//            textField.returnKeyType = .next
+//            textField.autocapitalizationType = .words
+//        }
+//
+//        alert.addTextField { (textField) in
+//            textField.placeholder = "post"
+//            textField.autocapitalizationType = .sentences
+//            textField.autocorrectionType = .yes
+//            textField.returnKeyType = .done
+//        }
+//
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+//
+//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ [unowned self] _  in
+//            guard let username = alert.textFields?[0].text else { return }
+//            let textPost = alert.textFields?[1].text
+//            if let imageForPost = withImage {
+//                let post = ImagePost(textBody: textPost, userName: username, timestamp: Date(), image: imageForPost)
+//                MediaPostsHandler.shared.addImagePost(imagePost: post)
+//            } else {
+//                let post = TextPost(textBody: textPost, userName: username, timestamp: Date())
+//                MediaPostsHandler.shared.addTextPost(textPost: post)
+//            }
+//
+//              self.tableview.reloadData()
+//        }))
+//
+//        present(alert, animated: true, completion: nil)
+//    }
+//
+//}

@@ -34,4 +34,38 @@ class MediaPostsHandler: NSObject {
         mediaPosts = mediaPosts.sorted(by: { $0.timestamp > $1.timestamp })
     }
 
+    func requestPostDetails(withImage:UIImage? = nil,vc: UIViewController,  completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "Username"
+            textField.returnKeyType = .next
+            textField.autocapitalizationType = .words
+        }
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "post"
+            textField.autocapitalizationType = .sentences
+            textField.autocorrectionType = .yes
+            textField.returnKeyType = .done
+        }
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ _  in
+            guard let username = alert.textFields?[0].text else { return }
+            let textPost = alert.textFields?[1].text
+            if let imageForPost = withImage {
+                let post = ImagePost(textBody: textPost, userName: username, timestamp: Date(), image: imageForPost)
+                MediaPostsHandler.shared.addImagePost(imagePost: post)
+            } else {
+                let post = TextPost(textBody: textPost, userName: username, timestamp: Date())
+                MediaPostsHandler.shared.addTextPost(textPost: post)
+            }
+             completion()
+        }))
+
+        vc.present(alert, animated: true, completion: nil)
+    }
+
 }
