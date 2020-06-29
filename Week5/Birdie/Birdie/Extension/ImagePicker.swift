@@ -74,7 +74,6 @@ open class ImagePicker: NSObject {
         self.delegate?.didSelect(image: image)
     }
 
-
 }
 
 extension ImagePicker: UIImagePickerControllerDelegate {

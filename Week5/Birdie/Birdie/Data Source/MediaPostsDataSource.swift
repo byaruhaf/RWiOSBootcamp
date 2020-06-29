@@ -32,7 +32,6 @@ class MediaPostsDataSource: NSObject, UITableViewDataSource {
     }
 }
 
-
 private extension UIView {
     convenience init(backgroundColor: UIColor) {
         self.init()

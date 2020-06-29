@@ -10,7 +10,6 @@
 		5F4A32A624A86CA300CCBDAB /* MediaPostsCellCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A32A524A86CA300CCBDAB /* MediaPostsCellCoordinator.swift */; };
 		5F52C08724A9C73700718C17 /* MediaPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52C08624A9C73700718C17 /* MediaPostsDataSource.swift */; };
 		5F52C08C24A9D2AF00718C17 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52C08A24A9D2AF00718C17 /* CustomButton.swift */; };
-		5F52C08D24A9D2AF00718C17 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52C08B24A9D2AF00718C17 /* Alert.swift */; };
 		5F52C08F24A9D9F300718C17 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52C08E24A9D9F300718C17 /* ImagePicker.swift */; };
 		5FC34E9C24A996D1003B7210 /* TextPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC34E9A24A996D1003B7210 /* TextPostCell.swift */; };
 		5FC34E9D24A996D1003B7210 /* TextPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC34E9B24A996D1003B7210 /* TextPostCell.xib */; };
@@ -52,7 +51,6 @@
 		5F4A32A524A86CA300CCBDAB /* MediaPostsCellCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPostsCellCoordinator.swift; sourceTree = "<group>"; };
 		5F52C08624A9C73700718C17 /* MediaPostsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPostsDataSource.swift; sourceTree = "<group>"; };
 		5F52C08A24A9D2AF00718C17 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		5F52C08B24A9D2AF00718C17 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5F52C08E24A9D9F300718C17 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5FC34E9A24A996D1003B7210 /* TextPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPostCell.swift; sourceTree = "<group>"; };
 		5FC34E9B24A996D1003B7210 /* TextPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPostCell.xib; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				5FC34EA224A9B3CE003B7210 /* Date.swift */,
-				5F52C08B24A9D2AF00718C17 /* Alert.swift */,
 				5F52C08E24A9D9F300718C17 /* ImagePicker.swift */,
 				5F52C08A24A9D2AF00718C17 /* CustomButton.swift */,
 			);
@@ -244,6 +241,7 @@
 				C3C9D356249B324B001F55A6 /* Sources */,
 				C3C9D357249B324B001F55A6 /* Frameworks */,
 				C3C9D358249B324B001F55A6 /* Resources */,
+				5F52C09024A9FF9E00718C17 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -362,6 +360,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F52C09024A9FF9E00718C17 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C3C9D356249B324B001F55A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,7 +392,6 @@
 				C3C9D395249B3453001F55A6 /* ImagePostModel.swift in Sources */,
 				C3C9D362249B324B001F55A6 /* ViewController.swift in Sources */,
 				5FC34EA024A996EA003B7210 /* ImagePostCell.swift in Sources */,
-				5F52C08D24A9D2AF00718C17 /* Alert.swift in Sources */,
 				5FC34E9C24A996D1003B7210 /* TextPostCell.swift in Sources */,
 				C3C9D397249B346E001F55A6 /* MediaPostProtocol.swift in Sources */,
 				C3C9D39B249B3711001F55A6 /* MediaPostsHandler.swift in Sources */,

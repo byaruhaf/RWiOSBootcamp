@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MediaPostsCellCoordinator {
     static let shared = MediaPostsCellCoordinator()
 
@@ -33,5 +32,3 @@ class MediaPostsCellCoordinator {
         }
     }
 }
-
-

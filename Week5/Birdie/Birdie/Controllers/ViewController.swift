@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     // create data source for tableview.
@@ -24,7 +24,7 @@ class ViewController: UIViewController{
 
     @IBAction func didPressCreateTextPostButton(_ sender: Any) {
         // request user for textpost details then reload tableview.
-        MediaPostsHandler.shared.requestPostDetails(vc: self) { [unowned self] in
+        MediaPostsHandler.shared.requestPostDetails(viewController: self) { [unowned self] in
             self.tableview.reloadData()
         }
     }
@@ -38,8 +38,8 @@ class ViewController: UIViewController{
         // Setting up tableview dataSource
         tableview.dataSource = dataSource
         // register custom cells
-        let Textnib = UINib(nibName: "TextPostCell",bundle: nil)
-        let Imagenib = UINib(nibName: "ImagePostCell",bundle: nil)
+        let Textnib = UINib(nibName: "TextPostCell", bundle: nil)
+        let Imagenib = UINib(nibName: "ImagePostCell", bundle: nil)
         tableview.register(Textnib, forCellReuseIdentifier: "TextPostCell")
         tableview.register(Imagenib, forCellReuseIdentifier: "ImagePostCell")
         // get initial data
@@ -51,7 +51,7 @@ class ViewController: UIViewController{
 extension ViewController: ImagePickerDelegate {
     // use image seleccted by user to request more details need for the post.
     func didSelect(image: UIImage?) {
-        MediaPostsHandler.shared.requestPostDetails(withImage: image, vc: self) { [unowned self] in
+        MediaPostsHandler.shared.requestPostDetails(withImage: image, viewController: self) { [unowned self] in
             self.tableview.reloadData()
         }
     }

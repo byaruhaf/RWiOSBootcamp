@@ -34,7 +34,7 @@ class MediaPostsHandler: NSObject {
         mediaPosts = mediaPosts.sorted(by: { $0.timestamp > $1.timestamp })
     }
 
-    func requestPostDetails(withImage:UIImage? = nil,vc: UIViewController,  completion: @escaping () -> Void) {
+    func requestPostDetails(withImage: UIImage? = nil, viewController: UIViewController, completion: @escaping () -> Void) {
         let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
 
         alert.addTextField { (textField) in
@@ -50,9 +50,9 @@ class MediaPostsHandler: NSObject {
             textField.returnKeyType = .done
         }
 
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ _  in
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _  in
             guard let username = alert.textFields?[0].text else { return }
             let textPost = alert.textFields?[1].text
             if let imageForPost = withImage {
@@ -65,7 +65,7 @@ class MediaPostsHandler: NSObject {
              completion()
         }))
 
-        vc.present(alert, animated: true, completion: nil)
+        viewController.present(alert, animated: true, completion: nil)
     }
 
 }

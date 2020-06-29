@@ -14,5 +14,3 @@ struct ImagePost: MediaPost {
     var timestamp: Date
     var image: UIImage
 }
-
-
