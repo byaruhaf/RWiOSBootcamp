@@ -45,39 +45,13 @@ class ViewController: UIViewController{
 }
 
 extension ViewController: ImagePickerDelegate {
-
     func didSelect(image: UIImage?) {
         requestPostDetails(withImage: image)
     }
 }
 
-//extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
 extension ViewController {
-
-//    func createPost(withImage:Bool = false) {
-//        if withImage {
-//            selectImageForPost()
-//        } else {
-//            requestPostDetails()
-//        }
-//    }
-//
-//    func selectImageForPost() {
-//        let pickerController = UIImagePickerController()
-//        pickerController.delegate = self
-//        pickerController.allowsEditing = false
-//        pickerController.sourceType = .photoLibrary
-//        present(pickerController, animated: true)
-//    }
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        guard let image = info[.originalImage] as? UIImage else { return }
-//        dismiss(animated: true)
-//        requestPostDetails(withImage: image)
-//    }
-
-
     func requestPostDetails(withImage:UIImage? = nil) {
         let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
 
