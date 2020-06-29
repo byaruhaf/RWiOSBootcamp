@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>This Birdie wants to take pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This Birdie wants to use your photos.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -60,10 +64,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>This Birdie wants to take pictures.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This Birdie wants to use your photos.</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
 </dict>
