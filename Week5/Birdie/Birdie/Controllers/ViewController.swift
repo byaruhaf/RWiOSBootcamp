@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController{
 
     @IBOutlet weak var tableview: UITableView!
+    // create data source for tableview.
     let dataSource = MediaPostsDataSource()
+    // create image picker for user.
     var imagePicker: ImagePicker!
 
     override func viewDidLoad() {
@@ -21,77 +23,36 @@ class ViewController: UIViewController{
     }
 
     @IBAction func didPressCreateTextPostButton(_ sender: Any) {
-//        createPost()
-//        requestPostDetails()
+        // request user for textpost details then reload tableview.
         MediaPostsHandler.shared.requestPostDetails(vc: self) { [unowned self] in
             self.tableview.reloadData()
         }
-
     }
 
     @IBAction func didPressCreateImagePostButton(_ sender: UIButton) {
-//        createPost(withImage:true)
+        // request user to pick an image
         self.imagePicker.present(from: sender)
-
     }
 
     func setUpTableView() {
-        // Set delegates, register custom cells, set up datasource, etc.
+        // Setting up tableview dataSource
         tableview.dataSource = dataSource
+        // register custom cells
         let Textnib = UINib(nibName: "TextPostCell",bundle: nil)
         let Imagenib = UINib(nibName: "ImagePostCell",bundle: nil)
         tableview.register(Textnib, forCellReuseIdentifier: "TextPostCell")
         tableview.register(Imagenib, forCellReuseIdentifier: "ImagePostCell")
+        // get initial data
         MediaPostsHandler.shared.getPosts()
         tableview.reloadData()
     }
-
 }
 
 extension ViewController: ImagePickerDelegate {
+    // use image seleccted by user to request more details need for the post.
     func didSelect(image: UIImage?) {
-//        requestPostDetails(withImage: image)
         MediaPostsHandler.shared.requestPostDetails(withImage: image, vc: self) { [unowned self] in
             self.tableview.reloadData()
         }
     }
 }
-
-
-//extension ViewController {
-//    func requestPostDetails(withImage:UIImage? = nil) {
-//        let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.addTextField { (textField) in
-//            textField.placeholder = "Username"
-//            textField.returnKeyType = .next
-//            textField.autocapitalizationType = .words
-//        }
-//
-//        alert.addTextField { (textField) in
-//            textField.placeholder = "post"
-//            textField.autocapitalizationType = .sentences
-//            textField.autocorrectionType = .yes
-//            textField.returnKeyType = .done
-//        }
-//
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
-//
-//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ [unowned self] _  in
-//            guard let username = alert.textFields?[0].text else { return }
-//            let textPost = alert.textFields?[1].text
-//            if let imageForPost = withImage {
-//                let post = ImagePost(textBody: textPost, userName: username, timestamp: Date(), image: imageForPost)
-//                MediaPostsHandler.shared.addImagePost(imagePost: post)
-//            } else {
-//                let post = TextPost(textBody: textPost, userName: username, timestamp: Date())
-//                MediaPostsHandler.shared.addTextPost(textPost: post)
-//            }
-//
-//              self.tableview.reloadData()
-//        }))
-//
-//        present(alert, animated: true, completion: nil)
-//    }
-//
-//}
