@@ -40,10 +40,10 @@ class ViewController: UIViewController {
         // Setting up tableview dataSource
         tableview.dataSource = dataSource
         // register custom cells
-        let Textnib = UINib(nibName: "TextPostCell", bundle: nil)
-        let Imagenib = UINib(nibName: "ImagePostCell", bundle: nil)
-        tableview.register(Textnib, forCellReuseIdentifier: "TextPostCell")
-        tableview.register(Imagenib, forCellReuseIdentifier: "ImagePostCell")
+        let Textnib = UINib(nibName: CellType.text, bundle: nil)
+        let Imagenib = UINib(nibName: CellType.image, bundle: nil)
+        tableview.register(Textnib, forCellReuseIdentifier: CellType.text)
+        tableview.register(Imagenib, forCellReuseIdentifier: CellType.image)
         // get initial data
         MediaPostsHandler.shared.getPosts()
         tableview.reloadData()

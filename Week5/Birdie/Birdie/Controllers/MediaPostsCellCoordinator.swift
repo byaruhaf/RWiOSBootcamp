@@ -11,15 +11,16 @@ import UIKit
 class MediaPostsCellCoordinator {
     static let shared = MediaPostsCellCoordinator()
 
+    // Return tableviewcell based on mediaPost.
     func configureCell(for post: MediaPost, in tableview: UITableView) -> UITableViewCell {
         if let post = post as? TextPost {
-            let cell = tableview.dequeueReusableCell(withIdentifier: "TextPostCell") as! TextPostCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: CellType.text) as! TextPostCell
             cell.nameLabel.text = post.userName
             cell.timestampLabel.text = post.timestamp.toString()
             cell.textBodyLabel.text = post.textBody
             return cell
         } else if let post = post as? ImagePost {
-            let cell = tableview.dequeueReusableCell(withIdentifier: "ImagePostCell") as! ImagePostCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: CellType.image) as! ImagePostCell
             cell.nameLabel.text = post.userName
             cell.timestampLabel.text = post.timestamp.toString()
             cell.textBodyLabel.text = post.textBody

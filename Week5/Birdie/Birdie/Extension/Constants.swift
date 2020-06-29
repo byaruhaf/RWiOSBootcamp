@@ -12,3 +12,9 @@ struct GraphicColors {
     static let nero = UIColor(hue: 0.30, saturation: 0.00, brightness: 0.15, alpha: 1.00)
     static let steelGray = UIColor(hue: 0.59, saturation: 0.11, brightness: 0.30, alpha: 1.00)
 }
+
+
+struct CellType {
+    static let text = "TextPostCell"
+    static let image = "ImagePostCell"
+}
