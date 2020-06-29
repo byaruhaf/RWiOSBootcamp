@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F4A329E24A86B8700CCBDAB /* TextPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A329D24A86B8700CCBDAB /* TextPostCell.xib */; };
-		5F4A32A024A86BA400CCBDAB /* ImagePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A329F24A86BA400CCBDAB /* ImagePostCell.xib */; };
-		5F4A32A224A86C2200CCBDAB /* ImagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A32A124A86C2200CCBDAB /* ImagePostCell.swift */; };
-		5F4A32A424A86C3500CCBDAB /* TextPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A32A324A86C3500CCBDAB /* TextPostCell.swift */; };
 		5F4A32A624A86CA300CCBDAB /* MediaPostsCellCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A32A524A86CA300CCBDAB /* MediaPostsCellCoordinator.swift */; };
+		5FC34E9C24A996D1003B7210 /* TextPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC34E9A24A996D1003B7210 /* TextPostCell.swift */; };
+		5FC34E9D24A996D1003B7210 /* TextPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC34E9B24A996D1003B7210 /* TextPostCell.xib */; };
+		5FC34EA024A996EA003B7210 /* ImagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC34E9E24A996EA003B7210 /* ImagePostCell.swift */; };
+		5FC34EA124A996EA003B7210 /* ImagePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC34E9F24A996EA003B7210 /* ImagePostCell.xib */; };
 		C3C9D35E249B324B001F55A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9D35D249B324B001F55A6 /* AppDelegate.swift */; };
 		C3C9D360249B324B001F55A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9D35F249B324B001F55A6 /* SceneDelegate.swift */; };
 		C3C9D362249B324B001F55A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9D361249B324B001F55A6 /* ViewController.swift */; };
@@ -44,11 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5F4A329D24A86B8700CCBDAB /* TextPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPostCell.xib; sourceTree = "<group>"; };
-		5F4A329F24A86BA400CCBDAB /* ImagePostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePostCell.xib; sourceTree = "<group>"; };
-		5F4A32A124A86C2200CCBDAB /* ImagePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePostCell.swift; sourceTree = "<group>"; };
-		5F4A32A324A86C3500CCBDAB /* TextPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPostCell.swift; sourceTree = "<group>"; };
 		5F4A32A524A86CA300CCBDAB /* MediaPostsCellCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPostsCellCoordinator.swift; sourceTree = "<group>"; };
+		5FC34E9A24A996D1003B7210 /* TextPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPostCell.swift; sourceTree = "<group>"; };
+		5FC34E9B24A996D1003B7210 /* TextPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPostCell.xib; sourceTree = "<group>"; };
+		5FC34E9E24A996EA003B7210 /* ImagePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePostCell.swift; sourceTree = "<group>"; };
+		5FC34E9F24A996EA003B7210 /* ImagePostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePostCell.xib; sourceTree = "<group>"; };
 		C3C9D35A249B324B001F55A6 /* Birdie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birdie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C9D35D249B324B001F55A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3C9D35F249B324B001F55A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,8 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				C3C9D363249B324B001F55A6 /* Main.storyboard */,
-				5F4A329D24A86B8700CCBDAB /* TextPostCell.xib */,
-				5F4A329F24A86BA400CCBDAB /* ImagePostCell.xib */,
 				C3C9D36B249B324C001F55A6 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -181,8 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				C3C9D361249B324B001F55A6 /* ViewController.swift */,
-				5F4A32A124A86C2200CCBDAB /* ImagePostCell.swift */,
-				5F4A32A324A86C3500CCBDAB /* TextPostCell.swift */,
+				5FC34E9A24A996D1003B7210 /* TextPostCell.swift */,
+				5FC34E9E24A996EA003B7210 /* ImagePostCell.swift */,
+				5FC34E9F24A996EA003B7210 /* ImagePostCell.xib */,
+				5FC34E9B24A996D1003B7210 /* TextPostCell.xib */,
 				5F4A32A524A86CA300CCBDAB /* MediaPostsCellCoordinator.swift */,
 			);
 			path = ControllernCoordinator;
@@ -299,8 +299,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4A329E24A86B8700CCBDAB /* TextPostCell.xib in Resources */,
-				5F4A32A024A86BA400CCBDAB /* ImagePostCell.xib in Resources */,
+				5FC34E9D24A996D1003B7210 /* TextPostCell.xib in Resources */,
+				5FC34EA124A996EA003B7210 /* ImagePostCell.xib in Resources */,
 				C3C9D36D249B324C001F55A6 /* LaunchScreen.storyboard in Resources */,
 				C3C9D36A249B324C001F55A6 /* Assets.xcassets in Resources */,
 				C3C9D365249B324B001F55A6 /* Main.storyboard in Resources */,
@@ -331,8 +331,8 @@
 				C3C9D393249B3448001F55A6 /* TextPostModel.swift in Sources */,
 				C3C9D395249B3453001F55A6 /* ImagePostModel.swift in Sources */,
 				C3C9D362249B324B001F55A6 /* ViewController.swift in Sources */,
-				5F4A32A224A86C2200CCBDAB /* ImagePostCell.swift in Sources */,
-				5F4A32A424A86C3500CCBDAB /* TextPostCell.swift in Sources */,
+				5FC34EA024A996EA003B7210 /* ImagePostCell.swift in Sources */,
+				5FC34E9C24A996D1003B7210 /* TextPostCell.swift in Sources */,
 				C3C9D397249B346E001F55A6 /* MediaPostProtocol.swift in Sources */,
 				C3C9D39B249B3711001F55A6 /* MediaPostsHandler.swift in Sources */,
 				5F4A32A624A86CA300CCBDAB /* MediaPostsCellCoordinator.swift in Sources */,
