@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = GraphicColors.nero
         setUpTableView()
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
     }
 
     func setUpTableView() {
+        tableview.backgroundColor = GraphicColors.nero
         // Setting up tableview dataSource
         tableview.dataSource = dataSource
         // register custom cells
