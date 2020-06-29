@@ -12,18 +12,23 @@ class ViewController: UIViewController{
 
     @IBOutlet weak var tableview: UITableView!
     let dataSource = MediaPostsDataSource()
+    var imagePicker: ImagePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
 
     @IBAction func didPressCreateTextPostButton(_ sender: Any) {
-        createPost()
+//        createPost()
+        requestPostDetails()
     }
 
-    @IBAction func didPressCreateImagePostButton(_ sender: Any) {
-        createPost(withImage:true)
+    @IBAction func didPressCreateImagePostButton(_ sender: UIButton) {
+//        createPost(withImage:true)
+        self.imagePicker.present(from: sender)
+
     }
 
     func setUpTableView() {
@@ -39,37 +44,47 @@ class ViewController: UIViewController{
 
 }
 
-extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+extension ViewController: ImagePickerDelegate {
 
-    func createPost(withImage:Bool = false) {
-        if withImage {
-            selectImageForPost()
-        } else {
-            requestPostDetails()
-        }
-    }
-
-    func selectImageForPost() {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.allowsEditing = false
-        pickerController.sourceType = .photoLibrary
-        present(pickerController, animated: true)
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.originalImage] as? UIImage else { return }
-        dismiss(animated: true)
+    func didSelect(image: UIImage?) {
         requestPostDetails(withImage: image)
     }
+}
+
+//extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+
+extension ViewController {
+
+//    func createPost(withImage:Bool = false) {
+//        if withImage {
+//            selectImageForPost()
+//        } else {
+//            requestPostDetails()
+//        }
+//    }
+//
+//    func selectImageForPost() {
+//        let pickerController = UIImagePickerController()
+//        pickerController.delegate = self
+//        pickerController.allowsEditing = false
+//        pickerController.sourceType = .photoLibrary
+//        present(pickerController, animated: true)
+//    }
+//
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        guard let image = info[.originalImage] as? UIImage else { return }
+//        dismiss(animated: true)
+//        requestPostDetails(withImage: image)
+//    }
 
 
     func requestPostDetails(withImage:UIImage? = nil) {
-        let alert = UIAlertController(title: "Create Post", message: "Whats the latest update", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "New Post", message: "What's happening?", preferredStyle: UIAlertController.Style.alert)
 
         alert.addTextField { (textField) in
             textField.placeholder = "Username"
             textField.returnKeyType = .next
+            textField.autocapitalizationType = .words
         }
 
         alert.addTextField { (textField) in
@@ -81,7 +96,7 @@ extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerD
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ (UIAlertAction) in
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{ [unowned self] _  in
             guard let username = alert.textFields?[0].text else { return }
             let textPost = alert.textFields?[1].text
             if let imageForPost = withImage {
@@ -95,7 +110,7 @@ extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerD
               self.tableview.reloadData()
         }))
 
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
 }
