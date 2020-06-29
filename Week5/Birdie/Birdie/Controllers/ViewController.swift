@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource{
+class ViewController: UIViewController{
 
     @IBOutlet weak var tableview: UITableView!
+    let dataSource = MediaPostsDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class ViewController: UIViewController,UITableViewDataSource{
 
     func setUpTableView() {
         // Set delegates, register custom cells, set up datasource, etc.
-        tableview.dataSource = self
+        tableview.dataSource = dataSource
         let Textnib = UINib(nibName: "TextPostCell",bundle: nil)
         let Imagenib = UINib(nibName: "ImagePostCell",bundle: nil)
         tableview.register(Textnib, forCellReuseIdentifier: "TextPostCell")
@@ -36,31 +37,6 @@ class ViewController: UIViewController,UITableViewDataSource{
         tableview.reloadData()
     }
 
-}
-
-extension ViewController {
-    //MARK: UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MediaPostsHandler.shared.mediaPosts.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let mediaPost = MediaPostsHandler.shared.mediaPosts[indexPath.row]
-        let cell = MediaPostsCellCoordinator.shared.configureCell(for: mediaPost, in: tableView)
-        cell.backgroundView = UIView(backgroundColor: .white)
-        cell.backgroundView?.addSeparator()
-
-        cell.selectedBackgroundView = UIView(backgroundColor: .lightGray)
-        cell.selectedBackgroundView?.addSeparator()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
 }
 
 extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -73,7 +49,7 @@ extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerD
         }
     }
 
-    fileprivate func selectImageForPost() {
+    func selectImageForPost() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.allowsEditing = false
@@ -122,22 +98,4 @@ extension ViewController:UIImagePickerControllerDelegate,UINavigationControllerD
         self.present(alert, animated: true, completion: nil)
     }
 
-
-}
-
-private extension UIView {
-    convenience init(backgroundColor: UIColor) {
-        self.init()
-        self.backgroundColor = backgroundColor
-    }
-
-    func addSeparator() {
-        let separatorHeight: CGFloat = 2
-        let frame = CGRect(x: 0, y: bounds.height - separatorHeight, width: bounds.width, height: separatorHeight)
-        let separator = UIView(frame: frame)
-        separator.backgroundColor = .gray
-        separator.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
-
-        addSubview(separator)
-    }
 }
