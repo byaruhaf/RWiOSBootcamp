@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var tableview: UITableView!
-    var posts = MediaPostsHandler.shared.mediaPosts
+    var mediaPostsHandler = MediaPostsHandler.shared
+    var mediaPosts: [MediaPost] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class ViewController: UIViewController{
         let Imagenib = UINib(nibName: "ImagePostCell",bundle: nil)
         tableview.register(Textnib, forCellReuseIdentifier: "TextPostCell")
         tableview.register(Imagenib, forCellReuseIdentifier: "ImagePostCell")
+        mediaPostsHandler.getPosts()
+        mediaPosts = mediaPostsHandler.mediaPosts
+        tableview.reloadData()
     }
 
     @IBAction func didPressCreateTextPostButton(_ sender: Any) {
@@ -36,22 +40,23 @@ class ViewController: UIViewController{
 
     }
 
-
-}
-
-extension ViewController:UITableViewDelegate, UITableViewDataSource  {
     //MARK: UITableViewDataSource
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return mediaPosts.count
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = MediaPostsCellCoordinator.shared.setUpTableViewCell(for: posts[indexPath.row], in: tableView)
+        let mediaPost = mediaPosts[indexPath.row]
+        let cell = MediaPostsCellCoordinator.shared.setUpTableViewCell(for: mediaPost, in: tableView)
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+
+
 }
-
-
-

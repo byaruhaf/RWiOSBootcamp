@@ -18,6 +18,7 @@ class MediaPostsCellCoordinator {
             cell.nameLabel.text = post.userName
             cell.timestampLabel.text = post.timestamp.toString()
             cell.textBodyLabel.text = post.textBody
+            print("Text")
             return cell
         } else if let post = post as? ImagePost {
             let cell = tableview.dequeueReusableCell(withIdentifier: "ImagePostCell") as! ImagePostCell
@@ -25,6 +26,7 @@ class MediaPostsCellCoordinator {
             cell.timestampLabel.text = post.timestamp.toString()
             cell.textBodyLabel.text = post.textBody
             cell.postImageView.image = post.image
+             print("IMGAE")
             return cell
         } else {
             let cell = UITableViewCell()
@@ -33,6 +35,7 @@ class MediaPostsCellCoordinator {
         }
     }
 }
+
 
 extension Date {
     func toString(withFormat format: String = "d MMM, HH:mm") -> String {
