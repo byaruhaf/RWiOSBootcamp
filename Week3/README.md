@@ -31,6 +31,7 @@ Create an app called Cryptly that displays prices of cryptocurrencies
 * Added animation during the change of theme's
 * Added network component to fetch data from a remote [Nomics API](api.nomics.com)
 * Using swift's Result type for the Asynchronous completion handler
+* Disabled dark mode on the app
 
 
 
