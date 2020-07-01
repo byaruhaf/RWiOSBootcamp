@@ -12,8 +12,12 @@
 		185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CB1FD23C78CE6009F7571 /* SceneDelegate.swift */; };
 		185CB20323C78CE6009F7571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185CB20123C78CE6009F7571 /* Main.storyboard */; };
 		185CB20523C78CE8009F7571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185CB20423C78CE8009F7571 /* Assets.xcassets */; };
-		5F9D7CEF24AC221400BDACF1 /* CompactCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CEE24AC221400BDACF1 /* CompactCollectionViewController.swift */; };
-		5F9D7CF124AC223A00BDACF1 /* LargeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF024AC223A00BDACF1 /* LargeCollectionViewController.swift */; };
+		5F5680B924AD2D5200DC741D /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680B824AD2D5200DC741D /* ReusableView.swift */; };
+		5F5680BD24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680BA24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift */; };
+		5F5680BE24AD2D6800DC741D /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680BB24AD2D6800DC741D /* UICollectionView+Helpers.swift */; };
+		5F5680BF24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680BC24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift */; };
+		5F9D7CEF24AC221400BDACF1 /* CompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */; };
+		5F9D7CF124AC223A00BDACF1 /* LargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */; };
 		5F9D7CF624AC424700BDACF1 /* LargeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF424AC424700BDACF1 /* LargeCollectionViewCell.swift */; };
 		5F9D7CF724AC424700BDACF1 /* LargeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF524AC424700BDACF1 /* LargeCollectionViewCell.xib */; };
 		5F9D7CFA24AC426600BDACF1 /* CompactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF824AC426600BDACF1 /* CompactCollectionViewCell.swift */; };
@@ -34,8 +38,12 @@
 		185CB20223C78CE6009F7571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185CB20423C78CE8009F7571 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185CB20923C78CE8009F7571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F9D7CEE24AC221400BDACF1 /* CompactCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactCollectionViewController.swift; sourceTree = "<group>"; };
-		5F9D7CF024AC223A00BDACF1 /* LargeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCollectionViewController.swift; sourceTree = "<group>"; };
+		5F5680B824AD2D5200DC741D /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		5F5680BA24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+ReusableView.swift"; sourceTree = "<group>"; };
+		5F5680BB24AD2D6800DC741D /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
+		5F5680BC24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Helpers.swift"; sourceTree = "<group>"; };
+		5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactViewController.swift; sourceTree = "<group>"; };
+		5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeViewController.swift; sourceTree = "<group>"; };
 		5F9D7CF424AC424700BDACF1 /* LargeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F9D7CF524AC424700BDACF1 /* LargeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeCollectionViewCell.xib; sourceTree = "<group>"; };
 		5F9D7CF824AC426600BDACF1 /* CompactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -80,13 +88,15 @@
 		185CB1FA23C78CE6009F7571 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				5F5680C024AD2D7500DC741D /* Extensions */,
+				5F5680C124AD2D8300DC741D /* Protocols */,
 				185CB1FB23C78CE6009F7571 /* AppDelegate.swift */,
 				185CB1FD23C78CE6009F7571 /* SceneDelegate.swift */,
 				185CB20123C78CE6009F7571 /* Main.storyboard */,
-				5F9D7CF024AC223A00BDACF1 /* LargeCollectionViewController.swift */,
+				5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */,
 				5F9D7CF424AC424700BDACF1 /* LargeCollectionViewCell.swift */,
 				5F9D7CF524AC424700BDACF1 /* LargeCollectionViewCell.xib */,
-				5F9D7CEE24AC221400BDACF1 /* CompactCollectionViewController.swift */,
+				5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */,
 				5F9D7CF824AC426600BDACF1 /* CompactCollectionViewCell.swift */,
 				5F9D7CF924AC426600BDACF1 /* CompactCollectionViewCell.xib */,
 				185CB20423C78CE8009F7571 /* Assets.xcassets */,
@@ -96,6 +106,24 @@
 				A125200724AAAB64008F7E2E /* Resources */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		5F5680C024AD2D7500DC741D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F5680BB24AD2D6800DC741D /* UICollectionView+Helpers.swift */,
+				5F5680BC24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift */,
+				5F5680BA24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5F5680C124AD2D8300DC741D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5F5680B824AD2D5200DC741D /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A125200724AAAB64008F7E2E /* Resources */ = {
@@ -207,15 +235,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9D7CEF24AC221400BDACF1 /* CompactCollectionViewController.swift in Sources */,
+				5F5680BE24AD2D6800DC741D /* UICollectionView+Helpers.swift in Sources */,
+				5F9D7CEF24AC221400BDACF1 /* CompactViewController.swift in Sources */,
+				5F5680B924AD2D5200DC741D /* ReusableView.swift in Sources */,
 				A10D04F924ABC8DB00DE5D14 /* Pokemon.swift in Sources */,
 				5F9D7CF624AC424700BDACF1 /* LargeCollectionViewCell.swift in Sources */,
 				A125200B24AAAB71008F7E2E /* csv.swift in Sources */,
+				5F5680BD24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift in Sources */,
+				5F5680BF24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift in Sources */,
 				A125200D24AAABA0008F7E2E /* PokemonGenerator.swift in Sources */,
 				5F9D7CFA24AC426600BDACF1 /* CompactCollectionViewCell.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
-				5F9D7CF124AC223A00BDACF1 /* LargeCollectionViewController.swift in Sources */,
+				5F9D7CF124AC223A00BDACF1 /* LargeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
