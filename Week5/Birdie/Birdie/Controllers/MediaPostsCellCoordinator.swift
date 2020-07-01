@@ -19,16 +19,13 @@ class MediaPostsCellCoordinator {
             cell.timestampLabel.text = post.timestamp.toString()
             cell.textBodyLabel.text = post.textBody
             return cell
-        } else if let post = post as? ImagePost {
+        } else{
+            guard let post = post as? ImagePost  else { fatalError("Unknown Cell") }
             let cell = tableview.dequeueReusableCell(withIdentifier: CellType.image) as! ImagePostCell
             cell.nameLabel.text = post.userName
             cell.timestampLabel.text = post.timestamp.toString()
             cell.textBodyLabel.text = post.textBody
             cell.postImageView.image = post.image
-            return cell
-        } else {
-            let cell = UITableViewCell()
-            cell.textLabel?.text = post.textBody
             return cell
         }
     }
