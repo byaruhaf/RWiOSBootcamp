@@ -34,8 +34,6 @@ import UIKit
 
 class LargeViewController: UIViewController {
     @IBOutlet weak var largeCollection: UICollectionView!
-
-  
     override func viewDidLoad() {
         super.viewDidLoad()
     }

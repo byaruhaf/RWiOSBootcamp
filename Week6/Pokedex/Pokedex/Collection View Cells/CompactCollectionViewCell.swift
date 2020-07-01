@@ -34,7 +34,9 @@ import UIKit
 
 class CompactCollectionViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var pokemonImage: UIImageView!
+  @IBOutlet weak var pokemonName: UILabel!
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
