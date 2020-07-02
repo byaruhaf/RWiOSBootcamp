@@ -32,11 +32,23 @@
 
 import UIKit
 
+@IBDesignable
 class LargeCollectionViewCell: UICollectionViewCell {
+  @IBOutlet weak var pokemonName: UILabel!
+  @IBOutlet weak var pokemonImage: UIImageView!
+  @IBOutlet weak var pokemonBaseExp: UILabel!
+  @IBOutlet weak var pokemonHeight: UILabel!
+  @IBOutlet weak var pokemonWeight: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+
+  @IBInspectable
+  var cornerRadius: CGFloat {
+    set { layer.cornerRadius = newValue }
+    get { return layer.cornerRadius     }
+  }
 
 }

@@ -93,9 +93,8 @@
 				185CB1FB23C78CE6009F7571 /* AppDelegate.swift */,
 				185CB1FD23C78CE6009F7571 /* SceneDelegate.swift */,
 				185CB20123C78CE6009F7571 /* Main.storyboard */,
-				5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */,
+				5F13532A24AD534300C69B14 /* ViewControllers */,
 				5F5680C224AD2FB400DC741D /* Collection View Cells */,
-				5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */,
 				185CB20423C78CE8009F7571 /* Assets.xcassets */,
 				180DC61423C78D9800486B1A /* LaunchScreen.storyboard */,
 				185CB20923C78CE8009F7571 /* Info.plist */,
@@ -103,6 +102,15 @@
 				A125200724AAAB64008F7E2E /* Resources */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		5F13532A24AD534300C69B14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */,
+				5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		5F5680C024AD2D7500DC741D /* Extensions */ = {
