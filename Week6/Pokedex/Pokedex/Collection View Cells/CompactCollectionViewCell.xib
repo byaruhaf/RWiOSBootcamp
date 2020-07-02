@@ -25,10 +25,11 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="172" translatesAutoresizingMaskIntoConstraints="NO" id="xz6-1r-FjX">
                         <rect key="frame" x="0.0" y="0.0" width="494" height="261.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="xz6-1r-FjX" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="40b-QU-yXW"/>
                 <constraint firstAttribute="trailing" secondItem="xz6-1r-FjX" secondAttribute="trailing" id="IPF-jl-mCw"/>
