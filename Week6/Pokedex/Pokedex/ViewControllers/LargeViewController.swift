@@ -26,6 +26,7 @@ class LargeViewController: UIViewController {
       reloadData()
     }
 
+  // Configure Cell
   func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with pokemon: Pokemon, for indexPath: IndexPath) -> T {
     guard let cell = largeCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
       fatalError("Unable to dequeue \(cellType)")
@@ -34,6 +35,7 @@ class LargeViewController: UIViewController {
     return cell
   }
 
+  // Configure Collection View Layout
   func configureLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -45,12 +47,14 @@ class LargeViewController: UIViewController {
     return UICollectionViewCompositionalLayout(section: section)
   }
 
+  // Configure Collection Data Source
   func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: largeCollection) { (largeCollection, indexPath, pokemon) -> UICollectionViewCell? in
       self.configure(LargeCollectionViewCell.self, with: pokemon, for: indexPath)
     }
   }
 
+  // load snapshot of Data
   func reloadData() {
     var initialSnapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
     initialSnapshot.appendSections([.main])

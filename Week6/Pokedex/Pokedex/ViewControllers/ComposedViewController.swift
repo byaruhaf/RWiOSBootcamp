@@ -30,6 +30,7 @@ class ComposedViewController: UIViewController {
       reloadData()
     }
 
+  // Configure Cell
   func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with pokemon: Pokemon, for indexPath: IndexPath) -> T {
     guard let cell = ComposedCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
       fatalError("Unable to dequeue \(cellType)")
@@ -38,6 +39,7 @@ class ComposedViewController: UIViewController {
     return cell
   }
 
+  // Configure Collection View Layout based on sections
   func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
     let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
 
@@ -55,6 +57,7 @@ class ComposedViewController: UIViewController {
     return layout
   }
 
+  // Configure Compact Section of Collection View
   func createCompactSection() -> NSCollectionLayoutSection {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1.0))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -67,6 +70,7 @@ class ComposedViewController: UIViewController {
     return section
   }
 
+  // Configure Large Section of Collection View
   func createLargeSection() -> NSCollectionLayoutSection {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -79,6 +83,7 @@ class ComposedViewController: UIViewController {
     return section
   }
 
+  // Configure Data Source based on sections
     func configureDataSource() {
       dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: ComposedCollection) { (ComposedCollection, indexPath, pokemon) -> UICollectionViewCell? in
         let section = Section.allCases[indexPath.section]
@@ -91,7 +96,7 @@ class ComposedViewController: UIViewController {
       }
     }
 
-
+// load snapshot of Data in each section
   func reloadData() {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
     snapshot.appendSections(Section.allCases)
