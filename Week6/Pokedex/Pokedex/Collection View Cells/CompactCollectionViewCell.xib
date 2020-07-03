@@ -23,9 +23,9 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="172" translatesAutoresizingMaskIntoConstraints="NO" id="xz6-1r-FjX">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xz6-1r-FjX">
                         <rect key="frame" x="0.0" y="0.0" width="494" height="261.5"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
@@ -43,6 +43,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="494" height="366"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="pokemonImage" destination="xz6-1r-FjX" id="Rzt-oj-Q4p"/>
                 <outlet property="pokemonName" destination="BnF-JL-qvb" id="yiD-kL-wcC"/>
@@ -50,7 +55,4 @@
             <point key="canvasLocation" x="459.4202898550725" y="258.48214285714283"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="172" width="120" height="120"/>
-    </resources>
 </document>

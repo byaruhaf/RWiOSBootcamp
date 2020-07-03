@@ -16,12 +16,14 @@
 		5F5680BD24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680BA24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift */; };
 		5F5680BE24AD2D6800DC741D /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680BB24AD2D6800DC741D /* UICollectionView+Helpers.swift */; };
 		5F5680BF24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5680BC24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift */; };
+		5F6DE1EB24AE552600A61650 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6DE1EA24AE552600A61650 /* SelfConfiguringCell.swift */; };
 		5F9D7CEF24AC221400BDACF1 /* CompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */; };
 		5F9D7CF124AC223A00BDACF1 /* LargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */; };
 		5F9D7CF624AC424700BDACF1 /* LargeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF424AC424700BDACF1 /* LargeCollectionViewCell.swift */; };
 		5F9D7CF724AC424700BDACF1 /* LargeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF524AC424700BDACF1 /* LargeCollectionViewCell.xib */; };
 		5F9D7CFA24AC426600BDACF1 /* CompactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF824AC426600BDACF1 /* CompactCollectionViewCell.swift */; };
 		5F9D7CFB24AC426600BDACF1 /* CompactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7CF924AC426600BDACF1 /* CompactCollectionViewCell.xib */; };
+		5FA3B54A24ADCFFA0097F551 /* ComposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA3B54924ADCFFA0097F551 /* ComposedViewController.swift */; };
 		A10D04F924ABC8DB00DE5D14 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D04F824ABC8DB00DE5D14 /* Pokemon.swift */; };
 		A11D349A24AABED7002BDD2B /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A11D349824AABED7002BDD2B /* Pokemon Solid.ttf */; };
 		A11D349B24AABED7002BDD2B /* Pokemon Hollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A11D349924AABED7002BDD2B /* Pokemon Hollow.ttf */; };
@@ -42,12 +44,14 @@
 		5F5680BA24AD2D6800DC741D /* UICollectionViewCell+ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+ReusableView.swift"; sourceTree = "<group>"; };
 		5F5680BB24AD2D6800DC741D /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		5F5680BC24AD2D6800DC741D /* UICollectionViewCell+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Helpers.swift"; sourceTree = "<group>"; };
+		5F6DE1EA24AE552600A61650 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactViewController.swift; sourceTree = "<group>"; };
 		5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeViewController.swift; sourceTree = "<group>"; };
 		5F9D7CF424AC424700BDACF1 /* LargeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F9D7CF524AC424700BDACF1 /* LargeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeCollectionViewCell.xib; sourceTree = "<group>"; };
 		5F9D7CF824AC426600BDACF1 /* CompactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F9D7CF924AC426600BDACF1 /* CompactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompactCollectionViewCell.xib; sourceTree = "<group>"; };
+		5FA3B54924ADCFFA0097F551 /* ComposedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedViewController.swift; sourceTree = "<group>"; };
 		A10D04F824ABC8DB00DE5D14 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		A11D349824AABED7002BDD2B /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
 		A11D349924AABED7002BDD2B /* Pokemon Hollow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Hollow.ttf"; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				5F9D7CF024AC223A00BDACF1 /* LargeViewController.swift */,
 				5F9D7CEE24AC221400BDACF1 /* CompactViewController.swift */,
+				5FA3B54924ADCFFA0097F551 /* ComposedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5680B824AD2D5200DC741D /* ReusableView.swift */,
+				5F6DE1EA24AE552600A61650 /* SelfConfiguringCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -251,7 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA3B54A24ADCFFA0097F551 /* ComposedViewController.swift in Sources */,
 				5F5680BE24AD2D6800DC741D /* UICollectionView+Helpers.swift in Sources */,
+				5F6DE1EB24AE552600A61650 /* SelfConfiguringCell.swift in Sources */,
 				5F9D7CEF24AC221400BDACF1 /* CompactViewController.swift in Sources */,
 				5F5680B924AD2D5200DC741D /* ReusableView.swift in Sources */,
 				A10D04F924ABC8DB00DE5D14 /* Pokemon.swift in Sources */,
@@ -400,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

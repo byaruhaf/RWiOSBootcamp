@@ -15,16 +15,25 @@ class CompactViewController:UIViewController {
       compactCollection.collectionViewLayout = configureLayout()
 
       // Register Episode Collection View Cell
-      let xib = UINib(nibName: CompactCollectionViewCell.nibName, bundle: .main)
-      compactCollection.register(xib, forCellWithReuseIdentifier: CompactCollectionViewCell.reuseIdentifier)
+      let CompactCellxib = UINib(nibName: CompactCollectionViewCell.nibName, bundle: .main)
+      compactCollection.register(CompactCellxib, forCellWithReuseIdentifier: CompactCollectionViewCell.reuseIdentifier)
     }
   }
     
     override func viewDidLoad() {
         super.viewDidLoad()
       configureDataSource()
+      reloadData()
 
     }
+
+  func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with pokemon: Pokemon, for indexPath: IndexPath) -> T {
+    guard let cell = compactCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+      fatalError("Unable to dequeue \(cellType)")
+    }
+    cell.configure(with: pokemon)
+    return cell
+  }
 
   func configureLayout() -> UICollectionViewCompositionalLayout {
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
@@ -37,20 +46,16 @@ class CompactViewController:UIViewController {
   }
 
   func configureDataSource() {
-    dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: compactCollection) { (compactCollection, indexPath, number) -> UICollectionViewCell? in
-      guard let cell = compactCollection.dequeueReusableCell(withReuseIdentifier: CompactCollectionViewCell.reuseIdentifier, for: indexPath) as?  CompactCollectionViewCell else {
-        fatalError("Cannot create new cell")
-      }
-      cell.pokemonName.text = self.pokemons[indexPath.row].pokemonName
-      cell.pokemonImage.image = UIImage(named: "\(self.pokemons[indexPath.row].pokemonID)")
-      return cell
+    dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: compactCollection) { (compactCollection, indexPath, pokemon) -> UICollectionViewCell? in
+      self.configure(CompactCollectionViewCell.self, with: pokemon, for: indexPath)
     }
+  }
 
+  func reloadData() {
     var initialSnapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
     initialSnapshot.appendSections([.main])
     initialSnapshot.appendItems(pokemons, toSection: .main)
-    dataSource.apply(initialSnapshot, animatingDifferences: false, completion: nil)
-
+    dataSource.apply(initialSnapshot)
   }
 
 }

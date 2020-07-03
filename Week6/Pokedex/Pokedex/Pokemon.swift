@@ -33,6 +33,7 @@
 import Foundation
 
 struct Pokemon:Hashable {
+  var id:UUID = UUID()
   var pokemonID:Int
   var pokemonName:String
   var baseExp:Int
