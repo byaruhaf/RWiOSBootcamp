@@ -7,11 +7,6 @@ class ComposedViewController: UIViewController {
     case main
   }
 
-  enum SectionType: Hashable {
-    case objectA([Pokemon])
-    case objectB([Pokemon])
-  }
-
   var dataSource:UICollectionViewDiffableDataSource<Section, Pokemon>!
   let pokemons1 = PokemonGenerator.shared.generatePokemons()
   let pokemons2 = PokemonGenerator.shared.generatePokemons()
@@ -55,21 +50,21 @@ class ComposedViewController: UIViewController {
       }
     }
     let config = UICollectionViewCompositionalLayoutConfiguration()
-    config.interSectionSpacing = 20
+    config.interSectionSpacing = 2
     layout.configuration = config
     return layout
   }
 
   func createCompactSection() -> NSCollectionLayoutSection {
-    let compactitemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1.0))
-    let compactitem = NSCollectionLayoutItem(layoutSize: compactitemSize)
-    compactitem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-    let compactgroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(0.2))
-    let compactgroup = NSCollectionLayoutGroup.horizontal(layoutSize: compactgroupSize, subitems: [compactitem])
-    let compactsection = NSCollectionLayoutSection(group: compactgroup)
-    compactsection.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-    compactsection.contentInsets = NSDirectionalEdgeInsets.init(top:5, leading: 0, bottom: 0, trailing: 0)
-    return compactsection
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1.0))
+    let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(0.2))
+    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+    let section = NSCollectionLayoutSection(group: group)
+    section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+    section.contentInsets = NSDirectionalEdgeInsets.init(top:5, leading: 0, bottom: 0, trailing: 0)
+    return section
   }
 
   func createLargeSection() -> NSCollectionLayoutSection {
