@@ -56,10 +56,10 @@ class LargeViewController: UIViewController {
 
   // load snapshot of Data
   func reloadData() {
-    var initialSnapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
-    initialSnapshot.appendSections([.main])
-    initialSnapshot.appendItems(pokemons, toSection: .main)
-    dataSource.apply(initialSnapshot)
+    var snapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
+    snapshot.appendSections([.main])
+    snapshot.appendItems(pokemons, toSection: .main)
+    dataSource.apply(snapshot)
   }
 
 }
