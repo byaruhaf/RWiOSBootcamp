@@ -40,6 +40,8 @@
 /* Begin PBXFileReference section */
 		5FB8AFB3249C02E800695BBD /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5FB8AFB5249C2E6700695BBD /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		5FEB08CF24B141C300F6E5AD /* Regression.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Regression.xctestplan; sourceTree = "<group>"; };
+		5FEB08D024B148F100F6E5AD /* UnitTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTest.xctestplan; sourceTree = "<group>"; };
 		C3017C3C2499C83A00B1E49A /* CompatibilitySlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompatibilitySlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3017C3F2499C83A00B1E49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3017C412499C83A00B1E49A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,8 @@
 		C3017C332499C83A00B1E49A = {
 			isa = PBXGroup;
 			children = (
+				5FEB08D024B148F100F6E5AD /* UnitTest.xctestplan */,
+				5FEB08CF24B141C300F6E5AD /* Regression.xctestplan */,
 				C3017C3E2499C83A00B1E49A /* CompatibilitySlider */,
 				C3017C582499C83B00B1E49A /* CompatibilitySliderTests */,
 				C3017C632499C83B00B1E49A /* CompatibilitySliderUITests */,

@@ -1,0 +1,46 @@
+{
+  "configurations" : [
+    {
+      "id" : "879C0355-1674-41DD-A81E-B78F4C6D39E4",
+      "name" : "Default",
+      "options" : {
+        "addressSanitizer" : {
+          "enabled" : true
+        },
+        "language" : "en",
+        "region" : "UG",
+        "threadSanitizerEnabled" : false,
+        "uiTestingScreenshotsLifetime" : "keepAlways",
+        "undefinedBehaviorSanitizerEnabled" : true
+      }
+    },
+    {
+      "id" : "8E55B019-654A-4200-9401-F03B1BAB8295",
+      "name" : "Lite",
+      "options" : {
+        "threadSanitizerEnabled" : true,
+        "undefinedBehaviorSanitizerEnabled" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CompatibilitySlider.xcodeproj",
+        "identifier" : "C3017C542499C83B00B1E49A",
+        "name" : "CompatibilitySliderTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CompatibilitySlider.xcodeproj",
+        "identifier" : "C3017C5F2499C83B00B1E49A",
+        "name" : "CompatibilitySliderUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

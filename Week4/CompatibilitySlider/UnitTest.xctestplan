@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "35B801DF-2EF2-4A79-8D65-F0302E361734",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CompatibilitySlider.xcodeproj",
+        "identifier" : "C3017C542499C83B00B1E49A",
+        "name" : "CompatibilitySliderTests"
+      }
+    }
+  ],
+  "version" : 1
+}
