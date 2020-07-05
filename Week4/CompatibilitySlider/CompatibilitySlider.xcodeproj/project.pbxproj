@@ -84,12 +84,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C3017C332499C83A00B1E49A = {
+		5F6B477C24B15B1700F1A849 /* Testplans */ = {
 			isa = PBXGroup;
 			children = (
 				5FEB08D024B148F100F6E5AD /* UnitTest.xctestplan */,
 				5FEB08CF24B141C300F6E5AD /* Regression.xctestplan */,
+			);
+			path = Testplans;
+			sourceTree = "<group>";
+		};
+		C3017C332499C83A00B1E49A = {
+			isa = PBXGroup;
+			children = (
 				C3017C3E2499C83A00B1E49A /* CompatibilitySlider */,
+				5F6B477C24B15B1700F1A849 /* Testplans */,
 				C3017C582499C83B00B1E49A /* CompatibilitySliderTests */,
 				C3017C632499C83B00B1E49A /* CompatibilitySliderUITests */,
 				C3017C3D2499C83A00B1E49A /* Products */,

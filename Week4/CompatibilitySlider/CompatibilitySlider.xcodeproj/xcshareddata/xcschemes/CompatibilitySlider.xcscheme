@@ -31,11 +31,11 @@
       codeCoverageEnabled = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:Regression.xctestplan"
+            reference = "container:Testplans/Regression.xctestplan"
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:UnitTest.xctestplan">
+            reference = "container:Testplans/UnitTest.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
