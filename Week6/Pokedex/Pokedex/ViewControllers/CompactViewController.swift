@@ -35,16 +35,7 @@ class CompactViewController:UIViewController {
     return cell
   }
 
-  // Configure Collection View Layout
-  func configureLayout() -> UICollectionViewCompositionalLayout {
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
-    let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))
-    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-    let section = NSCollectionLayoutSection(group: group)
-    return UICollectionViewCompositionalLayout(section: section)
-  }
+
 
   // Configure Collection Data Source
   func configureDataSource() {
@@ -61,4 +52,19 @@ class CompactViewController:UIViewController {
     dataSource.apply(snapshot)
   }
 
+}
+
+// MARK: - Layout
+extension CompactViewController {
+  // Configure Collection View Layout
+  private func configureLayout() -> UICollectionViewCompositionalLayout {
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))
+    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+
+    let section = NSCollectionLayoutSection(group: group)
+    return UICollectionViewCompositionalLayout(section: section)
+  }
 }

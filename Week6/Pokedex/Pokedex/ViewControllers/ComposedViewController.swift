@@ -39,50 +39,6 @@ class ComposedViewController: UIViewController {
     return cell
   }
 
-  // Configure Collection View Layout based on sections
-  func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-    let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-
-      let section = Section.allCases[sectionIndex]
-      switch section {
-        case .top:
-        return self.createCompactSection()
-        case .main:
-        return self.createLargeSection()
-      }
-    }
-    let config = UICollectionViewCompositionalLayoutConfiguration()
-    config.interSectionSpacing = 2
-    layout.configuration = config
-    return layout
-  }
-
-  // Configure Compact Section of Collection View
-  func createCompactSection() -> NSCollectionLayoutSection {
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1.0))
-    let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(0.2))
-    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-    let section = NSCollectionLayoutSection(group: group)
-    section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-    section.contentInsets = NSDirectionalEdgeInsets.init(top:5, leading: 0, bottom: 0, trailing: 0)
-    return section
-  }
-
-  // Configure Large Section of Collection View
-  func createLargeSection() -> NSCollectionLayoutSection {
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-    let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 20, trailing: 10)
-    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .fractionalHeight(0.8))
-    let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-    let section = NSCollectionLayoutSection(group: group)
-    section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-     section.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 20, trailing: 0)
-    return section
-  }
-
   // Configure Data Source based on sections
     func configureDataSource() {
       dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: ComposedCollection) { (ComposedCollection, indexPath, pokemon) -> UICollectionViewCell? in
@@ -103,5 +59,53 @@ class ComposedViewController: UIViewController {
     snapshot.appendItems(pokemons1, toSection: .main)
     snapshot.appendItems(pokemons2, toSection: .top)
     dataSource.apply(snapshot)
+  }
+}
+
+// MARK: - Layout
+extension ComposedViewController {
+  // Configure Collection View Layout based on sections
+ private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+    let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+      let section = Section.allCases[sectionIndex]
+      switch section {
+        case .top:
+          return self.createCompactSection(environment)
+        case .main:
+          return self.createLargeSection(environment)
+      }
+    }
+    let config = UICollectionViewCompositionalLayoutConfiguration()
+    config.interSectionSpacing = 2
+    layout.configuration = config
+    return layout
+  }
+
+  // Configure Compact Section of Collection View
+ private func createCompactSection(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+  let isIpad = environment.traitCollection.horizontalSizeClass == .regular &&  environment.traitCollection.verticalSizeClass == .regular
+  let columns = isIpad ? 6:3
+  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+  let item = NSCollectionLayoutItem(layoutSize: itemSize)
+  item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))
+  let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
+    let section = NSCollectionLayoutSection(group: group)
+    section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+    section.contentInsets = NSDirectionalEdgeInsets.init(top:5, leading: 0, bottom: 0, trailing: 0)
+    return section
+  }
+
+  // Configure Large Section of Collection View
+ private func createLargeSection(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+    let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 20, trailing: 10)
+    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .fractionalHeight(0.8))
+    let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+    let section = NSCollectionLayoutSection(group: group)
+    section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+    section.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 20, trailing: 0)
+    return section
   }
 }
