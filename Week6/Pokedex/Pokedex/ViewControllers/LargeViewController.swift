@@ -5,6 +5,7 @@ class LargeViewController: UIViewController {
   enum Section {
     case main
   }
+
   var dataSource:UICollectionViewDiffableDataSource<Section, Pokemon>!
   let pokemons = PokemonGenerator.shared.generatePokemons()
 
@@ -12,20 +13,21 @@ class LargeViewController: UIViewController {
     didSet {
       // Create Collection View Layout
       largeCollection.collectionViewLayout = configureLayout()
-
       // Register Episode Collection View Cell
       let LargeCellxib = UINib(nibName: LargeCollectionViewCell.nibName, bundle: .main)
       largeCollection.register(LargeCellxib, forCellWithReuseIdentifier: LargeCollectionViewCell.reuseIdentifier)
     }
   }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
       configureDataSource()
       reloadData()
     }
+}
 
+// MARK: - Data Source
+extension LargeViewController {
   // Configure Cell
   func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with pokemon: Pokemon, for indexPath: IndexPath) -> T {
     guard let cell = largeCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {

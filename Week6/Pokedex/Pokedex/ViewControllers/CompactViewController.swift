@@ -6,6 +6,7 @@ class CompactViewController:UIViewController {
   enum Section {
     case main
   }
+
   var dataSource:UICollectionViewDiffableDataSource<Section, Pokemon>!
   let pokemons = PokemonGenerator.shared.generatePokemons()
 
@@ -13,7 +14,6 @@ class CompactViewController:UIViewController {
     didSet {
       // Create Collection View Layout
       compactCollection.collectionViewLayout = configureLayout()
-
       // Register Episode Collection View Cell
       let CompactCellxib = UINib(nibName: CompactCollectionViewCell.nibName, bundle: .main)
       compactCollection.register(CompactCellxib, forCellWithReuseIdentifier: CompactCollectionViewCell.reuseIdentifier)
@@ -24,8 +24,11 @@ class CompactViewController:UIViewController {
         super.viewDidLoad()
       configureDataSource()
       reloadData()
-
     }
+
+}
+// MARK: - Data Source
+extension CompactViewController {
   // Configure Cell
   func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with pokemon: Pokemon, for indexPath: IndexPath) -> T {
     guard let cell = compactCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
@@ -35,15 +38,13 @@ class CompactViewController:UIViewController {
     return cell
   }
 
-
-
   // Configure Collection Data Source
   func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: compactCollection) { (compactCollection, indexPath, pokemon) -> UICollectionViewCell? in
       self.configure(CompactCollectionViewCell.self, with: pokemon, for: indexPath)
     }
   }
-  
+
   // load snapshot of Data
   func reloadData() {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
@@ -51,7 +52,6 @@ class CompactViewController:UIViewController {
     snapshot.appendItems(pokemons, toSection: .main)
     dataSource.apply(snapshot)
   }
-
 }
 
 // MARK: - Layout

@@ -2,6 +2,7 @@ import UIKit
 
 
 class ComposedViewController: UIViewController {
+
   enum Section:CaseIterable {
     case top
     case main
@@ -15,7 +16,6 @@ class ComposedViewController: UIViewController {
     didSet {
       // Create Collection View Layout
       ComposedCollection.collectionViewLayout = createCompositionalLayout()
-
       // Register Episode Collection View Cell
       let LargeCellxib = UINib(nibName: LargeCollectionViewCell.nibName, bundle: .main)
       ComposedCollection.register(LargeCellxib, forCellWithReuseIdentifier: LargeCollectionViewCell.reuseIdentifier)
@@ -25,11 +25,14 @@ class ComposedViewController: UIViewController {
   }
   
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
       configureDataSource()
       reloadData()
     }
+}
 
+// MARK: - Data Source
+extension ComposedViewController {
   // Configure Cell
   func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with pokemon: Pokemon, for indexPath: IndexPath) -> T {
     guard let cell = ComposedCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
@@ -40,19 +43,19 @@ class ComposedViewController: UIViewController {
   }
 
   // Configure Data Source based on sections
-    func configureDataSource() {
-      dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: ComposedCollection) { (ComposedCollection, indexPath, pokemon) -> UICollectionViewCell? in
-        let section = Section.allCases[indexPath.section]
-        switch section {
-          case .top:
-            return self.configure(CompactCollectionViewCell.self, with: pokemon, for: indexPath)
-          case .main:
-            return self.configure(LargeCollectionViewCell.self, with: pokemon, for: indexPath)
-        }
+  func configureDataSource() {
+    dataSource = UICollectionViewDiffableDataSource<Section, Pokemon>(collectionView: ComposedCollection) { (ComposedCollection, indexPath, pokemon) -> UICollectionViewCell? in
+      let section = Section.allCases[indexPath.section]
+      switch section {
+        case .top:
+          return self.configure(CompactCollectionViewCell.self, with: pokemon, for: indexPath)
+        case .main:
+          return self.configure(LargeCollectionViewCell.self, with: pokemon, for: indexPath)
       }
     }
+  }
 
-// load snapshot of Data in each section
+  // load snapshot of Data in each section
   func reloadData() {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
     snapshot.appendSections(Section.allCases)
