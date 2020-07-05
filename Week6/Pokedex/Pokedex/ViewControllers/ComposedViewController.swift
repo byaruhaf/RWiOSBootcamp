@@ -88,10 +88,11 @@ extension ComposedViewController {
  private func createCompactSection(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
   let isIpad = environment.traitCollection.horizontalSizeClass == .regular &&  environment.traitCollection.verticalSizeClass == .regular
   let columns = isIpad ? 6:3
+  let hightWidth = CGFloat(isIpad ? 0.2:0.33)
   let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
   let item = NSCollectionLayoutItem(layoutSize: itemSize)
   item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))
+  let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(hightWidth))
   let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
     let section = NSCollectionLayoutSection(group: group)
     section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
