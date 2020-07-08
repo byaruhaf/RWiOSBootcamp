@@ -37,14 +37,12 @@ struct PostListView: View {
             }
 
         }
-        ScrollView {
+        List {
             VStack(alignment: .leading, spacing: 30.0) {
                 ForEach(posts.posts, id: \.id) { post in
-                   PostView(post: post)
+                    PostView(post: post)
             }
-
             }
-            .padding(.horizontal)
         }
     }
 }

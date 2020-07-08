@@ -25,6 +25,7 @@ struct PostView: View {
             }
             VStack(alignment: .leading, spacing: -20.0) {
                 Text("\(post.textBody!)")
+                    .padding(.bottom)
                 HStack(alignment: .top) {
                     if post.uiImage  != nil {
                         Spacer()
@@ -38,6 +39,9 @@ struct PostView: View {
                     }
                 }
             }
+            Rectangle()
+                .frame(height: 2)
+                .foregroundColor(Color(UIColor.separator))
         }
     }
 }
