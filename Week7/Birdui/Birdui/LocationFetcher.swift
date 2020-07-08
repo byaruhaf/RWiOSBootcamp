@@ -17,15 +17,16 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    }
-
-    func start() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
 
+//    func start() {
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        lastKnownLocation = locations.first?.coordinate
         guard let location = locations.last else { return }
         lastKnownLocation = location.coordinate
     }

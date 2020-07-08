@@ -8,7 +8,7 @@
 
 import SwiftUI
 //
-//  ContentView.swift
+//  RadialButtonLabView.swift
 //  RadialMenuExample
 //
 //  Created by Paul Hudson on 07/07/2020.
@@ -96,7 +96,7 @@ struct RadialMenu: View {
     }
 }
 
-struct ContentView: View {
+struct RadialButtonLabView: View {
     @State var isCreateNewPostShowing = false
     var buttons: [RadialButton] {
         [
@@ -133,6 +133,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RadialButtonLabView()
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct PostView: View {
      @State var post: MediaPost
@@ -23,7 +24,7 @@ struct PostView: View {
                     Text("\(post.timestamp.toString())")
                 }
             }
-            VStack(alignment: .leading, spacing: -20.0) {
+            VStack(alignment: .leading, spacing: 0.0) {
                 Text("\(post.textBody!)")
                     .padding(.bottom)
                 HStack(alignment: .top) {
@@ -31,6 +32,7 @@ struct PostView: View {
                         Spacer()
                         Image(uiImage: post.uiImage ?? UIImage())
                             .resizable()
+                            .padding(.vertical, -40.0)
                             .scaledToFit()
                             .frame(width: 200.0,height:200.0)
                         Spacer()
@@ -38,6 +40,7 @@ struct PostView: View {
                         EmptyView()
                     }
                 }
+//                Text("\(post.location!.latitude.description),\(post.location!.longitude.description)")
 // code to add fav button. 
 //                HStack() {
 //                    Button(action: {
@@ -63,8 +66,12 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
-                                 userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
-                                 uiImage: UIImage(named: "octopus")))
+        Group {
+            PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
+                                     userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
+                                 uiImage: UIImage(named: "octopus"), location: CLLocationCoordinate2DMake(37.8136,144.9631)))
+            PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
+                                     userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876), uiImage: nil, location: CLLocationCoordinate2DMake(37.8136,144.9631)))
+        }
     }
 }

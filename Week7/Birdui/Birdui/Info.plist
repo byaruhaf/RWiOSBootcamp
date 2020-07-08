@@ -58,5 +58,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires usage of camera to function property! </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires your location to function property! </string>
 </dict>
 </plist>

@@ -10,35 +10,9 @@ import SwiftUI
 
 struct PostListView: View {
     @ObservedObject var posts = PostViewModel()
-     @State var isCreateNewPostShowing = false
   var body: some View {
-    // TODO: This should look exactly like the Birdie table view,
-    // but with only one button.
     VStack {
-        VStack(alignment: .leading) {
-            HStack {
-                Image("mascot_swift-badge")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
-                Spacer()
-                Text("HOME")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                 Spacer()
-
-            Button(action: {
-                self.isCreateNewPostShowing.toggle()
-            }) {
-                Text("Create New Post")
-            }
-            .padding(.trailing)
-            .sheet(isPresented: self.$isCreateNewPostShowing) {
-                NewPostView(postHandler: self.posts)
-            }.buttonStyle(AddPostButton())
-
-            }
-        }
+        HomeTopView(posts: posts)
         List {
             VStack(alignment: .leading, spacing: 30.0) {
                 ForEach(posts.posts, id: \.id) { post in
@@ -55,3 +29,4 @@ struct PostListView_Previews: PreviewProvider {
     PostListView()
   }
 }
+

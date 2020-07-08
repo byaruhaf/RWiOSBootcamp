@@ -59,14 +59,14 @@ struct NewPostView: View {
                 Button("Cancel") {
                     self.presentationMode.wrappedValue.dismiss()
                 }
-                .buttonStyle(ChoiceButtonStyle())
+                .buttonStyle(ChoiceButton())
                 Spacer()
                     .padding(.horizontal)
                 Button("Post") {
                     self.postHandler.addPost(post: MediaPost(textBody: self.postText, userName: self.username, timestamp: Date(), uiImage: self.uiImage))
                     self.presentationMode.wrappedValue.dismiss()
                 }
-                .buttonStyle(ChoiceButtonStyle())
+                .buttonStyle(ChoiceButton())
                 .disabled(username.isEmpty && postText.isEmpty)
             }
             .padding()
@@ -77,21 +77,21 @@ struct NewPostView: View {
     }
 
     func photoTapped() {
-        print("photo Tapped")
         self.showImagePicker = true
         self.sourceType = .photoLibrary
     }
 
     func cameraTapped() {
-        print("camera Tapped")
         self.showImagePicker = true
         self.sourceType = .camera
     }
 
     func locationTapped() {
-//        self.locationFetcher.start()
-        print("Locaiton Tapped")
-//        print("\(locationFetcher.lastKnownLocation)")
+        if let location = self.locationFetcher.lastKnownLocation {
+            print("Your location is \(location)")
+        } else {
+            print("Your location is unknown")
+        }
     }
 
 }
