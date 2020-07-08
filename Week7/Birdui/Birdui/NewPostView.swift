@@ -25,26 +25,36 @@ struct NewPostView: View {
         .font(.headline)
       Form {
         TextField("Username", text: $username)
-        Button("Pick image") {
-          self.showImagePicker = true
-        }
-        if uiImage != nil {
-          Image(uiImage: uiImage!)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: imageSize, height: imageSize)
-        }
         TextField("Post text", text: $postText)
+        HStack {
+            Spacer()
+            Button(action: {
+                self.showImagePicker = true
+            }) {
+                Image(systemName: "camera").font(.system(size: 25, weight: .regular)).foregroundColor( Color(hue: 0.08, saturation: 0.76, brightness: 0.99))
+            }
+        }
+
+        if uiImage != nil {
+            Image(uiImage: uiImage!)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: imageSize, height: imageSize)
+        }
+
       }
       HStack {
         Button("Cancel") {
           self.presentationMode.wrappedValue.dismiss()
         }
+        .buttonStyle(SpicyButtonStyle())
         Spacer()
+            .padding(.horizontal)
         Button("Post") {
           self.postHandler.addPost(post: MediaPost(textBody: self.postText, userName: self.username, timestamp: Date(), uiImage: self.uiImage))
           self.presentationMode.wrappedValue.dismiss()
         }
+            .buttonStyle(SpicyButtonStyle())
         .disabled(username.isEmpty && postText.isEmpty)
       }
       .padding()

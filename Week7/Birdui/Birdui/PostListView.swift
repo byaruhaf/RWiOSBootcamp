@@ -26,16 +26,18 @@ struct PostListView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                  Spacer()
-                 Spacer()
-            }
+
             Button(action: {
                 self.showingNewPost.toggle()
             }) {
                 Text("Create New Post")
-            }.sheet(isPresented: self.$showingNewPost) {
-                NewPostView(postHandler: self.posts)
             }
+            .padding(.trailing)
+            .sheet(isPresented: self.$showingNewPost) {
+                NewPostView(postHandler: self.posts)
+            }.buttonStyle(CoolButton())
 
+            }
         }
         List {
             VStack(alignment: .leading, spacing: 30.0) {
