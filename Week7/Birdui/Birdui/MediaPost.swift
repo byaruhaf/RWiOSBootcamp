@@ -9,9 +9,10 @@
 import UIKit
 
 struct MediaPost: Identifiable {
-  let id = UUID()
-  let textBody: String?
-  let userName: String
-  let timestamp: Date
-  let uiImage: UIImage?
+    let id = UUID()
+    let textBody: String?
+    let userName: String
+    let timestamp: Date
+    let uiImage: UIImage?
+    var isFavorite:Bool = false
 }

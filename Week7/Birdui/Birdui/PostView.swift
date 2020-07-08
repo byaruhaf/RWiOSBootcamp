@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PostView: View {
-    let post: MediaPost
+     @State var post: MediaPost
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -38,6 +38,21 @@ struct PostView: View {
                         EmptyView()
                     }
                 }
+// code to add fav button. 
+//                HStack() {
+//                    Button(action: {
+//                        post.isFavorite.toggle()
+//                    }) {
+//                        if post.isFavorite {
+//                            Image(systemName: "star.fill")
+//                                .foregroundColor(Color.yellow)
+//                        } else {
+//                            Image(systemName: "star")
+//                                .foregroundColor(Color.gray)
+//                        }
+//
+//                    }
+//                }
             }
             Rectangle()
                 .frame(height: 2)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PostListView: View {
     @ObservedObject var posts = PostViewModel()
-     @State var showingNewPost = false
+     @State var isCreateNewPostShowing = false
   var body: some View {
     // TODO: This should look exactly like the Birdie table view,
     // but with only one button.
@@ -28,12 +28,12 @@ struct PostListView: View {
                  Spacer()
 
             Button(action: {
-                self.showingNewPost.toggle()
+                self.isCreateNewPostShowing.toggle()
             }) {
                 Text("Create New Post")
             }
             .padding(.trailing)
-            .sheet(isPresented: self.$showingNewPost) {
+            .sheet(isPresented: self.$isCreateNewPostShowing) {
                 NewPostView(postHandler: self.posts)
             }.buttonStyle(CoolButton())
 
