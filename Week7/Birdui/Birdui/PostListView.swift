@@ -35,7 +35,7 @@ struct PostListView: View {
             .padding(.trailing)
             .sheet(isPresented: self.$isCreateNewPostShowing) {
                 NewPostView(postHandler: self.posts)
-            }.buttonStyle(CoolButton())
+            }.buttonStyle(AddPostButton())
 
             }
         }

@@ -1,5 +1,5 @@
 //
-//  CoolButton.swift
+//  AppButton.swift
 //  Birdui
 //
 //  Created by Franklin Byaruhanga on 08/07/2020.
@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct CoolButton: ButtonStyle {
+struct AddPostButton: ButtonStyle {
 
-    let backgroundColor = Color(hue: 0.08, saturation: 0.76, brightness: 0.99)
+//    let backgroundColor = Color(hue: 0.08, saturation: 0.76, brightness: 0.99)
     let diameter: CGFloat = 60
 
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -20,7 +20,7 @@ struct CoolButton: ButtonStyle {
         return ZStack {
 
             Circle()
-                .fill(backgroundColor)
+                .fill(GradientBack.linear)
 
             VStack(spacing: 12) {
 
@@ -37,7 +37,7 @@ struct CoolButton: ButtonStyle {
 }
 
 
-struct SpicyButtonStyle: ButtonStyle {
+struct ChoiceButtonStyle: ButtonStyle {
 
     let trimColor = Color(hue: 0.08, saturation: 0.76, brightness: 0.99)
     let radius: CGFloat = 50
@@ -71,10 +71,10 @@ struct ButtonLabView: View {
         VStack(spacing: 32) {
             Button(action: {}) {
                 labelContent
-            }.buttonStyle(CoolButton())
+            }.buttonStyle(AddPostButton())
             Button(action: {}) {
                 labelContent
-            }.buttonStyle(SpicyButtonStyle())
+            }.buttonStyle(ChoiceButtonStyle())
         }.padding()
 
 

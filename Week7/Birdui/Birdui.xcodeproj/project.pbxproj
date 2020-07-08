@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F6E705824B590F100E45CFA /* CoolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705724B590F100E45CFA /* CoolButton.swift */; };
+		5F6E705824B590F100E45CFA /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705724B590F100E45CFA /* AppButton.swift */; };
+		5F6E705A24B5C36100E45CFA /* RadialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705924B5C36100E45CFA /* RadialButton.swift */; };
+		5F6E705C24B600B700E45CFA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705B24B600B700E45CFA /* GradientView.swift */; };
+		5F6E705E24B62DA500E45CFA /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705D24B62DA500E45CFA /* LocationFetcher.swift */; };
 		5F74E4F324B548FA00CD92ED /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F74E4F224B548FA00CD92ED /* Date.swift */; };
 		CD7798B924AF0799004D6A6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7798B824AF0799004D6A6B /* AppDelegate.swift */; };
 		CD7798BB24AF0799004D6A6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7798BA24AF0799004D6A6B /* SceneDelegate.swift */; };
@@ -23,7 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F6E705724B590F100E45CFA /* CoolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolButton.swift; sourceTree = "<group>"; };
+		5F6E705724B590F100E45CFA /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		5F6E705924B5C36100E45CFA /* RadialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialButton.swift; sourceTree = "<group>"; };
+		5F6E705B24B600B700E45CFA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		5F6E705D24B62DA500E45CFA /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		5F74E4F224B548FA00CD92ED /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CD7798B524AF0799004D6A6B /* Birdui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birdui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7798B824AF0799004D6A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,9 +80,12 @@
 				CD7798BA24AF0799004D6A6B /* SceneDelegate.swift */,
 				CD7798D724B04BEC004D6A6B /* PostListView.swift */,
 				CD7798D924B04C01004D6A6B /* PostView.swift */,
-				5F6E705724B590F100E45CFA /* CoolButton.swift */,
+				5F6E705724B590F100E45CFA /* AppButton.swift */,
+				5F6E705924B5C36100E45CFA /* RadialButton.swift */,
+				5F6E705B24B600B700E45CFA /* GradientView.swift */,
 				5F74E4F224B548FA00CD92ED /* Date.swift */,
 				CD7798D524B040C9004D6A6B /* NewPostView.swift */,
+				5F6E705D24B62DA500E45CFA /* LocationFetcher.swift */,
 				CD7798DD24B05896004D6A6B /* ImagePicker.swift */,
 				CD7798DB24B04C1A004D6A6B /* PostViewModel.swift */,
 				CD7798CD24AF0B23004D6A6B /* MediaPost.swift */,
@@ -167,13 +176,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6E705E24B62DA500E45CFA /* LocationFetcher.swift in Sources */,
+				5F6E705A24B5C36100E45CFA /* RadialButton.swift in Sources */,
 				CD7798B924AF0799004D6A6B /* AppDelegate.swift in Sources */,
+				5F6E705C24B600B700E45CFA /* GradientView.swift in Sources */,
 				CD7798D124AF0B23004D6A6B /* MediaPost.swift in Sources */,
 				CD7798DA24B04C01004D6A6B /* PostView.swift in Sources */,
 				CD7798BB24AF0799004D6A6B /* SceneDelegate.swift in Sources */,
 				CD7798D624B040C9004D6A6B /* NewPostView.swift in Sources */,
 				CD7798DE24B05896004D6A6B /* ImagePicker.swift in Sources */,
-				5F6E705824B590F100E45CFA /* CoolButton.swift in Sources */,
+				5F6E705824B590F100E45CFA /* AppButton.swift in Sources */,
 				CD7798DC24B04C1A004D6A6B /* PostViewModel.swift in Sources */,
 				5F74E4F324B548FA00CD92ED /* Date.swift in Sources */,
 				CD7798D824B04BEC004D6A6B /* PostListView.swift in Sources */,
@@ -314,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Birdui/Preview Content\"";
-				DEVELOPMENT_TEAM = 35ERK77LXE;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Birdui/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Birdui/Preview Content\"";
-				DEVELOPMENT_TEAM = 35ERK77LXE;
+				DEVELOPMENT_TEAM = MDJHKWEU8A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Birdui/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

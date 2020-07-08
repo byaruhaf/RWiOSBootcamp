@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 struct MediaPost: Identifiable {
     let id = UUID()
@@ -15,4 +16,5 @@ struct MediaPost: Identifiable {
     let timestamp: Date
     let uiImage: UIImage?
     var isFavorite:Bool = false
+    var location:CLLocationCoordinate2D?
 }
