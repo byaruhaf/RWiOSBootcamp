@@ -40,8 +40,11 @@ struct PostView: View {
                         EmptyView()
                     }
                 }
+                // code to add location.
+
 //                Text("\(post.location!.latitude.description),\(post.location!.longitude.description)")
-// code to add fav button. 
+
+                // code to add fav button.
 //                HStack() {
 //                    Button(action: {
 //                        post.isFavorite.toggle()

@@ -7,14 +7,6 @@
 //
 
 import SwiftUI
-//
-//  RadialButtonLabView.swift
-//  RadialMenuExample
-//
-//  Created by Paul Hudson on 07/07/2020.
-//
-
-import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
