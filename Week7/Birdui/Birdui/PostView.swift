@@ -42,6 +42,12 @@ struct PostView: View {
                         EmptyView()
                     }
                 }
+
+                HStack {
+                    Spacer()
+                    Image(systemName: "heart.fill").font(.system(size: 16, weight: .regular)).foregroundColor(.red)
+                }
+
                 // code to add location.
 
 //                Text("\(post.location!.latitude.description),\(post.location!.longitude.description)")

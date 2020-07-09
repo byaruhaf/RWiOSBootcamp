@@ -36,7 +36,6 @@ struct HomeTopView: View {
                                 .cancel()
                             ])
                     }
-
                 }
                 Spacer()
                 Text("HOME")
