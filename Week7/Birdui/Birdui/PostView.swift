@@ -21,7 +21,9 @@ struct PostView: View {
                     .frame(width: 50, height: 50)
                 VStack(alignment: .leading) {
                     Text("\(post.userName)")
+                        .fontWeight(.bold)
                     Text("\(post.timestamp.toString())")
+                        .font(.caption)
                 }
             }
             VStack(alignment: .leading, spacing: 0.0) {
@@ -64,6 +66,11 @@ struct PostView: View {
                 .frame(height: 2)
                 .foregroundColor(Color(UIColor.separator))
         }
+        .padding(.horizontal)
+        .background(Color.quaternaryLabel)
+        .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+//        .border(Color.quaternaryLabel, width: 4)
+        .shadow(color: .quaternaryLabel, radius: 30, x: 20, y: 20)
     }
 }
 
@@ -73,8 +80,34 @@ struct PostView_Previews: PreviewProvider {
             PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
                                      userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
                                  uiImage: UIImage(named: "octopus"), location: CLLocationCoordinate2DMake(37.8136,144.9631)))
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .previewDisplayName("Post With Image preview")
+
             PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
                                      userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876), uiImage: nil, location: CLLocationCoordinate2DMake(37.8136,144.9631)))
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .previewDisplayName("Post Without Image preview")
+
+            PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
+                                     userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876),
+                                     uiImage: UIImage(named: "octopus"), location: CLLocationCoordinate2DMake(37.8136,144.9631)))
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .background(Color(.systemBackground))
+                .environment(\.colorScheme, .dark)
+                .previewDisplayName("Post With Image Dark Mode preview")
+
+            PostView(post: MediaPost(textBody: "Went to the Aquarium today :]",
+                                     userName: "Audrey", timestamp: Date(timeIntervalSinceNow: -9876), uiImage: nil, location: CLLocationCoordinate2DMake(37.8136,144.9631)))
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .background(Color(.systemBackground))
+                .environment(\.colorScheme, .dark)
+                .previewDisplayName("Post Without Image Dark Mode preview")
+
+            
         }
     }
 }

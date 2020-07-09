@@ -26,7 +26,19 @@ struct PostListView: View {
 
 struct PostListView_Previews: PreviewProvider {
   static var previews: some View {
-    PostListView()
+    Group {
+        PostListView()
+            .previewDisplayName("Post List's")
+            .background(Color(.systemBackground))
+            .environment(\.colorScheme, .dark)
+        .previewDisplayName("Post List Dark Mode")
+
+        PostListView()
+            .previewDisplayName("Post List's")
+            .background(Color(.systemBackground))
+            .previewDisplayName("Post List Dark Mode")
+
+    }
   }
 }
 

@@ -53,6 +53,18 @@ struct ChoiceButtonLabView: View {
 
 struct ChoiceButton_Previews: PreviewProvider {
     static var previews: some View {
-        ChoiceButtonLabView()
+        Group {
+            ChoiceButtonLabView()
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .background(Color(.systemBackground))
+                .previewDisplayName("Button preview")
+            ChoiceButtonLabView()
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .background(Color(.systemBackground))
+                .environment(\.colorScheme, .dark)
+                .previewDisplayName("Button Dark Mode preview")
+        }
     }
 }

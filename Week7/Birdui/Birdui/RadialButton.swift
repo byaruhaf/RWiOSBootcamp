@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CustomButtonStyle: ButtonStyle {
+struct RadialButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
@@ -105,7 +105,7 @@ struct RadialButtonLabView: View {
 
             RadialMenu(title: "Attach…", closedImage: Image(systemName: "ellipsis.circle"), openImage: Image(systemName: "multiply.circle.fill"), buttons: buttons, animation: .interactiveSpring(response: 0.4, dampingFraction: 0.6))
                 .offset(x: -20, y: -20)
-                .buttonStyle(CustomButtonStyle())
+                .buttonStyle(RadialButtonStyle())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

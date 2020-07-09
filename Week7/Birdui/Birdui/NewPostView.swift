@@ -52,7 +52,7 @@ struct NewPostView: View {
 
             HStack {
                 RadialMenu(title: "Attach…", closedImage: Image(systemName: "camera.on.rectangle.fill"), openImage: Image(systemName: "multiply.circle.fill"), buttons: buttons, animation: .interactiveSpring(response: 0.4, dampingFraction: 0.6))
-                    .buttonStyle(CustomButtonStyle())
+                    .buttonStyle(RadialButtonStyle())
             }
             Spacer()
             HStack {

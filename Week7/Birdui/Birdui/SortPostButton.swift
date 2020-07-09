@@ -1,16 +1,17 @@
 //
-//  AddPostButton.swift
+//  SortPostButton.swift
 //  Birdui
 //
-//  Created by Franklin Byaruhanga on 08/07/2020.
+//  Created by Franklin Byaruhanga on 09/07/2020.
 //  Copyright © 2020 Razeware. All rights reserved.
 //
 
+
 import SwiftUI
 
-struct AddPostButton: ButtonStyle {
+struct SortPostButton: ButtonStyle {
 
-//    let backgroundColor = Color(hue: 0.08, saturation: 0.76, brightness: 0.99)
+    //    let backgroundColor = Color(hue: 0.08, saturation: 0.76, brightness: 0.99)
     let diameter: CGFloat = 60
 
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -24,9 +25,8 @@ struct AddPostButton: ButtonStyle {
 
             VStack(spacing: 12) {
 
-                Image(systemName: "rectangle.stack.badge.plus")
+                Image(systemName: "arrow.up.arrow.down")
                     .font(.system(size: 30))
-
             }.foregroundColor(trimColor)
 
         }.frame(width: diameter, height: diameter)
@@ -39,7 +39,7 @@ struct AddPostButton: ButtonStyle {
 
 
 
-struct AddPostButtonLabView: View {
+struct SortPostButtonLabView: View {
 
     var labelContent: some View {
         Text("Hello world!")
@@ -50,29 +50,27 @@ struct AddPostButtonLabView: View {
         VStack(spacing: 32) {
             Button(action: {}) {
                 labelContent
-            }.buttonStyle(AddPostButton())
+            }.buttonStyle(SortPostButton())
         }.padding()
 
 
     }
 }
 
-struct AddPostButton_Previews: PreviewProvider {
+struct SortPostButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AddPostButtonLabView()
+            SortPostButtonLabView()
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .padding()
                 .background(Color(.systemBackground))
                 .previewDisplayName("Button preview")
-
-            AddPostButtonLabView()
+            SortPostButtonLabView()
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .padding()
                 .background(Color(.systemBackground))
                 .environment(\.colorScheme, .dark)
                 .previewDisplayName("Button Dark Mode preview")
-
         }
     }
 }

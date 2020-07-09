@@ -10,14 +10,34 @@ import SwiftUI
 
 struct HomeTopView: View {
     @State var isCreateNewPostShowing = false
+    @State var showSortSheet: Bool = false
     var posts:PostViewModel
+    @State var isSortedByNewest:Bool = true
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("mascot_swift-badge")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
+                VStack {
+                    Button("") {
+                        self.showSortSheet = true
+                    }.padding()
+                        .buttonStyle(SortPostButton())
+                        .actionSheet(isPresented: $showSortSheet) {
+                            ActionSheet(title: Text("Sort By"), buttons: [
+                                .default(Text("Oldest")) {
+                                    self.isSortedByNewest = false
+                                    self.posts.isSortedByNewest = false
+                                    self.posts.toggle()
+                                },
+                                .default(Text("Newest")) {
+                                    self.isSortedByNewest = true
+                                    self.posts.isSortedByNewest = true
+                                    self.posts.toggle()
+                                },
+                                .cancel()
+                            ])
+                    }
+
+                }
                 Spacer()
                 Text("HOME")
                     .font(.largeTitle)
@@ -35,6 +55,23 @@ struct HomeTopView: View {
                 }.buttonStyle(AddPostButton())
 
             }
+            HStack {
+                if isSortedByNewest {
+                    Text("Newest")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                }else {
+                    Text("Oldest")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                }
+                Spacer()
+                Text("\(posts.posts.count) Posts")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .padding(.trailing)
+            }
+            .padding(.leading)
         }
     }
 }
@@ -42,6 +79,18 @@ struct HomeTopView: View {
 
 struct HomeTopView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTopView(posts: PostViewModel())
+        Group {
+            HomeTopView(posts: PostViewModel())
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .background(Color(.systemBackground))
+                .previewDisplayName("Home Top")
+            HomeTopView(posts: PostViewModel())
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .padding()
+                .background(Color(.systemBackground))
+                .environment(\.colorScheme, .dark)
+                .previewDisplayName("Home Top Dark Mode")
+        }
     }
 }
