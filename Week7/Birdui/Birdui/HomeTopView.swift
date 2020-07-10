@@ -15,44 +15,34 @@ struct HomeTopView: View {
     @State var isSortedByNewest:Bool = true
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                VStack {
-                    Button("") {
-                        self.showSortSheet = true
-                    }.padding()
-                        .buttonStyle(SortPostButton())
-                        .actionSheet(isPresented: $showSortSheet) {
-                            ActionSheet(title: Text("Sort By"), buttons: [
-                                .default(Text("Oldest")) {
-                                    self.isSortedByNewest = false
-                                    self.posts.isSortedByNewest = false
-                                    self.posts.toggle()
-                                },
-                                .default(Text("Newest")) {
-                                    self.isSortedByNewest = true
-                                    self.posts.isSortedByNewest = true
-                                    self.posts.toggle()
-                                },
-                                .cancel()
-                            ])
+            ZStack {
+                HStack {
+                    VStack {
+                        Button("") {
+                            self.showSortSheet = true
+                        }.padding()
+                            .buttonStyle(SortPostButton())
+                            .actionSheet(isPresented: $showSortSheet) {
+                                ActionSheet(title: Text("Sort By"), buttons: [
+                                    .default(Text("Oldest")) {
+                                        self.isSortedByNewest = false
+                                        self.posts.isSortedByNewest = false
+                                        self.posts.toggle()
+                                    },
+                                    .default(Text("Newest")) {
+                                        self.isSortedByNewest = true
+                                        self.posts.isSortedByNewest = true
+                                        self.posts.toggle()
+                                    },
+                                    .cancel()
+                                ])
+                        }
                     }
+                    Spacer()
                 }
-                Spacer()
                 Text("HOME")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                Spacer()
-
-                Button(action: {
-                    self.isCreateNewPostShowing.toggle()
-                }) {
-                    Text("Create New Post")
-                }
-                .padding(.trailing)
-                .sheet(isPresented: self.$isCreateNewPostShowing) {
-                    NewPostView(postHandler: self.posts)
-                }.buttonStyle(AddPostButton())
-
             }
             HStack {
                 if isSortedByNewest {

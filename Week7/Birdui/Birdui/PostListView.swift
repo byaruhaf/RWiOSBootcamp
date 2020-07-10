@@ -14,25 +14,25 @@ struct PostListView: View {
     var body: some View {
         VStack {
             HomeTopView(posts: posts)
-            //        ZStack(alignment: .bottomTrailing){
-            List {
-                VStack(alignment: .leading, spacing: 30.0) {
-                    ForEach(posts.posts, id: \.id) { post in
-                        PostView(post: post)
+            ZStack(alignment: .bottomTrailing){
+                List {
+                    VStack(alignment: .leading, spacing: 30.0) {
+                        ForEach(posts.posts, id: \.id) { post in
+                                PostView(post: post)
+                        }
                     }
                 }
-            }
 
-            //            Button(action: {
-            //                self.isCreateNewPostShowing.toggle()
-            //            }) {
-            //                Text("Create New Post")
-            //            }
-            //            .padding(.trailing)
-            //            .sheet(isPresented: self.$isCreateNewPostShowing) {
-            //                NewPostView(postHandler: self.posts)
-            //            }.buttonStyle(AddPostButton())
-            //        }
+                Button(action: {
+                    self.isCreateNewPostShowing.toggle()
+                }) {
+                    Text("Create New Post")
+                }
+                .padding(.trailing)
+                .sheet(isPresented: self.$isCreateNewPostShowing) {
+                    NewPostView(postHandler: self.posts)
+                }.buttonStyle(AddPostButton())
+            }
         }
     }
 }
