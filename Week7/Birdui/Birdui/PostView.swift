@@ -7,11 +7,13 @@
 //
 
 import SwiftUI
+import UIKit
 import CoreLocation
 
 struct PostView: View {
     @State var post: MediaPost
      @State var favColor = Color.primary
+    @State var selectedDocument: UIImage?
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,7 +29,7 @@ struct PostView: View {
                         .font(.caption)
                 }
             }
-            VStack(alignment: .leading, spacing: 0.0) {
+            VStack(alignment: .leading, spacing: 5.0) {
                 Text("\(post.textBody!)")
                     .padding(.bottom)
                 HStack(alignment: .top) {
@@ -37,7 +39,11 @@ struct PostView: View {
                             .resizable()
                             .padding(.vertical, -40.0)
                             .scaledToFit()
-                            .frame(width: 200.0,height:200.0)
+                            .frame(width: 300.0,height:300.0)
+                        .clipped()
+                            .onTapGesture {
+                                self.selectedDocument = self.post.uiImage
+                        }
                         Spacer()
                     } else {
                         EmptyView()
@@ -59,26 +65,6 @@ struct PostView: View {
                             }
                     }
                 }
-
-                // code to add location.
-
-                //                Text("\(post.location!.latitude.description),\(post.location!.longitude.description)")
-
-                // code to add fav button.
-                //                HStack() {
-                //                    Button(action: {
-                //                        post.isFavorite.toggle()
-                //                    }) {
-                //                        if post.isFavorite {
-                //                            Image(systemName: "star.fill")
-                //                                .foregroundColor(Color.yellow)
-                //                        } else {
-                //                            Image(systemName: "star")
-                //                                .foregroundColor(Color.gray)
-                //                        }
-                //
-                //                    }
-                //                }
             }
             Rectangle()
                 .frame(height: 2)
@@ -87,10 +73,14 @@ struct PostView: View {
         .padding(.horizontal)
         .background(Color.quaternaryLabel)
         .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
-            //        .border(Color.quaternaryLabel, width: 4)
-            .shadow(color: .quaternaryLabel, radius: 30, x: 20, y: 20)
+        .shadow(color: .quaternaryLabel, radius: 30, x: 20, y: 20)
     }
 }
+
+
+
+
+
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {

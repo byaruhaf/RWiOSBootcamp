@@ -16,9 +16,15 @@ struct NewPostView: View {
     @State var username: String = ""
     @State var postText: String = ""
     @State var uiImage: UIImage?
-    @State var location:CLLocationCoordinate2D?
+    @State var cityLocation:String?
+//
+//    let locationFetcher = LocationFetcher()
+     @ObservedObject var lm = LocationManager()
+    var location:CLLocationCoordinate2D? {lm.location?.coordinate}
 
-    let locationFetcher = LocationFetcher()
+    var latitude: String  { return("\(lm.location?.latitude ?? 0)") }
+    var longitude: String { return("\(lm.location?.longitude ?? 0)") }
+    var placemark: String { return("\(lm.placemark?.locality?.description ?? "XXX")") }
 
     @State private var showSheet: Bool = false
     @State private var showImagePicker: Bool = false
@@ -48,6 +54,9 @@ struct NewPostView: View {
             Form {
                 TextField("Username", text: $username)
                 TextField("Post text", text: $postText)
+                if location != nil{
+                          Text("Lat:\(location!.latitude): Long:\(location!.longitude)")
+                }
             }
 
             HStack {
@@ -63,7 +72,7 @@ struct NewPostView: View {
                 Spacer()
                     .padding(.horizontal)
                 Button("Post") {
-                    self.postHandler.addPost(post: MediaPost(textBody: self.postText, userName: self.username, timestamp: Date(), uiImage: self.uiImage))
+                    self.postHandler.addPost(post: MediaPost(textBody: self.postText, userName: self.username, timestamp: Date(), uiImage: self.uiImage,location: self.location))
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .buttonStyle(ChoiceButton())
@@ -87,11 +96,7 @@ struct NewPostView: View {
     }
 
     func locationTapped() {
-        if let location = self.locationFetcher.lastKnownLocation {
-            print("Your location is \(location)")
-        } else {
-            print("Your location is unknown")
-        }
+//        self.location = placemark
     }
 
 }

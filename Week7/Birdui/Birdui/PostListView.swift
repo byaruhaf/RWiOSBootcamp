@@ -15,10 +15,13 @@ struct PostListView: View {
         VStack {
             HomeTopView(posts: posts)
             ZStack(alignment: .bottomTrailing){
-                List {
+                NavigationView {
                     VStack(alignment: .leading, spacing: 30.0) {
-                        ForEach(posts.posts, id: \.id) { post in
+                        List {
+                            ForEach(posts.posts, id: \.id) { post in
                                 PostView(post: post)
+                            }
+                            .onDelete(perform:posts.deletePost(at:))
                         }
                     }
                 }

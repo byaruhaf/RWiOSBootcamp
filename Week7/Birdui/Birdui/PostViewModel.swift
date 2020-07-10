@@ -31,6 +31,15 @@ class PostViewModel: ObservableObject {
     }
   }
 
+    func deletePost(at offsets: IndexSet) {
+        posts.remove(atOffsets: offsets)
+        if isSortedByNewest {
+            posts = posts.sorted(by: { $0.timestamp < $1.timestamp })
+        } else {
+            posts = posts.sorted(by: { $0.timestamp > $1.timestamp })
+        }
+    }
+
     func toggle() {
         isSortedByNewest.toggle()
         if isSortedByNewest {
