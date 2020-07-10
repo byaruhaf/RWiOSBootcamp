@@ -12,7 +12,7 @@ import SwiftUI
 struct SortPostButton: ButtonStyle {
 
     //    let backgroundColor = Color(hue: 0.08, saturation: 0.76, brightness: 0.99)
-    let diameter: CGFloat = 60
+    let diameter: CGFloat = 40
 
     func makeBody(configuration: Self.Configuration) -> some View {
 
@@ -26,7 +26,8 @@ struct SortPostButton: ButtonStyle {
             VStack(spacing: 12) {
 
                 Image(systemName: "arrow.up.arrow.down")
-                    .font(.system(size: 30))
+                    .font(.system(size: 20))
+                 .accessibility(label: Text("Sort Posts By Date"))
             }.foregroundColor(trimColor)
 
         }.frame(width: diameter, height: diameter)

@@ -17,6 +17,7 @@
 		5F96842124B6A94300CD21D9 /* SortPostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F96842024B6A94300CD21D9 /* SortPostButton.swift */; };
 		5FA7905524B87B61000269DC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA7905424B87B61000269DC /* LocationManager.swift */; };
 		5FA7905724B890C8000269DC /* ImageViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA7905624B890C8000269DC /* ImageViewDetail.swift */; };
+		5FA7907924B8E302000269DC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA7907824B8E302000269DC /* Keyboard.swift */; };
 		5FC4993924B6D70C008CCB09 /* Color4UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC4993824B6D70C008CCB09 /* Color4UIColor.swift */; };
 		CD7798B924AF0799004D6A6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7798B824AF0799004D6A6B /* AppDelegate.swift */; };
 		CD7798BB24AF0799004D6A6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7798BA24AF0799004D6A6B /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		5F96842024B6A94300CD21D9 /* SortPostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPostButton.swift; sourceTree = "<group>"; };
 		5FA7905424B87B61000269DC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5FA7905624B890C8000269DC /* ImageViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDetail.swift; sourceTree = "<group>"; };
+		5FA7907824B8E302000269DC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		5FC4993824B6D70C008CCB09 /* Color4UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color4UIColor.swift; sourceTree = "<group>"; };
 		CD7798B524AF0799004D6A6B /* Birdui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birdui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7798B824AF0799004D6A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				5F6E705924B5C36100E45CFA /* RadialButton.swift */,
 				5F6E705B24B600B700E45CFA /* GradientView.swift */,
 				5F74E4F224B548FA00CD92ED /* Date.swift */,
+				5FA7907824B8E302000269DC /* Keyboard.swift */,
 				5FA7905424B87B61000269DC /* LocationManager.swift */,
 				CD7798D524B040C9004D6A6B /* NewPostView.swift */,
 				5F6E705D24B62DA500E45CFA /* LocationFetcher.swift */,
@@ -212,6 +215,7 @@
 				5F6E705824B590F100E45CFA /* AddPostButton.swift in Sources */,
 				CD7798DC24B04C1A004D6A6B /* PostViewModel.swift in Sources */,
 				5F74E4F324B548FA00CD92ED /* Date.swift in Sources */,
+				5FA7907924B8E302000269DC /* Keyboard.swift in Sources */,
 				CD7798D824B04BEC004D6A6B /* PostListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.Birdui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -380,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.Birdui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

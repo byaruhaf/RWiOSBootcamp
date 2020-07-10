@@ -18,10 +18,8 @@ struct PostView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("mascot_swift-badge")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
+                Image(systemName: "person.circle") .accessibility(label: Text("Profile Image")).font(.system(size: 40, weight: .regular)).foregroundColor(Color.orange)
+                .frame(width: 50, height: 50)
                 VStack(alignment: .leading) {
                     Text("\(post.userName)")
                         .fontWeight(.bold)
@@ -41,6 +39,7 @@ struct PostView: View {
                             .scaledToFit()
                             .frame(width: 300.0,height:300.0)
                         .clipped()
+                             .accessibility(label: Text("user posted Image"))
                             .onTapGesture {
                                 self.selectedDocument = self.post.uiImage
                         }
@@ -52,10 +51,13 @@ struct PostView: View {
 
                 HStack {
                     if post.location != nil {
-                        Text("Lat:\(post.location!.latitude): Long:\(post.location!.longitude)")
+                        Text("Lat:\(Int(post.location!.latitude)): Long:\(Int(post.location!.longitude))")
+                        .accessibility(hint: Text("User Location."))
                     }
                     Spacer()
                     Image(systemName: "heart.fill").font(.system(size: 16, weight: .regular)).foregroundColor(favColor)
+                        .accessibility(addTraits: .isButton)
+                        .accessibility(label: Text("Mark posts as Favorite"))
                         .onTapGesture {
                             self.post.isFavorite.toggle()
                             if self.post.isFavorite {

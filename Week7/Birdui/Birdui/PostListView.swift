@@ -13,7 +13,6 @@ struct PostListView: View {
     @State var isCreateNewPostShowing = false
     var body: some View {
         VStack {
-            HomeTopView(posts: posts)
             ZStack(alignment: .bottomTrailing){
                 NavigationView {
                     VStack(alignment: .leading, spacing: 30.0) {
@@ -24,6 +23,10 @@ struct PostListView: View {
                             .onDelete(perform:posts.deletePost(at:))
                         }
                     }
+                    .navigationBarTitle("HOME")
+                    .navigationBarItems(trailing:
+                            HomeTopView(posts: posts)
+                    )
                 }
 
                 Button(action: {

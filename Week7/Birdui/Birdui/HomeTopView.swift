@@ -11,56 +11,39 @@ import SwiftUI
 struct HomeTopView: View {
     @State var isCreateNewPostShowing = false
     @State var showSortSheet: Bool = false
-    var posts:PostViewModel
     @State var isSortedByNewest:Bool = true
+    var sortState: String  { return isSortedByNewest ? "Newest": "Oldest" }
+    var posts:PostViewModel
+
     var body: some View {
-        VStack(alignment: .leading) {
-            ZStack {
-                HStack {
-                    VStack {
-                        Button("") {
-                            self.showSortSheet = true
-                        }.padding()
-                            .buttonStyle(SortPostButton())
-                            .actionSheet(isPresented: $showSortSheet) {
-                                ActionSheet(title: Text("Sort By"), buttons: [
-                                    .default(Text("Oldest")) {
-                                        self.isSortedByNewest = false
-                                        self.posts.isSortedByNewest = false
-                                        self.posts.toggle()
-                                    },
-                                    .default(Text("Newest")) {
-                                        self.isSortedByNewest = true
-                                        self.posts.isSortedByNewest = true
-                                        self.posts.toggle()
-                                    },
-                                    .cancel()
-                                ])
-                        }
-                    }
-                    Spacer()
+        HStack {
+                Button("") {
+                    self.showSortSheet = true
                 }
-                Text("HOME")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }
-            HStack {
-                if isSortedByNewest {
-                    Text("Newest")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                }else {
-                    Text("Oldest")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
+                .buttonStyle(SortPostButton())
+                .actionSheet(isPresented: $showSortSheet) {
+                    ActionSheet(title: Text("Sort Images By"), buttons: [
+                        .default(Text("Oldest Date")) {
+                            self.isSortedByNewest = false
+                            self.posts.isSortedByNewest = false
+                            self.posts.toggle()
+                        },
+                        .default(Text("Newest Date")) {
+                            self.isSortedByNewest = true
+                            self.posts.isSortedByNewest = true
+                            self.posts.toggle()
+                        },
+                        .cancel()
+                    ])
                 }
-                Spacer()
-                Text("\(posts.posts.count) Posts")
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .padding(.trailing)
+            Text(sortState)
+                .font(.subheadline)
+                .fontWeight(.bold)
+                .onTapGesture {
+                    self.showSortSheet = true
             }
-            .padding(.leading)
+
+
         }
     }
 }
