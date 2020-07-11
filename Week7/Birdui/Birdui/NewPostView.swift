@@ -20,7 +20,7 @@ struct NewPostView: View {
 //
 //    let locationFetcher = LocationFetcher()
      @ObservedObject var lm = LocationManager()
-    var location:CLLocationCoordinate2D? {lm.location?.coordinate}
+    @State var location:CLLocationCoordinate2D?
 
     var latitude: String  { return("\(lm.location?.latitude ?? 0)") }
     var longitude: String { return("\(lm.location?.longitude ?? 0)") }
@@ -100,7 +100,7 @@ struct NewPostView: View {
     }
 
     func locationTapped() {
-//        self.location = placemark
+        self.location = lm.location?.coordinate
     }
 
 }

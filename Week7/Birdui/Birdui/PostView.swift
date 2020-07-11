@@ -35,7 +35,7 @@ struct PostView: View {
                         Spacer()
                         Image(uiImage: post.uiImage ?? UIImage())
                             .resizable()
-                            .padding(.vertical, -40.0)
+//                            .padding(.vertical, -40.0)
                             .scaledToFit()
                             .frame(width: 300.0,height:300.0)
                             .clipped()

@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeTopView: View {
     @State var isCreateNewPostShowing = false
     @State var showSortSheet: Bool = false
-    @State var isSortedByNewest:Bool = true
+    var isSortedByNewest:Bool { return  self.posts.isSortedByNewest}
     var sortState: String  { return isSortedByNewest ? "Newest": "Oldest" }
     var posts:PostViewModel
 
@@ -23,13 +23,13 @@ struct HomeTopView: View {
                 .buttonStyle(SortPostButton())
                 .actionSheet(isPresented: $showSortSheet) {
                     ActionSheet(title: Text("Sort Images By"), buttons: [
-                        .default(Text("Oldest Date")) {
-                            self.isSortedByNewest = false
+                        .default(Text("Newest Date")) {
+//                            self.isSortedByNewest = false
                             self.posts.isSortedByNewest = false
                             self.posts.toggle()
                         },
-                        .default(Text("Newest Date")) {
-                            self.isSortedByNewest = true
+                        .default(Text("Oldest Date")) {
+//                            self.isSortedByNewest = true
                             self.posts.isSortedByNewest = true
                             self.posts.toggle()
                         },
