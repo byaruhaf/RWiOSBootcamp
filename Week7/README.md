@@ -36,7 +36,7 @@ Rebuild the social media app Birdie from Week 5 in SwiftUI
 
 ## App Demo
 
-![Birdie](Demo/Birdie.gif)
+![Birdie](Demo/Bird.mov)
 
 ## Contribution
 - If you have a **feature request**, open an **issue**

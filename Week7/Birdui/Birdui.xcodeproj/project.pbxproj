@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F0318A024B68EC500296574 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F03189F24B68EC500296574 /* HomeTopView.swift */; };
+		5F0318A024B68EC500296574 /* NavSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F03189F24B68EC500296574 /* NavSortView.swift */; };
 		5F2F44FD24B690CC00C8C6BB /* ChoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F44FC24B690CC00C8C6BB /* ChoiceButton.swift */; };
 		5F6E705824B590F100E45CFA /* AddPostButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705724B590F100E45CFA /* AddPostButton.swift */; };
 		5F6E705A24B5C36100E45CFA /* RadialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E705924B5C36100E45CFA /* RadialButton.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F03189F24B68EC500296574 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
+		5F03189F24B68EC500296574 /* NavSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavSortView.swift; sourceTree = "<group>"; };
 		5F2F44FC24B690CC00C8C6BB /* ChoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButton.swift; sourceTree = "<group>"; };
 		5F6E705724B590F100E45CFA /* AddPostButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostButton.swift; sourceTree = "<group>"; };
 		5F6E705924B5C36100E45CFA /* RadialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialButton.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				CD7798B824AF0799004D6A6B /* AppDelegate.swift */,
 				CD7798BA24AF0799004D6A6B /* SceneDelegate.swift */,
 				CD7798D724B04BEC004D6A6B /* PostListView.swift */,
-				5F03189F24B68EC500296574 /* HomeTopView.swift */,
+				5F03189F24B68EC500296574 /* NavSortView.swift */,
 				CD7798D924B04C01004D6A6B /* PostView.swift */,
 				5FA7905624B890C8000269DC /* ImageViewDetail.swift */,
 				5FC4993824B6D70C008CCB09 /* Color4UIColor.swift */,
@@ -198,7 +198,7 @@
 				5F6E705A24B5C36100E45CFA /* RadialButton.swift in Sources */,
 				5F2F44FD24B690CC00C8C6BB /* ChoiceButton.swift in Sources */,
 				CD7798B924AF0799004D6A6B /* AppDelegate.swift in Sources */,
-				5F0318A024B68EC500296574 /* HomeTopView.swift in Sources */,
+				5F0318A024B68EC500296574 /* NavSortView.swift in Sources */,
 				5F6E705C24B600B700E45CFA /* GradientView.swift in Sources */,
 				CD7798D124AF0B23004D6A6B /* MediaPost.swift in Sources */,
 				CD7798DA24B04C01004D6A6B /* PostView.swift in Sources */,

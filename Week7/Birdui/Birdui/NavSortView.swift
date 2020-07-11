@@ -1,5 +1,5 @@
 //
-//  HomeTopView.swift
+//  NavSortView.swift
 //  Birdui
 //
 //  Created by Franklin Byaruhanga on 09/07/2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct HomeTopView: View {
+struct NavSortView: View {
     @State var isCreateNewPostShowing = false
     @State var showSortSheet: Bool = false
     var isSortedByNewest:Bool { return  self.posts.isSortedByNewest}
@@ -52,12 +52,12 @@ struct HomeTopView: View {
 struct HomeTopView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeTopView(posts: PostViewModel())
+            NavSortView(posts: PostViewModel())
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .padding()
                 .background(Color(.systemBackground))
                 .previewDisplayName("Home Top")
-            HomeTopView(posts: PostViewModel())
+            NavSortView(posts: PostViewModel())
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .padding()
                 .background(Color(.systemBackground))

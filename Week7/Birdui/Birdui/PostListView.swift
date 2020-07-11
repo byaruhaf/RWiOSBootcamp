@@ -25,7 +25,7 @@ struct PostListView: View {
                     }
                     .navigationBarTitle("HOME")
                     .navigationBarItems(trailing:
-                            HomeTopView(posts: posts)
+                            NavSortView(posts: posts)
                     )
                 }
 
