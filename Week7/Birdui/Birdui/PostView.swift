@@ -12,14 +12,14 @@ import CoreLocation
 
 struct PostView: View {
     @State var post: MediaPost
-     @State var favColor = Color.primary
-    @State var selectedDocument: UIImage?
+    @State var favColor = Color.primary
+    @State var selectedPost: MediaPost?
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "person.circle") .accessibility(label: Text("Profile Image")).font(.system(size: 40, weight: .regular)).foregroundColor(Color.orange)
-                .frame(width: 50, height: 50)
+                    .frame(width: 50, height: 50)
                 VStack(alignment: .leading) {
                     Text("\(post.userName)")
                         .fontWeight(.bold)
@@ -38,21 +38,23 @@ struct PostView: View {
                             .padding(.vertical, -40.0)
                             .scaledToFit()
                             .frame(width: 300.0,height:300.0)
-                        .clipped()
-                             .accessibility(label: Text("user posted Image"))
-                            .onTapGesture {
-                                self.selectedDocument = self.post.uiImage
+                            .clipped()
+                            .accessibility(label: Text("user posted Image"))
+                            .onTapGesture(count: 2) {
+                                self.selectedPost = self.post
                         }
                         Spacer()
                     } else {
                         EmptyView()
                     }
+                }.sheet(item: $selectedPost) {
+                    ImageViewDetail(image: $0.uiImage!)
                 }
 
                 HStack {
                     if post.location != nil {
                         Text("Lat:\(Int(post.location!.latitude)): Long:\(Int(post.location!.longitude))")
-                        .accessibility(hint: Text("User Location."))
+                            .accessibility(hint: Text("User Location."))
                     }
                     Spacer()
                     Image(systemName: "heart.fill").font(.system(size: 16, weight: .regular)).foregroundColor(favColor)

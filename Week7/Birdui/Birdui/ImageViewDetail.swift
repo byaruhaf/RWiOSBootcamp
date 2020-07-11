@@ -9,13 +9,20 @@
 import SwiftUI
 
 struct ImageViewDetail: View {
+     @Environment(\.presentationMode) var presentationMode
+    var image: UIImage
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(uiImage: image)
+            .resizable() //it will sized so that it fills all the available space
+            .aspectRatio(contentMode: .fit)
+            .onTapGesture(count: 2) {
+                self.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 
 struct ImageViewDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ImageViewDetail()
+        ImageViewDetail(image: UIImage(named: "octopus")!)
     }
 }
