@@ -42,10 +42,8 @@ class PostViewModel: ObservableObject {
 
     fileprivate func postsSorted() {
         if isSortedByNewest {
-            print("top")
             posts = posts.sorted(by: { $0.timestamp > $1.timestamp })
         } else {
-             print("bottom")
             posts = posts.sorted(by: { $0.timestamp < $1.timestamp })
         }
     }
