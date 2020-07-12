@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PostListView: View {
-    @ObservedObject var posts = PostViewModel()
+    @ObservedObject var postViewModel = PostViewModel()
     @State var isCreateNewPostShowing = false
     var body: some View {
         VStack {
@@ -17,15 +17,15 @@ struct PostListView: View {
                 NavigationView {
                     VStack(alignment: .leading, spacing: 30.0) {
                         List {
-                            ForEach(posts.posts, id: \.id) { post in
+                            ForEach(postViewModel.posts, id: \.id) { post in
                                 PostView(post: post)
                             }
-                            .onDelete(perform:posts.deletePost(at:))
+                            .onDelete(perform:postViewModel.deletePost(at:))
                         }
                     }
                     .navigationBarTitle("HOME")
                     .navigationBarItems(trailing:
-                            NavSortView(posts: posts)
+                            NavSortView(posts: postViewModel)
                     )
                 }
 
@@ -36,7 +36,7 @@ struct PostListView: View {
                 }
                 .padding(.trailing)
                 .sheet(isPresented: self.$isCreateNewPostShowing) {
-                    NewPostView(postHandler: self.posts)
+                    NewPostView(postHandler: self.postViewModel)
                 }.buttonStyle(AddPostButton())
             }
         }
