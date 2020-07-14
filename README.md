@@ -18,3 +18,5 @@
 4. [Week 04](./Week4/)
 5. [Week 05](./Week5/)
 6. [Week 06](./Week6/)
+7. [Week 07](./Week7/)
+8. [Week 08](./Week8/)
