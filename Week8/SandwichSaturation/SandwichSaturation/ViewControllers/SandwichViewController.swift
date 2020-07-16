@@ -37,11 +37,17 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
     definesPresentationContext = true
     searchController.searchBar.scopeButtonTitles = SauceAmount.allCases.map { $0.rawValue }
     searchController.searchBar.delegate = self
+    searchController.searchBar.selectedScopeButtonIndex = UserDefaults.standard.integer(forKey: "selectedindex")
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UserDefaults.standard.set(searchController.searchBar.selectedScopeButtonIndex, forKey: "selectedindex")
+    }
   
   func loadSandwiches() {
     let sandwichArray = [SandwichData(name: "Bagel Toast", sauceAmount: .none, imageName: "sandwich1"),
@@ -135,6 +141,7 @@ extension SandwichViewController: UISearchResultsUpdating {
 extension SandwichViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar,
       selectedScopeButtonIndexDidChange selectedScope: Int) {
+    UserDefaults.standard.set(searchController.searchBar.selectedScopeButtonIndex, forKey: "selectedindex")
     let sauceAmount = SauceAmount(rawValue:
       searchBar.scopeButtonTitles![selectedScope])
     filterContentForSearchText(searchBar.text!, sauceAmount: sauceAmount)
