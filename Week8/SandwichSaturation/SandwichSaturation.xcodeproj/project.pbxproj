@@ -74,7 +74,7 @@
 			children = (
 				1255797A24AFB8FA004C616F /* AppDelegate.swift */,
 				1255797C24AFB8FA004C616F /* SceneDelegate.swift */,
-				5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */,
+				5FDC180724C01CB100B3D5DF /* Extension */,
 				12A0791224AFDD810097F149 /* Model */,
 				1255799424AFCBDE004C616F /* View */,
 				12A0790F24AFDC2F0097F149 /* ViewControllers */,
@@ -137,6 +137,14 @@
 				12A0791724B2CC9A0097F149 /* sandwiches.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		5FDC180724C01CB100B3D5DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

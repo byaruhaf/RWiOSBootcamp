@@ -50,7 +50,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
     }
   
   func loadSandwiches() {
-    let sandwichArray:[SandwichData] = Bundle.main.decode("sandwiches.json")
+    let sandwichArray = Bundle.main.decode([SandwichData].self, from: "sandwiches.json")
     sandwiches.append(contentsOf: sandwichArray)
   }
 
