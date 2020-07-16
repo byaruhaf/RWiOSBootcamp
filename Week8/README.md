@@ -1,4 +1,4 @@
-# Birdie App in SwiftUI
+# SandwichSaturation App in SwiftUI
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,43 +7,46 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
-## Week 7 Assignment
+## Week 8 Assignment
 
 Rebuild the social media app Birdie from Week 5 in SwiftUI
 
 ### Assignment Requirements completed
 * Work as a Team to complete the Assignment
-* Create PostListView as Main View
-* Create PostView as a subviews
-* When the List displays PostView, the image should be horizontally centered on the screen
-* make your code easier to understand, with subviews
-* Tapping Create New Post button should show NewPostView as a modal sheet
-* Add Image selection form NewPostView
+
 
 ### Stretch Above and Beyond Requirements completed:
 * Added feature for user to Delete Birdie Post
-* Added Camera mode feature so users can take photos for their Birdie Post's
-* Added feature for user to make Birdie Post as favorite
-* Added feature to add user location to Birdie Post 
-* Added feature to sort Birdie Post's by date
-* Added custom buttons to improve the Birdie App UX 
-* Replaced mascot_swift-badge with more appropriate SF symbol improved UX
-* Added accessibility label's for buttons and images to improve accessibility
-* Because the images are clipped when in the PostList, Added a feature to double-tap images to zoom in for an expanded view.
-* Add Custom App iCon to Birdie App
-* Moved new post button to lower end of the phone, for easy reachability by the user. 
 
 
+
+
+### Other options for packaging seed data
+**In your README, describe at least one other option for packaging seed data like this with an app. Which do you think makes the most sense if you were shipping SandwichSaturation, and why?**
+
+File-based approach for persisting simply-structured data sets
+Entire contents of a plist get loaded into memory when you access the file
+Way to ship initial configuration for your app
+Capable of storing lists of data with predictable size
+
+JSON is a very simple, but very powerful way to express data. Anything you can do with a plist? You can do it in JSON as well. Furthermore, JSON tends to yield more compact data/files than XML, but still can be quite readable (unlike binary). The data structures map naturally onto concepts supported by just about every language and library, so having parser support for JSON is natural. In fact, you’ll find Apple supports JSON natively in the OS with NSJSONSerialization. Now you have a nice way on iOS or Mac OS X to convert your JSON to native Foundation objects, and gee wasn’t that the point of Property Lists? JSON isn’t supported as integrally as Property Lists are, but that the OS provides built-in support for JSON is welcome. You’ll even find that on most other platforms, other languages, other libraries, JSON support is a natural part of things. This makes use of JSON quite nice when you work in a multi-platform situation. Just write the file once, share it, life goes on.
+
+For the most part on that other project, JSON became the file format of choice because everyone can share the files.
+
+
+
+##### Angles for Analysis
+
+* Where data is saved
+* Who maintains the technology
+* Data model complexity
+* Data Size
+* Compatibility
+* Price
 
 ## App Demo
 
-| use Device Camera|Sorting By Date|Add Location to Post's|
-|:-------------------------:|:-------------------------:|:---------------------:
-|![Compact](Demo/A9.gif)  |  ![Large](Demo/A0.gif)  | ![Composed](Demo/A5.gif)  |
 
-| Delete Posts|Mark Posts As Favorite|Zoom Image Posts|
-|:-------------------------:|:-------------------------:|:---------------------:
-|![Compact](Demo/A4.gif)  |  ![Large](Demo/A7.gif)  | ![Composed](Demo/A8.gif)  |
 
 
 ## Contribution
