@@ -18,9 +18,11 @@
 		12A0791124AFDC5C0097F149 /* AddSandwichViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0791024AFDC5C0097F149 /* AddSandwichViewController.swift */; };
 		12A0791424AFDD8E0097F149 /* SandwichData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0791324AFDD8E0097F149 /* SandwichData.swift */; };
 		12A0791824B2CC9A0097F149 /* sandwiches.json in Resources */ = {isa = PBXBuildFile; fileRef = 12A0791724B2CC9A0097F149 /* sandwiches.json */; };
+		5F16646024C3237E00AF9C9E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16645F24C3237E00AF9C9E /* UserDefaults.swift */; };
+		5F3CB74824C05FAE00AFDA3B /* SauceAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */; };
+		5F3CB74B24C0653E00AFDA3B /* SeedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CB74A24C0653E00AFDA3B /* SeedOperation.swift */; };
 		5FDC17FE24C00BDD00B3D5DF /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */; };
 		5FDC180124C012A700B3D5DF /* sandwiches.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC17FF24C012A700B3D5DF /* sandwiches.xcdatamodeld */; };
-		5FDC180324C01BAC00B3D5DF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC180224C01BAC00B3D5DF /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +39,11 @@
 		12A0791024AFDC5C0097F149 /* AddSandwichViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSandwichViewController.swift; sourceTree = "<group>"; };
 		12A0791324AFDD8E0097F149 /* SandwichData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichData.swift; sourceTree = "<group>"; };
 		12A0791724B2CC9A0097F149 /* sandwiches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sandwiches.json; sourceTree = "<group>"; };
+		5F16645F24C3237E00AF9C9E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceAmount.swift; sourceTree = "<group>"; };
+		5F3CB74A24C0653E00AFDA3B /* SeedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedOperation.swift; sourceTree = "<group>"; };
 		5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		5FDC180024C012A700B3D5DF /* sandwiches.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sandwiches.xcdatamodel; sourceTree = "<group>"; };
-		5FDC180224C01BAC00B3D5DF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,23 +113,24 @@
 			children = (
 				5FDC180624C01C0300B3D5DF /* JSON */,
 				5FDC180524C01BFC00B3D5DF /* CoreData */,
-				5FDC180424C01BCA00B3D5DF /* CoreDataManager */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5FDC180424C01BCA00B3D5DF /* CoreDataManager */ = {
+		5F3CB74924C05FD300AFDA3B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5FDC180224C01BAC00B3D5DF /* CoreDataManager.swift */,
+				5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */,
 			);
-			path = CoreDataManager;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5FDC180524C01BFC00B3D5DF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				5FDC17FF24C012A700B3D5DF /* sandwiches.xcdatamodeld */,
+				5F3CB74924C05FD300AFDA3B /* Extension */,
+				5F3CB74A24C0653E00AFDA3B /* SeedOperation.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */,
+				5F16645F24C3237E00AF9C9E /* UserDefaults.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,11 +228,13 @@
 			files = (
 				5FDC180124C012A700B3D5DF /* sandwiches.xcdatamodeld in Sources */,
 				1255799324AFCBD7004C616F /* SandwichCell.swift in Sources */,
+				5F3CB74B24C0653E00AFDA3B /* SeedOperation.swift in Sources */,
+				5F16646024C3237E00AF9C9E /* UserDefaults.swift in Sources */,
 				12A0791124AFDC5C0097F149 /* AddSandwichViewController.swift in Sources */,
+				5F3CB74824C05FAE00AFDA3B /* SauceAmount.swift in Sources */,
 				1255797B24AFB8FA004C616F /* AppDelegate.swift in Sources */,
 				1255797D24AFB8FA004C616F /* SceneDelegate.swift in Sources */,
 				1255797F24AFB8FA004C616F /* SandwichViewController.swift in Sources */,
-				5FDC180324C01BAC00B3D5DF /* CoreDataManager.swift in Sources */,
 				5FDC17FE24C00BDD00B3D5DF /* Bundle-Decodable.swift in Sources */,
 				12A0791424AFDD8E0097F149 /* SandwichData.swift in Sources */,
 			);

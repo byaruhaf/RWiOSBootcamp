@@ -7,15 +7,35 @@
 //
 
 import UIKit
+import CoreData
 
 protocol SandwichDataSource {
   func saveSandwich(_: SandwichData)
 }
 
-class SandwichViewController: UITableViewController, SandwichDataSource {
+class SandwichViewController: UITableViewController, SandwichDataSource, NSFetchedResultsControllerDelegate {
   let searchController = UISearchController(searchResultsController: nil)
   var sandwiches = [SandwichData]()
   var filteredSandwiches = [SandwichData]()
+  var persistentContiner = NSPersistentContainer(name: "sandwiches")
+
+    // MARK: -
+
+    private lazy var fetchedResultsController:NSFetchedResultsController<SandwichModel> = {
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
+
+        // Configure Fetch Request
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
+
+        // Create Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContiner.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = self
+
+        return fetchedResultsController
+    }()
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
@@ -25,7 +45,6 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddView(_:)))
     navigationItem.rightBarButtonItem = addButton
     
@@ -38,6 +57,15 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
     searchController.searchBar.scopeButtonTitles = SauceAmount.allCases.map { $0.rawValue }
     searchController.searchBar.delegate = self
     searchController.searchBar.selectedScopeButtonIndex = UserDefaults.standard.integer(forKey: "selectedindex")
+
+    persistentContiner.loadPersistentStores { (persistentStoreDescription, error) in
+        if let error = error {
+            print("Unable to Add Persistent Store")
+            print("\(error), \(error.localizedDescription)")
+        } else {
+            self.seed()
+        }
+    }
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -139,3 +167,53 @@ extension SandwichViewController: UISearchBarDelegate {
   }
 }
 
+
+
+extension SandwichViewController {
+
+    fileprivate func saveFood() {
+        guard !UserDefaults.didSeedPersistentStore else {
+            return
+        }
+        do {
+            // Save Changes
+            print("Saving Changes \(persistentContiner)")
+            try persistentContiner.viewContext.save()
+            // Update User Defaults
+            UserDefaults.setDidSeedPersistentStore(true)
+        } catch {
+            print("Unable to Save Main Managed Object Context After Seeding Persistent Store (\(error))")
+        }
+    }
+
+    func seed() {
+        var sauceAmountsBuffer: [SauceAmountModel] = []
+
+        for amount in sauceAmounts {
+            let sauceAmount = SauceAmountModel(context: persistentContiner.viewContext)
+            sauceAmount.sauceAmountString = amount
+            sauceAmountsBuffer.append(sauceAmount)
+        }
+
+        for data in sandwichArray {
+            // Initialize sandwich
+            let sandwich = SandwichModel(context: persistentContiner.viewContext)
+
+            // Configure sandwich
+            sandwich.name = data.name
+            sandwich.imageName = data.imageName
+            sandwich.sauceAmount = sauceAmountsBuffer.first {
+                return $0.sauceAmountString == data.sauceAmount.rawValue
+            }
+        }
+
+        saveFood()
+
+    }
+
+    // Mark: - Seed Data
+    private var sauceAmounts: [String] {
+        return SauceAmount.allCases.map { $0.rawValue }
+    }
+    private var sandwichArray:[SandwichData] { Bundle.main.decode([SandwichData].self, from: "sandwiches.json")}
+}
