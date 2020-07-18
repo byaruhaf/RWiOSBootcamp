@@ -15,32 +15,14 @@ protocol SandwichDataSource {
 
 class SandwichViewController: UITableViewController, SandwichDataSource, NSFetchedResultsControllerDelegate {
   let searchController = UISearchController(searchResultsController: nil)
-  var sandwiches = [SandwichData]()
-  var filteredSandwiches = [SandwichData]()
+//  var sandwiches = [SandwichData]()
+//  var filteredSandwiches = [SandwichData]()
   var persistentContiner = NSPersistentContainer(name: "sandwiches")
 
-    // MARK: -
 
-    private lazy var fetchedResultsController:NSFetchedResultsController<SandwichModel> = {
-        // Create Fetch Request
-        let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
-
-        // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
-
-        // Create Fetched Results Controller
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContiner.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-
-        // Configure Fetched Results Controller
-        fetchedResultsController.delegate = self
-
-        return fetchedResultsController
-    }()
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    
-    loadSandwiches()
   }
   
   override func viewDidLoad() {
@@ -64,9 +46,35 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
             print("\(error), \(error.localizedDescription)")
         } else {
             self.seed()
+            self.loadSandwiches()
         }
     }
   }
+
+    // MARK: -
+
+    private lazy var fetchedResultsController:NSFetchedResultsController<SandwichModel>  = {
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
+
+        // Configure Fetch Request
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
+
+        // Create Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContiner.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = self
+
+        return fetchedResultsController
+    }()
+
+    // MARK: -
+
+    private var hasSandwichs: Bool {
+        guard let fetchedObjects = fetchedResultsController.fetchedObjects else { return false }
+        return fetchedObjects.count > 0
+    }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -78,12 +86,22 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
     }
   
   func loadSandwiches() {
-    let sandwichArray = Bundle.main.decode([SandwichData].self, from: "sandwiches.json")
-    sandwiches.append(contentsOf: sandwichArray)
+//    let sandwichArray = Bundle.main.decode([SandwichData].self, from: "sandwiches.json")
+    fetchSandwiches()
+//    sandwiches.append(contentsOf: sandwichArray)
   }
 
+    func fetchSandwiches() {
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Unable to Persorm Fetch Reests")
+            print("\(error),\(error.localizedDescription)")
+        }
+    }
+
   func saveSandwich(_ sandwich: SandwichData) {
-    sandwiches.append(sandwich)
+//   sandwiches.append(sandwich)
     tableView.reloadData()
   }
 
@@ -99,17 +117,17 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
   
   func filterContentForSearchText(_ searchText: String,
                                   sauceAmount: SauceAmount? = nil) {
-    filteredSandwiches = sandwiches.filter { (sandwhich: SandwichData) -> Bool in
-      let doesSauceAmountMatch = sauceAmount == .any || sandwhich.sauceAmount == sauceAmount
-
-      if isSearchBarEmpty {
-        return doesSauceAmountMatch
-      } else {
-        return doesSauceAmountMatch && sandwhich.name.lowercased()
-          .contains(searchText.lowercased())
-      }
-    }
-    
+//    filteredSandwiches = sandwiches.filter { (sandwhich: SandwichData) -> Bool in
+//      let doesSauceAmountMatch = sauceAmount == .any || sandwhich.sauceAmount == sauceAmount
+//
+//      if isSearchBarEmpty {
+//        return doesSauceAmountMatch
+//      } else {
+//        return doesSauceAmountMatch && sandwhich.name.lowercased()
+//          .contains(searchText.lowercased())
+//      }
+//    }
+//
     tableView.reloadData()
   }
   
@@ -122,24 +140,37 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
   
   // MARK: - Table View
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    guard let sections = fetchedResultsController.sections else { return 0}
+    return sections.count
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return isFiltering ? filteredSandwiches.count : sandwiches.count
+//    return isFiltering ? filteredSandwiches.count : sandwiches.count
+    guard let section = fetchedResultsController.sections?[section] else { return 0}
+    return section.numberOfObjects
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell
-      else { return UITableViewCell() }
-    
-    let sandwich = isFiltering ?
-      filteredSandwiches[indexPath.row] :
-      sandwiches[indexPath.row]
 
-    cell.thumbnail.image = UIImage.init(imageLiteralResourceName: sandwich.imageName)
+    // Dequeue Reusable Cell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell else {
+        fatalError("Unexpected Index Path")
+    }
+
+    let sandwich = fetchedResultsController.object(at: indexPath)
+
+
+
+//    guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell
+//      else { return UITableViewCell() }
+    
+//    let sandwich = isFiltering ?
+//      filteredSandwiches[indexPath.row] :
+//      sandwiches[indexPath.row]
+
+    cell.thumbnail.image = UIImage.init(imageLiteralResourceName: sandwich.imageName!)
     cell.nameLabel.text = sandwich.name
-    cell.sauceLabel.text = sandwich.sauceAmount.description
+    cell.sauceLabel.text = sandwich.sauceAmount?.sauceAmount.rawValue
 
     return cell
   }
@@ -172,9 +203,6 @@ extension SandwichViewController: UISearchBarDelegate {
 extension SandwichViewController {
 
     fileprivate func saveFood() {
-        guard !UserDefaults.didSeedPersistentStore else {
-            return
-        }
         do {
             // Save Changes
             print("Saving Changes \(persistentContiner)")
@@ -187,6 +215,7 @@ extension SandwichViewController {
     }
 
     func seed() {
+        guard !UserDefaults.didSeedPersistentStore else { return }
         var sauceAmountsBuffer: [SauceAmountModel] = []
 
         for amount in sauceAmounts {
@@ -208,7 +237,6 @@ extension SandwichViewController {
         }
 
         saveFood()
-
     }
 
     // Mark: - Seed Data
