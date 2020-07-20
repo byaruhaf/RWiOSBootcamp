@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
+// Convert Enum to String and String to Enum
 extension SauceAmountModel{
     var sauceAmount: SauceAmount {
         get {
@@ -20,5 +22,20 @@ extension SauceAmountModel{
         set {
             self.sauceAmountString = newValue.rawValue
         }
+    }
+}
+
+extension SauceAmountModel{
+    class func findAll(in managedObjectContext: NSManagedObjectContext) throws -> [SauceAmountModel] {
+        // Helpers
+        var currentSauceAmounts: [SauceAmountModel] = []
+
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<SauceAmountModel> = SauceAmountModel.fetchRequest()
+
+        // Perform Fetch Request
+        currentSauceAmounts = try managedObjectContext.fetch(fetchRequest)
+
+        return currentSauceAmounts
     }
 }
