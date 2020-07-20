@@ -134,10 +134,16 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
                 let p0 = NSPredicate(format: "name CONTAINS[cd] %@", "\(searchText)")
                 return NSCompoundPredicate(andPredicateWithSubpredicates: [p0])
             } else {
-                let p0 = NSPredicate(format: "tosauceAmount.sauceAmountString == %@", "\(sauceAmount!.rawValue)")
-                let p1 = NSPredicate(format: "name CONTAINS[cd] %@", "\(searchText)")
+                if isSearchBarEmpty{
+                   let p0 = NSPredicate(format: "tosauceAmount.sauceAmountString == %@", "\(sauceAmount!.rawValue)")
+                    return NSCompoundPredicate(andPredicateWithSubpredicates: [p0])
 
-                return NSCompoundPredicate(andPredicateWithSubpredicates: [p0,p1])
+                }else {
+                    let p0 = NSPredicate(format: "tosauceAmount.sauceAmountString == %@", "\(sauceAmount!.rawValue)")
+                    let p1 = NSPredicate(format: "name CONTAINS[cd] %@", "\(searchText)")
+                    return NSCompoundPredicate(andPredicateWithSubpredicates: [p0,p1])
+                }
+
             }
         }
         filteredSandwiches.removeAll()
