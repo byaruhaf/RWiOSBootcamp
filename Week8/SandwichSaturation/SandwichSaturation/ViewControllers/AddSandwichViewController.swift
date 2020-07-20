@@ -67,7 +67,7 @@ class AddSandwichViewController: UIViewController {
   
   func saveSandwich(sandwich: SandwichData) {
     guard let navController = presentingViewController as? UINavigationController,
-      let dataSource = navController.topViewController as? SandwichDataSource else {
+      let dataSource = navController.topViewController as? SandwichSaveable else {
         print("Oh noes! The datasource is missing and I don't know where to put these sandwiches!")
         fatalError()
     }

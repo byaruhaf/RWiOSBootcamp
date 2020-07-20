@@ -9,11 +9,11 @@
 import UIKit
 import CoreData
 
-protocol SandwichDataSource {
+protocol SandwichSaveable {
     func saveSandwich(_: SandwichData)
 }
 
-class SandwichViewController: UITableViewController, SandwichDataSource {
+class SandwichViewController: UITableViewController, SandwichSaveable {
     let searchController = UISearchController(searchResultsController: nil)
     var sandwiches = [SandwichModel]()
     var filteredSandwiches = [SandwichModel]()
@@ -26,12 +26,14 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         guard persistentContiner != nil else { fatalError("This view needs a persistent container.") }
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddView(_:)))
         navigationItem.rightBarButtonItem = addButton
 
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(deleteItems(_:)))
-        navigationItem.leftBarButtonItem = editButton
+//        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(deleteItems(_:)))
+//        navigationItem.leftBarButtonItem = editButton
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
 
         // Setup Search Controller
         searchController.searchResultsUpdater = self
@@ -178,6 +180,9 @@ extension SandwichViewController {
         cell.sauceLabel.text = sandwich.tosauceAmount?.sauceAmount.rawValue
         return cell
     }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -193,8 +198,9 @@ extension SandwichViewController {
             appDelegate.saveContext()
             tableView.reloadData()
         }
-
     }
+
+    
 }
 
 // MARK: - UISearchResultsUpdating
