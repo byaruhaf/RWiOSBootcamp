@@ -16,7 +16,8 @@ extension SandwichModel{
 
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
+           fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))]
+
 
         // Perform Fetch Request
         allSandwichs = try managedObjectContext.fetch(fetchRequest)
@@ -30,7 +31,8 @@ extension SandwichModel{
 
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))]
+
         fetchRequest.predicate = compoundPredicate
         
 

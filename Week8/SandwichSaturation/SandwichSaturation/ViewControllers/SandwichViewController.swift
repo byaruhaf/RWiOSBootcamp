@@ -94,7 +94,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
             let sandwichArray = try SandwichModel.findAll(in: persistentContiner.viewContext)
              sandwiches.append(contentsOf: sandwichArray)
         } catch {
-            print("Unable to Fetch current Sauce Amounts, (\(error))")
+            print("Unable to Fetch strored sandwiches, (\(error))")
         }
     }
 
@@ -146,7 +146,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
             let sandwichArray = try SandwichModel.findFilterd(in: persistentContiner.viewContext, compoundPredicate: tablePredicate)
             filteredSandwiches.append(contentsOf: sandwichArray)
         } catch {
-            print("Unable to Fetch current Sauce Amounts, (\(error))")
+            print("Unable to Fetch filtered Sandwiches, (\(error))")
         }
         tableView.reloadData()
     }
