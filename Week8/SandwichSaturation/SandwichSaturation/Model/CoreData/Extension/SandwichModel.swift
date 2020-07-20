@@ -12,14 +12,32 @@ import CoreData
 extension SandwichModel{
     class func findAll(in managedObjectContext: NSManagedObjectContext) throws -> [SandwichModel] {
         // Helpers
-        var currentSandwichs: [SandwichModel] = []
+        var allSandwichs: [SandwichModel] = []
 
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
 
         // Perform Fetch Request
-        currentSandwichs = try managedObjectContext.fetch(fetchRequest)
+        allSandwichs = try managedObjectContext.fetch(fetchRequest)
 
-        return currentSandwichs
+        return allSandwichs
     }
+
+    class func findFilterd(in managedObjectContext: NSManagedObjectContext, compoundPredicate: NSCompoundPredicate) throws -> [SandwichModel] {
+        // Helpers
+        var allSandwichs: [SandwichModel] = []
+
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
+        fetchRequest.predicate = compoundPredicate
+        
+
+        // Perform Fetch Request
+        allSandwichs = try managedObjectContext.fetch(fetchRequest)
+
+        return allSandwichs
+    }
+
 }
