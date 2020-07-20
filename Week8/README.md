@@ -14,15 +14,16 @@ Updated the SandwichSaturation app with data persistence with core data.
 ### Assignment Requirements completed
 * Save Scope Bar Selection into User Defaults so it can persist between app launches.
 * Remove hard-coded sandwiches & load Data from JSON File (sandwiches.json) 
-
+* Create a Core Data model and only on first launch seed the model with data from JSON File
+* Use Core Data to retrieve data for display in the TableView
+* When a user Adds a New Sandwich, ensure it is saved to Core Data.
+* Re-wire the filter functionality to use Core Data queries using NSCompoundPredicate
 
 ### Stretch Above and Beyond Requirements completed:
-* Added feature for user to Delete Birdie Post
+* Allow users to delete sandwiches from the tableview & Core Data.
+* Use Core Data to sort sandwiches alphabetically using NSSortDescriptor
 
-
-
-
-### Other options for packaging seed data
+#### Other options for packaging seed data
 Another option for packaging seed data is a Property List (plist)
 
 *Features of using a Property List (plist)*
