@@ -3,11 +3,11 @@
     <entity name="SandwichModel" representedClassName="SandwichModel" syncable="YES" codeGenerationType="class">
         <attribute name="imageName" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="sauceAmount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SauceAmountModel" inverseName="sandwich" inverseEntity="SauceAmountModel"/>
+        <relationship name="tosauceAmount" maxCount="1" deletionRule="Nullify" destinationEntity="SauceAmountModel" inverseName="tosandwich" inverseEntity="SauceAmountModel"/>
     </entity>
     <entity name="SauceAmountModel" representedClassName="SauceAmountModel" syncable="YES" codeGenerationType="class">
         <attribute name="sauceAmountString" optional="YES" attributeType="String"/>
-        <relationship name="sandwich" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SandwichModel" inverseName="sauceAmount" inverseEntity="SandwichModel"/>
+        <relationship name="tosandwich" toMany="YES" deletionRule="Deny" destinationEntity="SandwichModel" inverseName="tosauceAmount" inverseEntity="SandwichModel"/>
     </entity>
     <elements>
         <element name="SandwichModel" positionX="-450.703125" positionY="-101.46875" width="128" height="88"/>

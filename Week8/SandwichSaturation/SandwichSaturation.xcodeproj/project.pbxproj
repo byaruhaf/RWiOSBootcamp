@@ -20,7 +20,6 @@
 		12A0791824B2CC9A0097F149 /* sandwiches.json in Resources */ = {isa = PBXBuildFile; fileRef = 12A0791724B2CC9A0097F149 /* sandwiches.json */; };
 		5F16646024C3237E00AF9C9E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16645F24C3237E00AF9C9E /* UserDefaults.swift */; };
 		5F3CB74824C05FAE00AFDA3B /* SauceAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */; };
-		5F3CB74B24C0653E00AFDA3B /* SeedOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CB74A24C0653E00AFDA3B /* SeedOperation.swift */; };
 		5FDC17FE24C00BDD00B3D5DF /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */; };
 		5FDC180124C012A700B3D5DF /* sandwiches.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC17FF24C012A700B3D5DF /* sandwiches.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		12A0791724B2CC9A0097F149 /* sandwiches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sandwiches.json; sourceTree = "<group>"; };
 		5F16645F24C3237E00AF9C9E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceAmount.swift; sourceTree = "<group>"; };
-		5F3CB74A24C0653E00AFDA3B /* SeedOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedOperation.swift; sourceTree = "<group>"; };
 		5FDC17FD24C00BDD00B3D5DF /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		5FDC180024C012A700B3D5DF /* sandwiches.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sandwiches.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +128,6 @@
 			children = (
 				5FDC17FF24C012A700B3D5DF /* sandwiches.xcdatamodeld */,
 				5F3CB74924C05FD300AFDA3B /* Extension */,
-				5F3CB74A24C0653E00AFDA3B /* SeedOperation.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			files = (
 				5FDC180124C012A700B3D5DF /* sandwiches.xcdatamodeld in Sources */,
 				1255799324AFCBD7004C616F /* SandwichCell.swift in Sources */,
-				5F3CB74B24C0653E00AFDA3B /* SeedOperation.swift in Sources */,
 				5F16646024C3237E00AF9C9E /* UserDefaults.swift in Sources */,
 				12A0791124AFDC5C0097F149 /* AddSandwichViewController.swift in Sources */,
 				5F3CB74824C05FAE00AFDA3B /* SauceAmount.swift in Sources */,

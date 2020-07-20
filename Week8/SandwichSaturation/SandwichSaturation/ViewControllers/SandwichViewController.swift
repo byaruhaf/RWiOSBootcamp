@@ -17,9 +17,9 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
   let searchController = UISearchController(searchResultsController: nil)
 //  var sandwiches = [SandwichData]()
 //  var filteredSandwiches = [SandwichData]()
-  var persistentContiner = NSPersistentContainer(name: "sandwiches")
 
-
+    private let appDelegate =  UIApplication.shared.delegate as! AppDelegate
+    private let persistentContiner:NSPersistentContainer! = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
@@ -27,6 +27,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    guard persistentContiner != nil else { fatalError("This view needs a persistent container.") }
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddView(_:)))
     navigationItem.rightBarButtonItem = addButton
     
@@ -39,16 +40,8 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
     searchController.searchBar.scopeButtonTitles = SauceAmount.allCases.map { $0.rawValue }
     searchController.searchBar.delegate = self
     searchController.searchBar.selectedScopeButtonIndex = UserDefaults.standard.integer(forKey: "selectedindex")
-
-    persistentContiner.loadPersistentStores { (persistentStoreDescription, error) in
-        if let error = error {
-            print("Unable to Add Persistent Store")
-            print("\(error), \(error.localizedDescription)")
-        } else {
-            self.seed()
-            self.loadSandwiches()
-        }
-    }
+    self.seed()
+    self.loadSandwiches()
   }
 
     // MARK: -
@@ -101,7 +94,22 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
     }
 
   func saveSandwich(_ sandwich: SandwichData) {
-//   sandwiches.append(sandwich)
+    let newSandwich = SandwichModel(context: persistentContiner.viewContext)
+    // Configure sandwich
+    newSandwich.name = sandwich.name
+    newSandwich.imageName = sandwich.imageName
+    // Fetch available Sauce Amount's
+    let context: NSManagedObjectContext = persistentContiner.viewContext
+    let request:NSFetchRequest<SauceAmountModel> = SauceAmountModel.fetchRequest()
+    let currentSauceAmounts = try! context.fetch(request)
+
+    newSandwich.tosauceAmount = currentSauceAmounts.first {
+        $0.sauceAmountString == sandwich.sauceAmount.rawValue
+    }
+
+//    saveFood()
+    appDelegate.saveContext()
+    fetchSandwiches()
     tableView.reloadData()
   }
 
@@ -127,7 +135,6 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
 //          .contains(searchText.lowercased())
 //      }
 //    }
-//
     tableView.reloadData()
   }
   
@@ -170,7 +177,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource, NSFetch
 
     cell.thumbnail.image = UIImage.init(imageLiteralResourceName: sandwich.imageName!)
     cell.nameLabel.text = sandwich.name
-    cell.sauceLabel.text = sandwich.sauceAmount?.sauceAmount.rawValue
+    cell.sauceLabel.text = sandwich.tosauceAmount?.sauceAmount.rawValue
 
     return cell
   }
@@ -202,17 +209,15 @@ extension SandwichViewController: UISearchBarDelegate {
 
 extension SandwichViewController {
 
-    fileprivate func saveFood() {
-        do {
-            // Save Changes
-            print("Saving Changes \(persistentContiner)")
-            try persistentContiner.viewContext.save()
-            // Update User Defaults
-            UserDefaults.setDidSeedPersistentStore(true)
-        } catch {
-            print("Unable to Save Main Managed Object Context After Seeding Persistent Store (\(error))")
-        }
-    }
+//    fileprivate func saveFood() {
+//        do {
+//            // Save Changes
+//            print("Saving Changes \(persistentContiner)")
+//            try persistentContiner.viewContext.save()
+//        } catch {
+//            print("Unable to Save Main Managed Object Context After Seeding Persistent Store (\(error))")
+//        }
+//    }
 
     func seed() {
         guard !UserDefaults.didSeedPersistentStore else { return }
@@ -231,12 +236,16 @@ extension SandwichViewController {
             // Configure sandwich
             sandwich.name = data.name
             sandwich.imageName = data.imageName
-            sandwich.sauceAmount = sauceAmountsBuffer.first {
+            sandwich.tosauceAmount = sauceAmountsBuffer.first {
                 return $0.sauceAmountString == data.sauceAmount.rawValue
             }
         }
 
-        saveFood()
+//        saveFood()
+        appDelegate.saveContext()
+
+        // Update User Defaults
+        UserDefaults.setDidSeedPersistentStore(true)
     }
 
     // Mark: - Seed Data
