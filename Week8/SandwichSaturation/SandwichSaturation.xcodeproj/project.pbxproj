@@ -19,6 +19,7 @@
 		12A0791424AFDD8E0097F149 /* SandwichData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0791324AFDD8E0097F149 /* SandwichData.swift */; };
 		12A0791824B2CC9A0097F149 /* sandwiches.json in Resources */ = {isa = PBXBuildFile; fileRef = 12A0791724B2CC9A0097F149 /* sandwiches.json */; };
 		5F16646024C3237E00AF9C9E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16645F24C3237E00AF9C9E /* UserDefaults.swift */; };
+		5F3951C924C6FA5800FD7D4F /* DetailSandwichViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3951C824C6FA5800FD7D4F /* DetailSandwichViewController.swift */; };
 		5F3CB74824C05FAE00AFDA3B /* SauceAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */; };
 		5F420A9E24C557180030FBF9 /* SandwichModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F420A9D24C557180030FBF9 /* SandwichModel.swift */; };
 		5FDA808224C66FAB00CFD6BE /* SeedingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA808124C66FAB00CFD6BE /* SeedingManager.swift */; };
@@ -42,6 +43,7 @@
 		12A0791324AFDD8E0097F149 /* SandwichData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichData.swift; sourceTree = "<group>"; };
 		12A0791724B2CC9A0097F149 /* sandwiches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sandwiches.json; sourceTree = "<group>"; };
 		5F16645F24C3237E00AF9C9E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5F3951C824C6FA5800FD7D4F /* DetailSandwichViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSandwichViewController.swift; sourceTree = "<group>"; };
 		5F3CB74724C05FAE00AFDA3B /* SauceAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceAmount.swift; sourceTree = "<group>"; };
 		5F420A9D24C557180030FBF9 /* SandwichModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichModel.swift; sourceTree = "<group>"; };
 		5FDA808124C66FAB00CFD6BE /* SeedingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedingManager.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				1255797E24AFB8FA004C616F /* SandwichViewController.swift */,
 				12A0791024AFDC5C0097F149 /* AddSandwichViewController.swift */,
+				5F3951C824C6FA5800FD7D4F /* DetailSandwichViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				5FDA808424C6739000CFD6BE /* CoreDataManager.swift in Sources */,
 				1255797B24AFB8FA004C616F /* AppDelegate.swift in Sources */,
 				1255797D24AFB8FA004C616F /* SceneDelegate.swift in Sources */,
+				5F3951C924C6FA5800FD7D4F /* DetailSandwichViewController.swift in Sources */,
 				1255797F24AFB8FA004C616F /* SandwichViewController.swift in Sources */,
 				5FDC17FE24C00BDD00B3D5DF /* Bundle-Decodable.swift in Sources */,
 				12A0791424AFDD8E0097F149 /* SandwichData.swift in Sources */,

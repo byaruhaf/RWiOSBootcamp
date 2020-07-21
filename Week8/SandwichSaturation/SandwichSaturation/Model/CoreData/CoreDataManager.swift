@@ -90,6 +90,4 @@ class CoreDataManager {
          return [visibleSandwiches,hiddenSandwiches]
     }
 
-
-
 }

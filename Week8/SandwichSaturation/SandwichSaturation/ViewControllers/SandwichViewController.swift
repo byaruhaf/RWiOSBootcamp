@@ -13,11 +13,23 @@ protocol SandwichSaveable {
 }
 
 class SandwichViewController: UITableViewController, SandwichSaveable {
+
+    // MARK: - Segues
+
+    private enum Segue {
+
+        static let AddSandwich = "AddSandwichSegue"
+        static let DetailSandwich = "DetailSandwichSegue"
+
+    }
+
+
     let searchController = UISearchController(searchResultsController: nil)
     var sandwiches = [[SandwichModel]]()
     var filteredSandwiches = [[SandwichModel]]()
     private let seedingManager = SeedingManager()
     private let coreDataManager = CoreDataManager()
+    private var detailindexPath:IndexPath? = nil
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -56,7 +68,7 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
 
     @objc
     func presentAddView(_ sender: Any) {
-        performSegue(withIdentifier: "AddSandwichSegue", sender: self)
+        performSegue(withIdentifier: Segue.AddSandwich, sender: self)
     }
 
 
@@ -139,8 +151,9 @@ extension SandwichViewController {
             self?.coreDataManager.save()
             tableView.reloadData()
         }
-        let moreAction = UIContextualAction(style: .normal, title: "...") { (action, view, nil) in
-            print("more")
+        let moreAction = UIContextualAction(style: .normal, title: "...") { [weak self] (action, view, nil) in
+            self?.detailindexPath = indexPath
+            self?.performSegue(withIdentifier: Segue.DetailSandwich, sender: nil)
         }
         favAction.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         moreAction.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
@@ -185,7 +198,23 @@ extension SandwichViewController {
         return config
     }
 
-    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard let identifier = segue.identifier else { return }
+
+        switch identifier {
+            case Segue.DetailSandwich:
+                guard let destination = segue.destination as? DetailSandwichViewController else { return }
+                guard let indexPath =  detailindexPath else { return }
+            let sandwich = isFiltering ? filteredSandwiches[indexPath.section][indexPath.row] : sandwiches[indexPath.section][indexPath.row]
+                // Configure Destination
+                destination.sandwich = sandwich
+            default:
+                break
+        }
+    }
 }
 
 // MARK: - UISearchResultsUpdating

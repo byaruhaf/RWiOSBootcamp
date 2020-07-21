@@ -91,6 +91,7 @@
                                     <outlet property="nameLabel" destination="8ye-c0-g0Z" id="4tR-Bl-rum"/>
                                     <outlet property="sauceLabel" destination="4cL-eV-Ita" id="Ove-QS-LKK"/>
                                     <outlet property="thumbnail" destination="auk-N2-xpd" id="mLt-MB-zrZ"/>
+                                    <segue destination="Y6A-lJ-CrJ" kind="show" identifier="DetailSandwichSegue" id="gZU-zE-qrt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -107,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813" y="133"/>
+            <point key="canvasLocation" x="-758" y="133"/>
         </scene>
         <!--Add Sandwich View Controller-->
         <scene sceneID="cDh-LU-QZa">
@@ -194,7 +195,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUR-fy-AeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="133"/>
+            <point key="canvasLocation" x="190" y="-63"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="tP8-JO-TAY">
+            <objects>
+                <viewController id="Y6A-lJ-CrJ" customClass="DetailSandwichViewController" customModule="SandwichSaturation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8xF-6z-aeN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9p6-qh-2mN">
+                                <rect key="frame" x="20" y="128" width="374" height="714"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23q-rv-S5u">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="krd-se-cMv">
+                                        <rect key="frame" x="0.0" y="64" width="374" height="599.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L60-CH-gUL">
+                                        <rect key="frame" x="0.0" y="693.5" width="374" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbh-LX-Fkv">
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9hS-aS-g3E">
+                                                <rect key="frame" x="122" y="0.0" width="252" height="21.5"/>
+                                                <segments>
+                                                    <segment title="None"/>
+                                                    <segment title="Too Much"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9p6-qh-2mN" firstAttribute="leading" secondItem="M8K-ZP-qWP" secondAttribute="leading" constant="20" id="fb8-iZ-rrf"/>
+                            <constraint firstItem="M8K-ZP-qWP" firstAttribute="bottom" secondItem="9p6-qh-2mN" secondAttribute="bottom" constant="20" id="phk-Mh-ikG"/>
+                            <constraint firstItem="M8K-ZP-qWP" firstAttribute="trailing" secondItem="9p6-qh-2mN" secondAttribute="trailing" constant="20" id="sBr-p3-Xzv"/>
+                            <constraint firstItem="9p6-qh-2mN" firstAttribute="top" secondItem="M8K-ZP-qWP" secondAttribute="top" constant="40" id="vMc-Sv-USH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M8K-ZP-qWP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="OaM-QZ-0My"/>
+                    <connections>
+                        <outlet property="imageView" destination="krd-se-cMv" id="X7p-U0-MVZ"/>
+                        <outlet property="nameField" destination="23q-rv-S5u" id="05T-r3-f5N"/>
+                        <outlet property="sauceAmountSegmentedControl" destination="9hS-aS-g3E" id="A9e-yk-aAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbu-ZC-PKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189.85507246376812" y="591.96428571428567"/>
         </scene>
     </scenes>
 </document>
