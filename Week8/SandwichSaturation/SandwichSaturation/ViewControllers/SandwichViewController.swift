@@ -66,7 +66,7 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
         sandwiches.removeAll()
         do {
             // Fetch current Sauce Amount's
-            let sandwichArray = try SandwichModel.findAll(in: persistentContiner.viewContext)
+            let sandwichArray = try SandwichModel.getSandwichs(in: persistentContiner.viewContext)
             sandwiches.append(contentsOf: sandwichArray)
         } catch {
             print("Unable to Fetch strored sandwiches, (\(error))")
@@ -128,7 +128,7 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
         filteredSandwiches.removeAll()
         do {
             // Fetch current Sauce Amount's
-            let sandwichArray = try SandwichModel.findFilterd(in: persistentContiner.viewContext, compoundPredicate: tablePredicate)
+            let sandwichArray = try SandwichModel.getSandwichs(in: persistentContiner.viewContext, compoundPredicate: tablePredicate)
             filteredSandwiches.append(contentsOf: sandwichArray)
         } catch {
             print("Unable to Fetch filtered Sandwiches, (\(error))")

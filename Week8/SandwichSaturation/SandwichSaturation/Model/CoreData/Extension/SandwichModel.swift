@@ -10,36 +10,24 @@ import Foundation
 import CoreData
 
 extension SandwichModel{
-    class func findAll(in managedObjectContext: NSManagedObjectContext) throws -> [SandwichModel] {
+    class func getSandwichs(in managedObjectContext: NSManagedObjectContext,  compoundPredicate: NSCompoundPredicate? = nil) throws -> [SandwichModel] {
         // Helpers
         var allSandwichs: [SandwichModel] = []
 
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
-           fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))]
 
-
-        // Perform Fetch Request
-        allSandwichs = try managedObjectContext.fetch(fetchRequest)
-
-        return allSandwichs
-    }
-
-    class func findFilterd(in managedObjectContext: NSManagedObjectContext, compoundPredicate: NSCompoundPredicate) throws -> [SandwichModel] {
-        // Helpers
-        var allSandwichs: [SandwichModel] = []
-
-        // Create Fetch Request
-        let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
+        // Add sort Descriptors
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))]
 
-        fetchRequest.predicate = compoundPredicate
-        
+         // Add Predicate's
+        if let compoundPredicate = compoundPredicate {
+            fetchRequest.predicate = compoundPredicate
+        }
 
         // Perform Fetch Request
         allSandwichs = try managedObjectContext.fetch(fetchRequest)
 
         return allSandwichs
     }
-
 }
