@@ -12,7 +12,8 @@ class SandwichCell: UITableViewCell {
   @IBOutlet weak var thumbnail: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var sauceLabel: UILabel!
-  
+ @IBOutlet weak var favImage: UIImageView!
+
   override func awakeFromNib() {
     super.awakeFromNib()
   }

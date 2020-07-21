@@ -2,6 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SandwichModel" representedClassName="SandwichModel" syncable="YES" codeGenerationType="class">
         <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isVisible" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="tosauceAmount" maxCount="1" deletionRule="Nullify" destinationEntity="SauceAmountModel" inverseName="tosandwich" inverseEntity="SauceAmountModel"/>
     </entity>
@@ -10,7 +12,7 @@
         <relationship name="tosandwich" toMany="YES" deletionRule="Deny" destinationEntity="SandwichModel" inverseName="tosauceAmount" inverseEntity="SandwichModel"/>
     </entity>
     <elements>
-        <element name="SandwichModel" positionX="-450.703125" positionY="-101.46875" width="128" height="88"/>
+        <element name="SandwichModel" positionX="-450.703125" positionY="-101.46875" width="128" height="118"/>
         <element name="SauceAmountModel" positionX="-54" positionY="9" width="128" height="73"/>
     </elements>
 </model>

@@ -37,11 +37,18 @@ class CoreDataManager {
         persistentContiner.viewContext.delete(sandwich)
     }
 
+    func favoriteSandwich(_ sandwich: SandwichModel) {
+        sandwich.isFavorite = !sandwich.isFavorite
+    }
+
+    func hideSandwich(_ sandwich: SandwichModel) {
+        sandwich.isVisible = !sandwich.isVisible
+    }
     func save() {
         appDelegate.saveContext()
     }
 
-    func getSandwich() -> [SandwichModel] {
+    func getSandwich() -> [[SandwichModel]]{
         var sandwichArray:[SandwichModel]  = []
         do {
             // Fetch current Sauce Amount's
@@ -49,10 +56,14 @@ class CoreDataManager {
         } catch {
             print("Unable to Fetch strored sandwiches, (\(error))")
         }
-        return sandwichArray
+
+        let visibleSandwiches = sandwichArray.filter {$0.isVisible}
+        let hiddenSandwiches = sandwichArray.filter {$0.isVisible == false}
+
+        return [visibleSandwiches,hiddenSandwiches]
     }
 
-    func getFilteredSandwiches(_ searchText: String,_ sauceAmount: SauceAmount? = nil,_ isSearchBarEmpty: Bool) -> [SandwichModel] {
+    func getFilteredSandwiches(_ searchText: String,_ sauceAmount: SauceAmount? = nil,_ isSearchBarEmpty: Bool) -> [[SandwichModel]] {
         var filteredSandwiches:[SandwichModel]  = []
 
         let p0 = NSPredicate(format: "tosauceAmount.sauceAmountString == %@", "\(sauceAmount!.rawValue)")
@@ -73,7 +84,10 @@ class CoreDataManager {
             print("Unable to Fetch filtered Sandwiches, (\(error))")
         }
 
-        return filteredSandwiches
+        let visibleSandwiches = filteredSandwiches.filter {$0.isVisible}
+        let hiddenSandwiches = filteredSandwiches.filter {$0.isVisible == false}
+
+         return [visibleSandwiches,hiddenSandwiches]
     }
 
 
