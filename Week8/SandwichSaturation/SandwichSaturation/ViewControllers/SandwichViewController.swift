@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 protocol SandwichSaveable {
     func saveSandwich(_: SandwichData)
@@ -17,44 +16,22 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
     let searchController = UISearchController(searchResultsController: nil)
     var sandwiches = [SandwichModel]()
     var filteredSandwiches = [SandwichModel]()
-    private let appDelegate =  UIApplication.shared.delegate as! AppDelegate
-    private let persistentContiner:NSPersistentContainer! = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    private let seedingManager = SeedingManager()
+    private let coreDataManager = CoreDataManager()
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard persistentContiner != nil else { fatalError("This view needs a persistent container.") }
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(presentAddView(_:)))
         navigationItem.rightBarButtonItem = addButton
-
-//        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(deleteItems(_:)))
-//        navigationItem.leftBarButtonItem = editButton
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-
-        // Setup Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Filter Sandwiches"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        searchController.searchBar.scopeButtonTitles = SauceAmount.allCases.map { $0.rawValue }
-        searchController.searchBar.delegate = self
-        searchController.searchBar.selectedScopeButtonIndex = UserDefaults.standard.integer(forKey: "selectedindex")
-        self.seed()
+        setupSearchController()
+        seedingManager.seed()
         self.loadSandwiches()
-    }
-
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        tableView.setEditing(tableView.isEditing, animated: true)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,31 +41,11 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
 
     func loadSandwiches() {
         sandwiches.removeAll()
-        do {
-            // Fetch current Sauce Amount's
-            let sandwichArray = try SandwichModel.getSandwichs(in: persistentContiner.viewContext)
-            sandwiches.append(contentsOf: sandwichArray)
-        } catch {
-            print("Unable to Fetch strored sandwiches, (\(error))")
-        }
+        sandwiches = coreDataManager.getSandwich()
     }
 
     func saveSandwich(_ sandwich: SandwichData) {
-        let newSandwich = SandwichModel(context: persistentContiner.viewContext)
-        // Configure sandwich
-        newSandwich.name = sandwich.name
-        newSandwich.imageName = sandwich.imageName
-
-        do {
-            // Fetch current Sauce Amount's
-            let currentSauceAmounts = try SauceAmountModel.findAll(in: persistentContiner.viewContext)
-            newSandwich.tosauceAmount = currentSauceAmounts.first {
-                $0.sauceAmountString == sandwich.sauceAmount.rawValue
-            }
-        } catch {
-            print("Unable to Fetch current Sauce Amounts, (\(error))")
-        }
-        appDelegate.saveContext()
+        coreDataManager.saveSandwich(sandwich)
         loadSandwiches()
         tableView.reloadData()
     }
@@ -97,42 +54,29 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
     func presentAddView(_ sender: Any) {
         performSegue(withIdentifier: "AddSandwichSegue", sender: self)
     }
-    @objc
-    func deleteItems(_ sender: Any) {
-//        if let selectedRows = tableView.indexPathsForSelectedRows {
-//            let items = selectedRows.map() {
-//                mytodos.todos[$0.row]
-//            }
-//            mytodos.remove(items: items)
-//            tableView.reloadData()
-//        }
-    }
+
 
     // MARK: - Search Controller
+
+    fileprivate func setupSearchController() {
+        // Setup Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Filter Sandwiches"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.scopeButtonTitles = SauceAmount.allCases.map { $0.rawValue }
+        searchController.searchBar.delegate = self
+        searchController.searchBar.selectedScopeButtonIndex = UserDefaults.standard.integer(forKey: "selectedindex")
+    }
+
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
 
     func filterContentForSearchText(_ searchText: String, sauceAmount: SauceAmount? = nil) {
-        let p0 = NSPredicate(format: "tosauceAmount.sauceAmountString == %@", "\(sauceAmount!.rawValue)")
-        let p1 = NSPredicate(format: "name CONTAINS[cd] %@", "\(searchText)")
-
-        var tablePredicate: NSCompoundPredicate {
-            if  sauceAmount == .any || isSearchBarEmpty {
-                return NSCompoundPredicate(orPredicateWithSubpredicates: [p0,p1])
-            } else {
-                return NSCompoundPredicate(andPredicateWithSubpredicates: [p0,p1])
-            }
-        }
-
         filteredSandwiches.removeAll()
-        do {
-            // Fetch current Sauce Amount's
-            let sandwichArray = try SandwichModel.getSandwichs(in: persistentContiner.viewContext, compoundPredicate: tablePredicate)
-            filteredSandwiches.append(contentsOf: sandwichArray)
-        } catch {
-            print("Unable to Fetch filtered Sandwiches, (\(error))")
-        }
+        filteredSandwiches = coreDataManager.getFilteredSandwiches(searchText,sauceAmount, isSearchBarEmpty)
         tableView.reloadData()
     }
 
@@ -142,8 +86,6 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
         return searchController.isActive &&
             (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
-
-
 
 }
 
@@ -187,15 +129,16 @@ extension SandwichViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let selectedSandwiche = isFiltering ? filteredSandwiches[indexPath.row] : sandwiches[indexPath.row]
-            persistentContiner.viewContext.delete(selectedSandwiche)
+//            persistentContiner.viewContext.delete(selectedSandwiche)
+            coreDataManager.deleteSandwich(selectedSandwiche)
             if isFiltering {
                 filteredSandwiches.remove(at: indexPath.row)
             }else {
                 sandwiches.remove(at: indexPath.row)
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
-
-            appDelegate.saveContext()
+//            appDelegate.saveContext()
+            coreDataManager.save()
             tableView.reloadData()
         }
     }
@@ -225,78 +168,38 @@ extension SandwichViewController: UISearchBarDelegate {
     }
 }
 
-
-// MARK: - Seeding the CoreData Model
-extension SandwichViewController {
-    func seed() {
-        guard !UserDefaults.didSeedPersistentStore else { return }
-        var sauceAmountsBuffer: [SauceAmountModel] = []
-        for amount in sauceAmounts {
-            let sauceAmount = SauceAmountModel(context: persistentContiner.viewContext)
-            sauceAmount.sauceAmountString = amount
-            sauceAmountsBuffer.append(sauceAmount)
-        }
-        for data in sandwichArray {
-            // Initialize sandwich
-            let sandwich = SandwichModel(context: persistentContiner.viewContext)
-
-            // Configure sandwich
-            sandwich.name = data.name
-            sandwich.imageName = data.imageName
-            sandwich.tosauceAmount = sauceAmountsBuffer.first {
-                return $0.sauceAmountString == data.sauceAmount.rawValue
-            }
-        }
-        appDelegate.saveContext()
-        // Update User Defaults
-        UserDefaults.setDidSeedPersistentStore(true)
-    }
-
-    // Mark: - Seed Data
-    //Enum Data
-    private var sauceAmounts: [String] {
-        return SauceAmount.allCases.map { $0.rawValue }
-    }
-    //JSON Data
-    private var sandwichArray:[SandwichData] { Bundle.main.decode([SandwichData].self, from: "sandwiches.json")}
-}
-
-// MARK: - Fetched Results Controller setup
-extension SandwichViewController {
-
-    // MARK: -
-
-    //    private lazy var fetchedResultsController:NSFetchedResultsController<SandwichModel>  = {
-    //        // Create Fetch Request
-    //        let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
-    //
-    //        // Configure Fetch Request
-    //        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
-    //
-    //        // Create Fetched Results Controller
-    //        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContiner.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-    //
-    //        // Configure Fetched Results Controller
-    //        fetchedResultsController.delegate = self
-    //
-    //        return fetchedResultsController
-    //    }()
-
-    // MARK: -
-
-    //    private var hasSandwichs: Bool {
-    //        guard let fetchedObjects = fetchedResultsController.fetchedObjects else { return false }
-    //        return fetchedObjects.count > 0
-    //    }
-
-
-    //    func fetchSandwiches() {
-    //        do {
-    //            try fetchedResultsController.performFetch()
-    //        } catch {
-    //            print("Unable to Persorm Fetch Reests")
-    //            print("\(error),\(error.localizedDescription)")
-    //        }
-    //    }
-
-}
+//// MARK: - Fetched Results Controller setup
+//extension SandwichViewController: NSFetchedResultsControllerDelegate {
+//
+//    private var fetchedResultsController:NSFetchedResultsController<SandwichModel> {
+//            // Create Fetch Request
+//            let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
+//
+//            // Configure Fetch Request
+//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
+//
+//            // Create Fetched Results Controller
+//            let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContiner.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+//
+//            // Configure Fetched Results Controller
+//            fetchedResultsController.delegate = self
+//
+//            return fetchedResultsController
+//    }
+//
+//        private var hasSandwichs: Bool {
+//            guard let fetchedObjects = fetchedResultsController.fetchedObjects else { return false }
+//            return fetchedObjects.count > 0
+//        }
+//
+//
+//        func fetchSandwiches() {
+//            do {
+//                try fetchedResultsController.performFetch()
+//            } catch {
+//                print("Unable to Persorm Fetch Reests")
+//                print("\(error),\(error.localizedDescription)")
+//            }
+//        }
+//
+//}
