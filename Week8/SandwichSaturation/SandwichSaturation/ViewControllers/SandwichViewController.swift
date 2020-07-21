@@ -40,8 +40,12 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
     }
 
     func loadSandwiches() {
+        if isFiltering {
+            updateSearchResults(for: searchController)
+        }else {
         sandwiches.removeAll()
         sandwiches = coreDataManager.getSandwich()
+        }
     }
 
     func saveSandwich(_ sandwich: SandwichData) {
@@ -91,7 +95,7 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
 
 // MARK: - TableView Setup
 extension SandwichViewController {
-    var headerTitles:[String] { ["Visible", "Hidden"] }
+    var headerTitles:[String] { ["Visible Sandwiches", "Hidden Sandwiches"] }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return isFiltering ? filteredSandwiches.count : sandwiches.count
@@ -168,7 +172,7 @@ extension SandwichViewController {
 //            tableView.reloadData()
             //            tableView.reloadSections([0,1], with: .automatic)
             DispatchQueue.main.async {
-                self?.tableView.reloadSections([0,1], with: .bottom)
+                self?.tableView.reloadSections([0,1], with: .top)
 //                tableView.reloadData()
             }
         }
