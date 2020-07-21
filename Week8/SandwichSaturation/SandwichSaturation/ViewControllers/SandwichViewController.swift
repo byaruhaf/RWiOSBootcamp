@@ -156,11 +156,11 @@ extension SandwichViewController {
             self?.performSegue(withIdentifier: Segue.DetailSandwich, sender: nil)
         }
         favAction.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        moreAction.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+        moreAction.backgroundColor = #colorLiteral(red: 0.9369273186, green: 1, blue: 0.9328868985, alpha: 1)
         favAction.image = UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemPink, renderingMode: .alwaysOriginal)
-        moreAction.image = UIImage(systemName: "hand.point.right.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemPink, renderingMode: .alwaysOriginal)
+        moreAction.image = UIImage(systemName: "ellipsis", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
         let config = UISwipeActionsConfiguration(actions: [moreAction,favAction])
-        config.performsFirstActionWithFullSwipe = false
+//        config.performsFirstActionWithFullSwipe = false
         return config
     }
 
@@ -190,9 +190,9 @@ extension SandwichViewController {
             }
         }
         delete.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        hidden.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-        hidden.image = UIImage(systemName: "eye", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemPink, renderingMode: .alwaysOriginal)
-        delete.image = UIImage(systemName: "trash.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemPink, renderingMode: .alwaysOriginal)
+        hidden.backgroundColor = #colorLiteral(red: 0.9375473857, green: 0.9991515279, blue: 0.9319750667, alpha: 1)
+        hidden.image = UIImage(systemName: "eye", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemIndigo, renderingMode: .alwaysOriginal)
+        delete.image = UIImage(systemName: "trash.fill", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
         let config = UISwipeActionsConfiguration(actions: [delete,hidden])
          config.performsFirstActionWithFullSwipe = false
         return config
