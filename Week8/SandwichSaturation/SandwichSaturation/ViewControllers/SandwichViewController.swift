@@ -92,27 +92,14 @@ class SandwichViewController: UITableViewController, SandwichSaveable {
 // MARK: - TableView Setup
 extension SandwichViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        //        guard let sections = fetchedResultsController.sections else { return 0}
-        //        return sections.count
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isFiltering ? filteredSandwiches.count : sandwiches.count
-        //        guard let section = fetchedResultsController.sections?[section] else { return 0}
-        //        return section.numberOfObjects
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        // Dequeue Reusable Cell
-        //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell else {
-        //            fatalError("Unexpected Index Path")
-        //        }
-
-        //        let sandwich = fetchedResultsController.object(at: indexPath)
-
-
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell
             else { return UITableViewCell() }
@@ -129,7 +116,6 @@ extension SandwichViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let selectedSandwiche = isFiltering ? filteredSandwiches[indexPath.row] : sandwiches[indexPath.row]
-//            persistentContiner.viewContext.delete(selectedSandwiche)
             coreDataManager.deleteSandwich(selectedSandwiche)
             if isFiltering {
                 filteredSandwiches.remove(at: indexPath.row)
@@ -137,7 +123,6 @@ extension SandwichViewController {
                 sandwiches.remove(at: indexPath.row)
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
-//            appDelegate.saveContext()
             coreDataManager.save()
             tableView.reloadData()
         }
@@ -152,7 +137,6 @@ extension SandwichViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         let sauceAmount = SauceAmount(rawValue:
             searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
-
         filterContentForSearchText(searchBar.text!, sauceAmount: sauceAmount)
     }
 }
@@ -167,39 +151,3 @@ extension SandwichViewController: UISearchBarDelegate {
         filterContentForSearchText(searchBar.text!, sauceAmount: sauceAmount)
     }
 }
-
-//// MARK: - Fetched Results Controller setup
-//extension SandwichViewController: NSFetchedResultsControllerDelegate {
-//
-//    private var fetchedResultsController:NSFetchedResultsController<SandwichModel> {
-//            // Create Fetch Request
-//            let fetchRequest: NSFetchRequest<SandwichModel> = SandwichModel.fetchRequest()
-//
-//            // Configure Fetch Request
-//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SandwichModel.name), ascending: false)]
-//
-//            // Create Fetched Results Controller
-//            let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.persistentContiner.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-//
-//            // Configure Fetched Results Controller
-//            fetchedResultsController.delegate = self
-//
-//            return fetchedResultsController
-//    }
-//
-//        private var hasSandwichs: Bool {
-//            guard let fetchedObjects = fetchedResultsController.fetchedObjects else { return false }
-//            return fetchedObjects.count > 0
-//        }
-//
-//
-//        func fetchSandwiches() {
-//            do {
-//                try fetchedResultsController.performFetch()
-//            } catch {
-//                print("Unable to Persorm Fetch Reests")
-//                print("\(error),\(error.localizedDescription)")
-//            }
-//        }
-//
-//}
