@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F89748A24C815D80017EF4B /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89748924C815D80017EF4B /* JSONDownloader.swift */; };
+		5F89748C24C8161E0017EF4B /* JServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89748B24C8161E0017EF4B /* JServiceError.swift */; };
+		5F89748E24C816990017EF4B /* JServiceAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89748D24C816990017EF4B /* JServiceAPIClient.swift */; };
 		C3DF5B7724C2549400F6D3EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7624C2549400F6D3EC /* AppDelegate.swift */; };
 		C3DF5B7924C2549400F6D3EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7824C2549400F6D3EC /* SceneDelegate.swift */; };
 		C3DF5B7B24C2549400F6D3EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7A24C2549400F6D3EC /* ViewController.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F89748924C815D80017EF4B /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
+		5F89748B24C8161E0017EF4B /* JServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JServiceError.swift; sourceTree = "<group>"; };
+		5F89748D24C816990017EF4B /* JServiceAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JServiceAPIClient.swift; sourceTree = "<group>"; };
 		C3DF5B7324C2549400F6D3EC /* jQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DF5B7624C2549400F6D3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DF5B7824C2549400F6D3EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 				C3DF5B7A24C2549400F6D3EC /* ViewController.swift */,
 				C3DF5BAD24C25E1A00F6D3EC /* NetworkingHandler.swift */,
 				C3FBE53524C2877C00D11A30 /* SoundManager.swift */,
+				5F89748924C815D80017EF4B /* JSONDownloader.swift */,
+				5F89748B24C8161E0017EF4B /* JServiceError.swift */,
+				5F89748D24C816990017EF4B /* JServiceAPIClient.swift */,
 				C3DF5BAF24C260A600F6D3EC /* Clue.swift */,
 				C3FBE53724C4DEA300D11A30 /* ImageCache.swift */,
 				C3DF5B7C24C2549400F6D3EC /* Main.storyboard */,
@@ -265,11 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F89748A24C815D80017EF4B /* JSONDownloader.swift in Sources */,
 				C3DF5BAE24C25E1A00F6D3EC /* NetworkingHandler.swift in Sources */,
 				C3DF5B7B24C2549400F6D3EC /* ViewController.swift in Sources */,
 				C3DF5B7724C2549400F6D3EC /* AppDelegate.swift in Sources */,
+				5F89748E24C816990017EF4B /* JServiceAPIClient.swift in Sources */,
 				C3DF5B7924C2549400F6D3EC /* SceneDelegate.swift in Sources */,
 				C3DF5BB024C260A600F6D3EC /* Clue.swift in Sources */,
+				5F89748C24C8161E0017EF4B /* JServiceError.swift in Sources */,
 				C3FBE53824C4DEA300D11A30 /* ImageCache.swift in Sources */,
 				C3FBE53624C2877C00D11A30 /* SoundManager.swift in Sources */,
 			);
