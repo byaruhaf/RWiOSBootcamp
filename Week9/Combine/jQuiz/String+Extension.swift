@@ -9,9 +9,14 @@
 import Foundation
 
 extension String {
-    func firstCharacterUpperCase() -> String? {
-        guard !isEmpty else { return nil }
+    var firstCharacterUpperCase: String {
         let lowerCasedString = self.lowercased()
         return lowerCasedString.replacingCharacters(in: lowerCasedString.startIndex...lowerCasedString.startIndex, with: String(lowerCasedString[lowerCasedString.startIndex]).uppercased())
+    }
+}
+
+extension String{
+    var htmlStripped : String{
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 }

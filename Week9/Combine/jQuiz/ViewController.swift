@@ -8,7 +8,9 @@
 
 import UIKit
 
-
+struct CellType {
+    static let answerCell = "AnswerCell"
+}
 
 class ViewController: UIViewController {
 
@@ -26,9 +28,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        let Answernib = UINib(nibName: "AnswerTableViewCell", bundle: nil)
+        tableView.register(Answernib, forCellReuseIdentifier: CellType.answerCell)
         
         self.scoreLabel.text = "\(self.points)"
 
@@ -57,6 +62,8 @@ class ViewController: UIViewController {
         categoryLabel.text = clueViewModel.qestionCategory
         clueLabel.text = clueViewModel.qestion
         self.answerArray = clueViewModel.answerArray
+        tableView.isUserInteractionEnabled = true
+        tableView.reloadData()
     }
 
 
@@ -80,12 +87,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = answerArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellType.answerCell) as! AnswerTableViewCell
+        cell.qLable.text = answerArray[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        tableView.isUserInteractionEnabled = false
     }
+
 }
+
+
+

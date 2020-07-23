@@ -34,8 +34,10 @@ class ClueViewModel {
                 let selectedClue = clues.randomElement()
                  self.qestion = selectedClue?.question
                 self.qestionCategory = selectedClue?.category?.title
-                 self.correctanswer = selectedClue?.answer
-                 self.answerArray = clues.compactMap {$0.answer}
+                 let uncleanCorrectanswer = selectedClue?.answer
+                self.correctanswer = uncleanCorrectanswer?.htmlStripped
+                let uncleanAnswerArray = clues.compactMap {$0.answer}
+                self.answerArray = uncleanAnswerArray.map {$0.htmlStripped}
                 completion()
         }
     }
