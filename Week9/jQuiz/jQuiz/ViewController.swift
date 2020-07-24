@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 struct CellType {
     static let answerCell = "AnswerCell"
@@ -27,9 +28,21 @@ class ViewController: UIViewController {
     
     private let clueViewModel = ClueViewModel()
     private var hasUserSelectedAnswer = false
+     var operation: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let url = URL(string: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")!
+
+        self.operation = URLSession.shared
+            .downloadTaskPublisher(for: url)
+            .map { UIImage(contentsOfFile: $0.url.path)! }
+            .replaceError(with: UIImage(named: "fallback"))
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.image, on: self.logoImageView)
+
+
         let c1 = UIColor(hue:0.704, saturation:0.884, brightness:0.719, alpha:1.000)
         let c2 = UIColor(hue:0.762, saturation:0.667, brightness:0.800, alpha:1.000)
         self.view.setGradientBackground(top: c2, bottom: c1)
@@ -48,11 +61,11 @@ class ViewController: UIViewController {
         self.scoreLabel.text = "\(self.points)"
 
         if SoundManager.shared.isSoundEnabled == false {
-            soundButton.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
+            soundButton.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
         } else {
-            soundButton.setImage(UIImage(systemName: "speaker"), for: .normal)
+            soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
         }
-        SoundManager.shared.playSound()
+//        SoundManager.shared.playSound()
         clueViewModel.refreshClues {
             self.checkUP()
         }
@@ -123,8 +136,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.qLable?.backgroundColor = UIColor.clear
         cell.backView.backgroundColor = gameCalculator(selecteAnswer: cell.qLable.text!)
         scoreLabel.text = points.description
-//                tableView.isUserInteractionEnabled = false
-            hasUserSelectedAnswer = true
+        hasUserSelectedAnswer = true
         }else {
             nextButton.pulsate()
             nextButton.shake()
@@ -135,10 +147,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func gameCalculator(selecteAnswer:String) -> UIColor {
         if selecteAnswer == clueViewModel.correctanswer {
             points += 100
-            return UIColor.systemBlue
+            return UIColor.systemGreen
         }else {
             points -= 20
-            return UIColor.red
+            return UIColor.systemRed
         }
     }
 

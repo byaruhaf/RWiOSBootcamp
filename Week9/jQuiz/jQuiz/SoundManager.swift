@@ -51,7 +51,7 @@ class SoundManager: NSObject {
     }
 
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "bensound-creativeminds1", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "bensound-creativeminds", withExtension: "mp3") else { return }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
