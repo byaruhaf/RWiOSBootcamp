@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     var points: Int = 0
     
     private let clueViewModel = ClueViewModel()
+    private var hasUserSelectedAnswer = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,15 +74,15 @@ class ViewController: UIViewController {
         clueLabel.pushTransition(1)
         clueLabel.text = clueViewModel.qestion
         self.answerArray = clueViewModel.answerArray
-        //        tableView.isUserInteractionEnabled = true
+//                tableView.isUserInteractionEnabled = true
         //        tableView.reloadData()
 //        tableView.reloadData()
+        hasUserSelectedAnswer = false
         UIView.transition(with: tableView,
                           duration: 1,
                           options: .transitionFlipFromBottom,
 //                          animations: { self.tableView.reloadSections([0], with: .bottom) })
             animations: { self.tableView.reloadData()})
-
     }
 
 
@@ -110,11 +111,35 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellType.answerCell) as! AnswerTableViewCell
         cell.qLable.text = answerArray[indexPath.row]
         cell.selectedBackgroundView = bgColorView
+        cell.backView.backgroundColor = UIColor.white
+        cell.qLable?.textColor = #colorLiteral(red: 0.2865216732, green: 0.2005397379, blue: 0.544816196, alpha: 1)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        tableView.isUserInteractionEnabled = false
+        if !hasUserSelectedAnswer{
+        guard let cell = tableView.cellForRow(at: indexPath)  as? AnswerTableViewCell else { return }
+        cell.qLable?.textColor = UIColor.white
+        cell.qLable?.backgroundColor = UIColor.clear
+        cell.backView.backgroundColor = gameCalculator(selecteAnswer: cell.qLable.text!)
+        scoreLabel.text = points.description
+//                tableView.isUserInteractionEnabled = false
+            hasUserSelectedAnswer = true
+        }else {
+            nextButton.pulsate()
+            nextButton.shake()
+            nextButton.flash()
+        }
+    }
+
+    func gameCalculator(selecteAnswer:String) -> UIColor {
+        if selecteAnswer == clueViewModel.correctanswer {
+            points += 100
+            return UIColor.systemBlue
+        }else {
+            points -= 20
+            return UIColor.red
+        }
     }
 
 }

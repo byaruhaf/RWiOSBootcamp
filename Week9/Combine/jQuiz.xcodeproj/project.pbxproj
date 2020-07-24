@@ -10,22 +10,21 @@
 		5F410E9A24C949E4002FDD7F /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 5F410E9924C949E4002FDD7F /* TimelaneCombine */; };
 		5F410E9C24C9BB40002FDD7F /* ClueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F410E9B24C9BB40002FDD7F /* ClueViewModel.swift */; };
 		5F410E9E24C9CF27002FDD7F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F410E9D24C9CF27002FDD7F /* String+Extension.swift */; };
-		5F90CC9C24CAEC02002CC950 /* bensound-creativeminds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F90CC9A24CAEC02002CC950 /* bensound-creativeminds.mp3 */; };
-		5F90CC9D24CAEC02002CC950 /* bensound-ukulele.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F90CC9B24CAEC02002CC950 /* bensound-ukulele.mp3 */; };
+		5F90CC9F24CAFD3D002CC950 /* bensound-creativeminds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F90CC9E24CAFD3D002CC950 /* bensound-creativeminds.mp3 */; };
+		5F90CCA124CAFD5D002CC950 /* bensound-ukulele.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F90CCA024CAFD5D002CC950 /* bensound-ukulele.mp3 */; };
+		5F90CCA324CB29B7002CC950 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F90CCA224CB29B7002CC950 /* CustomView.swift */; };
 		5FFDAC5124CA3A01001D1081 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC4F24CA3A01001D1081 /* AnswerTableViewCell.swift */; };
 		5FFDAC5224CA3A01001D1081 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5024CA3A01001D1081 /* AnswerTableViewCell.xib */; };
 		5FFDAC5824CA5C5C001D1081 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5424CA5C5B001D1081 /* UIView+Extension.swift */; };
 		5FFDAC5924CA5C5C001D1081 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5524CA5C5B001D1081 /* UIButton+Extension.swift */; };
 		5FFDAC5A24CA5C5C001D1081 /* UIProgressBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5624CA5C5B001D1081 /* UIProgressBar+Extension.swift */; };
 		5FFDAC5B24CA5C5C001D1081 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5724CA5C5B001D1081 /* UITableView+Extension.swift */; };
-		5FFDAC5D24CA64A4001D1081 /* 1600x900-Q90_8484c3386d4378d7c826e3f3690b481b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5C24CA64A4001D1081 /* 1600x900-Q90_8484c3386d4378d7c826e3f3690b481b.jpg */; };
 		C3DF5B7724C2549400F6D3EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7624C2549400F6D3EC /* AppDelegate.swift */; };
 		C3DF5B7924C2549400F6D3EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7824C2549400F6D3EC /* SceneDelegate.swift */; };
 		C3DF5B7B24C2549400F6D3EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7A24C2549400F6D3EC /* ViewController.swift */; };
 		C3DF5B7E24C2549400F6D3EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DF5B7C24C2549400F6D3EC /* Main.storyboard */; };
 		C3DF5B8324C2549A00F6D3EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DF5B8224C2549A00F6D3EC /* Assets.xcassets */; };
 		C3DF5B8624C2549A00F6D3EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DF5B8424C2549A00F6D3EC /* LaunchScreen.storyboard */; };
-		C3DF5BAB24C256CF00F6D3EC /* Jeopardy-theme-song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3DF5BAA24C256CF00F6D3EC /* Jeopardy-theme-song.mp3 */; };
 		C3DF5BAE24C25E1A00F6D3EC /* NetworkingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5BAD24C25E1A00F6D3EC /* NetworkingHandler.swift */; };
 		C3DF5BB024C260A600F6D3EC /* Clue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5BAF24C260A600F6D3EC /* Clue.swift */; };
 		C3FBE53624C2877C00D11A30 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FBE53524C2877C00D11A30 /* SoundManager.swift */; };
@@ -52,15 +51,15 @@
 /* Begin PBXFileReference section */
 		5F410E9B24C9BB40002FDD7F /* ClueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueViewModel.swift; sourceTree = "<group>"; };
 		5F410E9D24C9CF27002FDD7F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		5F90CC9A24CAEC02002CC950 /* bensound-creativeminds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-creativeminds.mp3"; sourceTree = "<group>"; };
-		5F90CC9B24CAEC02002CC950 /* bensound-ukulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-ukulele.mp3"; sourceTree = "<group>"; };
+		5F90CC9E24CAFD3D002CC950 /* bensound-creativeminds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-creativeminds.mp3"; path = "Assets.xcassets/bensound-creativeminds.dataset/bensound-creativeminds.mp3"; sourceTree = "<group>"; };
+		5F90CCA024CAFD5D002CC950 /* bensound-ukulele.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-ukulele.mp3"; path = "Assets.xcassets/bensound-ukulele.dataset/bensound-ukulele.mp3"; sourceTree = "<group>"; };
+		5F90CCA224CB29B7002CC950 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5FFDAC4F24CA3A01001D1081 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		5FFDAC5024CA3A01001D1081 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		5FFDAC5424CA5C5B001D1081 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5FFDAC5524CA5C5B001D1081 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5FFDAC5624CA5C5B001D1081 /* UIProgressBar+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIProgressBar+Extension.swift"; sourceTree = "<group>"; };
 		5FFDAC5724CA5C5B001D1081 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		5FFDAC5C24CA64A4001D1081 /* 1600x900-Q90_8484c3386d4378d7c826e3f3690b481b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1600x900-Q90_8484c3386d4378d7c826e3f3690b481b.jpg"; sourceTree = "<group>"; };
 		C3DF5B7324C2549400F6D3EC /* jQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DF5B7624C2549400F6D3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DF5B7824C2549400F6D3EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +70,6 @@
 		C3DF5B8724C2549A00F6D3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3DF5B8C24C2549A00F6D3EC /* jQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DF5B9724C2549A00F6D3EC /* jQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3DF5BAA24C256CF00F6D3EC /* Jeopardy-theme-song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jeopardy-theme-song.mp3"; sourceTree = "<group>"; };
 		C3DF5BAD24C25E1A00F6D3EC /* NetworkingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandler.swift; sourceTree = "<group>"; };
 		C3DF5BAF24C260A600F6D3EC /* Clue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clue.swift; sourceTree = "<group>"; };
 		C3FBE53524C2877C00D11A30 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -108,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				5F410E9D24C9CF27002FDD7F /* String+Extension.swift */,
+				5F90CCA224CB29B7002CC950 /* CustomView.swift */,
 				5FFDAC5524CA5C5B001D1081 /* UIButton+Extension.swift */,
 				5FFDAC5624CA5C5B001D1081 /* UIProgressBar+Extension.swift */,
 				5FFDAC5724CA5C5B001D1081 /* UITableView+Extension.swift */,
@@ -167,11 +166,9 @@
 		C3DF5BAC24C256D600F6D3EC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				5F90CC9A24CAEC02002CC950 /* bensound-creativeminds.mp3 */,
-				5F90CC9B24CAEC02002CC950 /* bensound-ukulele.mp3 */,
+				5F90CCA024CAFD5D002CC950 /* bensound-ukulele.mp3 */,
+				5F90CC9E24CAFD3D002CC950 /* bensound-creativeminds.mp3 */,
 				C3DF5B8224C2549A00F6D3EC /* Assets.xcassets */,
-				5FFDAC5C24CA64A4001D1081 /* 1600x900-Q90_8484c3386d4378d7c826e3f3690b481b.jpg */,
-				C3DF5BAA24C256CF00F6D3EC /* Jeopardy-theme-song.mp3 */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -286,14 +283,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F90CC9C24CAEC02002CC950 /* bensound-creativeminds.mp3 in Resources */,
-				5FFDAC5D24CA64A4001D1081 /* 1600x900-Q90_8484c3386d4378d7c826e3f3690b481b.jpg in Resources */,
 				C3DF5B8624C2549A00F6D3EC /* LaunchScreen.storyboard in Resources */,
 				C3DF5B8324C2549A00F6D3EC /* Assets.xcassets in Resources */,
-				5F90CC9D24CAEC02002CC950 /* bensound-ukulele.mp3 in Resources */,
+				5F90CCA124CAFD5D002CC950 /* bensound-ukulele.mp3 in Resources */,
+				5F90CC9F24CAFD3D002CC950 /* bensound-creativeminds.mp3 in Resources */,
 				5FFDAC5224CA3A01001D1081 /* AnswerTableViewCell.xib in Resources */,
 				C3DF5B7E24C2549400F6D3EC /* Main.storyboard in Resources */,
-				C3DF5BAB24C256CF00F6D3EC /* Jeopardy-theme-song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F90CCA324CB29B7002CC950 /* CustomView.swift in Sources */,
 				5FFDAC5824CA5C5C001D1081 /* UIView+Extension.swift in Sources */,
 				C3DF5BAE24C25E1A00F6D3EC /* NetworkingHandler.swift in Sources */,
 				5F410E9E24C9CF27002FDD7F /* String+Extension.swift in Sources */,
