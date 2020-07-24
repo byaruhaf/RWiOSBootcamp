@@ -68,15 +68,20 @@ class ViewController: UIViewController {
         print(clueViewModel.qestion!)
         print(clueViewModel.correctanswer!)
         print(clueViewModel.answerArray)
+        categoryLabel.pushTransition(1)
         categoryLabel.text = clueViewModel.qestionCategory
+        clueLabel.pushTransition(1)
         clueLabel.text = clueViewModel.qestion
         self.answerArray = clueViewModel.answerArray
-//        tableView.isUserInteractionEnabled = true
+        //        tableView.isUserInteractionEnabled = true
+        //        tableView.reloadData()
 //        tableView.reloadData()
         UIView.transition(with: tableView,
-                          duration: 0.35,
-                          options: .transitionCrossDissolve,
-                          animations: { self.tableView.reloadData() }) // left out the unnecessary syntax in the completion block and the optional completion parameter
+                          duration: 1,
+                          options: .transitionFlipFromBottom,
+//                          animations: { self.tableView.reloadSections([0], with: .bottom) })
+            animations: { self.tableView.reloadData()})
+
     }
 
 
@@ -109,7 +114,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.isUserInteractionEnabled = false
+        //        tableView.isUserInteractionEnabled = false
     }
 
 }

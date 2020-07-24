@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au0-8X-o1t">
-                                <rect key="frame" x="304" y="807" width="79.666666666666686" height="38.666666666666629"/>
+                                <rect key="frame" x="309" y="807" width="79.666666666666686" height="38.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38.5" id="TOT-hi-jqz"/>
                                 </constraints>
@@ -57,15 +57,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMY-cr-kf3">
                                 <rect key="frame" x="25" y="184" width="364" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.5079745054" green="0.98789519069999998" blue="0.99608629940000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaE-8C-Db4">
-                                <rect key="frame" x="140.66666666666666" y="782" width="132.99999999999997" height="50"/>
+                                <rect key="frame" x="135.66666666666666" y="782" width="142.99999999999997" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
                                 <inset key="contentEdgeInsets" minX="35" minY="0.0" maxX="35" maxY="0.0"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" title="NEXT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -80,12 +80,13 @@
                             <constraint firstItem="pK8-df-Hfb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CUJ-Ns-6sS"/>
                             <constraint firstItem="IW7-gs-GWY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="CVj-xi-XsO"/>
                             <constraint firstItem="uFJ-cq-Nqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CvX-Nv-MGV"/>
+                            <constraint firstItem="au0-8X-o1t" firstAttribute="leading" secondItem="GaE-8C-Db4" secondAttribute="trailing" constant="30.333333333333371" id="DgM-BN-yPu"/>
                             <constraint firstItem="RMY-cr-kf3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Dul-u8-usS"/>
                             <constraint firstItem="IW7-gs-GWY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F9l-7f-Nwt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pK8-df-Hfb" secondAttribute="trailing" id="GNU-k5-D7d"/>
                             <constraint firstItem="RMY-cr-kf3" firstAttribute="top" secondItem="pK8-df-Hfb" secondAttribute="bottom" constant="15" id="H1d-aC-b0H"/>
                             <constraint firstItem="pK8-df-Hfb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IFp-TJ-B7M"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="au0-8X-o1t" secondAttribute="trailing" constant="30.5" id="SB0-34-sf5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="au0-8X-o1t" secondAttribute="trailing" id="SB0-34-sf5"/>
                             <constraint firstItem="uFJ-cq-Nqb" firstAttribute="top" secondItem="pK8-df-Hfb" secondAttribute="bottom" constant="193" id="Uov-ch-aFs"/>
                             <constraint firstItem="uFJ-cq-Nqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="VuX-i6-0cI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GaE-8C-Db4" secondAttribute="bottom" constant="30" id="XPB-qs-vfx"/>
