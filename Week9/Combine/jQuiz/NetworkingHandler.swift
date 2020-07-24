@@ -53,7 +53,6 @@ class Networking {
 
     func getAllCluesInCategory(for id: Int,  cluesCount: Int) -> AnyPublisher<Clues, Error> {
         let url = URL(string: "http://www.jservice.io/api/clues?category=\(id)&offset=\(cluesCount - 4)")!
-//        let url = URL(string: "http://www.jservice.io/api/clues?category=13607&offset=1")!
         print(url)
         return URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }

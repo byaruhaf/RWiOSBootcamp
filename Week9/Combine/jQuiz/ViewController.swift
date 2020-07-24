@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
 
     var answerArray: [String] = []
     var points: Int = 0
@@ -28,6 +29,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let c1 = UIColor(hue:0.704, saturation:0.884, brightness:0.719, alpha:1.000)
+        let c2 = UIColor(hue:0.762, saturation:0.667, brightness:0.800, alpha:1.000)
+        self.view.setGradientBackground(top: c2, bottom: c1)
+        let b1 = UIColor(hue:0.101, saturation:0.900, brightness:1.000, alpha:1.000)
+        let b2 = UIColor(hue:0.085, saturation:1.000, brightness:1.000, alpha:1.000)
+        nextButton.layer.cornerRadius = nextButton.frame.size.height/2
+        nextButton.layer.masksToBounds = true
+        nextButton.setGradientBackground(top: b2, bottom: b1)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -62,8 +71,12 @@ class ViewController: UIViewController {
         categoryLabel.text = clueViewModel.qestionCategory
         clueLabel.text = clueViewModel.qestion
         self.answerArray = clueViewModel.answerArray
-        tableView.isUserInteractionEnabled = true
-        tableView.reloadData()
+//        tableView.isUserInteractionEnabled = true
+//        tableView.reloadData()
+        UIView.transition(with: tableView,
+                          duration: 0.35,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() }) // left out the unnecessary syntax in the completion block and the optional completion parameter
     }
 
 
@@ -87,13 +100,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = .clear
         let cell = tableView.dequeueReusableCell(withIdentifier: CellType.answerCell) as! AnswerTableViewCell
         cell.qLable.text = answerArray[indexPath.row]
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.isUserInteractionEnabled = false
+//        tableView.isUserInteractionEnabled = false
     }
 
 }
