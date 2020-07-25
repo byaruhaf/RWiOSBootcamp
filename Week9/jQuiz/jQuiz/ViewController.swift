@@ -23,22 +23,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
 
-    var answerArray: [String] = []
     var points: Int = 0
     
     private let clueViewModel = ClueViewModel()
     private var hasUserSelectedAnswer = false
-     
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-//        let url = URL(string:)!
-        logoImageView.load(imageURL: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg", key: "logoImage")
-
-
-
+        logoImageView.load(imageURL:K.URL.imageURL , key: K.Keys.iamgeKey )
         let c1 = UIColor(hue:0.704, saturation:0.884, brightness:0.719, alpha:1.000)
         let c2 = UIColor(hue:0.762, saturation:0.667, brightness:0.800, alpha:1.000)
         self.view.setGradientBackground(top: c2, bottom: c1)
@@ -59,17 +52,17 @@ class ViewController: UIViewController {
         }
         SoundManager.shared.playSound()
         clueViewModel.refreshClues {
-            self.checkUP()
+            self.setupGameViews()
         }
     }
 
     @IBAction func submit(_ sender: Any) {
         clueViewModel.refreshClues {
-            self.checkUP()
+            self.setupGameViews()
         }
     }
 
-    func checkUP() {
+    func setupGameViews() {
         print(clueViewModel.qestionCategory!)
         print(clueViewModel.qestion!)
         print(clueViewModel.correctanswer!)
@@ -78,14 +71,13 @@ class ViewController: UIViewController {
         categoryLabel.text = clueViewModel.qestionCategory
         clueLabel.pushTransition(1)
         clueLabel.text = clueViewModel.qestion
-        self.answerArray = clueViewModel.answerArray
         nextButton.isEnabled = false
         nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
         hasUserSelectedAnswer = false
         UIView.transition(with: tableView,
                           duration: 1,
                           options: .transitionFlipFromBottom,
-            animations: { self.tableView.reloadData()})
+                          animations: { self.tableView.reloadData()})
     }
 
 
@@ -101,7 +93,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return answerArray.count
+        return clueViewModel.answerArray.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -112,7 +104,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let bgColorView = UIView()
         bgColorView.backgroundColor = .clear
         let cell = tableView.dequeueReusableCell(withIdentifier: CellType.answerCell) as! AnswerTableViewCell
-        cell.qLable.text = answerArray[indexPath.row]
+        cell.qLable.text = clueViewModel.answerArray[indexPath.row]
         cell.selectedBackgroundView = bgColorView
         cell.backView.backgroundColor = UIColor.white
         cell.qLable?.textColor = #colorLiteral(red: 0.2865216732, green: 0.2005397379, blue: 0.544816196, alpha: 1)
@@ -121,16 +113,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !hasUserSelectedAnswer{
-        guard let cell = tableView.cellForRow(at: indexPath)  as? AnswerTableViewCell else { return }
-        cell.qLable?.textColor = UIColor.white
-        cell.qLable?.backgroundColor = UIColor.clear
-        cell.backView.backgroundColor = gameCalculator(selecteAnswer: cell.qLable.text!)
-        scoreLabel.text = points.description
-        hasUserSelectedAnswer = true
-        nextButton.isEnabled = true
-        nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
+            guard let cell = tableView.cellForRow(at: indexPath)  as? AnswerTableViewCell else { return }
+            cell.qLable?.textColor = UIColor.white
+            cell.qLable?.backgroundColor = UIColor.clear
+            cell.backView.backgroundColor = gameCalculator(selecteAnswer: cell.qLable.text!)
+            scoreLabel.text = points.description
+            hasUserSelectedAnswer = true
+            nextButton.isEnabled = true
+            nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
         }else {
-//            nextButton.pulsate()
+            //Alert User to move to next qestiion.
             nextButton.shake()
             nextButton.flash()
             nextButton.shake()

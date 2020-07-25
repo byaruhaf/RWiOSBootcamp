@@ -14,16 +14,11 @@ class SoundManager: NSObject {
     static let shared = SoundManager()
     private var player: AVAudioPlayer?
 
-    struct Keys {
-        static let soundKey = "com.AppBantu.Sound.enabled"
-    }
-
-
     // Globally enable or disable sound. This setting value is stored in UserDefaults and will be loaded on app launch.
-    var isSoundEnabled: Bool = { return !UserDefaults.standard.bool(forKey: Keys.soundKey)}(){
+    var isSoundEnabled: Bool = { return !UserDefaults.standard.bool(forKey: K.Keys.soundKey)}(){
         didSet {
             let value = !isSoundEnabled
-            UserDefaults.standard.set(value, forKey: Keys.soundKey)
+            UserDefaults.standard.set(value, forKey: K.Keys.soundKey)
             if value {
                 stopSound()
             }
