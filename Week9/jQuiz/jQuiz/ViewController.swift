@@ -46,11 +46,7 @@ class ViewController: UIViewController {
         let c1 = UIColor(hue:0.704, saturation:0.884, brightness:0.719, alpha:1.000)
         let c2 = UIColor(hue:0.762, saturation:0.667, brightness:0.800, alpha:1.000)
         self.view.setGradientBackground(top: c2, bottom: c1)
-        let b1 = UIColor(hue:0.101, saturation:0.900, brightness:1.000, alpha:1.000)
-        let b2 = UIColor(hue:0.085, saturation:1.000, brightness:1.000, alpha:1.000)
-        nextButton.layer.cornerRadius = nextButton.frame.size.height/2
-        nextButton.layer.masksToBounds = true
-        nextButton.setGradientBackground(top: b2, bottom: b1)
+        nextButton.roundCorners()
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -87,14 +83,11 @@ class ViewController: UIViewController {
         clueLabel.pushTransition(1)
         clueLabel.text = clueViewModel.qestion
         self.answerArray = clueViewModel.answerArray
-//                tableView.isUserInteractionEnabled = true
-        //        tableView.reloadData()
-//        tableView.reloadData()
+
         hasUserSelectedAnswer = false
         UIView.transition(with: tableView,
                           duration: 1,
                           options: .transitionFlipFromBottom,
-//                          animations: { self.tableView.reloadSections([0], with: .bottom) })
             animations: { self.tableView.reloadData()})
     }
 
