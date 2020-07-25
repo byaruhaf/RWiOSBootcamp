@@ -12,18 +12,17 @@ import AVFoundation
 class SoundManager: NSObject {
 
     static let shared = SoundManager()
-
     private var player: AVAudioPlayer?
 
-    fileprivate struct Keys {
-        static let soundKey = "com.AppBantu.SwiftySound.enabled"
+    struct Keys {
+        static let soundKey = "com.AppBantu.Sound.enabled"
     }
 
 
-    /// Globally enable or disable sound. This setting value is stored in UserDefaults and will be loaded on app launch.
-    var enabled: Bool = { return !UserDefaults.standard.bool(forKey: Keys.soundKey)}(){
+    // Globally enable or disable sound. This setting value is stored in UserDefaults and will be loaded on app launch.
+    var isSoundEnabled: Bool = { return !UserDefaults.standard.bool(forKey: Keys.soundKey)}(){
         didSet {
-            let value = !enabled
+            let value = !isSoundEnabled
             UserDefaults.standard.set(value, forKey: Keys.soundKey)
             if value {
                 stopSound()
@@ -31,49 +30,40 @@ class SoundManager: NSObject {
         }
     }
 
-    /// Stop playing the sound.
+    // Stop playing the sound.
     public func stopSound() {
         guard let player = player else { return }
             player.stop()
     }
 
 
-    var isSoundEnabled: Bool? {
-        get {
-            // Since UserDefaults.standard.bool(forKey: "sound") will default to "false" if it has not been set
-            // You might want to use `object`, because if an object has not been set yet it will be nil
-            // Then if it's nil you know it's the user's first time launching the app
-            UserDefaults.standard.object(forKey: Keys.soundKey) as? Bool
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Keys.soundKey)
-        }
-    }
+//    var isSoundEnabled: Bool? {
+//        get {
+//            // Since UserDefaults.standard.bool(forKey: "sound") will default to "false" if it has not been set
+//            // You might want to use `object`, because if an object has not been set yet it will be nil
+//            // Then if it's nil you know it's the user's first time launching the app
+//            UserDefaults.standard.object(forKey: Keys.soundKey) as? Bool
+//        }
+//        set {
+//            UserDefaults.standard.set(newValue, forKey: Keys.soundKey)
+//        }
+//    }
 
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "bensound-creativeminds", withExtension: "mp3") else { return }
-
+        guard let url = Bundle.main.url(forResource: "bensound-ukulele", withExtension: "mp3") else { return }
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-
-            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-            /* iOS 10 and earlier require the following line:
-             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-
-            guard let player = player else { return }
-
+           guard let player = player else { return }
             player.play()
-
         } catch let error {
             print(error.localizedDescription)
         }
     }
 
     func toggleSoundPreference() {
-        if let isSoundEnabled = isSoundEnabled{
+//        if let isSoundEnabled = isSoundEnabled{
             if isSoundEnabled {
                 self.isSoundEnabled = false
                 player?.stop()
@@ -82,8 +72,7 @@ class SoundManager: NSObject {
                 playSound()
             }
 
-        }
-
+//        }
     }
 
 }

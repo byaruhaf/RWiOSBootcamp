@@ -28,14 +28,14 @@ class ViewController: UIViewController {
     
     private let clueViewModel = ClueViewModel()
     private var hasUserSelectedAnswer = false
-     var operation: AnyCancellable?
+     var imageCancellable: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let url = URL(string: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")!
 
-        self.operation = URLSession.shared
+        self.imageCancellable = URLSession.shared
             .downloadTaskPublisher(for: url)
             .map { UIImage(contentsOfFile: $0.url.path)! }
             .replaceError(with: UIImage(named: "fallback"))
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         } else {
             soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
         }
-//        SoundManager.shared.playSound()
+        SoundManager.shared.playSound()
         clueViewModel.refreshClues {
             self.checkUP()
         }
@@ -83,7 +83,9 @@ class ViewController: UIViewController {
         clueLabel.pushTransition(1)
         clueLabel.text = clueViewModel.qestion
         self.answerArray = clueViewModel.answerArray
-
+        nextButton.isEnabled = false
+        nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
+//        alpha = isEnabled ? 1.0 : 0.5
         hasUserSelectedAnswer = false
         UIView.transition(with: tableView,
                           duration: 1,
@@ -97,7 +99,7 @@ class ViewController: UIViewController {
         if SoundManager.shared.isSoundEnabled == false {
             soundButton.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
         } else {
-            soundButton.setImage(UIImage(systemName: "speaker"), for: .normal)
+            soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
         }
     }
 }
@@ -130,6 +132,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backView.backgroundColor = gameCalculator(selecteAnswer: cell.qLable.text!)
         scoreLabel.text = points.description
         hasUserSelectedAnswer = true
+        nextButton.isEnabled = true
+        nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
         }else {
             nextButton.pulsate()
             nextButton.shake()

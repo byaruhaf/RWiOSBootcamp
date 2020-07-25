@@ -56,6 +56,7 @@ class Networking {
 //        let url = URL(string: "http://www.jservice.io/api/clues?category=10526&offset=6")!
         print(url)
         return URLSession.shared.dataTaskPublisher(for: url)
+            .mapError { $0 as Error }
             .map { $0.data }
             .decode(type: Clues.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
