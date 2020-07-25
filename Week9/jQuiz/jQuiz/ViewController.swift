@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        let url = URL(string: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")!
-        logoImageView.load(url: url)
+//        let url = URL(string:)!
+        logoImageView.load(imageURL: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")
 
 
 

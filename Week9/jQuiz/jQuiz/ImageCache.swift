@@ -10,37 +10,52 @@
 //https://dribbble.com/shots/4801691-Trivia-Game-Logo
 
 import UIKit
-import Combine
 
 extension UIImageView {
-    func load(url: URL, cache: URLCache? = nil) {
-        let cache = cache ?? URLCache.shared
-        let request = URLRequest(url: url)
-        //        let imageCancellable: Cancellable
-        if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
-            self.image = image
-        } else {
-            //            URLSession.shared.dataTaskPublisher(for: url)
-            //                   .map { (data, response) -> UIImage? in
-            //                    let cachedData = CachedURLResponse(response: response, data: data)
-            //                    cache.storeCachedResponse(cachedData, for: request)
-            //                    return UIImage(data: data) }
-            //                .catch { error in return Just(nil) }
-            //                .handleEvents(receiveOutput: {[unowned self] image in
-            //                    guard let image = image else { return }
-            //                    self.image = image
-            //                })
-            //                .receive(on: DispatchQueue.main)
-            //            .assign(to: \.image, on: self)
-            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
-                    let cachedData = CachedURLResponse(response: response, data: data)
-                    cache.storeCachedResponse(cachedData, for: request)
-                    DispatchQueue.main.async {
-                        self.image = image
+    func load(imageURL: String) {
+        var imageDictionary = [String:Data]()
+        func saveImageToCache(_ url:String,imageData:Data) {imageDictionary[url] = imageData}
+        if imageDictionary[imageURL] == nil {
+            print("Downloading")
+            if let url = URL(string: imageURL) {
+                DispatchQueue.global().async { [weak self] in
+                    if let data = try? Data(contentsOf: url) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                self?.image = image
+                            }
+                           saveImageToCache(imageURL, imageData: data)
+                        }
                     }
                 }
-            }).resume()
+            }
+
+        } else {
+             print("Using Cache")
+            DispatchQueue.main.async {
+                self.image = UIImage(data: imageDictionary[imageURL]!)
+            }
         }
     }
 }
+
+//extension UIImageView {
+//    func load(url: URL, cache: URLCache? = nil) {
+//        let cache = cache ?? URLCache.shared
+//        let request = URLRequest(url: url)
+//        if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
+//            self.image = image
+//        } else {
+//            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+//                if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
+//                    let cachedData = CachedURLResponse(response: response, data: data)
+//                    cache.storeCachedResponse(cachedData, for: request)
+//                    DispatchQueue.main.async {
+//                        self.image = image
+//                    }
+//                }
+//            }).resume()
+//        }
+//    }
+//}
+
