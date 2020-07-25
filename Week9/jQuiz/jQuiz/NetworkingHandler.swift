@@ -30,6 +30,7 @@ enum HTTPError: LocalizedError {
 
 class Networking {
       static let sharedInstance = Networking()
+    var imageDictionary = [String:Data]()
 
     func loadData() -> AnyPublisher<Clues, Error> {
         let url1 = URL(string: "http://www.jservice.io/api/random")!

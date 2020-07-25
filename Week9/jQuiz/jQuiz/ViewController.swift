@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
 
 //        let url = URL(string:)!
-        logoImageView.load(imageURL: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")
+        logoImageView.load(imageURL: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg", key: "logoImage")
 
 
 
@@ -81,7 +81,6 @@ class ViewController: UIViewController {
         self.answerArray = clueViewModel.answerArray
         nextButton.isEnabled = false
         nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
-//        alpha = isEnabled ? 1.0 : 0.5
         hasUserSelectedAnswer = false
         UIView.transition(with: tableView,
                           duration: 1,
@@ -131,9 +130,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         nextButton.isEnabled = true
         nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
         }else {
-            nextButton.pulsate()
+//            nextButton.pulsate()
             nextButton.shake()
             nextButton.flash()
+            nextButton.shake()
         }
     }
 

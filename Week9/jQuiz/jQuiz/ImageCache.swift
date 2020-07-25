@@ -12,10 +12,9 @@
 import UIKit
 
 extension UIImageView {
-    func load(imageURL: String) {
-        var imageDictionary = [String:Data]()
-        func saveImageToCache(_ url:String,imageData:Data) {imageDictionary[url] = imageData}
-        if imageDictionary[imageURL] == nil {
+    func load(imageURL: String,key:String) {
+        func saveImageToCache(_ url:String,imageData:Data) {Networking.sharedInstance.imageDictionary[url] = imageData}
+        if Networking.sharedInstance.imageDictionary[key] == nil {
             print("Downloading")
             if let url = URL(string: imageURL) {
                 DispatchQueue.global().async { [weak self] in
@@ -24,7 +23,7 @@ extension UIImageView {
                             DispatchQueue.main.async {
                                 self?.image = image
                             }
-                           saveImageToCache(imageURL, imageData: data)
+                           saveImageToCache(key, imageData: data)
                         }
                     }
                 }
@@ -33,7 +32,7 @@ extension UIImageView {
         } else {
              print("Using Cache")
             DispatchQueue.main.async {
-                self.image = UIImage(data: imageDictionary[imageURL]!)
+                self.image = UIImage(data: Networking.sharedInstance.imageDictionary[key]!)
             }
         }
     }
