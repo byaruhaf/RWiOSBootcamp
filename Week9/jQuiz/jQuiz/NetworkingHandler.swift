@@ -53,6 +53,7 @@ class Networking {
 
     func getAllCluesInCategory(for id: Int,  cluesCount: Int) -> AnyPublisher<Clues, Error> {
         let url = Endpoint.CategorylookUp(id: id, cluesCount: cluesCount).url!
+//        let url = URL(string: "http://www.jservice.io/api/clues?category=31&offset=221")!
         print(url)
         return URLSession.shared.dataTaskPublisher(for: url)
             .mapError { $0 as Error }

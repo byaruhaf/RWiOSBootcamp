@@ -63,14 +63,26 @@ class ViewController: UIViewController {
     }
 
     func setupGameViews() {
-        print(clueViewModel.qestionCategory!)
-        print(clueViewModel.qestion!)
-        print(clueViewModel.correctanswer!)
+        guard let qestionCategory = clueViewModel.qestionCategory else { return }
+        guard let qestion = clueViewModel.qestion else { return }
+        guard let correctanswer = clueViewModel.correctanswer else { return }
+
+                if qestion == "" {
+                    print("empty")
+                    clueViewModel.refreshClues {
+                        self.setupGameViews()
+                    }
+                    return
+                }
+
+        print(qestionCategory)
+        print(qestion)
+        print(correctanswer)
         print(clueViewModel.answerArray)
         categoryLabel.pushTransition(1)
-        categoryLabel.text = clueViewModel.qestionCategory
+        categoryLabel.text = qestionCategory
         clueLabel.pushTransition(1)
-        clueLabel.text = clueViewModel.qestion
+        clueLabel.text = qestion
         nextButton.isEnabled = false
         nextButton.alpha = nextButton.isEnabled ? 1.0 : 0.5
         hasUserSelectedAnswer = false

@@ -41,12 +41,4 @@ class ClueViewModel {
                 completion()
         }
     }
-
-//    func setupQuizData() -> (qestion:String,correctanswer:String,answerArray:[String]) {
-//    func setupQuizData(){
-//        refreshClues()
-//        print(qestion)
-//        print(correctanswer)
-//        print(answerArray)
-//    }
 }
