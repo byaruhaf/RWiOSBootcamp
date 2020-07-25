@@ -29,13 +29,12 @@ enum HTTPError: LocalizedError {
 
 
 class Networking {
-      static let sharedInstance = Networking()
+    static let sharedInstance = Networking()
     var imageDictionary = [String:Data]()
 
     func loadData() -> AnyPublisher<Clues, Error> {
-        let url1 = URL(string: "http://www.jservice.io/api/random")!
-
-        return URLSession.shared.dataTaskPublisher(for: url1)
+        let url = Endpoint.randomCategory().url!
+        return URLSession.shared.dataTaskPublisher(for: url)
             .mapError { $0 as Error }
             .map { $0.data }
             .decode(type: Clues.self, decoder: JSONDecoder())
@@ -53,8 +52,7 @@ class Networking {
 
 
     func getAllCluesInCategory(for id: Int,  cluesCount: Int) -> AnyPublisher<Clues, Error> {
-        let url = URL(string: "http://www.jservice.io/api/clues?category=\(id)&offset=\(cluesCount - 4)")!
-//        let url = URL(string: "http://www.jservice.io/api/clues?category=10526&offset=6")!
+        let url = Endpoint.CategorylookUp(id: id, cluesCount: cluesCount).url!
         print(url)
         return URLSession.shared.dataTaskPublisher(for: url)
             .mapError { $0 as Error }
