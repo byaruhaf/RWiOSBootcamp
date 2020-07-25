@@ -28,19 +28,15 @@ class ViewController: UIViewController {
     
     private let clueViewModel = ClueViewModel()
     private var hasUserSelectedAnswer = false
-     var imageCancellable: AnyCancellable?
+     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")!
 
-        self.imageCancellable = URLSession.shared
-            .downloadTaskPublisher(for: url)
-            .map { UIImage(contentsOfFile: $0.url.path)! }
-            .replaceError(with: UIImage(named: "fallback"))
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.image, on: self.logoImageView)
+        let url = URL(string: "https://cdn.dribbble.com/users/1405795/screenshots/4801691/1.jpg")!
+        logoImageView.load(url: url)
+
 
 
         let c1 = UIColor(hue:0.704, saturation:0.884, brightness:0.719, alpha:1.000)

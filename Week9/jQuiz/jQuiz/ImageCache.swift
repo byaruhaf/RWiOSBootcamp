@@ -10,47 +10,37 @@
 //https://dribbble.com/shots/4801691-Trivia-Game-Logo
 
 import UIKit
+import Combine
 
 extension UIImageView {
-
-}
-
-
-class CacheManager {
-    static var imageDictionary = [String:Data]()
-    static func saveImageToCache(_ url:String,imageData:Data) {
-        imageDictionary[url] = imageData
+    func load(url: URL, cache: URLCache? = nil) {
+        let cache = cache ?? URLCache.shared
+        let request = URLRequest(url: url)
+        //        let imageCancellable: Cancellable
+        if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
+            self.image = image
+        } else {
+            //            URLSession.shared.dataTaskPublisher(for: url)
+            //                   .map { (data, response) -> UIImage? in
+            //                    let cachedData = CachedURLResponse(response: response, data: data)
+            //                    cache.storeCachedResponse(cachedData, for: request)
+            //                    return UIImage(data: data) }
+            //                .catch { error in return Just(nil) }
+            //                .handleEvents(receiveOutput: {[unowned self] image in
+            //                    guard let image = image else { return }
+            //                    self.image = image
+            //                })
+            //                .receive(on: DispatchQueue.main)
+            //            .assign(to: \.image, on: self)
+            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
+                    let cachedData = CachedURLResponse(response: response, data: data)
+                    cache.storeCachedResponse(cachedData, for: request)
+                    DispatchQueue.main.async {
+                        self.image = image
+                    }
+                }
+            }).resume()
+        }
     }
 }
-
-//if let imageURL = article.urlToImage {
-//
-//    if CacheManager.imageDictionary[imageURL] == nil {
-//
-//        if let url = URL(string: imageURL) {
-//            DispatchQueue.global().async { [weak self] in
-//                if let data = try? Data(contentsOf: url) {
-//                    if let image = UIImage(data: data) {
-//                        DispatchQueue.main.async {
-//                            if self?.articleToDisplay?.urlToImage == article.urlToImage {
-//                                self?.articleImage.image = image
-//                                UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
-//                                    self?.articleImage.alpha = 1
-//                                }, completion: nil)
-//
-//                            }
-//                        }
-//                        CacheManager.saveImageToCache(imageURL, imageData: data)
-//                    }
-//                }
-//            }
-//        }
-//    } else {
-//        DispatchQueue.main.async {
-//            self.articleImage.image = UIImage(data: CacheManager.imageDictionary[imageURL]!)
-//            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-//                self.articleImage.alpha = 1
-//            }, completion: nil)
-//        }
-//    }
-//}
