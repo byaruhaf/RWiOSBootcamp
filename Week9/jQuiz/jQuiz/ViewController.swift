@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         guard let correctanswer = clueViewModel.correctanswer else { return }
 
                 if qestion == "" {
-                    print("empty")
+                    print("****empty qestion*****")
                     clueViewModel.refreshClues {
                         self.setupGameViews()
                     }
