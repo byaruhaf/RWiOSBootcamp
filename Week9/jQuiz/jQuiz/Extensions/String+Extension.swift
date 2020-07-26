@@ -22,3 +22,9 @@ extension String{
     }
 }
 
+
+extension String{
+    var nonAsciStripped : String{
+        return self.replacingOccurrences(of: "[^\\x00-\\x7F]", with: "", options: .regularExpression, range: nil)
+    }
+}
