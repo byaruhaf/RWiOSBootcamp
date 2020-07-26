@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5F010D8524CBCAB300F8E0AC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010D8424CBCAB300F8E0AC /* Alert.swift */; };
 		5F010D8724CC071E00F8E0AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010D8624CC071E00F8E0AC /* Constants.swift */; };
 		5F010D8924CC0EE300F8E0AC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010D8824CC0EE300F8E0AC /* EndPoint.swift */; };
-		5F410E9A24C949E4002FDD7F /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 5F410E9924C949E4002FDD7F /* TimelaneCombine */; };
 		5F410E9C24C9BB40002FDD7F /* ClueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F410E9B24C9BB40002FDD7F /* ClueViewModel.swift */; };
 		5F410E9E24C9CF27002FDD7F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F410E9D24C9CF27002FDD7F /* String+Extension.swift */; };
 		5F90CC9F24CAFD3D002CC950 /* bensound-creativeminds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F90CC9E24CAFD3D002CC950 /* bensound-creativeminds.mp3 */; };
@@ -87,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F410E9A24C949E4002FDD7F /* TimelaneCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +197,6 @@
 			);
 			name = jQuiz;
 			packageProductDependencies = (
-				5F410E9924C949E4002FDD7F /* TimelaneCombine */,
 			);
 			productName = jQuiz;
 			productReference = C3DF5B7324C2549400F6D3EC /* jQuiz.app */;
@@ -274,7 +271,6 @@
 			);
 			mainGroup = C3DF5B6A24C2549400F6D3EC;
 			packageReferences = (
-				5F410E9824C949E4002FDD7F /* XCRemoteSwiftPackageReference "TimelaneCombine" */,
 			);
 			productRefGroup = C3DF5B7424C2549400F6D3EC /* Products */;
 			projectDirPath = "";
@@ -662,25 +658,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5F410E9824C949E4002FDD7F /* XCRemoteSwiftPackageReference "TimelaneCombine" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:icanzilb/TimelaneCombine.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5F410E9924C949E4002FDD7F /* TimelaneCombine */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5F410E9824C949E4002FDD7F /* XCRemoteSwiftPackageReference "TimelaneCombine" */;
-			productName = TimelaneCombine;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C3DF5B6B24C2549400F6D3EC /* Project object */;
 }
