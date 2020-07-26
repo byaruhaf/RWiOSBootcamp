@@ -33,23 +33,6 @@
 		C3FBE53824C4DEA300D11A30 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FBE53724C4DEA300D11A30 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C3DF5B8D24C2549A00F6D3EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3DF5B6B24C2549400F6D3EC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C3DF5B7224C2549400F6D3EC;
-			remoteInfo = jQuiz;
-		};
-		C3DF5B9824C2549A00F6D3EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3DF5B6B24C2549400F6D3EC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C3DF5B7224C2549400F6D3EC;
-			remoteInfo = jQuiz;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		5F010D8424CBCAB300F8E0AC /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5F010D8624CC071E00F8E0AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -73,8 +56,6 @@
 		C3DF5B8224C2549A00F6D3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3DF5B8524C2549A00F6D3EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3DF5B8724C2549A00F6D3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3DF5B8C24C2549A00F6D3EC /* jQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3DF5B9724C2549A00F6D3EC /* jQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DF5BAD24C25E1A00F6D3EC /* NetworkingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandler.swift; sourceTree = "<group>"; };
 		C3DF5BAF24C260A600F6D3EC /* Clue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clue.swift; sourceTree = "<group>"; };
 		C3FBE53524C2877C00D11A30 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -83,20 +64,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		C3DF5B7024C2549400F6D3EC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3DF5B8924C2549A00F6D3EC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3DF5B9424C2549A00F6D3EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,8 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				C3DF5B7324C2549400F6D3EC /* jQuiz.app */,
-				C3DF5B8C24C2549A00F6D3EC /* jQuizTests.xctest */,
-				C3DF5B9724C2549A00F6D3EC /* jQuizUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,42 +167,6 @@
 			productReference = C3DF5B7324C2549400F6D3EC /* jQuiz.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C3DF5B8B24C2549A00F6D3EC /* jQuizTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C3DF5BA324C2549A00F6D3EC /* Build configuration list for PBXNativeTarget "jQuizTests" */;
-			buildPhases = (
-				C3DF5B8824C2549A00F6D3EC /* Sources */,
-				C3DF5B8924C2549A00F6D3EC /* Frameworks */,
-				C3DF5B8A24C2549A00F6D3EC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C3DF5B8E24C2549A00F6D3EC /* PBXTargetDependency */,
-			);
-			name = jQuizTests;
-			productName = jQuizTests;
-			productReference = C3DF5B8C24C2549A00F6D3EC /* jQuizTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		C3DF5B9624C2549A00F6D3EC /* jQuizUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C3DF5BA624C2549A00F6D3EC /* Build configuration list for PBXNativeTarget "jQuizUITests" */;
-			buildPhases = (
-				C3DF5B9324C2549A00F6D3EC /* Sources */,
-				C3DF5B9424C2549A00F6D3EC /* Frameworks */,
-				C3DF5B9524C2549A00F6D3EC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C3DF5B9924C2549A00F6D3EC /* PBXTargetDependency */,
-			);
-			name = jQuizUITests;
-			productName = jQuizUITests;
-			productReference = C3DF5B9724C2549A00F6D3EC /* jQuizUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -250,14 +179,6 @@
 				TargetAttributes = {
 					C3DF5B7224C2549400F6D3EC = {
 						CreatedOnToolsVersion = 11.6;
-					};
-					C3DF5B8B24C2549A00F6D3EC = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = C3DF5B7224C2549400F6D3EC;
-					};
-					C3DF5B9624C2549A00F6D3EC = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = C3DF5B7224C2549400F6D3EC;
 					};
 				};
 			};
@@ -277,8 +198,6 @@
 			projectRoot = "";
 			targets = (
 				C3DF5B7224C2549400F6D3EC /* jQuiz */,
-				C3DF5B8B24C2549A00F6D3EC /* jQuizTests */,
-				C3DF5B9624C2549A00F6D3EC /* jQuizUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -294,20 +213,6 @@
 				5F90CC9F24CAFD3D002CC950 /* bensound-creativeminds.mp3 in Resources */,
 				5FFDAC5224CA3A01001D1081 /* AnswerTableViewCell.xib in Resources */,
 				C3DF5B7E24C2549400F6D3EC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3DF5B8A24C2549A00F6D3EC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3DF5B9524C2549A00F6D3EC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,34 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3DF5B8824C2549A00F6D3EC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3DF5B9324C2549A00F6D3EC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C3DF5B8E24C2549A00F6D3EC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C3DF5B7224C2549400F6D3EC /* jQuiz */;
-			targetProxy = C3DF5B8D24C2549A00F6D3EC /* PBXContainerItemProxy */;
-		};
-		C3DF5B9924C2549A00F6D3EC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C3DF5B7224C2549400F6D3EC /* jQuiz */;
-			targetProxy = C3DF5B9824C2549A00F6D3EC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C3DF5B7C24C2549400F6D3EC /* Main.storyboard */ = {
@@ -538,86 +416,6 @@
 			};
 			name = Release;
 		};
-		C3DF5BA424C2549A00F6D3EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = jQuizTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rw.jQuizTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jQuiz.app/jQuiz";
-			};
-			name = Debug;
-		};
-		C3DF5BA524C2549A00F6D3EC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = jQuizTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rw.jQuizTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jQuiz.app/jQuiz";
-			};
-			name = Release;
-		};
-		C3DF5BA724C2549A00F6D3EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = jQuizUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rw.jQuizUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = jQuiz;
-			};
-			name = Debug;
-		};
-		C3DF5BA824C2549A00F6D3EC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = jQuizUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rw.jQuizUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = jQuiz;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -635,24 +433,6 @@
 			buildConfigurations = (
 				C3DF5BA124C2549A00F6D3EC /* Debug */,
 				C3DF5BA224C2549A00F6D3EC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C3DF5BA324C2549A00F6D3EC /* Build configuration list for PBXNativeTarget "jQuizTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C3DF5BA424C2549A00F6D3EC /* Debug */,
-				C3DF5BA524C2549A00F6D3EC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C3DF5BA624C2549A00F6D3EC /* Build configuration list for PBXNativeTarget "jQuizUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C3DF5BA724C2549A00F6D3EC /* Debug */,
-				C3DF5BA824C2549A00F6D3EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
