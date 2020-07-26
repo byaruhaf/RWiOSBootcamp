@@ -19,3 +19,7 @@ struct K {
         static let apiURL = "www.jservice.io"
     }
 }
+
+struct CellType {
+    static let answerCell = "AnswerCell"
+}

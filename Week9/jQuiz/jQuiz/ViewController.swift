@@ -9,10 +9,6 @@
 import UIKit
 import Combine
 
-struct CellType {
-    static let answerCell = "AnswerCell"
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var logoImageView: UIImageView!
