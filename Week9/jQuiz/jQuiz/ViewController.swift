@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         }
         if SoundManager.shared.isSoundEnabled == true {
             soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
-//            SoundManager.shared.playSound()
+            //            SoundManager.shared.playSound()
         }
 
         clueViewModel.refreshClues {
@@ -70,13 +70,11 @@ class ViewController: UIViewController {
         guard let qestion = clueViewModel.qestion else { return }
         guard let correctanswer = clueViewModel.correctanswer else { return }
 
-                if qestion == "" {
-                    print("****empty qestion*****")
-                    clueViewModel.refreshClues {
-                        self.setupGameViews()
-                    }
-                    return
-                }
+        if qestion == "" {
+            print("****empty qestion*****")
+            clueViewModel.refreshClues { self.setupGameViews()}
+            return
+        }
 
         print(qestionCategory)
         print(qestion)
