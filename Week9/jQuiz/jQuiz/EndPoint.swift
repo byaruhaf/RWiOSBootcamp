@@ -15,10 +15,7 @@ struct Endpoint {
 //randomCategory Endpoint
 extension Endpoint {
     static func randomCategory() -> Endpoint {
-        return Endpoint(
-            path: "/api/random",
-            queryItems: []
-        )
+        return Endpoint(path: "/api/random", queryItems: [])
     }
 }
 
@@ -32,10 +29,7 @@ extension Endpoint {
         let apiOffset = URLQueryItem(name: "offset", value: (cluesCount <= 4 ? 0 : cluesCount - 4).description)
         result.append(apiOffset)
 
-        return Endpoint(
-            path: "/api/clues",
-            queryItems: result
-        )
+        return Endpoint(path: "/api/clues", queryItems: result)
     }
 }
 
@@ -48,11 +42,7 @@ extension Endpoint {
         components.host = K.URL.apiURL
         components.path = path
         components.queryItems = queryItems
-        guard let url = components.url else {
-            preconditionFailure(
-                "Invalid URL components: \(components)"
-            )
-        }
+        guard let url = components.url else { preconditionFailure("Invalid URL components: \(components)")}
         return url
     }
 }
