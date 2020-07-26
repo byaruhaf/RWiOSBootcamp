@@ -12,12 +12,13 @@ import Foundation
 struct Clue: Codable {
     let id: Int?
     let answer, question: String?
-    let value: Int?
+    let points: Int?
     let categoryID: Int?
     let category: Category?
 
     enum CodingKeys: String, CodingKey {
-        case id, answer, question, value
+        case id, answer, question
+        case points = "value"
         case categoryID = "category_id"
         case category
     }

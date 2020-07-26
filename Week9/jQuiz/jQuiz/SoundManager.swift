@@ -15,15 +15,15 @@ class SoundManager: NSObject {
     private var player: AVAudioPlayer?
 
     // Globally enable or disable sound. This setting value is stored in UserDefaults and will be loaded on app launch.
-    var isSoundEnabled: Bool = { return !UserDefaults.standard.bool(forKey: K.Keys.soundKey)}(){
-        didSet {
-            let value = !isSoundEnabled
-            UserDefaults.standard.set(value, forKey: K.Keys.soundKey)
-            if value {
-                stopSound()
-            }
-        }
-    }
+//    var isSoundEnabled: Bool = { return !UserDefaults.standard.bool(forKey: K.Keys.soundKey)}(){
+//        didSet {
+//            let value = !isSoundEnabled
+//            UserDefaults.standard.set(value, forKey: K.Keys.soundKey)
+//            if value {
+//                stopSound()
+//            }
+//        }
+//    }
 
     // Stop playing the sound.
     public func stopSound() {
@@ -32,17 +32,17 @@ class SoundManager: NSObject {
     }
 
 
-//    var isSoundEnabled: Bool? {
-//        get {
-//            // Since UserDefaults.standard.bool(forKey: "sound") will default to "false" if it has not been set
-//            // You might want to use `object`, because if an object has not been set yet it will be nil
-//            // Then if it's nil you know it's the user's first time launching the app
-//            UserDefaults.standard.object(forKey: Keys.soundKey) as? Bool
-//        }
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: Keys.soundKey)
-//        }
-//    }
+    var isSoundEnabled: Bool? {
+        get {
+            // Since UserDefaults.standard.bool(forKey: "sound") will default to "false" if it has not been set
+            // You might want to use `object`, because if an object has not been set yet it will be nil
+            // Then if it's nil you know it's the user's first time launching the app
+            UserDefaults.standard.object(forKey: K.Keys.soundKey) as? Bool
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: K.Keys.soundKey)
+        }
+    }
 
     func playSound() {
         guard let url = Bundle.main.url(forResource: "bensound-ukulele", withExtension: "mp3") else { return }
@@ -58,16 +58,19 @@ class SoundManager: NSObject {
     }
 
     func toggleSoundPreference() {
-//        if let isSoundEnabled = isSoundEnabled{
-            if isSoundEnabled {
-                self.isSoundEnabled = false
-                player?.stop()
-            }else {
-                self.isSoundEnabled = true
-                playSound()
-            }
+        if isSoundEnabled == nil {
+            isSoundEnabled = false
+            return
+        }
 
-//        }
+        if isSoundEnabled! {
+            self.isSoundEnabled = false
+            player?.stop()
+        }else {
+            self.isSoundEnabled = true
+            playSound()
+        }
+
     }
 
 }

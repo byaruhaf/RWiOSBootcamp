@@ -45,12 +45,15 @@ class ViewController: UIViewController {
         
         self.scoreLabel.text = "\(self.points)"
 
+        SoundManager.shared.toggleSoundPreference()
         if SoundManager.shared.isSoundEnabled == false {
             soundButton.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
-        } else {
-            soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
         }
-        SoundManager.shared.playSound()
+        if SoundManager.shared.isSoundEnabled == true {
+            soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
+//            SoundManager.shared.playSound()
+        }
+
         clueViewModel.refreshClues {
             self.setupGameViews()
         }
