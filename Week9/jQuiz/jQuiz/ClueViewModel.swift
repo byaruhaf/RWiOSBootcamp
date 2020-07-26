@@ -25,6 +25,7 @@ class ClueViewModel {
                     case .finished:
                         break
                     case .failure(let error):
+                        print("received error: ", error)
                         print(error.localizedDescription)
                 }
 
