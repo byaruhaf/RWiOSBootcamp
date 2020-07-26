@@ -33,7 +33,7 @@ class Networking {
 
     func getAllCluesInCategory(for id: Int,  cluesCount: Int) -> AnyPublisher<Clues, Error> {
         let url = Endpoint.CategorylookUp(id: id, cluesCount: cluesCount).url!
-        //        let url = URL(string: "http://www.jservice.io/api/clues?category=31&offset=221")!
+        //let url = URL(string: "http://www.jservice.io/api/clues?category=31&offset=221")!
         print(url)
         return fetch(url: url)
             .decode(type: Clues.self, decoder: JSONDecoder())
@@ -80,6 +80,7 @@ class Networking {
         .eraseToAnyPublisher()
     }
 }
+
 
 enum APIError: Error, LocalizedError {
     case unknown, apiError(reason: String), parserError(reason: String), networkError(from: URLError)
