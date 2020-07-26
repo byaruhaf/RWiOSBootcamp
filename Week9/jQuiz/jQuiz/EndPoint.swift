@@ -29,7 +29,7 @@ extension Endpoint {
         let categoryID = URLQueryItem(name: "category", value: id.description)
         result.append(categoryID)
 
-        let apiOffset = URLQueryItem(name: "offset", value: (cluesCount - 4).description)
+        let apiOffset = URLQueryItem(name: "offset", value: (cluesCount <= 4 ? 0 : cluesCount - 4).description)
         result.append(apiOffset)
 
         return Endpoint(
