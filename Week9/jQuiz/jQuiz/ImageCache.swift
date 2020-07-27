@@ -17,7 +17,7 @@ extension UIImageView {
         if Networking.sharedInstance.imageDictionary[key] == nil {
 //            print("Downloading")
             if let url = URL(string: imageURL) {
-                DispatchQueue.global().async { [weak self] in
+                DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                     if let data = try? Data(contentsOf: url) {
                         if let image = UIImage(data: data) {
                             DispatchQueue.main.async {
