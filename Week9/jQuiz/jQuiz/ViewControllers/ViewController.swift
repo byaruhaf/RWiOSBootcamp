@@ -41,13 +41,7 @@ class ViewController: UIViewController {
         
         self.scoreLabel.text = "\(self.points)"
 
-        SoundManager.shared.toggleSoundPreference()
-        if SoundManager.shared.isSoundEnabled == false {
-            soundButton.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
-        }
-        if SoundManager.shared.isSoundEnabled == true {
-            soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
-        }
+        soundController()
 
         clueViewModel.refreshClues(completion: {
             self.setupGameViews()
@@ -100,12 +94,19 @@ class ViewController: UIViewController {
 
     @IBAction func didPressVolumeButton(_ sender: Any) {
         SoundManager.shared.toggleSoundPreference()
-        if SoundManager.shared.isSoundEnabled == false {
-            soundButton.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
-        } else {
+      soundController()
+    }
+
+    func soundController() {
+        if SoundManager.shared.isSoundEnabled {
             soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
+            SoundManager.shared.playSound()
+        } else {
+            soundButton.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
+            SoundManager.shared.stopSound()
         }
     }
+
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

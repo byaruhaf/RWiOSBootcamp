@@ -73,6 +73,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FC51DE124CF35BF001B30DC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3DF5B7A24C2549400F6D3EC /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5FC51DE224CF35DF001B30DC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C3DF5BAD24C25E1A00F6D3EC /* NetworkingHandler.swift */,
+				C3FBE53724C4DEA300D11A30 /* ImageCache.swift */,
+				5F010D8824CC0EE300F8E0AC /* EndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5FC51DE324CF35EB001B30DC /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				C3FBE53524C2877C00D11A30 /* SoundManager.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		5FC51DE424CF361F001B30DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3DF5BAF24C260A600F6D3EC /* Clue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FC51DE524CF362D001B30DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FC51DE624CF363A001B30DC /* Cell */,
+				C3DF5B7C24C2549400F6D3EC /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FC51DE624CF363A001B30DC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5FFDAC4F24CA3A01001D1081 /* AnswerTableViewCell.swift */,
+				5FFDAC5024CA3A01001D1081 /* AnswerTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5FC51DE724CF3663001B30DC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F410E9B24C9BB40002FDD7F /* ClueViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FC51DE824CF3675001B30DC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5F010D8624CC071E00F8E0AC /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		5FFDAC5324CA5C46001D1081 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,18 +175,14 @@
 			isa = PBXGroup;
 			children = (
 				C3DF5BA924C254A800F6D3EC /* AppDelegate */,
-				C3DF5B7A24C2549400F6D3EC /* ViewController.swift */,
-				C3DF5BAD24C25E1A00F6D3EC /* NetworkingHandler.swift */,
-				5F010D8824CC0EE300F8E0AC /* EndPoint.swift */,
-				C3FBE53524C2877C00D11A30 /* SoundManager.swift */,
-				5F010D8624CC071E00F8E0AC /* Constants.swift */,
-				C3DF5BAF24C260A600F6D3EC /* Clue.swift */,
-				5FFDAC4F24CA3A01001D1081 /* AnswerTableViewCell.swift */,
-				5FFDAC5024CA3A01001D1081 /* AnswerTableViewCell.xib */,
+				5FC51DE124CF35BF001B30DC /* ViewControllers */,
+				5FC51DE224CF35DF001B30DC /* Network */,
+				5FC51DE324CF35EB001B30DC /* Audio */,
+				5FC51DE824CF3675001B30DC /* Constants */,
+				5FC51DE424CF361F001B30DC /* Model */,
+				5FC51DE524CF362D001B30DC /* View */,
 				5FFDAC5324CA5C46001D1081 /* Extensions */,
-				5F410E9B24C9BB40002FDD7F /* ClueViewModel.swift */,
-				C3FBE53724C4DEA300D11A30 /* ImageCache.swift */,
-				C3DF5B7C24C2549400F6D3EC /* Main.storyboard */,
+				5FC51DE724CF3663001B30DC /* ViewModel */,
 				C3DF5B8424C2549A00F6D3EC /* LaunchScreen.storyboard */,
 				C3DF5BAC24C256D600F6D3EC /* Assets */,
 				C3DF5B8724C2549A00F6D3EC /* Info.plist */,
