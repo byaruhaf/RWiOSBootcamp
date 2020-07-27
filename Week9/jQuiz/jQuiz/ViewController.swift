@@ -47,35 +47,43 @@ class ViewController: UIViewController {
         }
         if SoundManager.shared.isSoundEnabled == true {
             soundButton.setImage(UIImage(systemName: "speaker.3.fill"), for: .normal)
-            //            SoundManager.shared.playSound()
         }
 
-        clueViewModel.refreshClues {
+        clueViewModel.refreshClues(completion: {
             self.setupGameViews()
+        }) { (error) in
+            Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
         }
+
     }
 
     @IBAction func submit(_ sender: Any) {
-        clueViewModel.refreshClues {
+        clueViewModel.refreshClues(completion: {
             self.setupGameViews()
+        }) { (error) in
+            Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
         }
     }
 
     func setupGameViews() {
         guard let qestionCategory = clueViewModel.qestionCategory else { return }
         guard let qestion = clueViewModel.qestion else { return }
-        guard let correctanswer = clueViewModel.correctanswer else { return }
+//        guard let correctanswer = clueViewModel.correctanswer else { return }
 
         if qestion == "" {
-            print("****empty qestion*****")
-            clueViewModel.refreshClues { self.setupGameViews()}
+//            print("****empty qestion*****")
+            clueViewModel.refreshClues(completion: {
+                self.setupGameViews()
+            }) { (error) in
+                Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
+            }
             return
         }
 
-        print(qestionCategory)
-        print(qestion)
-        print(correctanswer)
-        print(clueViewModel.answerArray)
+//        print(qestionCategory)
+//        print(qestion)
+//        print(correctanswer)
+//        print(clueViewModel.answerArray)
         categoryLabel.pushTransition(1)
         categoryLabel.text = qestionCategory
         clueLabel.pushTransition(1)

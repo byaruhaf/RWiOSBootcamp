@@ -15,7 +15,7 @@ extension UIImageView {
     func load(imageURL: String,key:String) {
         func saveImageToCache(_ url:String,imageData:Data) {Networking.sharedInstance.imageDictionary[url] = imageData}
         if Networking.sharedInstance.imageDictionary[key] == nil {
-            print("Downloading")
+//            print("Downloading")
             if let url = URL(string: imageURL) {
                 DispatchQueue.global().async { [weak self] in
                     if let data = try? Data(contentsOf: url) {
@@ -30,7 +30,7 @@ extension UIImageView {
             }
 
         } else {
-             print("Using Cache")
+//             print("Using Cache")
             DispatchQueue.main.async {
                 self.image = UIImage(data: Networking.sharedInstance.imageDictionary[key]!)
             }

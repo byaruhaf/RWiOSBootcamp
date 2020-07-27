@@ -19,9 +19,9 @@ class Networking {
         return fetch(url: url)
             .decode(type: Clues.self, decoder: JSONDecoder())
             .tryMap { category in
-                guard let categoryID = category.first?.categoryID else { throw APIError.apiError(reason: "invalid categoryID")}
-                guard let cluesCount = category.first?.category?.cluesCount else { throw APIError.apiError(reason: "invalid cluesCount")}
-                print("\(categoryID)")
+                guard let categoryID = category.first?.categoryID else { throw APIError.parserError(reason: "invalid categoryID")}
+                guard let cluesCount = category.first?.category?.cluesCount else { throw APIError.parserError(reason: "invalid cluesCount")}
+//                print("\(categoryID)")
                 return (categoryID,cluesCount)
         }
         .flatMap { (categoryID,cluesCount) in
@@ -34,7 +34,7 @@ class Networking {
     func getAllCluesInCategory(for id: Int,  cluesCount: Int) -> AnyPublisher<Clues, Error> {
         let url = Endpoint.CategorylookUp(id: id, cluesCount: cluesCount).url!
         //let url = URL(string: "http://www.jservice.io/api/clues?category=31&offset=221")!
-        print(url)
+//        print(url)
         return fetch(url: url)
             .decode(type: Clues.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()

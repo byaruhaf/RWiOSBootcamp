@@ -17,7 +17,7 @@ class ClueViewModel {
     var correctanswer:String?
     var answerArray:[String] = []
 
-    func refreshClues(completion: @escaping () -> Void) {
+    func refreshClues(completion: @escaping () -> Void, errorFailure: @escaping (_ error:Error) -> Void) {
         cancellable = Networking.sharedInstance.loadData()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -25,8 +25,9 @@ class ClueViewModel {
                     case .finished:
                         break
                     case .failure(let error):
-                        print("received error: ", error)
-                        print(error.localizedDescription)
+//                        print("received error: ", error)
+//                        print(error.localizedDescription)
+                        errorFailure(error)
                 }
 
             }) { clues in
