@@ -95,7 +95,7 @@ class ViewController: UIViewController {
     }
 
     fileprivate func gameStart() {
-        clueViewModel.refreshClues(completion: {
+        clueViewModel.refreshClues(completion: { [unowned self]  in 
             self.setupGameViews()
         }) { (error) in
             Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
