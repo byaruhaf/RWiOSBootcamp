@@ -25,12 +25,12 @@ class ViewController: UIViewController {
     private var hasUserSelectedAnswer = false
 
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         logoImageView.load(imageURL:K.URL.imageURL , key: K.Keys.iamgeKey )
-        let c1 = UIColor(hue:0.704, saturation:0.884, brightness:0.719, alpha:1.000)
-        let c2 = UIColor(hue:0.762, saturation:0.667, brightness:0.800, alpha:1.000)
-        self.view.setGradientBackground(top: c2, bottom: c1)
+        self.view.setGradientBackground(top: K.Colours.c2, bottom: K.Colours.c1)
         nextButton.roundCorners()
 
         tableView.delegate = self
@@ -43,20 +43,12 @@ class ViewController: UIViewController {
 
         soundController()
 
-        clueViewModel.refreshClues(completion: {
-            self.setupGameViews()
-        }) { (error) in
-            Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
-        }
+        gameStart()
 
     }
 
     @IBAction func submit(_ sender: Any) {
-        clueViewModel.refreshClues(completion: {
-            self.setupGameViews()
-        }) { (error) in
-            Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
-        }
+        gameStart()
     }
 
     func setupGameViews() {
@@ -65,12 +57,7 @@ class ViewController: UIViewController {
 //        guard let correctanswer = clueViewModel.correctanswer else { return }
 
         if qestion == "" {
-//            print("****empty qestion*****")
-            clueViewModel.refreshClues(completion: {
-                self.setupGameViews()
-            }) { (error) in
-                Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
-            }
+            gameStart()
             return
         }
 
@@ -104,6 +91,14 @@ class ViewController: UIViewController {
         } else {
             soundButton.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
             SoundManager.shared.stopSound()
+        }
+    }
+
+    fileprivate func gameStart() {
+        clueViewModel.refreshClues(completion: {
+            self.setupGameViews()
+        }) { (error) in
+            Alert.showBasic(title: error.localizedDescription, message: "Contact Developer", vc: self)
         }
     }
 
