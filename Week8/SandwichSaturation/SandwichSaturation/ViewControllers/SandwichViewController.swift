@@ -122,6 +122,7 @@ extension SandwichViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell
             else { return UITableViewCell() }
         let sandwich = isFiltering ? filteredSandwiches[indexPath.section][indexPath.row] : sandwiches[indexPath.section][indexPath.row]
+
         cell.thumbnail.image = UIImage.init(imageLiteralResourceName: sandwich.imageName!)
         cell.nameLabel.text = sandwich.name
         cell.sauceLabel.text = sandwich.tosauceAmount?.sauceAmount.rawValue
@@ -175,6 +176,7 @@ extension SandwichViewController {
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
             self?.coreDataManager.save()
+            self?.loadSandwiches()
             tableView.reloadData()
         }
         let hidden = UIContextualAction(style: .normal, title: "Hidden") {  [weak self] (action, view, nil) in
@@ -237,5 +239,10 @@ extension SandwichViewController: UISearchBarDelegate {
         let sauceAmount = SauceAmount(rawValue:
             searchBar.scopeButtonTitles![selectedScope])
         filterContentForSearchText(searchBar.text!, sauceAmount: sauceAmount)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        sandwiches.removeAll()
+        sandwiches = coreDataManager.getSandwich()
+        tableView.reloadData()
     }
 }
