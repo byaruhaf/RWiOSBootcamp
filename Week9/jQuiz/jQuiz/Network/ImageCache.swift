@@ -11,6 +11,7 @@
 
 import UIKit
 
+// Image Caching using Flyweight Cache Pattern provides in-memory cache only
 extension UIImageView {
     func load(imageURL: String,key:String) {
         func saveImageToCache(_ url:String,imageData:Data) {Networking.sharedInstance.imageDictionary[url] = imageData}
@@ -37,6 +38,9 @@ extension UIImageView {
         }
     }
 }
+
+// Better Solution For Real APP
+// Image Caching using URLCache provides in-memory and on-disk cache
 
 //extension UIImageView {
 //    func load(url: URL, cache: URLCache? = nil) {
