@@ -17,14 +17,7 @@ extension String {
 }
 
 extension String{
-    var htmlStripped : String{
-        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-    }
-}
-
-
-extension String{
     var nonAsciStripped : String{
-        return self.replacingOccurrences(of: "[^\\x00-\\x7F]", with: "", options: .regularExpression, range: nil)
+        return self.replacingOccurrences(of: "<[^>]+>|\"|\\\\", with: "", options: .regularExpression, range: nil)
     }
 }

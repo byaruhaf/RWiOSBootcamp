@@ -37,9 +37,9 @@ class ClueViewModel {
                  self.qestion = selectedClue?.question
                 self.qestionCategory = selectedClue?.category?.title
                  let uncleanCorrectanswer = selectedClue?.answer
-                self.correctanswer = uncleanCorrectanswer?.htmlStripped.replacingOccurrences(of: "\\", with: "")
+                self.correctanswer = uncleanCorrectanswer?.nonAsciStripped
                 let uncleanAnswerArray = clues.compactMap {$0.answer}
-                self.answerArray = uncleanAnswerArray.map {$0.htmlStripped.replacingOccurrences(of: "\\", with: "")}
+                self.answerArray = uncleanAnswerArray.map {$0.nonAsciStripped}
                 completion()
         }
     }
