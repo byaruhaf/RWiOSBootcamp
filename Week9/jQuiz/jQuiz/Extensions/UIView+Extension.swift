@@ -5,13 +5,6 @@ import UIKit
 
 extension UIView {
     
-    // This quickly applies a drop shadow to a view. You could pull out some of these
-    // properties and make them parameters so it's more customizable when you call it.
-    // However, I typically find that a shadow style is likely to be universal for a project.
-    // I have masksToBounds on there so it can be used on a view with a cornerRadius.
-    
-    // How it's used: myView.setShadow()
-    
     func setShadow() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
@@ -20,10 +13,6 @@ extension UIView {
         clipsToBounds = true
         layer.masksToBounds = false
     }
-    
-    
-    // Sets the background of any view to a gradient.
-    // How it's used: myView.setGradientBackground(top: .red, bottom: .blue)
     
     func setGradientBackground(top: UIColor, bottom: UIColor) {
         let gradientLayer = CAGradientLayer()

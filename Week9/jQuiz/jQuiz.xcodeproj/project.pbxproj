@@ -19,8 +19,6 @@
 		5FFDAC5224CA3A01001D1081 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5024CA3A01001D1081 /* AnswerTableViewCell.xib */; };
 		5FFDAC5824CA5C5C001D1081 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5424CA5C5B001D1081 /* UIView+Extension.swift */; };
 		5FFDAC5924CA5C5C001D1081 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5524CA5C5B001D1081 /* UIButton+Extension.swift */; };
-		5FFDAC5A24CA5C5C001D1081 /* UIProgressBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5624CA5C5B001D1081 /* UIProgressBar+Extension.swift */; };
-		5FFDAC5B24CA5C5C001D1081 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFDAC5724CA5C5B001D1081 /* UITableView+Extension.swift */; };
 		C3DF5B7724C2549400F6D3EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7624C2549400F6D3EC /* AppDelegate.swift */; };
 		C3DF5B7924C2549400F6D3EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7824C2549400F6D3EC /* SceneDelegate.swift */; };
 		C3DF5B7B24C2549400F6D3EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF5B7A24C2549400F6D3EC /* ViewController.swift */; };
@@ -46,8 +44,6 @@
 		5FFDAC5024CA3A01001D1081 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		5FFDAC5424CA5C5B001D1081 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5FFDAC5524CA5C5B001D1081 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		5FFDAC5624CA5C5B001D1081 /* UIProgressBar+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIProgressBar+Extension.swift"; sourceTree = "<group>"; };
-		5FFDAC5724CA5C5B001D1081 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		C3DF5B7324C2549400F6D3EC /* jQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DF5B7624C2549400F6D3EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DF5B7824C2549400F6D3EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,8 +144,6 @@
 				5F010D8424CBCAB300F8E0AC /* Alert.swift */,
 				5F90CCA224CB29B7002CC950 /* CustomView.swift */,
 				5FFDAC5524CA5C5B001D1081 /* UIButton+Extension.swift */,
-				5FFDAC5624CA5C5B001D1081 /* UIProgressBar+Extension.swift */,
-				5FFDAC5724CA5C5B001D1081 /* UITableView+Extension.swift */,
 				5FFDAC5424CA5C5B001D1081 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
@@ -294,13 +288,11 @@
 				5F010D8524CBCAB300F8E0AC /* Alert.swift in Sources */,
 				5F410E9E24C9CF27002FDD7F /* String+Extension.swift in Sources */,
 				5F410E9C24C9BB40002FDD7F /* ClueViewModel.swift in Sources */,
-				5FFDAC5A24CA5C5C001D1081 /* UIProgressBar+Extension.swift in Sources */,
 				5FFDAC5124CA3A01001D1081 /* AnswerTableViewCell.swift in Sources */,
 				5FFDAC5924CA5C5C001D1081 /* UIButton+Extension.swift in Sources */,
 				C3DF5B7B24C2549400F6D3EC /* ViewController.swift in Sources */,
 				C3DF5B7724C2549400F6D3EC /* AppDelegate.swift in Sources */,
 				5F010D8924CC0EE300F8E0AC /* EndPoint.swift in Sources */,
-				5FFDAC5B24CA5C5C001D1081 /* UITableView+Extension.swift in Sources */,
 				C3DF5B7924C2549400F6D3EC /* SceneDelegate.swift in Sources */,
 				C3DF5BB024C260A600F6D3EC /* Clue.swift in Sources */,
 				C3FBE53824C4DEA300D11A30 /* ImageCache.swift in Sources */,
