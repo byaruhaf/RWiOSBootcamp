@@ -182,11 +182,13 @@ extension SandwichViewController {
             self?.coreDataManager.hideSandwich(selectedSandwiche!)
             self?.coreDataManager.save()
             self?.loadSandwiches()
-//            tableView.reloadData()
-            //            tableView.reloadSections([0,1], with: .automatic)
+
             DispatchQueue.main.async {
-                self?.tableView.reloadSections([0,1], with: .top)
-//                tableView.reloadData()
+                if tableView.numberOfSections > 1 {
+                    self?.tableView.reloadSections([0,1], with: .top)
+                } else {
+                    tableView.reloadData()
+                }
             }
         }
         delete.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
