@@ -8,19 +8,21 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //:
 //: **Step 1**: Implement this new `UIView` function:
 extension UIView {
-  static func animate(withDuration duration: TimeInterval, animations: @escaping () -> Void, group: DispatchGroup, completion: ((Bool) -> Void)?) {
-    
-  // TODO: Fill in this implementation
-  
-  }
+    static func animate(withDuration duration: TimeInterval, animations: @escaping () -> Void, group: DispatchGroup, completion: ((Bool) -> Void)?) {
+        group.enter()
+        animate(withDuration: duration, animations: animations) { (success) in
+            completion?(success)
+            group.leave()
+        }
+    }
 }
 //: ## Setup
 // Use this dispatch group:
 let animationGroup = DispatchGroup()
 // This should only print once all the animations are complete
-animationGroup.notify(queue: DispatchQueue.main) {
-  print("Animations Completed!")
-}
+//animationGroup.notify(queue: DispatchQueue.main) {
+//  print("Animations Completed!")
+//}
 //: ## Views
 //: The animation uses the following views
 // A red square
@@ -33,19 +35,24 @@ view.addSubview(box)
 // Note: Enable Xcode▸Editor▸Live View to see the animation.
 PlaygroundPage.current.liveView = view
 //: **Step 2**: Rewrite the following animation to be notified when all sub-animations complete:
+
+
 UIView.animate(withDuration: 1, animations: {
-  // Move box to lower right corner
-  box.center = CGPoint(x: 150, y: 150)
-  }, completion: {
-    _ in
+    // Move box to lower right corner
+    box.center = CGPoint(x: 150, y: 150)
+}, group: animationGroup, completion: { _ in
     UIView.animate(withDuration: 2, animations: {
-      // Rotate box 45 degrees
-      box.transform = CGAffineTransform(rotationAngle: .pi/4)
-      }, completion: .none)
+        // Rotate box 45 degrees
+        box.transform = CGAffineTransform(rotationAngle: .pi/4)
+    }, group: animationGroup, completion: nil)
 })
 
-UIView.animate(withDuration: 4, animations: { () -> Void in
-  // Change background color to blue
-  view.backgroundColor = UIColor.blue
-})
+UIView.animate(withDuration: 4, animations: {
+    // Change background color to blue
+    view.backgroundColor = UIColor.blue
+}, group: animationGroup, completion: nil)
 //: __Note:__ Manually stop execution of this playground when the animation finishes: click the stop button below.
+// This should only print once all the animations are complete
+animationGroup.notify(queue: DispatchQueue.main) {
+    print("Animations Completed!")
+}
