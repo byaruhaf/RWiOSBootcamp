@@ -19,10 +19,7 @@ extension UIView {
 //: ## Setup
 // Use this dispatch group:
 let animationGroup = DispatchGroup()
-// This should only print once all the animations are complete
-//animationGroup.notify(queue: DispatchQueue.main) {
-//  print("Animations Completed!")
-//}
+
 //: ## Views
 //: The animation uses the following views
 // A red square
