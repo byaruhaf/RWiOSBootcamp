@@ -1,12 +1,14 @@
 import UIKit
 import PlaygroundSupport
 PlaygroundPage.current.needsIndefiniteExecution = true
+
 //: # Animations
 //: In **Use a Group of Tasks**, you learned how you can use GCD dispatch groups to be notified when a set of GCD tasks completes, and how you can wrap an existing asynchronous API to use dispatch groups.
 //: 
 //: __Homework:__ The `UIView` animation API is asynchronous, but doesn't make it easy to determine when multiple simultaneous animations complete. Your challenge is to extend the `UIView` animation API to accept a `DispatchGroup` argument, and hence determine when a set of animations completes.
 //:
 //: **Step 1**: Implement this new `UIView` function:
+
 extension UIView {
     static func animate(withDuration duration: TimeInterval, animations: @escaping () -> Void, group: DispatchGroup, completion: ((Bool) -> Void)?) {
         group.enter()
