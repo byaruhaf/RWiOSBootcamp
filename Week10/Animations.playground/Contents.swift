@@ -10,9 +10,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 extension UIView {
     static func animate(withDuration duration: TimeInterval, animations: @escaping () -> Void, group: DispatchGroup, completion: ((Bool) -> Void)?) {
         group.enter()
-        animate(withDuration: duration, animations: animations) { (success) in
-            completion?(success)
-            group.leave()
+        animate(withDuration: duration, animations: animations) { result in
+            defer { group.leave() }
+            completion?(result)
         }
     }
 }
@@ -41,13 +41,13 @@ UIView.animate(withDuration: 1, animations: {
     UIView.animate(withDuration: 2, animations: {
         // Rotate box 45 degrees
         box.transform = CGAffineTransform(rotationAngle: .pi/4)
-    }, group: animationGroup, completion: nil)
+    }, group: animationGroup, completion: .none)
 })
 
 UIView.animate(withDuration: 4, animations: {
     // Change background color to blue
     view.backgroundColor = UIColor.blue
-}, group: animationGroup, completion: nil)
+}, group: animationGroup, completion: .none)
 //: __Note:__ Manually stop execution of this playground when the animation finishes: click the stop button below.
 // This should only print once all the animations are complete
 animationGroup.notify(queue: DispatchQueue.main) {
