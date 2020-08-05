@@ -13,6 +13,7 @@
 		5F18933D24DABD87008893BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F18933B24DABD87008893BB /* Main.storyboard */; };
 		5F18933F24DABD87008893BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F18933E24DABD87008893BB /* Assets.xcassets */; };
 		5F18934224DABD87008893BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F18934024DABD87008893BB /* LaunchScreen.storyboard */; };
+		5F2F5D0E24DB34BC00E19078 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F5D0D24DB34BC00E19078 /* Animator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5F18933E24DABD87008893BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F18934124DABD87008893BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F18934324DABD87008893BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F2F5D0D24DB34BC00E19078 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				5F18933524DABD87008893BB /* AppDelegate.swift */,
 				5F18933724DABD87008893BB /* SceneDelegate.swift */,
 				5F18933924DABD87008893BB /* ViewController.swift */,
+				5F2F5D0D24DB34BC00E19078 /* Animator.swift */,
 				5F18933B24DABD87008893BB /* Main.storyboard */,
 				5F18933E24DABD87008893BB /* Assets.xcassets */,
 				5F18934024DABD87008893BB /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				5F18933A24DABD87008893BB /* ViewController.swift in Sources */,
 				5F18933624DABD87008893BB /* AppDelegate.swift in Sources */,
+				5F2F5D0E24DB34BC00E19078 /* Animator.swift in Sources */,
 				5F18933824DABD87008893BB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

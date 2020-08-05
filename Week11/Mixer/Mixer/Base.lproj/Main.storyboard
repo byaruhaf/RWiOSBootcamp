@@ -21,31 +21,60 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAV-Is-Ydy">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                         <state key="normal" title="Mix1"/>
+                                        <connections>
+                                            <action selector="addAnimation1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NCs-pD-lgk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnK-YO-bvR">
                                         <rect key="frame" x="159" y="0.0" width="96" height="30"/>
                                         <state key="normal" title="Mix2"/>
+                                        <connections>
+                                            <action selector="addAnimation2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="shx-UK-8sB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niN-5s-Y4W">
                                         <rect key="frame" x="318" y="0.0" width="96" height="30"/>
                                         <state key="normal" title="Mix3"/>
+                                        <connections>
+                                            <action selector="addAnimation3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3H-lL-ELa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FH2-N6-k4d">
+                                <rect key="frame" x="183.5" y="762" width="47" height="30"/>
+                                <state key="normal" title="Excute"/>
+                                <connections>
+                                    <action selector="mixAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcu-cW-scj"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tD4-5B-TT8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="668"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Cuf-2M-GjK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B1U-qE-OWb"/>
+                            <constraint firstItem="tD4-5B-TT8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="D67-V2-dlc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cuf-2M-GjK" secondAttribute="trailing" id="JXr-mD-DyA"/>
+                            <constraint firstItem="FH2-N6-k4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UEW-D3-5bf"/>
+                            <constraint firstItem="FH2-N6-k4d" firstAttribute="top" secondItem="tD4-5B-TT8" secondAttribute="bottom" constant="50" id="gkk-09-tS2"/>
+                            <constraint firstItem="tD4-5B-TT8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h0e-i9-roo"/>
                             <constraint firstItem="Cuf-2M-GjK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mrJ-mO-EH7"/>
+                            <constraint firstItem="Cuf-2M-GjK" firstAttribute="top" secondItem="FH2-N6-k4d" secondAttribute="bottom" constant="20" id="tWV-J2-bWH"/>
+                            <constraint firstItem="tD4-5B-TT8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ucb-GE-Uft"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cuf-2M-GjK" secondAttribute="bottom" constant="20" id="wBw-KT-v4u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="stageview" destination="tD4-5B-TT8" id="lXV-Fs-RU0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
