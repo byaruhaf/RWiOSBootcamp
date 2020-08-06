@@ -19,17 +19,17 @@ public extension Animator {
     }
 
     static func resize(to size: CGSize, duration: TimeInterval = 3) -> Animator {
-//        return Animator(duration: duration, closure: { $0.bounds.size = size })
-        return Animator(duration: duration, closure: {   $0.transform = CGAffineTransform(scaleX: 3, y: 3) })
+        return Animator(duration: duration, closure: { $0.bounds.size = size })
+//        return Animator(duration: duration, closure: {   $0.transform = CGAffineTransform(scaleX: 3, y: 3) })
 
     }
 
     static func move(duration: TimeInterval = 3) -> Animator {
-        return Animator(duration: duration, closure: {  $0.center = CGPoint(x: 198, y: 320) })
+        return Animator(duration: duration, closure: {  $0.center = CGPoint(x: 250, y: 330) })
     }
 
     static func rotate(duration: TimeInterval = 3) -> Animator {
-        return Animator(duration: duration, closure: {   $0.transform = CGAffineTransform(rotationAngle: .pi/4) })
+        return Animator(duration: duration, closure: {   $0.transform = CGAffineTransform(rotationAngle: -125)})
     }
 
 }

@@ -28,7 +28,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet-molten" translatesAutoresizingMaskIntoConstraints="NO" id="LPL-sc-19S">
                                 <rect key="frame" x="60" y="208.5" width="255" height="250"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="Pdy-TB-XA7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="—Pngtree—spaceship_592755" translatesAutoresizingMaskIntoConstraints="NO" id="Pdy-TB-XA7">
                                 <rect key="frame" x="0.0" y="9" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WgK-Yf-TwD"/>
@@ -84,6 +84,6 @@
     <resources>
         <image name="background-home" width="1080" height="2340"/>
         <image name="planet-molten" width="250" height="250"/>
-        <image name="spaceship" width="860" height="569"/>
+        <image name="—Pngtree—spaceship_592755" width="1200" height="1200"/>
     </resources>
 </document>

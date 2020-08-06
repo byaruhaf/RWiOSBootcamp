@@ -13,9 +13,9 @@ struct RadialButtonStyle: ButtonStyle {
         configuration.label
             .padding()
             .font(.title)
-            .background(Color.orange.opacity(configuration.isPressed ? 0.5 : 1))
+            .background(Color(UIColor(hue: 0.15, saturation: 0.85, brightness: 1.00, alpha: 1.00)).opacity(configuration.isPressed ? 0.5 : 1))
             .clipShape(Circle())
-            .foregroundColor(.white)
+            .foregroundColor(Color(UIColor(hue: 1.00, saturation: 1.00, brightness: 0.50, alpha: 1.00)))
     }
 }
 

@@ -13,9 +13,9 @@ struct MixerMenuButton: View {
       @State private var isExpanded = false
     var buttons: [RadialButton] {
         [
-            RadialButton(label: "eye.fill", image: Image(systemName: "eye.fill"), action: locationTapped),
-            RadialButton(label: "Resize", image: Image(systemName: "arkit"), action: cameraTapped),
-            RadialButton(label: "Move", image: Image(systemName: "arrow.swap"), action: photoTapped)
+            RadialButton(label: "eye.fill", image: Image(systemName: "eye.fill"), action: fadeInTapped),
+            RadialButton(label: "Resize", image: Image(systemName: "arkit"), action: resizeTapped),
+            RadialButton(label: "Move", image: Image(systemName: "arrow.swap"), action: moveTapped)
         ]
     }
 
@@ -30,20 +30,21 @@ struct MixerMenuButton: View {
         }
     }
 
-    func photoTapped() {
+    func moveTapped() {
         print("Hello, photoTapped!")
         mixerViewModel.addMove()
-
     }
 
-    func cameraTapped() {
+    func resizeTapped() {
         print("Hello, cameraTapped!")
         mixerViewModel.addResize()
     }
 
-    func locationTapped() {
+    func fadeInTapped() {
         print("Hello, locationTapped!")
         mixerViewModel.addFadeIn()
+        mixerViewModel.addrotate()
+
     }
 
     func openActionTapped() {

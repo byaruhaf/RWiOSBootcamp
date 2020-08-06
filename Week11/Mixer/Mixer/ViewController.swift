@@ -53,9 +53,8 @@ class ViewController: UIViewController {
     }
 
     func resetMix() {
+        configureInitialSetup()
         viewAnimations.removeAll()
-        viewAnimations.append(.resize(to: CGSize(width: 40, height: 40)))
-        spaceShip.performInParallel(viewAnimations)
     }
 
 

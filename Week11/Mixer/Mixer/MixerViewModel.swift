@@ -17,11 +17,15 @@ class MixerViewModel: ObservableObject {
     }
 
     func addResize() {
-        viewAnimations.append(.resize(to: CGSize(width: 100, height: 100)))
+        viewAnimations.append(.resize(to: CGSize(width: 150, height: 150)))
     }
 
     func addMove() {
         viewAnimations.append(.move())
+    }
+
+    func addrotate() {
+        viewAnimations.append(.rotate())
     }
     
 }
