@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
     @IBOutlet weak var stageview: UIView!
+    @IBOutlet weak var mixerMenuContainerView: UIView!
     var viewAnimations:[Animator] = []
+    @ObservedObject var mixerViewModel = MixerViewModel()
+
 
     // A yellow box
     let playBox = UIView(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
@@ -22,10 +26,21 @@ class ViewController: UIViewController {
         playBox.backgroundColor = UIColor.yellow
         stageview.addSubview(playBox)
 
+        let childView = UIHostingController(rootView: MixerMenuButton(mixerViewModel: mixerViewModel))
+        addChild(childView)
+        childView.view.frame = mixerMenuContainerView.bounds
+        mixerMenuContainerView.addSubview(childView.view)
+        childView.didMove(toParent: self)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshList), name:NSNotification.Name(rawValue: "refresh"), object: nil)
+    }
+
+    @objc func refreshList(notification: NSNotification){
+        performMix()
     }
 
     func performMix() {
-        playBox.performInParallel(viewAnimations)
+        playBox.performInParallel(mixerViewModel.viewAnimations)
     }
 
     func resetMix() {
@@ -35,22 +50,5 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func mixAnimation(_ sender: Any) {
-        performMix()
-    }
-
-    @IBAction func addAnimation1(_ sender: Any) {
-        viewAnimations.append(.fadeIn())
-        viewAnimations.append(.colorChange())
-    }
-
-    @IBAction func addAnimation2(_ sender: Any) {
-        viewAnimations.append(.resize(to: CGSize(width: 200, height: 200)))
-        viewAnimations.append(.move())
-    }
-
-    @IBAction func addAnimation3(_ sender: Any) {
-        resetMix()
-    }
 }
 
