@@ -16,12 +16,8 @@ class MixerViewModel: ObservableObject {
         viewAnimations.append(.fadeIn())
     }
 
-    func addColorChange() {
-        viewAnimations.append(.colorChange())
-    }
-
     func addResize() {
-        viewAnimations.append(.resize(to: CGSize(width: 200, height: 200)))
+        viewAnimations.append(.resize(to: CGSize(width: 100, height: 100)))
     }
 
     func addMove() {

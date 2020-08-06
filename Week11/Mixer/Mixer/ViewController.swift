@@ -10,43 +10,52 @@ import UIKit
 import SwiftUI
 
 class ViewController: UIViewController {
-    @IBOutlet weak var stageview: UIView!
+    @IBOutlet weak var spaceShip: UIImageView!
     @IBOutlet weak var mixerMenuContainerView: UIView!
     var viewAnimations:[Animator] = []
     @ObservedObject var mixerViewModel = MixerViewModel()
 
 
-    // A yellow box
-    let playBox = UIView(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        stageview.backgroundColor = UIColor.red
-        playBox.backgroundColor = UIColor.yellow
-        stageview.addSubview(playBox)
-
         let childView = UIHostingController(rootView: MixerMenuButton(mixerViewModel: mixerViewModel))
         addChild(childView)
-        childView.view.frame = mixerMenuContainerView.bounds
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: mixerMenuContainerView.bounds.height)
+        childView.view.frame = frame
+        childView.view.backgroundColor = .clear
         mixerMenuContainerView.addSubview(childView.view)
         childView.didMove(toParent: self)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshList), name:NSNotification.Name(rawValue: "refresh"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(performMixAnimations), name:NSNotification.Name(rawValue: "perform"), object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(resetMixAnimations), name:NSNotification.Name(rawValue: "reset"), object: nil)
+
+        configureInitialSetup()
     }
 
-    @objc func refreshList(notification: NSNotification){
+    func configureInitialSetup() {
+        spaceShip.alpha = 0.0
+        spaceShip.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+    }
+
+    @objc func performMixAnimations(notification: NSNotification){
         performMix()
     }
 
+    @objc func resetMixAnimations(notification: NSNotification){
+//        resetMix()
+    }
     func performMix() {
-        playBox.performInParallel(mixerViewModel.viewAnimations)
+        spaceShip.performInParallel(mixerViewModel.viewAnimations)
+
+
     }
 
     func resetMix() {
         viewAnimations.removeAll()
         viewAnimations.append(.resize(to: CGSize(width: 40, height: 40)))
-        playBox.performInParallel(viewAnimations)
+        spaceShip.performInParallel(viewAnimations)
     }
 
 
