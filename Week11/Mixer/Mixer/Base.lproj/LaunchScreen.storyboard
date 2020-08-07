@@ -15,16 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-home" translatesAutoresizingMaskIntoConstraints="NO" id="2TZ-sN-LGN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-home" translatesAutoresizingMaskIntoConstraints="NO" id="9pT-6n-Oll">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2TZ-sN-LGN" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Div-qI-gAM"/>
-                            <constraint firstAttribute="trailing" secondItem="2TZ-sN-LGN" secondAttribute="trailing" id="Qha-Pq-4vD"/>
-                            <constraint firstItem="2TZ-sN-LGN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="XW1-bT-N3Q"/>
-                            <constraint firstAttribute="bottom" secondItem="2TZ-sN-LGN" secondAttribute="bottom" id="p0i-7h-nTy"/>
+                            <constraint firstAttribute="trailing" secondItem="9pT-6n-Oll" secondAttribute="trailing" id="Bzp-Db-YKm"/>
+                            <constraint firstItem="9pT-6n-Oll" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dtT-0T-VrU"/>
+                            <constraint firstAttribute="bottom" secondItem="9pT-6n-Oll" secondAttribute="bottom" id="rLC-OR-2oF"/>
+                            <constraint firstItem="9pT-6n-Oll" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="xCK-T8-TA3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,78 +12,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mixer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-home" translatesAutoresizingMaskIntoConstraints="NO" id="wJj-N4-3PV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-3N-D5H">
-                                <rect key="frame" x="0.0" y="483.5" width="375" height="133.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="5hb-nd-r2W" kind="embed" id="zXd-gO-6tE"/>
-                                </connections>
-                            </containerView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet-molten" translatesAutoresizingMaskIntoConstraints="NO" id="LPL-sc-19S">
-                                <rect key="frame" x="60" y="208.5" width="255" height="250"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceshipMain" translatesAutoresizingMaskIntoConstraints="NO" id="Pdy-TB-XA7">
-                                <rect key="frame" x="0.0" y="9" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="WgK-Yf-TwD"/>
-                                    <constraint firstAttribute="width" constant="50" id="tav-O4-E4C"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-home" translatesAutoresizingMaskIntoConstraints="NO" id="V1h-X9-QQy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Pdy-TB-XA7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Ug-q4-7o9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aq9-3N-D5H" secondAttribute="trailing" id="H8r-RB-0Zk"/>
-                            <constraint firstAttribute="bottom" secondItem="wJj-N4-3PV" secondAttribute="bottom" id="M8g-wD-tMC"/>
-                            <constraint firstItem="LPL-sc-19S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="PUy-jK-Ayi"/>
-                            <constraint firstItem="LPL-sc-19S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QFX-vJ-Dbj"/>
-                            <constraint firstItem="Aq9-3N-D5H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SQE-R5-Wmf"/>
-                            <constraint firstItem="LPL-sc-19S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SR0-rN-lA6"/>
-                            <constraint firstItem="Aq9-3N-D5H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SrA-rd-Xss"/>
-                            <constraint firstItem="wJj-N4-3PV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UZO-N8-Tvg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LPL-sc-19S" secondAttribute="trailing" constant="60" id="Uzb-XS-Cbh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Aq9-3N-D5H" secondAttribute="bottom" constant="50" id="W7s-FH-gBI"/>
-                            <constraint firstAttribute="trailing" secondItem="wJj-N4-3PV" secondAttribute="trailing" id="Z2E-bO-tmS"/>
-                            <constraint firstItem="wJj-N4-3PV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g1I-eG-JfP"/>
-                            <constraint firstItem="Pdy-TB-XA7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="iO0-jS-k14"/>
-                            <constraint firstItem="Aq9-3N-D5H" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="kf3-cc-ucK"/>
+                            <constraint firstItem="V1h-X9-QQy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="39s-3R-nX3"/>
+                            <constraint firstAttribute="trailing" secondItem="V1h-X9-QQy" secondAttribute="trailing" id="kEc-PV-5M5"/>
+                            <constraint firstAttribute="bottom" secondItem="V1h-X9-QQy" secondAttribute="bottom" id="m9W-Si-6g0"/>
+                            <constraint firstItem="V1h-X9-QQy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u0Y-fm-r4P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="mixerMenuContainerView" destination="Aq9-3N-D5H" id="3pu-R5-TOW"/>
-                        <outlet property="spaceShip" destination="Pdy-TB-XA7" id="guV-jq-hFd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="RBP-cX-FhQ">
-            <objects>
-                <viewController id="5hb-nd-r2W" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5bX-Kf-qJw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ZBW-gi-2ne"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8lK-2I-gMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="926" y="138"/>
+            <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
     <resources>
         <image name="background-home" width="1080" height="2340"/>
-        <image name="planet-molten" width="250" height="250"/>
-        <image name="spaceshipMain" width="1068" height="799"/>
     </resources>
 </document>

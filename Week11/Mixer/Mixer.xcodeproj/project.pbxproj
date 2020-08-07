@@ -7,35 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F18933624DABD87008893BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18933524DABD87008893BB /* AppDelegate.swift */; };
-		5F18933824DABD87008893BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18933724DABD87008893BB /* SceneDelegate.swift */; };
-		5F18933A24DABD87008893BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18933924DABD87008893BB /* ViewController.swift */; };
-		5F18933D24DABD87008893BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F18933B24DABD87008893BB /* Main.storyboard */; };
-		5F18933F24DABD87008893BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F18933E24DABD87008893BB /* Assets.xcassets */; };
-		5F18934224DABD87008893BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F18934024DABD87008893BB /* LaunchScreen.storyboard */; };
-		5F2F5D0E24DB34BC00E19078 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F5D0D24DB34BC00E19078 /* Animator.swift */; };
-		5F2F5D1024DB501700E19078 /* RadialButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F5D0F24DB501700E19078 /* RadialButtonStyle.swift */; };
-		5F2F5D1624DB53B200E19078 /* MixerMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F5D1524DB53B200E19078 /* MixerMenuButton.swift */; };
-		5F2F5D1824DB5D2A00E19078 /* MixerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F5D1724DB5D2A00E19078 /* MixerViewModel.swift */; };
+		5F9E938224DD0854000C1833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E938124DD0854000C1833 /* AppDelegate.swift */; };
+		5F9E938424DD0854000C1833 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E938324DD0854000C1833 /* SceneDelegate.swift */; };
+		5F9E938624DD0854000C1833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E938524DD0854000C1833 /* ViewController.swift */; };
+		5F9E938924DD0854000C1833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9E938724DD0854000C1833 /* Main.storyboard */; };
+		5F9E938B24DD0855000C1833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9E938A24DD0855000C1833 /* Assets.xcassets */; };
+		5F9E938E24DD0855000C1833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9E938C24DD0855000C1833 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F18933224DABD87008893BB /* Mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F18933524DABD87008893BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F18933724DABD87008893BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F18933924DABD87008893BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5F18933C24DABD87008893BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5F18933E24DABD87008893BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5F18934124DABD87008893BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5F18934324DABD87008893BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F2F5D0D24DB34BC00E19078 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		5F2F5D0F24DB501700E19078 /* RadialButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialButtonStyle.swift; sourceTree = "<group>"; };
-		5F2F5D1524DB53B200E19078 /* MixerMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerMenuButton.swift; sourceTree = "<group>"; };
-		5F2F5D1724DB5D2A00E19078 /* MixerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerViewModel.swift; sourceTree = "<group>"; };
+		5F9E937E24DD0854000C1833 /* Mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9E938124DD0854000C1833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F9E938324DD0854000C1833 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5F9E938524DD0854000C1833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F9E938824DD0854000C1833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F9E938A24DD0855000C1833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F9E938D24DD0855000C1833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F9E938F24DD0855000C1833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5F18932F24DABD87008893BB /* Frameworks */ = {
+		5F9E937B24DD0854000C1833 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,36 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F18932924DABD87008893BB = {
+		5F9E937524DD0854000C1833 = {
 			isa = PBXGroup;
 			children = (
-				5F18933424DABD87008893BB /* Mixer */,
-				5F18933324DABD87008893BB /* Products */,
+				5F9E938024DD0854000C1833 /* Mixer */,
+				5F9E937F24DD0854000C1833 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5F18933324DABD87008893BB /* Products */ = {
+		5F9E937F24DD0854000C1833 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F18933224DABD87008893BB /* Mixer.app */,
+				5F9E937E24DD0854000C1833 /* Mixer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5F18933424DABD87008893BB /* Mixer */ = {
+		5F9E938024DD0854000C1833 /* Mixer */ = {
 			isa = PBXGroup;
 			children = (
-				5F18933524DABD87008893BB /* AppDelegate.swift */,
-				5F18933724DABD87008893BB /* SceneDelegate.swift */,
-				5F18933924DABD87008893BB /* ViewController.swift */,
-				5F2F5D0F24DB501700E19078 /* RadialButtonStyle.swift */,
-				5F2F5D1524DB53B200E19078 /* MixerMenuButton.swift */,
-				5F2F5D1724DB5D2A00E19078 /* MixerViewModel.swift */,
-				5F2F5D0D24DB34BC00E19078 /* Animator.swift */,
-				5F18933B24DABD87008893BB /* Main.storyboard */,
-				5F18933E24DABD87008893BB /* Assets.xcassets */,
-				5F18934024DABD87008893BB /* LaunchScreen.storyboard */,
-				5F18934324DABD87008893BB /* Info.plist */,
+				5F9E938124DD0854000C1833 /* AppDelegate.swift */,
+				5F9E938324DD0854000C1833 /* SceneDelegate.swift */,
+				5F9E938524DD0854000C1833 /* ViewController.swift */,
+				5F9E938724DD0854000C1833 /* Main.storyboard */,
+				5F9E938A24DD0855000C1833 /* Assets.xcassets */,
+				5F9E938C24DD0855000C1833 /* LaunchScreen.storyboard */,
+				5F9E938F24DD0855000C1833 /* Info.plist */,
 			);
 			path = Mixer;
 			sourceTree = "<group>";
@@ -82,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F18933124DABD87008893BB /* Mixer */ = {
+		5F9E937D24DD0854000C1833 /* Mixer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F18934624DABD87008893BB /* Build configuration list for PBXNativeTarget "Mixer" */;
+			buildConfigurationList = 5F9E939224DD0855000C1833 /* Build configuration list for PBXNativeTarget "Mixer" */;
 			buildPhases = (
-				5F18932E24DABD87008893BB /* Sources */,
-				5F18932F24DABD87008893BB /* Frameworks */,
-				5F18933024DABD87008893BB /* Resources */,
+				5F9E937A24DD0854000C1833 /* Sources */,
+				5F9E937B24DD0854000C1833 /* Frameworks */,
+				5F9E937C24DD0854000C1833 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -96,25 +84,25 @@
 			);
 			name = Mixer;
 			productName = Mixer;
-			productReference = 5F18933224DABD87008893BB /* Mixer.app */;
+			productReference = 5F9E937E24DD0854000C1833 /* Mixer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5F18932A24DABD87008893BB /* Project object */ = {
+		5F9E937624DD0854000C1833 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Franklin Byaruhanga";
 				TargetAttributes = {
-					5F18933124DABD87008893BB = {
+					5F9E937D24DD0854000C1833 = {
 						CreatedOnToolsVersion = 11.6;
 					};
 				};
 			};
-			buildConfigurationList = 5F18932D24DABD87008893BB /* Build configuration list for PBXProject "Mixer" */;
+			buildConfigurationList = 5F9E937924DD0854000C1833 /* Build configuration list for PBXProject "Mixer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,59 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 5F18932924DABD87008893BB;
-			productRefGroup = 5F18933324DABD87008893BB /* Products */;
+			mainGroup = 5F9E937524DD0854000C1833;
+			productRefGroup = 5F9E937F24DD0854000C1833 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F18933124DABD87008893BB /* Mixer */,
+				5F9E937D24DD0854000C1833 /* Mixer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5F18933024DABD87008893BB /* Resources */ = {
+		5F9E937C24DD0854000C1833 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F18934224DABD87008893BB /* LaunchScreen.storyboard in Resources */,
-				5F18933F24DABD87008893BB /* Assets.xcassets in Resources */,
-				5F18933D24DABD87008893BB /* Main.storyboard in Resources */,
+				5F9E938E24DD0855000C1833 /* LaunchScreen.storyboard in Resources */,
+				5F9E938B24DD0855000C1833 /* Assets.xcassets in Resources */,
+				5F9E938924DD0854000C1833 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5F18932E24DABD87008893BB /* Sources */ = {
+		5F9E937A24DD0854000C1833 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2F5D1024DB501700E19078 /* RadialButtonStyle.swift in Sources */,
-				5F18933A24DABD87008893BB /* ViewController.swift in Sources */,
-				5F2F5D1624DB53B200E19078 /* MixerMenuButton.swift in Sources */,
-				5F2F5D1824DB5D2A00E19078 /* MixerViewModel.swift in Sources */,
-				5F18933624DABD87008893BB /* AppDelegate.swift in Sources */,
-				5F2F5D0E24DB34BC00E19078 /* Animator.swift in Sources */,
-				5F18933824DABD87008893BB /* SceneDelegate.swift in Sources */,
+				5F9E938624DD0854000C1833 /* ViewController.swift in Sources */,
+				5F9E938224DD0854000C1833 /* AppDelegate.swift in Sources */,
+				5F9E938424DD0854000C1833 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5F18933B24DABD87008893BB /* Main.storyboard */ = {
+		5F9E938724DD0854000C1833 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5F18933C24DABD87008893BB /* Base */,
+				5F9E938824DD0854000C1833 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		5F18934024DABD87008893BB /* LaunchScreen.storyboard */ = {
+		5F9E938C24DD0855000C1833 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5F18934124DABD87008893BB /* Base */,
+				5F9E938D24DD0855000C1833 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -182,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5F18934424DABD87008893BB /* Debug */ = {
+		5F9E939024DD0855000C1833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		5F18934524DABD87008893BB /* Release */ = {
+		5F9E939124DD0855000C1833 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +280,7 @@
 			};
 			name = Release;
 		};
-		5F18934724DABD87008893BB /* Debug */ = {
+		5F9E939324DD0855000C1833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -314,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		5F18934824DABD87008893BB /* Release */ = {
+		5F9E939424DD0855000C1833 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -335,25 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F18932D24DABD87008893BB /* Build configuration list for PBXProject "Mixer" */ = {
+		5F9E937924DD0854000C1833 /* Build configuration list for PBXProject "Mixer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F18934424DABD87008893BB /* Debug */,
-				5F18934524DABD87008893BB /* Release */,
+				5F9E939024DD0855000C1833 /* Debug */,
+				5F9E939124DD0855000C1833 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F18934624DABD87008893BB /* Build configuration list for PBXNativeTarget "Mixer" */ = {
+		5F9E939224DD0855000C1833 /* Build configuration list for PBXNativeTarget "Mixer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F18934724DABD87008893BB /* Debug */,
-				5F18934824DABD87008893BB /* Release */,
+				5F9E939324DD0855000C1833 /* Debug */,
+				5F9E939424DD0855000C1833 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5F18932A24DABD87008893BB /* Project object */;
+	rootObject = 5F9E937624DD0854000C1833 /* Project object */;
 }
