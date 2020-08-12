@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var rotateBtnLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var resizeBtnBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var moveBtnTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rotateBtnYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var moveBtnYConstraint: NSLayoutConstraint!
     private var isMenueShowing = false
 
 
@@ -38,19 +40,38 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
 
-    @IBAction func playPauseTapped(_ sender: Any) {
-        isMenueShowing.toggle()
 
+
+    @IBAction func playPauseTapped(_ sender: Any) {
+        showHideMenu()
+    }
+
+    @IBAction func resizeTapped(_ sender: Any) {
+    }
+    @IBAction func moveTapped(_ sender: Any) {
+    }
+    @IBAction func visualTapped(_ sender: Any) {
+    }
+
+
+    fileprivate func menucontroller() {
+        self.rotateBtnLeadingConstraint.constant = self.isMenueShowing ? -50 : 50
+        self.resizeBtnBottomConstraint.constant = self.isMenueShowing ? -50 : 50
+        self.moveBtnTrailingConstraint.constant = self.isMenueShowing ? -50 : 50
+         self.rotateBtnYConstraint.constant = self.isMenueShowing ? 0 : -45
+         self.moveBtnYConstraint.constant = self.isMenueShowing ? 0 : -45
+        let playImage = UIImage(systemName: "play.fill")!
+        let pauseImage =  UIImage(systemName: "playpause.fill")!
+        let playPauseBtnimage = self.isMenueShowing ? pauseImage : playImage
+        playPauseBtn.setImage(playPauseBtnimage , for: .normal)
+    }
+
+    fileprivate func showHideMenu() {
+        isMenueShowing.toggle()
         UIView.animate(withDuration: 0.5) {
             self.menucontroller()
             self.view.layoutIfNeeded()
         }
-    }
-
-    private func menucontroller() {
-        self.rotateBtnLeadingConstraint.constant = self.isMenueShowing ? -50 : 50
-        self.resizeBtnBottomConstraint.constant = self.isMenueShowing ? -50 : 50
-        self.moveBtnTrailingConstraint.constant = self.isMenueShowing ? -50 : 50
     }
 
 
