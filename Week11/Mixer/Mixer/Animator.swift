@@ -21,7 +21,7 @@ public extension Animator {
     }
 
 
-    func addresizeAnimation(to view: UIView,with scaleSize: CGFloat = 4) {
+    func addresizeAnimation(to view: UIView,with scaleSize: CGFloat = 6) {
         objectAnimator.addAnimations {
             view.transform = .init(scaleX: scaleSize, y: scaleSize)
         }
@@ -31,12 +31,12 @@ public extension Animator {
     func addMoveAnimation(to view: UIView) {
         objectAnimator.addAnimations {
             view.transform = .init(translationX: 256, y: 256)
+            view.center = CGPoint(x: 250, y: 250)
         }
     }
 
     func resetAnimatedView(to view: UIView) {
         view.transform = .identity
-        view.alpha = 1
     }
 }
 
