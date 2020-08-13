@@ -91,7 +91,7 @@ class ViewController: UIViewController {
             view.layoutIfNeeded()
         }) { _ in
             self.notificationTopConstraint.constant = -200
-            UIView.animate(withDuration: 0.8, delay: 0.2, options: .curveEaseOut, animations: { [view = self.view!] in
+            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
                 view.layoutIfNeeded()
             })
         }
