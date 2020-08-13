@@ -34,7 +34,7 @@ public extension Animator {
 
     func addMoveAnimation(to view: UIView) {
         viewAnimator.addAnimations {
-            view.transform = .init(translationX: 256, y: 256)
+            view.transform = CGAffineTransform.identity.translatedBy(x: 0.0, y: 256.0)
             view.center = self.finalAnimationPoint
         }
     }
