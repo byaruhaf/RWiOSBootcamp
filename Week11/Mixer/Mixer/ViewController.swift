@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var notificationView: UIView!
+    @IBOutlet weak var notificationTitle: UILabel!
     @IBOutlet weak var playPauseBtn: UIButton!
     @IBOutlet weak var rotateBtn: UIButton!
     @IBOutlet weak var resizeBtn: UIButton!
@@ -48,15 +49,15 @@ class ViewController: UIViewController {
 
     @IBAction func resizeTapped(_ sender: Any) {
         animator.addresizeAnimation(to: spaceShip, with: 4.0)
-        ShowNotification()
+         ShowNotification(message: "Resize Animation added")
     }
     @IBAction func moveTapped(_ sender: Any) {
         animator.addMoveAnimation(to: spaceShip)
-        ShowNotification()
+         ShowNotification(message: "Move Animation added")
     }
     @IBAction func visualTapped(_ sender: Any) {
         animator.addRotationAnimation(to: spaceShip)
-        ShowNotification() 
+        ShowNotification(message: "Rotation Animation added")
     }
 
     fileprivate func addSpaceShipObject() {
@@ -83,13 +84,14 @@ class ViewController: UIViewController {
         playPauseBtn.setImage(playPauseBtnimage , for: .normal)
     }
 
-    fileprivate func ShowNotification() {
+    fileprivate func ShowNotification(message:String) {
+        notificationTitle.text = message
         self.notificationTopConstraint.constant = 0
         UIView.animate(withDuration: 0.8, animations: { [view = self.view!] in
             view.layoutIfNeeded()
         }) { _ in
             self.notificationTopConstraint.constant = -200
-            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
+            UIView.animate(withDuration: 0.8, delay: 0.2, options: .curveEaseOut, animations: { [view = self.view!] in
                 view.layoutIfNeeded()
             })
         }

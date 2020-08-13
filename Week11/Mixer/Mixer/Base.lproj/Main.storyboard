@@ -29,7 +29,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" red="0.99726372959999998" green="0.95182436699999995" blue="0.4076974988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="arrow.right.arrow.left.square" catalog="system"/>
+                                <state key="normal" image="arrow.swap" catalog="system"/>
                                 <connections>
                                     <action selector="moveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p5D-wL-sTx"/>
                                 </connections>
@@ -56,7 +56,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" red="0.99726372959999998" green="0.95182436699999995" blue="0.4076974988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="eye.fill" catalog="system"/>
+                                <state key="normal" image="arrow.2.circlepath" catalog="system"/>
                                 <connections>
                                     <action selector="visualTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abO-Yu-ltt"/>
                                 </connections>
@@ -133,6 +133,7 @@
                         <outlet property="moveBtn" destination="7oU-N1-dbq" id="a3x-jb-hNz"/>
                         <outlet property="moveBtnTrailingConstraint" destination="cLM-v9-A9T" id="aBU-cJ-eDd"/>
                         <outlet property="moveBtnYConstraint" destination="f7y-QE-06k" id="yFo-x2-CLS"/>
+                        <outlet property="notificationTitle" destination="2cL-es-HB3" id="oK3-qp-Col"/>
                         <outlet property="notificationTopConstraint" destination="CqX-jR-mrR" id="8kR-c2-Kmo"/>
                         <outlet property="notificationView" destination="NMB-A1-JLQ" id="bXQ-56-LJ9"/>
                         <outlet property="playPauseBtn" destination="f62-dp-NBX" id="ISC-AB-glQ"/>
@@ -150,10 +151,10 @@
     </scenes>
     <resources>
         <image name="arkit" catalog="system" width="128" height="128"/>
-        <image name="arrow.right.arrow.left.square" catalog="system" width="128" height="114"/>
+        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
+        <image name="arrow.swap" catalog="system" width="128" height="100"/>
         <image name="background-home" width="1080" height="2340"/>
         <image name="bolt.fill" catalog="system" width="101" height="128"/>
-        <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="planet-molten" width="250" height="250"/>
         <image name="playpause.fill" catalog="system" width="128" height="73"/>
     </resources>
