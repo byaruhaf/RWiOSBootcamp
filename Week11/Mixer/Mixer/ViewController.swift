@@ -87,11 +87,13 @@ class ViewController: UIViewController {
     fileprivate func ShowNotification(message:String) {
         notificationTitle.text = message
         self.notificationTopConstraint.constant = 0
-        UIView.animate(withDuration: 0.8, animations: { [view = self.view!] in
+        UIView.animate(withDuration: 0.8, animations: { [view = self.view] in
+            guard let view = view else { return }
             view.layoutIfNeeded()
         }) { _ in
             self.notificationTopConstraint.constant = -200
-            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
+            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view] in
+                guard let view = view else { return }
                 view.layoutIfNeeded()
             })
         }
