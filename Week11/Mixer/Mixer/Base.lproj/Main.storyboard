@@ -75,7 +75,7 @@
                                     <action selector="playPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLS-uC-8M3"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-A1-JLQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-A1-JLQ" customClass="CustomView" customModule="Mixer" customModuleProvider="target">
                                 <rect key="frame" x="88" y="0.0" width="287" height="62.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gWU-B9-1fW">
