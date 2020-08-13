@@ -129,6 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="marsImageView" destination="LAs-7r-otM" id="XtW-w2-fXO"/>
                         <outlet property="moveBtn" destination="7oU-N1-dbq" id="a3x-jb-hNz"/>
                         <outlet property="moveBtnTrailingConstraint" destination="cLM-v9-A9T" id="aBU-cJ-eDd"/>
                         <outlet property="moveBtnYConstraint" destination="f7y-QE-06k" id="yFo-x2-CLS"/>

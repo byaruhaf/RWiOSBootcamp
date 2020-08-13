@@ -11,22 +11,23 @@ import UIKit
 
 public struct Animator {
     let viewAnimator = UIViewPropertyAnimator(duration: 2, curve: .linear)
+    var finalAnimationPoint:CGPoint
 }
 
 // MARK: - Animations for Animator
 public extension Animator {
     func addRotationAnimation(to view: UIView, with angleSize:CGFloat = CGFloat.pi) {
         viewAnimator.addAnimations {
-            view.center = CGPoint(x: 40, y: 40)
             view.transform = .init(rotationAngle: angleSize)
+            view.center = self.finalAnimationPoint
         }
     }
 
 
     func addresizeAnimation(to view: UIView,with scaleSize: CGFloat = 6) {
         viewAnimator.addAnimations {
-            view.center = CGPoint(x: 40, y: 40)
             view.transform = .init(scaleX: scaleSize, y: scaleSize)
+            view.center = self.finalAnimationPoint
         }
     }
 
@@ -34,7 +35,7 @@ public extension Animator {
     func addMoveAnimation(to view: UIView) {
         viewAnimator.addAnimations {
             view.transform = .init(translationX: 256, y: 256)
-            view.center = CGPoint(x: 250, y: 250)
+            view.center = self.finalAnimationPoint
         }
     }
 

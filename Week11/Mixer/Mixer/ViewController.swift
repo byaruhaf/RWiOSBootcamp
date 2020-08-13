@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rotateBtn: UIButton!
     @IBOutlet weak var resizeBtn: UIButton!
     @IBOutlet weak var moveBtn: UIButton!
+    @IBOutlet weak var marsImageView: UIImageView!
     @IBOutlet weak var rotateBtnLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var resizeBtnBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var moveBtnTrailingConstraint: NSLayoutConstraint!
@@ -21,10 +22,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var moveBtnYConstraint: NSLayoutConstraint!
     @IBOutlet weak var notificationTopConstraint: NSLayoutConstraint!
     private var isMenueOpen = false
-    private let animator = Animator()
+    private let animator = Animator(finalAnimationPoint: CGPoint(x: 250, y: 250))
 
     fileprivate lazy var spaceShip: UIImageView = {
-        let spaceshipImage = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+        let spaceshipImage = UIImageView(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
         spaceshipImage.image = UIImage(named: "spaceshipMain")
         spaceshipImage.contentMode = .scaleAspectFit
         return spaceshipImage
