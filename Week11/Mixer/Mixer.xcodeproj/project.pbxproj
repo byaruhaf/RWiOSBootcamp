@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1E9E7924E42C2400B3E694 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1E9E7824E42C2400B3E694 /* Animator.swift */; };
+		5F1E9E7B24E4387700B3E694 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1E9E7A24E4387700B3E694 /* CustomButton.swift */; };
 		5F9E938224DD0854000C1833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E938124DD0854000C1833 /* AppDelegate.swift */; };
 		5F9E938424DD0854000C1833 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E938324DD0854000C1833 /* SceneDelegate.swift */; };
 		5F9E938624DD0854000C1833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E938524DD0854000C1833 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F1E9E7824E42C2400B3E694 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		5F1E9E7A24E4387700B3E694 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5F9E937E24DD0854000C1833 /* Mixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9E938124DD0854000C1833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9E938324DD0854000C1833 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +65,9 @@
 				5F9E938124DD0854000C1833 /* AppDelegate.swift */,
 				5F9E938324DD0854000C1833 /* SceneDelegate.swift */,
 				5F9E938524DD0854000C1833 /* ViewController.swift */,
+				5F1E9E7A24E4387700B3E694 /* CustomButton.swift */,
 				5FDF0F4C24E076FC005983CF /* PartyAnimation.swift */,
+				5F1E9E7824E42C2400B3E694 /* Animator.swift */,
 				5F9E938724DD0854000C1833 /* Main.storyboard */,
 				5F9E938A24DD0855000C1833 /* Assets.xcassets */,
 				5F9E938C24DD0855000C1833 /* LaunchScreen.storyboard */,
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1E9E7924E42C2400B3E694 /* Animator.swift in Sources */,
 				5F9E938624DD0854000C1833 /* ViewController.swift in Sources */,
+				5F1E9E7B24E4387700B3E694 /* CustomButton.swift in Sources */,
 				5F9E938224DD0854000C1833 /* AppDelegate.swift in Sources */,
 				5F9E938424DD0854000C1833 /* SceneDelegate.swift in Sources */,
 				5FDF0F4D24E076FC005983CF /* PartyAnimation.swift in Sources */,

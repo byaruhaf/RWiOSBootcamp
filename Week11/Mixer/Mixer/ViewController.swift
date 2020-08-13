@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var notificationView: UIView!
     @IBOutlet weak var playPauseBtn: UIButton!
     @IBOutlet weak var rotateBtn: UIButton!
     @IBOutlet weak var resizeBtn: UIButton!
@@ -18,22 +19,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var moveBtnTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var rotateBtnYConstraint: NSLayoutConstraint!
     @IBOutlet weak var moveBtnYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var notificationTopConstraint: NSLayoutConstraint!
     private var isMenueShowing = false
+    private let animator = Animator()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        playPauseBtn.layer.masksToBounds = true
-        playPauseBtn.layer.cornerRadius = playPauseBtn.frame.width/2
-        rotateBtn.layer.masksToBounds = true
-        rotateBtn.layer.cornerRadius = rotateBtn.frame.width/2
-        resizeBtn.layer.masksToBounds = true
-        resizeBtn.layer.cornerRadius = resizeBtn.frame.width/2
-        moveBtn.layer.masksToBounds = true
-        moveBtn.layer.cornerRadius = moveBtn.frame.width/2
-        isMenueShowing = false
-        menucontroller()
+        showHideMenu()
+        addAnimationObject()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,15 +38,37 @@ class ViewController: UIViewController {
 
     @IBAction func playPauseTapped(_ sender: Any) {
         showHideMenu()
+        animator.startAnimations(in: spaceShip, when: isMenueShowing)
     }
 
     @IBAction func resizeTapped(_ sender: Any) {
+        animator.addresizeAnimation(to: spaceShip, with: 4.0)
+        notificationController()
     }
     @IBAction func moveTapped(_ sender: Any) {
+        animator.addMoveAnimation(to: spaceShip)
+        notificationController()
     }
     @IBAction func visualTapped(_ sender: Any) {
+        animator.addRotationAnimation(to: spaceShip)
+        notificationController() 
     }
 
+
+    fileprivate func notificationController() {
+        self.notificationTopConstraint.constant = 0
+        UIView.animate(withDuration: 0.8, animations: { [view = self.view!] in
+            view.layoutIfNeeded()
+        }) { _ in
+            self.notificationTopConstraint.constant = -70
+            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
+                view.layoutIfNeeded()
+            })
+//            UIView.animate(withDuration: 2, delay: 1) { [view = self.view!] in
+//                view.layoutIfNeeded()
+//            }
+        }
+    }
 
     fileprivate func menucontroller() {
         self.rotateBtnLeadingConstraint.constant = self.isMenueShowing ? -50 : 50
@@ -66,13 +82,29 @@ class ViewController: UIViewController {
         playPauseBtn.setImage(playPauseBtnimage , for: .normal)
     }
 
+    fileprivate lazy var spaceShip: UIImageView = {
+        let spaceshipImage = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+        spaceshipImage.image = UIImage(named: "spaceshipMain")
+        spaceshipImage.contentMode = .scaleAspectFit
+        return spaceshipImage
+    }()
+
+    fileprivate func addAnimationObject() {
+        view.addSubview(spaceShip)
+    }
+
     fileprivate func showHideMenu() {
-        isMenueShowing.toggle()
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.4) {
             self.menucontroller()
             self.view.layoutIfNeeded()
         }
+         isMenueShowing.toggle()
     }
 
 
+}
+
+
+private func delay(seconds: TimeInterval, execute: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: execute)
 }

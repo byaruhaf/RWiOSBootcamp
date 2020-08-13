@@ -21,7 +21,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet-molten" translatesAutoresizingMaskIntoConstraints="NO" id="LAs-7r-otM">
                                 <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oU-N1-dbq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oU-N1-dbq" customClass="CustomButton" customModule="Mixer" customModuleProvider="target">
                                 <rect key="frame" x="82.5" y="557" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.50418639180000002" green="0.001406932715" blue="0.0038705109619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -34,7 +34,7 @@
                                     <action selector="moveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p5D-wL-sTx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fl-Et-yqq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fl-Et-yqq" customClass="CustomButton" customModule="Mixer" customModuleProvider="target">
                                 <rect key="frame" x="162.5" y="522" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.50418639180000002" green="0.001406932715" blue="0.0038705109619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -48,7 +48,7 @@
                                     <action selector="resizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SWe-Qr-nL4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w44-nb-Ugx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w44-nb-Ugx" customClass="CustomButton" customModule="Mixer" customModuleProvider="target">
                                 <rect key="frame" x="242.5" y="557" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.50418639180000002" green="0.001406932715" blue="0.0038705109619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -61,7 +61,7 @@
                                     <action selector="visualTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abO-Yu-ltt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f62-dp-NBX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f62-dp-NBX" customClass="CustomButton" customModule="Mixer" customModuleProvider="target">
                                 <rect key="frame" x="157.5" y="597" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.50418639180000002" green="0.001406932715" blue="0.0038705109619999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -75,16 +75,47 @@
                                     <action selector="playPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLS-uC-8M3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-A1-JLQ">
+                                <rect key="frame" x="88" y="-70" width="287" height="62.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gWU-B9-1fW">
+                                        <rect key="frame" x="20" y="20" width="247" height="22.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolt.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uO3-dj-8rz">
+                                                <rect key="frame" x="0.0" y="0.0" width="17" height="21.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.79355067010000002" green="0.72371631859999996" blue="0.089724920690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation added successfully" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cL-es-HB3">
+                                                <rect key="frame" x="23" y="0.0" width="224" height="22.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                                <color key="textColor" red="0.79355067010000002" green="0.72371631859999996" blue="0.089724920690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.55110037329999995" green="0.0017983884319999999" blue="0.0" alpha="0.64526079963235294" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gWU-B9-1fW" secondAttribute="trailing" constant="20" id="CKw-5X-WyI"/>
+                                    <constraint firstAttribute="bottom" secondItem="gWU-B9-1fW" secondAttribute="bottom" constant="20" id="R6M-ye-JUt"/>
+                                    <constraint firstItem="gWU-B9-1fW" firstAttribute="top" secondItem="NMB-A1-JLQ" secondAttribute="top" constant="20" id="ZKu-tc-a1J"/>
+                                    <constraint firstItem="gWU-B9-1fW" firstAttribute="leading" secondItem="NMB-A1-JLQ" secondAttribute="leading" constant="20" id="iOV-Fz-orf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="V1h-X9-QQy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="39s-3R-nX3"/>
                             <constraint firstItem="f62-dp-NBX" firstAttribute="top" secondItem="7Fl-Et-yqq" secondAttribute="bottom" constant="25" id="9SZ-Iz-2ib"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f62-dp-NBX" secondAttribute="bottom" constant="10" id="AkU-Z5-gTZ"/>
+                            <constraint firstItem="NMB-A1-JLQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-70" id="CqX-jR-mrR"/>
                             <constraint firstItem="w44-nb-Ugx" firstAttribute="height" secondItem="7Fl-Et-yqq" secondAttribute="height" id="OLG-jJ-zlC"/>
                             <constraint firstItem="f62-dp-NBX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SsK-no-HMr"/>
                             <constraint firstItem="w44-nb-Ugx" firstAttribute="centerY" secondItem="f62-dp-NBX" secondAttribute="centerY" constant="-45" id="U6v-fg-XeQ"/>
                             <constraint firstItem="w44-nb-Ugx" firstAttribute="leading" secondItem="f62-dp-NBX" secondAttribute="trailing" constant="25" id="aHU-du-yHh"/>
+                            <constraint firstItem="NMB-A1-JLQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c49-M5-zfR"/>
                             <constraint firstItem="f62-dp-NBX" firstAttribute="leading" secondItem="7oU-N1-dbq" secondAttribute="trailing" constant="25" id="cLM-v9-A9T"/>
                             <constraint firstItem="LAs-7r-otM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ejV-xz-trQ"/>
                             <constraint firstItem="7oU-N1-dbq" firstAttribute="centerY" secondItem="f62-dp-NBX" secondAttribute="centerY" constant="-45" id="f7y-QE-06k"/>
@@ -101,6 +132,8 @@
                         <outlet property="moveBtn" destination="7oU-N1-dbq" id="a3x-jb-hNz"/>
                         <outlet property="moveBtnTrailingConstraint" destination="cLM-v9-A9T" id="aBU-cJ-eDd"/>
                         <outlet property="moveBtnYConstraint" destination="f7y-QE-06k" id="yFo-x2-CLS"/>
+                        <outlet property="notificationTopConstraint" destination="CqX-jR-mrR" id="8kR-c2-Kmo"/>
+                        <outlet property="notificationView" destination="NMB-A1-JLQ" id="bXQ-56-LJ9"/>
                         <outlet property="playPauseBtn" destination="f62-dp-NBX" id="ISC-AB-glQ"/>
                         <outlet property="resizeBtn" destination="7Fl-Et-yqq" id="gCU-hc-97X"/>
                         <outlet property="resizeBtnBottomConstraint" destination="9SZ-Iz-2ib" id="Yze-Pc-4Ne"/>
@@ -111,13 +144,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
     <resources>
         <image name="arkit" catalog="system" width="128" height="128"/>
         <image name="arrow.right.arrow.left.square" catalog="system" width="128" height="114"/>
         <image name="background-home" width="1080" height="2340"/>
+        <image name="bolt.fill" catalog="system" width="101" height="128"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="planet-molten" width="250" height="250"/>
         <image name="playpause.fill" catalog="system" width="128" height="73"/>
