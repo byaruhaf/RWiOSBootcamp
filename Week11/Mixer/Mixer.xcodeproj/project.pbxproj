@@ -15,7 +15,6 @@
 		5F9E938924DD0854000C1833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9E938724DD0854000C1833 /* Main.storyboard */; };
 		5F9E938B24DD0855000C1833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9E938A24DD0855000C1833 /* Assets.xcassets */; };
 		5F9E938E24DD0855000C1833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9E938C24DD0855000C1833 /* LaunchScreen.storyboard */; };
-		5FDF0F4D24E076FC005983CF /* PartyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF0F4C24E076FC005983CF /* PartyAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		5F9E938A24DD0855000C1833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F9E938D24DD0855000C1833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F9E938F24DD0855000C1833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FDF0F4C24E076FC005983CF /* PartyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 				5F9E938324DD0854000C1833 /* SceneDelegate.swift */,
 				5F9E938524DD0854000C1833 /* ViewController.swift */,
 				5F1E9E7A24E4387700B3E694 /* CustomButton.swift */,
-				5FDF0F4C24E076FC005983CF /* PartyAnimation.swift */,
 				5F1E9E7824E42C2400B3E694 /* Animator.swift */,
 				5F9E938724DD0854000C1833 /* Main.storyboard */,
 				5F9E938A24DD0855000C1833 /* Assets.xcassets */,
@@ -152,7 +149,6 @@
 				5F1E9E7B24E4387700B3E694 /* CustomButton.swift in Sources */,
 				5F9E938224DD0854000C1833 /* AppDelegate.swift in Sources */,
 				5F9E938424DD0854000C1833 /* SceneDelegate.swift in Sources */,
-				5FDF0F4D24E076FC005983CF /* PartyAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,13 @@ import UIKit
 
 
 public struct Animator {
-    let objectAnimator = UIViewPropertyAnimator(duration: 2, curve: .linear)
+    let viewAnimator = UIViewPropertyAnimator(duration: 2, curve: .linear)
 }
 
+// MARK: - Animations for Animator
 public extension Animator {
     func addRotationAnimation(to view: UIView, with angleSize:CGFloat = CGFloat.pi) {
-        objectAnimator.addAnimations {
+        viewAnimator.addAnimations {
             view.center = CGPoint(x: 40, y: 40)
             view.transform = .init(rotationAngle: angleSize)
         }
@@ -23,7 +24,7 @@ public extension Animator {
 
 
     func addresizeAnimation(to view: UIView,with scaleSize: CGFloat = 6) {
-        objectAnimator.addAnimations {
+        viewAnimator.addAnimations {
             view.center = CGPoint(x: 40, y: 40)
             view.transform = .init(scaleX: scaleSize, y: scaleSize)
         }
@@ -31,26 +32,27 @@ public extension Animator {
 
 
     func addMoveAnimation(to view: UIView) {
-        objectAnimator.addAnimations {
+        viewAnimator.addAnimations {
             view.transform = .init(translationX: 256, y: 256)
             view.center = CGPoint(x: 250, y: 250)
         }
     }
 
-    func resetAnimatedView(to view: UIView) {
+    func addResetAnimation(to view: UIView) {
         view.transform = .identity
     }
 }
 
+// MARK: - Animator Starter
 public extension Animator {
-    func startAnimations(in view: UIView, when isMenuOpened: Bool) {
-        if !isMenuOpened {
-            objectAnimator.startAnimation()
+    func startAnimations(for view: UIView, when isMenuOpen: Bool) {
+        if !isMenuOpen {
+            viewAnimator.startAnimation()
 
-            objectAnimator.addCompletion { _ in
+            viewAnimator.addCompletion { _ in
                 let reversePropertyAnimator = UIViewPropertyAnimator(duration: 2, curve: .linear)
                 reversePropertyAnimator.addAnimations {
-                    self.resetAnimatedView(to: view)
+                    self.addResetAnimation(to: view)
                 }
                 reversePropertyAnimator.startAnimation()
             }

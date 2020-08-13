@@ -23,52 +23,54 @@ class ViewController: UIViewController {
     private var isMenueOpen = false
     private let animator = Animator()
 
+    fileprivate lazy var spaceShip: UIImageView = {
+        let spaceshipImage = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
+        spaceshipImage.image = UIImage(named: "spaceshipMain")
+        spaceshipImage.contentMode = .scaleAspectFit
+        return spaceshipImage
+    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         showHideMenu()
-        addAnimationObject()
+        addSpaceShipObject()
         notificationTopConstraint.constant = -200
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
 
-
-
+// MARK: - Button Actions
     @IBAction func playPauseTapped(_ sender: Any) {
         showHideMenu()
-        animator.startAnimations(in: spaceShip, when: !isMenueOpen)
+        animator.startAnimations(for: spaceShip, when: !isMenueOpen)
     }
 
     @IBAction func resizeTapped(_ sender: Any) {
         animator.addresizeAnimation(to: spaceShip, with: 4.0)
-        notificationController()
+        ShowNotification()
     }
     @IBAction func moveTapped(_ sender: Any) {
         animator.addMoveAnimation(to: spaceShip)
-        notificationController()
+        ShowNotification()
     }
     @IBAction func visualTapped(_ sender: Any) {
         animator.addRotationAnimation(to: spaceShip)
-        notificationController() 
+        ShowNotification() 
     }
 
+    fileprivate func addSpaceShipObject() {
+        view.addSubview(spaceShip)
+    }
 
-    fileprivate func notificationController() {
-        self.notificationTopConstraint.constant = 0
-        UIView.animate(withDuration: 0.8, animations: { [view = self.view!] in
-            view.layoutIfNeeded()
-        }) { _ in
-            self.notificationTopConstraint.constant = -200
-            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
-                view.layoutIfNeeded()
-            })
+    fileprivate func showHideMenu() {
+        UIView.animate(withDuration: 0.4) {
+            self.menuController()
+            self.isMenueOpen.toggle()
+            self.view.layoutIfNeeded()
         }
     }
 
-    fileprivate func menucontroller() {
+    fileprivate func menuController() {
         self.rotateBtnLeadingConstraint.constant = self.isMenueOpen ? 50 : -50
         self.resizeBtnBottomConstraint.constant = self.isMenueOpen ? 50 : -50
         self.moveBtnTrailingConstraint.constant = self.isMenueOpen ? 50 : -50
@@ -80,27 +82,16 @@ class ViewController: UIViewController {
         playPauseBtn.setImage(playPauseBtnimage , for: .normal)
     }
 
-    fileprivate lazy var spaceShip: UIImageView = {
-        let spaceshipImage = UIImageView(frame: CGRect(x: 10, y: 10, width: 50, height: 50))
-        spaceshipImage.image = UIImage(named: "spaceshipMain")
-        spaceshipImage.contentMode = .scaleAspectFit
-        return spaceshipImage
-    }()
-
-    fileprivate func addAnimationObject() {
-        view.addSubview(spaceShip)
-    }
-
-    fileprivate func showHideMenu() {
-        UIView.animate(withDuration: 0.4) {
-            self.menucontroller()
-            self.isMenueOpen.toggle()
-            self.view.layoutIfNeeded()
+    fileprivate func ShowNotification() {
+        self.notificationTopConstraint.constant = 0
+        UIView.animate(withDuration: 0.8, animations: { [view = self.view!] in
+            view.layoutIfNeeded()
+        }) { _ in
+            self.notificationTopConstraint.constant = -200
+            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
+                view.layoutIfNeeded()
+            })
         }
     }
-}
 
-
-private func delay(seconds: TimeInterval, execute: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: execute)
 }
