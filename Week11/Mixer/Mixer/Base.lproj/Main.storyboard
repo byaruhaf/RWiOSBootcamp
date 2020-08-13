@@ -104,13 +104,23 @@
                                     <constraint firstItem="gWU-B9-1fW" firstAttribute="leading" secondItem="NMB-A1-JLQ" secondAttribute="leading" constant="20" id="iOV-Fz-orf"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bf5-VO-JgF">
+                                <rect key="frame" x="228" y="251" width="45" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Ng8-dG-POq"/>
+                                    <constraint firstAttribute="width" constant="45" id="dqU-Le-h4p"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="V1h-X9-QQy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="39s-3R-nX3"/>
+                            <constraint firstItem="bf5-VO-JgF" firstAttribute="top" secondItem="LAs-7r-otM" secondAttribute="bottom" constant="-207.5" id="5uA-qO-n16"/>
                             <constraint firstItem="f62-dp-NBX" firstAttribute="top" secondItem="7Fl-Et-yqq" secondAttribute="bottom" constant="25" id="9SZ-Iz-2ib"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f62-dp-NBX" secondAttribute="bottom" constant="10" id="AkU-Z5-gTZ"/>
                             <constraint firstItem="NMB-A1-JLQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CqX-jR-mrR"/>
+                            <constraint firstItem="LAs-7r-otM" firstAttribute="trailing" secondItem="bf5-VO-JgF" secondAttribute="trailing" constant="39.5" id="J7f-qs-yAn"/>
                             <constraint firstItem="w44-nb-Ugx" firstAttribute="height" secondItem="7Fl-Et-yqq" secondAttribute="height" id="OLG-jJ-zlC"/>
                             <constraint firstItem="f62-dp-NBX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SsK-no-HMr"/>
                             <constraint firstItem="w44-nb-Ugx" firstAttribute="centerY" secondItem="f62-dp-NBX" secondAttribute="centerY" constant="-45" id="U6v-fg-XeQ"/>
@@ -129,6 +139,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ghostView" destination="bf5-VO-JgF" id="iVO-AG-ZKr"/>
                         <outlet property="marsImageView" destination="LAs-7r-otM" id="XtW-w2-fXO"/>
                         <outlet property="moveBtn" destination="7oU-N1-dbq" id="a3x-jb-hNz"/>
                         <outlet property="moveBtnTrailingConstraint" destination="cLM-v9-A9T" id="aBU-cJ-eDd"/>

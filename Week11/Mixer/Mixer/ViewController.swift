@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resizeBtn: UIButton!
     @IBOutlet weak var moveBtn: UIButton!
     @IBOutlet weak var marsImageView: UIImageView!
+    @IBOutlet weak var ghostView: UIView!
     @IBOutlet weak var rotateBtnLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var resizeBtnBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var moveBtnTrailingConstraint: NSLayoutConstraint!
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var moveBtnYConstraint: NSLayoutConstraint!
     @IBOutlet weak var notificationTopConstraint: NSLayoutConstraint!
     private var isMenueOpen = false
-    private let animator = Animator(finalAnimationPoint: CGPoint(x: 250, y: 250))
+    fileprivate lazy var animator:Animator = { Animator(finalAnimationPoint: ghostView.center) }()
 
     fileprivate lazy var spaceShip: UIImageView = {
         let spaceshipImage = UIImageView(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
@@ -92,7 +93,7 @@ class ViewController: UIViewController {
             view.layoutIfNeeded()
         }) { _ in
             self.notificationTopConstraint.constant = -200
-            UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view] in
+            UIView.animate(withDuration: 0.8, delay: 0.5, options: .curveEaseOut, animations: { [view = self.view] in
                 guard let view = view else { return }
                 view.layoutIfNeeded()
             })
