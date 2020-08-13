@@ -16,6 +16,7 @@ public struct Animator {
 public extension Animator {
     func addRotationAnimation(to view: UIView, with angleSize:CGFloat = CGFloat.pi) {
         objectAnimator.addAnimations {
+            view.center = CGPoint(x: 40, y: 40)
             view.transform = .init(rotationAngle: angleSize)
         }
     }
@@ -23,6 +24,7 @@ public extension Animator {
 
     func addresizeAnimation(to view: UIView,with scaleSize: CGFloat = 6) {
         objectAnimator.addAnimations {
+            view.center = CGPoint(x: 40, y: 40)
             view.transform = .init(scaleX: scaleSize, y: scaleSize)
         }
     }

@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rotateBtnYConstraint: NSLayoutConstraint!
     @IBOutlet weak var moveBtnYConstraint: NSLayoutConstraint!
     @IBOutlet weak var notificationTopConstraint: NSLayoutConstraint!
-    private var isMenueShowing = false
+    private var isMenueOpen = false
     private let animator = Animator()
 
 
@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         showHideMenu()
         addAnimationObject()
+        notificationTopConstraint.constant = -200
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
 
     @IBAction func playPauseTapped(_ sender: Any) {
         showHideMenu()
-        animator.startAnimations(in: spaceShip, when: isMenueShowing)
+        animator.startAnimations(in: spaceShip, when: !isMenueOpen)
     }
 
     @IBAction func resizeTapped(_ sender: Any) {
@@ -60,25 +61,22 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.8, animations: { [view = self.view!] in
             view.layoutIfNeeded()
         }) { _ in
-            self.notificationTopConstraint.constant = -70
+            self.notificationTopConstraint.constant = -200
             UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: { [view = self.view!] in
                 view.layoutIfNeeded()
             })
-//            UIView.animate(withDuration: 2, delay: 1) { [view = self.view!] in
-//                view.layoutIfNeeded()
-//            }
         }
     }
 
     fileprivate func menucontroller() {
-        self.rotateBtnLeadingConstraint.constant = self.isMenueShowing ? -50 : 50
-        self.resizeBtnBottomConstraint.constant = self.isMenueShowing ? -50 : 50
-        self.moveBtnTrailingConstraint.constant = self.isMenueShowing ? -50 : 50
-         self.rotateBtnYConstraint.constant = self.isMenueShowing ? 0 : -45
-         self.moveBtnYConstraint.constant = self.isMenueShowing ? 0 : -45
+        self.rotateBtnLeadingConstraint.constant = self.isMenueOpen ? 50 : -50
+        self.resizeBtnBottomConstraint.constant = self.isMenueOpen ? 50 : -50
+        self.moveBtnTrailingConstraint.constant = self.isMenueOpen ? 50 : -50
+         self.rotateBtnYConstraint.constant = self.isMenueOpen ? -45 : 0
+         self.moveBtnYConstraint.constant = self.isMenueOpen ? -45 : 0
         let playImage = UIImage(systemName: "play.fill")!
         let pauseImage =  UIImage(systemName: "playpause.fill")!
-        let playPauseBtnimage = self.isMenueShowing ? pauseImage : playImage
+        let playPauseBtnimage = self.isMenueOpen ? pauseImage : playImage
         playPauseBtn.setImage(playPauseBtnimage , for: .normal)
     }
 
@@ -96,12 +94,10 @@ class ViewController: UIViewController {
     fileprivate func showHideMenu() {
         UIView.animate(withDuration: 0.4) {
             self.menucontroller()
+            self.isMenueOpen.toggle()
             self.view.layoutIfNeeded()
         }
-         isMenueShowing.toggle()
     }
-
-
 }
 
 
